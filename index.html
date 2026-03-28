@@ -1,1 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:   #f2ead8;
+    --cream2:  #ede3cc;
+    --ink:     #1c1510;
+    --ink2:    #3a2e22;
+    --muted:   #8a7a62;
+    --border:  #1c1510;
+    --accent:  #c45c38;
+    --accent2: #5a8a6a;
+    --dot:     rgba(28,21,16,0.12);
+  }
 
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+
+  /* halftone dot grid */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: radial-gradient(circle, var(--dot) 1px, transparent 1px);
+    background-size: 14px 14px;
+  }
+
+  .wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* scattered star decorations */
+  .star {
+    position: absolute;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 7px;
+    color: var(--muted);
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border: 2px solid var(--border);
+    background: var(--cream2);
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner {
+    width: 100%;
+    height: 110px;
+    background: var(--ink);
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner-inner {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle, #fff 1px, transparent 1px) 30px 20px / 80px 60px,
+      radial-gradient(circle, #fff 1px, transparent 1px) 150px 40px / 100px 80px,
+      radial-gradient(circle, #fff 1px, transparent 1px) 280px 15px / 90px 70px,
+      radial-gradient(circle, #fff 1px, transparent 1px) 400px 35px / 70px 55px,
+      radial-gradient(circle, #fff 1px, transparent 1px) 550px 20px / 60px 90px,
+      radial-gradient(circle, #fff 1.5px, transparent 1.5px) 90px 55px / 120px 80px,
+      radial-gradient(circle, #fff 1.5px, transparent 1.5px) 220px 70px / 130px 90px,
+      radial-gradient(circle, #fff 1.5px, transparent 1.5px) 370px 60px / 110px 100px,
+      radial-gradient(circle, #fff 1.5px, transparent 1.5px) 480px 80px / 150px 70px;
+  }
+
+  .banner-char {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 64px;
+    image-rendering: pixelated;
+    background:
+      linear-gradient(var(--accent) 0 0)              0 0   / 100% 18% no-repeat,
+      linear-gradient(#e8c9a0 0 0)                     4px 12px / calc(100% - 8px) 30% no-repeat,
+      linear-gradient(var(--ink) 0 0)                  6px 18px / 6px 6px no-repeat,
+      linear-gradient(var(--ink) 0 0)                  20px 18px / 6px 6px no-repeat,
+      linear-gradient(var(--accent2) 0 0)              0 38px / 100% 30% no-repeat,
+      linear-gradient(var(--ink) 0 0)                  2px 60px / 10px 10px no-repeat,
+      linear-gradient(var(--ink) 0 0)                  20px 60px / 10px 10px no-repeat,
+      var(--ink);
+  }
+
+  .banner-planet {
+    position: absolute;
+    right: 80px;
+    top: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #5a8a6a, #2a4a3a);
+    border: 3px solid var(--cream);
+    box-shadow: inset -8px -8px 0 rgba(0,0,0,0.3);
+    image-rendering: pixelated;
+  }
+
+  .banner-planet::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: -14px;
+    width: calc(100% + 28px);
+    height: 10px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transform: translateY(-50%) rotateX(70deg);
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+
+  .header-body {
+    padding: 20px 24px 18px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: end;
+  }
+
+  .site-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(12px, 2.8vw, 18px);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  .site-title em {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  .tagline {
+    font-size: 21px;
+    color: var(--muted);
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+
+  .header-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+
+  .link-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    padding: 5px 10px;
+    border: 2px solid var(--border);
+    background: var(--cream);
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    display: block;
+    transition: all 0.08s;
+  }
+
+  .link-btn:hover {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: -2px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .tab-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 7px;
+    padding: 8px 14px;
+    border: 2px solid var(--border);
+    border-bottom: 2px solid var(--border);
+    background: var(--cream);
+    color: var(--muted);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: all 0.08s;
+  }
+
+  .tab-btn:hover { background: var(--cream2); color: var(--ink); }
+
+  .tab-btn.active {
+    background: var(--cream2);
+    color: var(--ink);
+    border-bottom-color: var(--cream2);
+  }
+
+  /* ── CONTENT PANEL ── */
+  .content-panel {
+    border: 2px solid var(--border);
+    background: var(--cream2);
+    padding: 28px 28px;
+    min-height: 340px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active {
+    display: block;
+    animation: fadein 0.12s ease;
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: translateY(3px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* section label */
+  .sec {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 7px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sec::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--border) 0 4px, transparent 4px 8px);
+    opacity: 0.3;
+  }
+
+  /* ── HOME ── */
+  .bio {
+    font-size: 22px;
+    line-height: 1.65;
+    color: var(--ink2);
+    max-width: 540px;
+    margin-bottom: 22px;
+  }
+  .bio strong { color: var(--accent); font-weight: normal; }
+  .bio em { color: var(--accent2); font-style: normal; }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .chip {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    padding: 5px 9px;
+    border: 2px dashed var(--border);
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  .px-rule {
+    height: 3px;
+    background: repeating-linear-gradient(90deg, var(--ink) 0 4px, transparent 4px 8px);
+    opacity: 0.15;
+    margin: 18px 0;
+  }
+
+  /* ── PROJECTS ── */
+  .proj-list { display: flex; flex-direction: column; gap: 14px; }
+
+  .proj-card {
+    border: 2px solid var(--border);
+    background: var(--cream);
+    padding: 16px 18px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: start;
+    transition: all 0.08s;
+    position: relative;
+  }
+
+  .proj-card::before, .proj-card::after {
+    content: '+';
+    font-family: 'Press Start 2P', monospace;
+    font-size: 7px;
+    color: var(--muted);
+    position: absolute;
+    opacity: 0.4;
+  }
+  .proj-card::before { top: -1px; right: 6px; }
+  .proj-card::after  { bottom: -1px; left: 6px; }
+
+  .proj-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .proj-name {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .proj-desc { font-size: 19px; color: var(--muted); line-height: 1.45; margin-bottom: 10px; }
+
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  .tag {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    padding: 3px 7px;
+    border: 1px solid var(--muted);
+    color: var(--muted);
+  }
+
+  .proj-link {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 7px;
+    color: var(--accent);
+    white-space: nowrap;
+    padding-top: 2px;
+    text-decoration: none;
+  }
+  .proj-link:hover { text-decoration: underline; }
+
+  /* ── HOBBIES ── */
+  .hobby-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    gap: 10px;
+  }
+
+  .hobby-card {
+    border: 2px dashed var(--border);
+    background: var(--cream);
+    padding: 16px 14px;
+    text-align: center;
+    transition: all 0.08s;
+  }
+
+  .hobby-card:hover {
+    border-style: solid;
+    background: var(--cream2);
+    transform: translate(-2px,-2px);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .hobby-icon { font-size: 28px; display: block; margin-bottom: 9px; }
+
+  .hobby-name {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    color: var(--ink);
+    margin-bottom: 7px;
+    letter-spacing: 0.5px;
+  }
+
+  .hobby-sub { font-size: 17px; color: var(--muted); line-height: 1.35; }
+
+  /* ── MUSIC ── */
+  .np-box {
+    border: 2px solid var(--border);
+    background: var(--cream);
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    position: relative;
+  }
+
+  .np-box::before {
+    content: '♪ NOW PLAYING';
+    position: absolute;
+    top: -10px; left: 12px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    background: var(--cream2);
+    padding: 0 6px;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+
+  .record {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 3px solid var(--ink);
+    background: repeating-radial-gradient(circle, #2a2218 0 3px, #1c1510 3px 7px);
+    position: relative;
+    animation: spin 5s linear infinite;
+    image-rendering: pixelated;
+  }
+  .record::after {
+    content: '';
+    position: absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    width:12px;height:12px;
+    border-radius:50%;
+    background: var(--cream2);
+    border: 2px solid var(--ink);
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .np-track-title { font-size: 22px; color: var(--ink); line-height: 1.3; }
+  .np-artist { font-size: 18px; color: var(--muted); }
+
+  .track-list { display: flex; flex-direction: column; gap: 5px; }
+
+  .track-row {
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 9px 14px;
+    border: 1px dashed rgba(28,21,16,0.2);
+    background: var(--cream);
+    transition: all 0.08s;
+  }
+
+  .track-row:hover {
+    border-style: solid;
+    border-color: var(--border);
+    transform: translateX(3px);
+  }
+
+  .track-num {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  .track-name { font-size: 19px; color: var(--ink); }
+  .track-dur { font-size: 16px; color: var(--muted); }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 20px;
+    border: 2px dashed var(--border);
+    padding: 14px 20px;
+    text-align: center;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 6px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    line-height: 2;
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- scattered pixel stars -->
+<span class="star" style="top:140px;left:18px">✦</span>
+<span class="star" style="top:320px;right:22px">✦</span>
+<span class="star" style="top:500px;left:12px">*</span>
+<span class="star" style="top:640px;right:16px">*</span>
+<span class="star" style="top:80px;right:30px">✦</span>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <div class="banner">
+      <div class="banner-inner"></div>
+      <div class="banner-planet"></div>
+      <div class="banner-char"></div>
+    </div>
+    <div class="header-body">
+      <div>
+        <div class="site-title">hi, i'm <em>your name</em></div>
+        <div class="tagline">maker · thinker · collector</div>
+      </div>
+      <div class="header-links">
+        <a class="link-btn" href="#">[ github ]</a>
+        <a class="link-btn" href="#">[ email ]</a>
+        <a class="link-btn" href="#">[ linkedin ]</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="go('home',this)">home</button>
+    <button class="tab-btn" onclick="go('projects',this)">projects</button>
+    <button class="tab-btn" onclick="go('hobbies',this)">hobbies</button>
+    <button class="tab-btn" onclick="go('music',this)">music</button>
+  </div>
+
+  <!-- CONTENT PANEL -->
+  <div class="content-panel">
+
+    <!-- HOME -->
+    <div class="tab-panel active" id="tab-home">
+      <div class="sec">about me</div>
+      <div class="bio">
+        hey — i'm <strong>your name</strong>, a <em>creative / developer / whatever</em>
+        based in <strong>your city</strong>.<br><br>
+        i build things, collect things, and think about things for too long.
+        this is my little space on the internet.
+      </div>
+      <div class="chips">
+        <div class="chip">location // earth</div>
+        <div class="chip">status // online</div>
+        <div class="chip">currently // working on stuff</div>
+      </div>
+      <div class="px-rule"></div>
+      <div style="font-size:19px;color:var(--muted);line-height:1.9;">
+        ✦ open to collabs &nbsp;&nbsp;
+        ✦ <a href="mailto:you@email.com" style="color:var(--accent);text-decoration:none;">you@email.com</a>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="tab-panel" id="tab-projects">
+      <div class="sec">projects</div>
+      <div class="proj-list">
+        <div class="proj-card">
+          <div>
+            <div class="proj-name">project one</div>
+            <div class="proj-desc">what it does and why you made it. keep it short.</div>
+            <div class="proj-tags"><span class="tag">python</span><span class="tag">web</span><span class="tag">2024</span></div>
+          </div>
+          <a class="proj-link" href="#">view →</a>
+        </div>
+        <div class="proj-card">
+          <div>
+            <div class="proj-name">project two</div>
+            <div class="proj-desc">another thing you built. link it if it's live somewhere.</div>
+            <div class="proj-tags"><span class="tag">react</span><span class="tag">api</span></div>
+          </div>
+          <a class="proj-link" href="#">view →</a>
+        </div>
+        <div class="proj-card">
+          <div>
+            <div class="proj-name">project three</div>
+            <div class="proj-desc">or remove this card — you're in charge here.</div>
+            <div class="proj-tags"><span class="tag">design</span><span class="tag">figma</span></div>
+          </div>
+          <a class="proj-link" href="#">view →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOBBIES -->
+    <div class="tab-panel" id="tab-hobbies">
+      <div class="sec">hobbies & interests</div>
+      <div class="hobby-grid">
+        <div class="hobby-card">
+          <span class="hobby-icon">🎮</span>
+          <div class="hobby-name">gaming</div>
+          <div class="hobby-sub">retro & indie. always replaying something.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-icon">📚</span>
+          <div class="hobby-name">reading</div>
+          <div class="hobby-sub">sci-fi, essays, weird rabbit holes.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-icon">🎨</span>
+          <div class="hobby-name">making things</div>
+          <div class="hobby-sub">building, sketching, tinkering.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-icon">🌿</span>
+          <div class="hobby-name">outdoors</div>
+          <div class="hobby-sub">walks, parks, touching grass.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-icon">🍜</span>
+          <div class="hobby-name">food</div>
+          <div class="hobby-sub">always hunting for the best spot.</div>
+        </div>
+        <div class="hobby-card">
+          <span class="hobby-icon">📷</span>
+          <div class="hobby-name">photography</div>
+          <div class="hobby-sub">film & street mostly.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MUSIC -->
+    <div class="tab-panel" id="tab-music">
+      <div class="sec">music</div>
+      <div class="np-box">
+        <div class="record"></div>
+        <div>
+          <div class="np-track-title">your favorite track</div>
+          <div class="np-artist">artist name</div>
+        </div>
+      </div>
+      <div class="track-list">
+        <div class="track-row"><div class="track-num">01</div><div class="track-name">track name — artist</div><div class="track-dur">3:42</div></div>
+        <div class="track-row"><div class="track-num">02</div><div class="track-name">another favorite — artist</div><div class="track-dur">4:11</div></div>
+        <div class="track-row"><div class="track-num">03</div><div class="track-name">late night vibe — artist</div><div class="track-dur">5:02</div></div>
+        <div class="track-row"><div class="track-num">04</div><div class="track-name">old reliable — artist</div><div class="track-dur">3:28</div></div>
+        <div class="track-row"><div class="track-num">05</div><div class="track-name">current obsession — artist</div><div class="track-dur">4:55</div></div>
+      </div>
+    </div>
+
+  </div><!-- /content-panel -->
+
+  <footer>
+    &copy; 2025 your name &nbsp;·&nbsp;
+    <a href="#">github</a> &nbsp;·&nbsp;
+    <a href="#">email</a>
+  </footer>
+
+</div><!-- /wrapper -->
+
+<script>
+  function go(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
