@@ -19,7 +19,6 @@
       width: 100%;
     }
 
-    /* subtle scanline overlay — matches the CRT feel of the image */
     body:before {
       content: "";
       position: fixed;
@@ -43,18 +42,14 @@
       text-align: center;
     }
 
-    /* ── ASCII cat image ── */
+    /* natural size — adjust width here to taste */
     .cat-img {
       display: block;
-      /* natural size — matches the #0E140E bg so edges blend in */
-      max-width: 90vw;
+      margin: 0 auto 24px auto;
       image-rendering: pixelated;
       image-rendering: crisp-edges;
-      margin: 0 auto 24px auto;
     }
 
-
-    /* ── enter button ── */
     a.enter {
       display: inline-block;
       background-color: #2ecc2e;
@@ -74,14 +69,8 @@
 <body>
 <div class="outer">
   <div class="stage">
-
-    <!-- ASCII cat image — background is #0E140E so it blends seamlessly -->
     <img src="ascii_cat.PNG" class="cat-img" alt="" />
-
-    <div class="cursor-line"><span class="cursor"></span></div>
-
     <a href="boot.html" class="enter">[ &nbsp;ENTER&nbsp; ]</a>
-
   </div>
 </div>
 </body>
