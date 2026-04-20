@@ -3,193 +3,154 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>mikatomorrow's world!</title>
+  <title>mikatomorrow :: plaza</title>
   <style type="text/css">
 
     /* ============================================================
-       BASE — tiled mac background
+       BASE — diagonal stripe texture like Steam header
        ============================================================ */
     body {
-      background-color: #7070aa;
-      background-image: url('bg.png');
-      background-repeat: repeat;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.018) 0px,
+        rgba(255,255,255,0.018) 1px,
+        transparent 1px,
+        transparent 6px
+      );
       color: #cccccc;
       font-family: Verdana, Arial, sans-serif;
       font-size: 12px;
-      margin: 0;
-      padding: 16px 0 30px 0;
     }
 
-    a { text-decoration: none; }
+    a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
 
-    /* ============================================================
-       OUTER WRAPPER
-       ============================================================ */
     #outer {
-      width: 720px;
+      width: 760px;
       margin: 0 auto;
     }
 
     /* ============================================================
-       BANNER
+       HEADER — same diagonal stripe but darker, like Steam bar
        ============================================================ */
-    #banner {
-      background-color: #000000;
-      border: 3px solid #2ecc2e;
-      border-bottom: none;
-      padding: 26px 20px 20px 20px;
+    #header {
+      background-color: #111111;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.025) 0px,
+        rgba(255,255,255,0.025) 1px,
+        transparent 1px,
+        transparent 6px
+      );
+      border-bottom: 2px solid #2a2a2a;
+      padding: 26px 24px 22px 24px;
       text-align: center;
     }
 
-    #banner h1 {
+    #header h1 {
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 46px;
+      font-size: 50px;
       font-weight: normal;
-      color: #2ecc2e;
-      letter-spacing: 6px;
+      color: #ffffff;
+      letter-spacing: 10px;
       text-transform: lowercase;
       line-height: 1;
       margin-bottom: 10px;
-      text-shadow: 0 0 20px #1a8c1a, 0 0 40px #0a440a;
     }
 
-    #banner .sub {
+    #header .sub {
       font-family: "Courier New", Courier, monospace;
-      font-size: 13px;
-      color: #88bb88;
-      letter-spacing: 3px;
+      font-size: 11px;
+      color: #555555;
+      letter-spacing: 4px;
     }
 
     /* ============================================================
-       RAINBOW DIVIDER
-       ============================================================ */
-    .rainbow {
-      height: 5px;
-      background: linear-gradient(to right,
-        #2ecc2e, #aacc00, #ccaa00, #cc6644, #993388, #4488cc, #2ecc2e);
-    }
-
-    /* ============================================================
-       NAV
-       ============================================================ */
-    #nav {
-      background-color: #050505;
-      border-left: 3px solid #2ecc2e;
-      border-right: 3px solid #2ecc2e;
-      text-align: center;
-      padding: 7px 12px;
-      font-family: "Courier New", Courier, monospace;
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: #2a2a2a;
-    }
-
-    #nav a { color: #3a5a3a; margin: 0 10px; }
-    #nav a:hover { color: #2ecc2e; }
-
-    /* ============================================================
-       CONTENT BOX
+       CONTENT AREA
        ============================================================ */
     #content {
-      background-color: rgba(0,0,0,0.82);
-      border-left: 3px solid #2ecc2e;
-      border-right: 3px solid #2ecc2e;
-      border-bottom: 3px solid #2ecc2e;
-      padding: 24px 22px 26px 22px;
+      background-color: rgba(10,10,10,0.7);
+      border-left: 1px solid #222222;
+      border-right: 1px solid #222222;
+      padding: 30px 22px 28px 22px;
     }
 
     .section-label {
       font-family: "Courier New", Courier, monospace;
       font-size: 10px;
-      color: #2a2a2a;
+      color: #2e2e2e;
       letter-spacing: 4px;
       text-align: center;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
     /* ============================================================
-       HORIZONTAL DOOR BUTTONS
+       DOOR TABLE
        ============================================================ */
-    a.hdoor {
+    table.doors {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 10px;
+    }
+
+    .door-cell { vertical-align: top; width: 50%; }
+
+    a.door {
       display: block;
-      border: 2px solid #1a1a1a;
-      background-color: #0a0a0a;
-      margin-bottom: 10px;
-      overflow: hidden;
+      border: 1px solid #222222;
+      background-color: #0e0e0e;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,0.012) 0px,
+        rgba(255,255,255,0.012) 1px,
+        transparent 1px,
+        transparent 6px
+      );
     }
 
-    a.hdoor:last-child { margin-bottom: 0; }
-
-    a.hdoor:hover { border-color: #2a2a2a; }
-
-    /* left accent stripe */
-    .hdoor-stripe {
-      float: left;
-      width: 6px;
-      height: 100%;
-      min-height: 90px;
-      align-self: stretch;
+    a.door:hover {
+      border-color: #3a3a3a;
+      background-color: #131313;
     }
 
-    /* image slot */
-    .hdoor-img {
-      float: left;
-      width: 90px;
-      height: 90px;
-      background-color: #111111;
-      border-right: 1px solid #1e1e1e;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hdoor-img img {
-      width: 90px;
-      height: 90px;
-      display: block;
-      object-fit: cover;
-    }
-
-    /* placeholder shown when no image is set */
-    .hdoor-img .placeholder {
-      width: 90px;
-      height: 90px;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-box-align: center;
-      -webkit-box-pack: center;
-      font-family: "Courier New", Courier, monospace;
-      font-size: 9px;
-      color: #2a2a2a;
-      letter-spacing: 1px;
-      text-align: center;
-      line-height: 90px;
-    }
-
-    /* text area */
-    .hdoor-text {
-      float: left;
-      width: 564px;    /* 720 - 22*2 (content pad) - 6 (stripe) - 90 (img) - 4 (borders) */
-      padding: 14px 18px 14px 18px;
-    }
-
-    .hdoor-title {
+    /* banner bar — each door has its own color, subtle */
+    .dbanner {
+      padding: 11px 16px 10px 16px;
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: normal;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 5px;
+      color: #ffffff;
+      border-bottom: 1px solid rgba(0,0,0,0.6);
     }
 
-    .hdoor-desc {
+    /* each room gets a distinct but muted left accent */
+    .db-work    { background-color: #161e08; border-left: 4px solid #7a9900; }
+    .db-music   { background-color: #08101e; border-left: 4px solid #2266aa; }
+    .db-papers  { background-color: #1a1208; border-left: 4px solid #996622; }
+    .db-about   { background-color: #1a0a08; border-left: 4px solid #994433; }
+    .db-mystery { background-color: #0e0818; border-left: 4px solid #663399; }
+
+    a.door:hover .db-work    { background-color: #1e2a0a; }
+    a.door:hover .db-music   { background-color: #0a1828; }
+    a.door:hover .db-papers  { background-color: #241a0a; }
+    a.door:hover .db-about   { background-color: #240e0a; }
+    a.door:hover .db-mystery { background-color: #140a22; }
+
+    .dbody {
+      padding: 13px 16px 15px 16px;
+    }
+
+    .dbody p {
       font-size: 11px;
-      color: #505050;
-      line-height: 1.6;
-      margin-bottom: 8px;
+      color: #4a4a4a;
+      line-height: 1.65;
+      margin-bottom: 10px;
     }
-
-    .hdoor-tags { }
 
     .dtag {
       display: inline-block;
@@ -198,76 +159,57 @@
       letter-spacing: 1px;
       padding: 2px 6px;
       margin-right: 3px;
-      border: 1px solid;
+      border: 1px solid #252525;
+      color: #383838;
     }
 
-    /* ── per-room theming ── */
+    /* ── mystery door full-width ── */
+    .mystery-full .dbanner {
+      font-size: 26px;
+      letter-spacing: 12px;
+      text-align: center;
+    }
 
-    /* work — green */
-    .hdoor-work { }
-    .hdoor-work .hdoor-stripe { background-color: #aacc00; }
-    .hdoor-work .hdoor-img    { border-right-color: #1c2200; }
-    .hdoor-work .hdoor-title  { color: #aacc00; }
-    .hdoor-work:hover         { border-color: #3a4a00; background-color: #0c0e00; }
-    .dtag-work  { color: #4a6600; border-color: #2e3e00; }
-
-    /* music — blue */
-    .hdoor-music .hdoor-stripe { background-color: #4499ee; }
-    .hdoor-music .hdoor-img    { border-right-color: #001c30; }
-    .hdoor-music .hdoor-title  { color: #4499ee; }
-    .hdoor-music:hover         { border-color: #0e2840; background-color: #000a10; }
-    .dtag-music { color: #1a3e66; border-color: #0e2840; }
-
-    /* papers — amber */
-    .hdoor-papers .hdoor-stripe { background-color: #cc9944; }
-    .hdoor-papers .hdoor-img    { border-right-color: #241400; }
-    .hdoor-papers .hdoor-title  { color: #cc9944; }
-    .hdoor-papers:hover         { border-color: #442200; background-color: #0c0600; }
-    .dtag-papers { color: #664422; border-color: #3e2800; }
-
-    /* about — orange-red */
-    .hdoor-about .hdoor-stripe { background-color: #dd7755; }
-    .hdoor-about .hdoor-img    { border-right-color: #220a00; }
-    .hdoor-about .hdoor-title  { color: #dd7755; }
-    .hdoor-about:hover         { border-color: #442200; background-color: #0c0400; }
-    .dtag-about { color: #662211; border-color: #3e1400; }
-
-    /* clearfix */
-    .cf:after { content:""; display:table; clear:both; }
+    .mystery-full .dbody {
+      text-align: center;
+      padding: 12px 16px;
+    }
 
     /* ============================================================
-       MID RULE + FOOTER AREA
+       MID RULE + FOOTER
        ============================================================ */
     hr.mid {
       border: none;
-      border-top: 1px solid #161616;
-      margin: 22px 0 18px 0;
+      border-top: 1px solid #1e1e1e;
+      margin: 24px 0 20px 0;
     }
 
-    .footer-area { text-align: center; }
+    .footer-area {
+      text-align: center;
+    }
 
     .counter {
       display: inline-block;
-      background-color: #000000;
-      border: 1px solid #1c1c1c;
+      background-color: #080808;
+      border: 1px solid #1e1e1e;
       font-family: "Courier New", Courier, monospace;
       font-size: 12px;
-      color: #2ecc2e;
+      color: #aaaaaa;
       padding: 5px 18px;
       letter-spacing: 4px;
       margin-bottom: 12px;
-      text-shadow: 0 0 8px #1a6c1a;
     }
 
     .footer-links {
       font-family: "Courier New", Courier, monospace;
       font-size: 10px;
-      color: #282828;
+      color: #2a2a2a;
       letter-spacing: 2px;
+      margin-top: 4px;
     }
 
-    .footer-links a { color: #303030; margin: 0 8px; }
-    .footer-links a:hover { color: #666666; }
+    .footer-links a { color: #333333; margin: 0 8px; }
+    .footer-links a:hover { color: #777777; }
 
     .last-upd {
       font-family: "Courier New", Courier, monospace;
@@ -277,93 +219,105 @@
       letter-spacing: 2px;
     }
 
+    /* ============================================================
+       FOOTER STRIP
+       ============================================================ */
+    #footerstrip {
+      background-color: #0a0a0a;
+      border-top: 1px solid #1e1e1e;
+      border-left: 1px solid #222222;
+      border-right: 1px solid #222222;
+      text-align: center;
+      padding: 8px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 9px;
+      color: #1e1e1e;
+      letter-spacing: 2px;
+    }
+
   </style>
 </head>
 <body>
 <div id="outer">
 
-  <!-- BANNER -->
-  <div id="banner">
-    <h1>mikatomorrow's world!</h1>
-    <div class="sub">welcome to my plaza!!!</div>
-  </div>
-
-  <div class="rainbow"></div>
-
-  <!-- NAV -->
-  <div id="nav">
-    <a href="index.html">&#9632; terminal</a> &nbsp;::&nbsp;
-    <a href="work.html">work</a> &nbsp;::&nbsp;
-    <a href="music.html">music</a> &nbsp;::&nbsp;
-    <a href="papers.html">papers</a> &nbsp;::&nbsp;
-    <a href="about.html">about</a>
+  <!-- HEADER — no nav below, just the title -->
+  <div id="header">
+    <h1>mikatomorrow</h1>
+    <div class="sub">welcome &nbsp;&mdash;&nbsp; pick a room</div>
   </div>
 
   <!-- CONTENT -->
   <div id="content">
 
-    <div class="section-label">// pick a room //</div>
+    <div class="section-label">// the plaza //</div>
 
-    <!-- WORK -->
-    <a href="work.html" class="hdoor hdoor-work cf">
-      <div class="hdoor-stripe"></div>
-      <div class="hdoor-img">
-        <!-- replace the placeholder div below with:
-             <img src="images/work.jpg" alt="work" />
-             when you have a picture ready                -->
-        <div class="placeholder">img</div>
-      </div>
-      <div class="hdoor-text">
-        <div class="hdoor-title">[&gt;_] &nbsp;work</div>
-        <div class="hdoor-desc">RF &amp; IC design projects. Internship experience. The technical stuff, made readable.</div>
-        <span class="dtag dtag-work">RFIC</span>
-        <span class="dtag dtag-work">radar</span>
-        <span class="dtag dtag-work">microwave</span>
-      </div>
-    </a>
+    <table class="doors" cellpadding="0" cellspacing="0">
 
-    <!-- MUSIC -->
-    <a href="music.html" class="hdoor hdoor-music cf">
-      <div class="hdoor-stripe"></div>
-      <div class="hdoor-img">
-        <div class="placeholder">img</div>
-      </div>
-      <div class="hdoor-text">
-        <div class="hdoor-title">&#9834; &nbsp;music</div>
-        <div class="hdoor-desc">Currently listening. What&rsquo;s been on repeat. No algorithms involved.</div>
-        <span class="dtag dtag-music">listening</span>
-        <span class="dtag dtag-music">rotation</span>
-      </div>
-    </a>
+      <!-- ROW 1 -->
+      <tr>
+        <td class="door-cell">
+          <a href="work.html" class="door">
+            <div class="dbanner db-work">[&gt;_] &nbsp;work</div>
+            <div class="dbody">
+              <p>RF &amp; IC design projects. Internship experience.<br />The technical stuff, made readable.</p>
+              <span class="dtag">RFIC</span>
+              <span class="dtag">radar</span>
+              <span class="dtag">microwave</span>
+            </div>
+          </a>
+        </td>
+        <td class="door-cell">
+          <a href="music.html" class="door">
+            <div class="dbanner db-music">&#9834; &nbsp;music</div>
+            <div class="dbody">
+              <p>Currently listening. What&rsquo;s been on repeat.<br />No algorithms involved.</p>
+              <span class="dtag">listening</span>
+              <span class="dtag">rotation</span>
+            </div>
+          </a>
+        </td>
+      </tr>
 
-    <!-- PAPERS -->
-    <a href="papers.html" class="hdoor hdoor-papers cf">
-      <div class="hdoor-stripe"></div>
-      <div class="hdoor-img">
-        <div class="placeholder">img</div>
-      </div>
-      <div class="hdoor-text">
-        <div class="hdoor-title">[doc] &nbsp;papers</div>
-        <div class="hdoor-desc">Technical reports and writing. Things I had to learn and wrote down.</div>
-        <span class="dtag dtag-papers">ECE</span>
-        <span class="dtag dtag-papers">technical</span>
-        <span class="dtag dtag-papers">reports</span>
-      </div>
-    </a>
+      <!-- ROW 2 -->
+      <tr>
+        <td class="door-cell">
+          <a href="papers.html" class="door">
+            <div class="dbanner db-papers">[doc] &nbsp;papers</div>
+            <div class="dbody">
+              <p>Technical reports and writing. Things I had<br />to learn and wrote down.</p>
+              <span class="dtag">ECE</span>
+              <span class="dtag">technical</span>
+              <span class="dtag">reports</span>
+            </div>
+          </a>
+        </td>
+        <td class="door-cell">
+          <a href="about.html" class="door">
+            <div class="dbanner db-about">/me &nbsp;about</div>
+            <div class="dbody">
+              <p>Who I actually am. Not a resume.<br />Not a LinkedIn. Just a page.</p>
+              <span class="dtag">human</span>
+              <span class="dtag">atlanta</span>
+            </div>
+          </a>
+        </td>
+      </tr>
 
-    <!-- ABOUT -->
-    <a href="about.html" class="hdoor hdoor-about cf">
-      <div class="hdoor-stripe"></div>
-      <div class="hdoor-img">
-        <div class="placeholder">img</div>
-      </div>
-      <div class="hdoor-text">
-        <div class="hdoor-title">/me &nbsp;about</div>
-        <div class="hdoor-desc">Who I actually am. Not a resume. Not a LinkedIn. Just a page.</div>
-        <span class="dtag dtag-about">human</span>
-        <span class="dtag dtag-about">atlanta</span>
-      </div>
-    </a>
+      <!-- ROW 3 — mystery full width -->
+      <tr>
+        <td colspan="2">
+          <a href="mystery.html" class="door mystery-full">
+            <div class="dbanner db-mystery">? &nbsp; ? &nbsp; ?</div>
+            <div class="dbody">
+              <p style="color:#221a2e; font-family:'Courier New',monospace; margin-bottom:0;">
+                no idea what&rsquo;s in here.&nbsp; probably fine.
+              </p>
+            </div>
+          </a>
+        </td>
+      </tr>
+
+    </table>
 
     <hr class="mid" />
 
@@ -371,7 +325,7 @@
     <div class="footer-area">
       <div class="counter">visitors: 000413</div>
       <div class="footer-links">
-        <a href="index.html">&#9632; back to terminal</a>
+        <a href="index.html">&#9632; terminal</a>
         &nbsp;::&nbsp;
         <a href="mailto:mharrington35@gatech.edu">contact</a>
         &nbsp;::&nbsp;
@@ -380,9 +334,9 @@
       <div class="last-upd">last updated: april 2026 &nbsp;&mdash;&nbsp; best viewed at 1024x768</div>
     </div>
 
-  </div><!-- end content -->
+  </div>
 
-  <div class="rainbow"></div>
+  <div id="footerstrip">mikatomorrow.github.io &nbsp;::&nbsp; made with notepad &nbsp;::&nbsp; &copy; 2026</div>
 
 </div>
 </body>

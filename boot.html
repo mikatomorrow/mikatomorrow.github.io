@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="refresh" content="6;url=plaza.html" />
+  <title>starting up...</title>
+  <style type="text/css">
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      background-color: #000000;
+    }
+
+    /* ── outer black border like the screenshot ── */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── the grey "screen" ── */
+    .screen {
+      width: 860px;
+      height: 540px;
+      position: relative;
+      overflow: hidden;
+
+      /* classic Mac dithered grey — checkerboard of #aaaaaa and #888888 */
+      background-color: #999999;
+      background-image:
+        linear-gradient(45deg, #888888 25%, transparent 25%),
+        linear-gradient(-45deg, #888888 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #888888 75%),
+        linear-gradient(-45deg, transparent 75%, #888888 75%);
+      background-size: 2px 2px;
+      background-position: 0 0, 0 1px, 1px -1px, -1px 0px;
+
+      border: 6px solid #000000;
+      border-radius: 6px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+
+      /* fade the whole screen in */
+      animation: fadein 0.4s ease-in forwards;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── happy mac icon — pure CSS/HTML ── */
+    .mac-wrap {
+      animation: popIn 0.3s ease-out 0.3s both;
+      margin-bottom: 28px;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+
+    .mac-icon {
+      width: 56px;
+      height: 64px;
+      position: relative;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    /* outer casing */
+    .mac-body {
+      width: 56px;
+      height: 64px;
+      background-color: #ffffff;
+      border: 2px solid #000000;
+      border-radius: 4px 4px 3px 3px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* screen area */
+    .mac-screen {
+      width: 38px;
+      height: 28px;
+      background-color: #888888;
+      border: 2px solid #000000;
+      margin-top: 6px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* happy face inside screen */
+    .mac-face {
+      font-size: 11px;
+      line-height: 1;
+      color: #ffffff;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* floppy slot */
+    .mac-slot {
+      width: 22px;
+      height: 3px;
+      background-color: #000000;
+      margin-top: 8px;
+      border-radius: 1px;
+    }
+
+    /* stand / base */
+    .mac-base {
+      width: 42px;
+      height: 5px;
+      background-color: #dddddd;
+      border: 2px solid #000000;
+      border-top: none;
+      position: absolute;
+      bottom: -7px;
+      border-radius: 0 0 3px 3px;
+    }
+
+    /* ── "Welcome to Mikatomorrow" text ── */
+    .boot-text {
+      font-family: "Chicago", "Charcoal", "Geneva", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000000;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      animation: fadein 0.4s ease-in 0.6s both;
+    }
+
+    /* ── loading bar — outer ── */
+    .bar-outer {
+      width: 220px;
+      height: 16px;
+      background-color: #ffffff;
+      border: 2px solid #000000;
+      position: relative;
+      animation: fadein 0.3s ease-in 0.8s both;
+    }
+
+    /* ── loading bar — fill animates over 4s ── */
+    .bar-fill {
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%;
+      width: 0%;
+      background-color: #000000;
+      animation: load 4.2s linear 1s forwards;
+    }
+
+    @keyframes load {
+      0%   { width: 0%;   }
+      15%  { width: 12%;  }
+      30%  { width: 28%;  }
+      45%  { width: 41%;  }
+      55%  { width: 58%;  }
+      70%  { width: 72%;  }
+      82%  { width: 85%;  }
+      92%  { width: 93%;  }
+      100% { width: 100%; }
+    }
+
+    /* ── "starting up..." caption ── */
+    .boot-caption {
+      font-family: "Geneva", Arial, sans-serif;
+      font-size: 11px;
+      color: #333333;
+      margin-top: 8px;
+      animation: fadein 0.3s ease-in 1s both;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="screen">
+
+    <div class="mac-wrap">
+      <div class="mac-icon">
+        <div class="mac-body">
+          <div class="mac-screen">
+            <!-- happy mac face -->
+            <div class="mac-face">^‿^</div>
+          </div>
+          <div class="mac-slot"></div>
+          <div class="mac-base"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="boot-text">Welcome to Mikatomorrow</div>
+
+    <div class="bar-outer">
+      <div class="bar-fill"></div>
+    </div>
+
+    <div class="boot-caption">starting up&hellip;</div>
+
+  </div>
+</body>
+</html>
