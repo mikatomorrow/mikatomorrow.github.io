@@ -1,9 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Michael Harrington - EE Portfolio" />
+  <title>mharrington ~ $</title>
+  <style type="text/css">
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: #060606;
+      color: #2ecc2e;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      display: table;
+      width: 100%;
+    }
+
+    .outer {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: left;
+    }
+
+    .terminal {
+      width: 660px;
+      margin: 0 auto;
+      padding: 20px 0 40px 0;
+    }
+
+    /* scanline overlay */
+    .terminal:before {
+      content: "";
+      display: block;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.08) 2px,
+        rgba(0,0,0,0.08) 4px
+      );
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .line {
+      display: block;
+      margin: 1px 0;
+    }
+
+    .gap {
+      display: block;
+      margin-top: 14px;
+    }
+
+    .dim    { color: #175c17; }
+    .bright { color: #77ff77; }
+    .label  { color: #44aa44; }
+    .white  { color: #cccccc; }
+    .rule   { color: #175c17; letter-spacing: 0; }
+
+    .cursor {
+      display: inline-block;
+      width: 9px;
+      height: 15px;
+      background: #2ecc2e;
+      vertical-align: middle;
+      margin-left: 1px;
+      animation: blink 1.1s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    .enter-wrap {
+      margin-top: 32px;
+    }
+
+    a.enter {
+      display: inline-block;
+      background-color: #2ecc2e;
+      color: #060606;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-decoration: none;
+      padding: 7px 28px;
+      text-transform: uppercase;
+    }
+
+    a.enter:hover {
+      background-color: #77ff77;
+    }
+
+    .footer-note {
+      margin-top: 40px;
+      color: #175c17;
+      font-size: 11px;
+    }
+
+  </style>
+</head>
 <body>
+<div class="outer">
+<div class="terminal">
+
+  <span class="line rule">----------------------------------------------------------------</span>
+  <span class="line dim">&nbsp; TERMINAL &nbsp;::&nbsp; SESSION ESTABLISHED &nbsp;::&nbsp; 2026</span>
+  <span class="line rule">----------------------------------------------------------------</span>
+
+  <span class="gap"></span>
+
+  <span class="line"><span class="label">mh@gatech:~$</span> whoami</span>
+  <span class="line bright">michael harrington</span>
+
+  <span class="gap"></span>
+
+  <span class="line"><span class="label">mh@gatech:~$</span> cat info.txt</span>
+  <span class="line white">M.S. Electrical Engineering &mdash; Georgia Tech, Dec 2026</span>
+  <span class="line white">B.S. Electrical Engineering, High Honors &mdash; May 2025</span>
+  <span class="line white">Focus: RFIC Design &nbsp;/&nbsp; Radar &amp; EW Systems &nbsp;/&nbsp; Microwave</span>
+  <span class="line white">Clearance: Secret</span>
+
+  <span class="gap"></span>
+
+  <span class="line"><span class="label">mh@gatech:~$</span> ls projects/</span>
+  <span class="line bright">6.8ghz_direct_conversion_rx/</span>
+  <span class="line bright">2.4ghz_cascode_lna/</span>
+  <span class="line bright">paddlesat_reflectarray/</span>
+  <span class="line bright">rf_passive_network_design/</span>
+  <span class="line bright">waveguide_modal_analysis/</span>
+  <span class="line bright">hyundai_adas_simulator/</span>
+  <span class="line bright">mems_accelerometer/</span>
+
+  <span class="gap"></span>
+
+  <span class="line"><span class="label">mh@gatech:~$</span> ./enter_portfolio<span class="cursor"></span></span>
+
+  <div class="enter-wrap">
+    <a href="main.html" class="enter">[ &nbsp;ENTER &nbsp;]</a>
+  </div>
+
+  <p class="footer-note">
+    &mdash; mikatomorrow.github.io &nbsp;::&nbsp; mharrington35@gatech.edu
+  </p>
+
+</div>
+</div>
 </body>
 </html>
