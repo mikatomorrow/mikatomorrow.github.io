@@ -11,11 +11,11 @@
       width: 100%; height: 100%;
       overflow: hidden;
       background: #000;
-      cursor: none; /* hide cursor like a real boot */
+      cursor: none;
     }
 
     /* ============================================================
-       STAGES — each is a full-screen layer
+       STAGES
        ============================================================ */
     .stage {
       position: absolute;
@@ -32,28 +32,29 @@
       pointer-events: auto;
     }
 
-    /* ── CRT top-down render overlay ──
-       A black div that slides down off the screen,
-       revealing the stage content underneath.
-       Added to each stage when it becomes active.    */
+    /* ── CRT top-down render curtain ──
+       Slides off top-to-bottom in 18 steps to mimic
+       a CRT electron gun drawing the screen.           */
     .render-curtain {
       position: absolute;
       inset: 0;
       background: #000;
-      transform-origin: top center;
       animation: curtainDrop 0.28s steps(18, end) forwards;
       z-index: 50;
+      pointer-events: none;
     }
 
     @keyframes curtainDrop {
-      0%   { clip-path: inset(0 0 0 0);   }   /* fully covering */
-      100% { clip-path: inset(100% 0 0 0); }  /* fully revealed */
+      0%   { clip-path: inset(0 0 100% 0); }  /* black covers top    */
+      100% { clip-path: inset(100% 0 0 0); }  /* black exits bottom  */
     }
 
     /* ============================================================
-       STAGE 1 — Happy Mac, classic grey dither
+       STAGE BACKGROUNDS
        ============================================================ */
-    #s1 {
+
+    /* Stage 1 & 2 — classic grey dither */
+    #s1, #s2 {
       background-color: #999999;
       background-image:
         linear-gradient(45deg, #888 25%, transparent 25%),
@@ -64,185 +65,8 @@
       background-position: 0 0, 0 1px, 1px -1px, -1px 0;
     }
 
-    /* ── CSS Happy Mac icon ── */
-    .happy-mac {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-    }
-
-    .mac-case {
-      width: 52px;
-      height: 60px;
-      background: #e8e8e8;
-      border: 2px solid #333;
-      border-radius: 5px 5px 3px 3px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-
-    .mac-screen-wrap {
-      width: 36px;
-      height: 26px;
-      background: #aaaacc; /* classic bluish screen tint */
-      border: 2px solid #333;
-      margin-top: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* the actual happy face — drawn with borders */
-    .mac-face-inner {
-      width: 24px;
-      height: 18px;
-      position: relative;
-    }
-
-    /* eyes */
-    .mac-eye {
-      position: absolute;
-      width: 3px; height: 3px;
-      background: #fff;
-      top: 3px;
-    }
-    .mac-eye.left  { left: 4px; }
-    .mac-eye.right { right: 4px; }
-
-    /* smile — just a text char works perfectly at this size */
-    .mac-smile {
-      position: absolute;
-      bottom: 1px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 10px;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      line-height: 1;
-    }
-
-    .mac-disk-slot {
-      width: 20px; height: 2px;
-      background: #333;
-      margin-top: 7px;
-      border-radius: 1px;
-    }
-
-    .mac-foot {
-      width: 40px; height: 5px;
-      background: #d0d0d0;
-      border: 2px solid #333;
-      border-top: none;
-      border-radius: 0 0 3px 3px;
-      margin-top: -1px;
-    }
-
-    /* ============================================================
-       STAGE 2 — "Welcome to Mika OS" dialog, grey bg
-       ============================================================ */
-    #s2 {
-      background-color: #999999;
-      background-image:
-        linear-gradient(45deg, #888 25%, transparent 25%),
-        linear-gradient(-45deg, #888 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #888 75%),
-        linear-gradient(-45deg, transparent 75%, #888 75%);
-      background-size: 2px 2px;
-      background-position: 0 0, 0 1px, 1px -1px, -1px 0;
-    }
-
-    /* ── Mac OS 9 Platinum dialog chrome ── */
-    .os-dialog {
-      width: 420px;
-      background: #dddddd;
-      border: 3px solid #888;
-      box-shadow:
-        inset 1px 1px 0 #fff,
-        inset -1px -1px 0 #666,
-        3px 3px 0 #555;
-    }
-
-    .os-dialog-inner {
-      margin: 6px;
-      background: #ffffff;
-      border: 2px solid #888;
-      box-shadow: inset 1px 1px 0 #ccc;
-      padding: 32px 20px 28px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
-    }
-
-    /* ── Finder icon placeholder ──
-       REPLACE finder.png with your photoshopped version.
-       Recommended size: 96x96px or 128x128px.          */
-    .finder-icon {
-      width: 96px;
-      height: 96px;
-      margin-bottom: 18px;
-      image-rendering: pixelated;
-    }
-
-    /* CSS fallback if no image yet */
-    .finder-icon-css {
-      width: 96px;
-      height: 96px;
-      position: relative;
-      margin-bottom: 18px;
-    }
-
-    .finder-blue {
-      position: absolute;
-      top: 0; left: 0;
-      width: 68px; height: 68px;
-      background: #5566bb;
-      border: 2px solid #333;
-    }
-
-    .finder-grey {
-      position: absolute;
-      bottom: 0; right: 0;
-      width: 58px; height: 58px;
-      background: #aaaaaa;
-      border: 2px solid #333;
-    }
-
-    /* smile on finder icon */
-    .finder-smile {
-      position: absolute;
-      top: 10px; left: 8px;
-      font-size: 28px;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      z-index: 2;
-      text-shadow: 1px 1px 0 #334;
-    }
-
-    .os-title {
-      font-family: Palatino, "Palatino Linotype", Georgia, serif;
-      font-size: 32px;
-      color: #111;
-      letter-spacing: -0.5px;
-      margin: 0;
-    }
-
-    .os-welcome {
-      font-family: Charcoal, Chicago, "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 13px;
-      color: #222;
-      margin-top: 14px;
-      letter-spacing: 0.2px;
-    }
-
-    /* ============================================================
-       STAGE 3 — Starting Up, lavender bg, loading bar
-       ============================================================ */
+    /* Stage 3 — lavender/periwinkle */
     #s3 {
-      /* lavender/periwinkle from the screenshot */
       background-color: #8899bb;
       background-image:
         linear-gradient(45deg, #7788aa 25%, transparent 25%),
@@ -253,56 +77,32 @@
       background-position: 0 0, 0 1px, 1px -1px, -1px 0;
     }
 
-    /* same dialog chrome, same inner, different text + bar */
-    .os-starting {
-      font-family: Charcoal, Chicago, "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 13px;
-      color: #222;
-      margin-top: 14px;
-      margin-bottom: 8px;
-      letter-spacing: 0.2px;
+    /* ============================================================
+       IMAGES
+       ============================================================ */
+
+    /* Stage 1 — happy mac image, pixel-perfect, no scaling blur */
+    #s1 img {
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
     }
 
-    /* ── Mac OS 9 loading bar ── */
-    .os-bar-outer {
-      width: 200px;
-      height: 12px;
-      background: #cccccc;
-      border: 1px solid #666;
-      box-shadow: inset 1px 1px 0 #aaa;
-      margin-top: 4px;
-      display: flex;
-      align-items: stretch;
-      overflow: hidden;
-      gap: 1px;
-      padding: 1px;
+    /* Stage 2 — welcome dialog screenshot */
+    #s2 img {
+      width: 420px;          /* adjust to match your screenshot width */
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
     }
 
-    /* chunky pixel segments filling in */
-    .bar-seg {
-      flex: 1;
-      background: #333399;
-      transform: scaleX(0);
-      transform-origin: left;
-    }
-
-    /* stagger each segment */
-    .bar-seg:nth-child(1)  { animation: fillSeg 0.12s linear 0.4s forwards; }
-    .bar-seg:nth-child(2)  { animation: fillSeg 0.12s linear 0.65s forwards; }
-    .bar-seg:nth-child(3)  { animation: fillSeg 0.12s linear 0.9s forwards; }
-    .bar-seg:nth-child(4)  { animation: fillSeg 0.12s linear 1.15s forwards; }
-    .bar-seg:nth-child(5)  { animation: fillSeg 0.12s linear 1.4s forwards; }
-    .bar-seg:nth-child(6)  { animation: fillSeg 0.12s linear 1.65s forwards; }
-    .bar-seg:nth-child(7)  { animation: fillSeg 0.12s linear 1.9s forwards; }
-    .bar-seg:nth-child(8)  { animation: fillSeg 0.12s linear 2.15s forwards; }
-    .bar-seg:nth-child(9)  { animation: fillSeg 0.12s linear 2.4s forwards; }
-    .bar-seg:nth-child(10) { animation: fillSeg 0.12s linear 2.65s forwards; }
-    .bar-seg:nth-child(11) { animation: fillSeg 0.12s linear 2.9s forwards; }
-    .bar-seg:nth-child(12) { animation: fillSeg 0.12s linear 3.1s forwards; }
-
-    @keyframes fillSeg {
-      from { transform: scaleX(0); }
-      to   { transform: scaleX(1); }
+    /* ============================================================
+       VIDEO — Stage 3
+       fills the full stage, no letterboxing
+       ============================================================ */
+    #bootvid {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
   </style>
@@ -310,141 +110,84 @@
 <body>
 
   <!-- ============================================================
-       STAGE 1 — Happy Mac
+       STAGE 1 — Happy Mac image
+       Replace happymac.png with your file.
        ============================================================ -->
   <div id="s1" class="stage active">
-    <div class="happy-mac">
-      <div class="mac-case">
-        <div class="mac-screen-wrap">
-          <div class="mac-face-inner">
-            <div class="mac-eye left"></div>
-            <div class="mac-eye right"></div>
-            <div class="mac-smile">‿</div>
-          </div>
-        </div>
-        <div class="mac-disk-slot"></div>
-      </div>
-      <div class="mac-foot"></div>
-    </div>
+    <img src="happymac.png" alt="" />
   </div>
 
   <!-- ============================================================
-       STAGE 2 — Mika OS 9 welcome dialog
+       STAGE 2 — Welcome dialog image
+       Replace welcome.png with your file.
        ============================================================ -->
   <div id="s2" class="stage">
-    <div class="os-dialog">
-      <div class="os-dialog-inner">
-
-        <!-- ════════════════════════════════════════
-             OPTION A: Use your Photoshopped image.
-             Uncomment this and comment out Option B.
-             Put finder.png in the same folder.
-
-        <img src="finder.png" class="finder-icon" alt="Mika OS 9" />
-
-             ════════════════════════════════════════
-             OPTION B: CSS placeholder (default).
-             Delete this once you have your image.   -->
-        <div class="finder-icon-css">
-          <div class="finder-blue"></div>
-          <div class="finder-grey"></div>
-          <div class="finder-smile">◡</div>
-        </div>
-        <!-- ════════════════════════════════════════ -->
-
-        <div class="os-title">Mika OS 9</div>
-      </div>
-      <div style="text-align:center; padding: 10px 0 12px 0;">
-        <span class="os-welcome">Welcome to Mika OS</span>
-      </div>
-    </div>
+    <img src="welcome.png" alt="" />
   </div>
 
   <!-- ============================================================
-       STAGE 3 — Starting Up, loading bar
+       STAGE 3 — Startup video
+       Replace startup.mp4 with your file.
+       Redirect happens when video ends — no hardcoded delay.
        ============================================================ -->
   <div id="s3" class="stage">
-    <div class="os-dialog">
-      <div class="os-dialog-inner">
-
-        <!-- same icon as stage 2 -->
-        <div class="finder-icon-css">
-          <div class="finder-blue"></div>
-          <div class="finder-grey"></div>
-          <div class="finder-smile">◡</div>
-        </div>
-
-        <div class="os-title">Mika OS 9</div>
-      </div>
-      <div style="text-align:center; padding: 10px 0 14px 0;">
-        <div class="os-starting">Starting Up...</div>
-        <div class="os-bar-outer">
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-          <div class="bar-seg"></div>
-        </div>
-      </div>
-    </div>
+    <video id="bootvid" src="startup.mp4" muted playsinline preload="auto"></video>
   </div>
 
   <script>
-    function showStage(hideId, showId, then, thenDelay) {
-      var hide = document.getElementById(hideId);
-      var show = document.getElementById(showId);
-
-      // hide old stage
-      hide.classList.remove('active');
-
-      // add render curtain to new stage
+    // ── curtain drop ─────────────────────────────────────────────
+    // Adds a black overlay that animates off top-to-bottom,
+    // simulating an old CRT drawing the screen line by line.
+    function dropCurtain(stageEl) {
       var curtain = document.createElement('div');
       curtain.className = 'render-curtain';
-      show.appendChild(curtain);
-
-      // show new stage
-      show.classList.add('active');
-
-      // remove curtain after animation completes
+      stageEl.appendChild(curtain);
       setTimeout(function() {
         if (curtain.parentNode) curtain.parentNode.removeChild(curtain);
-      }, 300);
-
-      // schedule next transition
-      if (then) {
-        setTimeout(function() { then(); }, thenDelay);
-      }
+      }, 320);
     }
 
-    // kick off the render effect on stage 1 immediately
-    (function() {
-      var curtain = document.createElement('div');
-      curtain.className = 'render-curtain';
-      document.getElementById('s1').appendChild(curtain);
-      setTimeout(function() {
-        if (curtain.parentNode) curtain.parentNode.removeChild(curtain);
-      }, 300);
-    })();
+    // ── transition ───────────────────────────────────────────────
+    function goTo(fromId, toId, callback) {
+      document.getElementById(fromId).classList.remove('active');
+      var next = document.getElementById(toId);
+      next.classList.add('active');
+      dropCurtain(next);
+      if (callback) callback();
+    }
 
-    // Stage 1 → Stage 2 after 1.4s
-    setTimeout(function() {
-      showStage('s1', 's2', function() {
-        // Stage 2 → Stage 3 after 2.2s
-        showStage('s2', 's3', function() {
-          // Stage 3 → Plaza after bar finishes (~3.5s)
-          setTimeout(function() {
-            window.location.href = 'plaza.html';
-          }, 3600);
+    // ── boot on load ─────────────────────────────────────────────
+    window.addEventListener('load', function() {
+
+      // curtain on stage 1 immediately
+      dropCurtain(document.getElementById('s1'));
+
+      // stage 1 → stage 2 after 1.4s
+      setTimeout(function() {
+        goTo('s1', 's2');
+
+        // stage 2 → stage 3 after 2.2s
+        setTimeout(function() {
+          goTo('s2', 's3', function() {
+            // play video the moment stage 3 is visible
+            var vid = document.getElementById('bootvid');
+            vid.play();
+
+            // redirect to plaza when video ends
+            vid.addEventListener('ended', function() {
+              window.location.href = 'plaza.html';
+            });
+
+            // safety fallback: redirect after 12s if video never fires 'ended'
+            setTimeout(function() {
+              window.location.href = 'plaza.html';
+            }, 12000);
+          });
         }, 2200);
+
       }, 1400);
-    }, 1400);
+
+    });
   </script>
 
 </body>
