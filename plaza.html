@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: plaza</title>
+  <style type="text/css">
+
+    /* ============================================================
+       BASE
+       ============================================================ */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #0e0e0e;
+      color: #bbbbbb;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+      min-height: 100%;
+    }
+
+    a { text-decoration: none; }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    #header {
+      background-color: #080808;
+      border-bottom: 1px solid #1e1e1e;
+      padding: 28px 0 22px 0;
+      text-align: center;
+    }
+
+    #header h1 {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 26px;
+      font-weight: bold;
+      color: #eeeeee;
+      letter-spacing: 6px;
+      text-transform: lowercase;
+    }
+
+    #header .sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 11px;
+      color: #444444;
+      letter-spacing: 3px;
+      margin-top: 8px;
+    }
+
+    /* ============================================================
+       PLAZA WRAPPER
+       ============================================================ */
+    #plaza {
+      width: 700px;
+      margin: 50px auto 60px auto;
+    }
+
+    .plaza-label {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      color: #333333;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* ============================================================
+       DOOR GRID
+       ============================================================ */
+    .door-grid {
+      /* two column rows */
+    }
+
+    .door-row {
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    /* standard two-column door */
+    .door {
+      float: left;
+      width: 338px;
+      height: 160px;
+      margin-right: 14px;
+      background-color: #111111;
+      border: 1px solid #222222;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .door:last-child {
+      margin-right: 0;
+    }
+
+    /* full-width mystery door */
+    .door.full {
+      float: none;
+      width: 100%;
+      height: 90px;
+      margin-right: 0;
+    }
+
+    /* accent bar at top of each door */
+    .door:before {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    /* ── per-room accent colors ── */
+    .door-work:before     { background-color: #aacc00; }
+    .door-music:before    { background-color: #4488cc; }
+    .door-papers:before   { background-color: #cc9944; }
+    .door-about:before    { background-color: #cc6644; }
+    .door-mystery:before  { background-color: #773399; }
+
+    /* hover states */
+    .door:hover {
+      border-color: #333333;
+      background-color: #141414;
+    }
+
+    .door-work:hover     { border-color: #556600; }
+    .door-music:hover    { border-color: #224466; }
+    .door-papers:hover   { border-color: #664422; }
+    .door-about:hover    { border-color: #662200; }
+    .door-mystery:hover  { border-color: #441166; }
+
+    /* door inner content */
+    .door-inner {
+      padding: 22px 20px 16px 20px;
+    }
+
+    .door.full .door-inner {
+      padding: 20px 24px;
+    }
+
+    .door-symbol {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 22px;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+
+    .door-work .door-symbol     { color: #aacc00; }
+    .door-music .door-symbol    { color: #4488cc; }
+    .door-papers .door-symbol   { color: #cc9944; }
+    .door-about .door-symbol    { color: #cc6644; }
+    .door-mystery .door-symbol  { color: #773399; }
+
+    .door-title {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #dddddd;
+      margin-bottom: 6px;
+    }
+
+    .door-desc {
+      font-size: 11px;
+      color: #555555;
+      line-height: 1.5;
+    }
+
+    /* full door layout is horizontal */
+    .door.full .door-inner {
+      overflow: hidden;
+    }
+
+    .door.full .door-symbol {
+      float: left;
+      font-size: 26px;
+      margin-right: 18px;
+      margin-bottom: 0;
+      padding-top: 2px;
+    }
+
+    .door.full .door-text {
+      overflow: hidden;
+    }
+
+    .door.full .door-title {
+      margin-bottom: 4px;
+    }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    #footer {
+      border-top: 1px solid #181818;
+      padding: 14px 0;
+      text-align: center;
+      color: #2a2a2a;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    #footer a {
+      color: #333333;
+    }
+
+    #footer a:hover {
+      color: #555555;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header">
+    <h1>mikatomorrow</h1>
+    <div class="sub">welcome &nbsp;&mdash;&nbsp; pick a door</div>
+  </div>
+
+  <!-- PLAZA -->
+  <div id="plaza">
+
+    <div class="plaza-label">// the plaza //</div>
+
+    <div class="door-grid">
+
+      <!-- ROW 1 -->
+      <div class="door-row">
+
+        <a href="work.html" class="door door-work">
+          <div class="door-inner">
+            <div class="door-symbol">[&gt;_]</div>
+            <div class="door-title">Work</div>
+            <div class="door-desc">
+              Projects, internships,<br />
+              RF &amp; IC design work.
+            </div>
+          </div>
+        </a>
+
+        <a href="music.html" class="door door-music">
+          <div class="door-inner">
+            <div class="door-symbol">&#9834;</div>
+            <div class="door-title">Music</div>
+            <div class="door-desc">
+              Currently listening.<br />
+              What&rsquo;s on repeat.
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="door-row">
+
+        <a href="papers.html" class="door door-papers">
+          <div class="door-inner">
+            <div class="door-symbol">[doc]</div>
+            <div class="door-title">Papers</div>
+            <div class="door-desc">
+              Technical reports<br />
+              and writing.
+            </div>
+          </div>
+        </a>
+
+        <a href="about.html" class="door door-about">
+          <div class="door-inner">
+            <div class="door-symbol">/me</div>
+            <div class="door-title">About</div>
+            <div class="door-desc">
+              Who I actually am.<br />
+              Not a resume.
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- MYSTERY ROW -->
+      <div class="door-row">
+
+        <a href="mystery.html" class="door door-mystery full">
+          <div class="door-inner">
+            <div class="door-symbol">?</div>
+            <div class="door-text">
+              <div class="door-title">???</div>
+              <div class="door-desc">no idea what&rsquo;s in here.</div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer">
+    mikatomorrow.github.io &nbsp;&mdash;&nbsp;
+    <a href="index.html">back to terminal</a>
+  </div>
+
+</body>
+</html>
