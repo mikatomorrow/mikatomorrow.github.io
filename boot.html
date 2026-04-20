@@ -20,9 +20,6 @@
     .stage {
       position: absolute;
       inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       opacity: 0;
       pointer-events: none;
     }
@@ -32,9 +29,7 @@
       pointer-events: auto;
     }
 
-    /* ── CRT top-down render curtain ──
-       Slides off top-to-bottom in 18 steps to mimic
-       a CRT electron gun drawing the screen.           */
+    /* ── CRT top-down render curtain ── */
     .render-curtain {
       position: absolute;
       inset: 0;
@@ -45,64 +40,30 @@
     }
 
     @keyframes curtainDrop {
-      0%   { clip-path: inset(0 0 100% 0); }  /* black covers top    */
-      100% { clip-path: inset(100% 0 0 0); }  /* black exits bottom  */
+      0%   { clip-path: inset(0 0 100% 0); }
+      100% { clip-path: inset(100% 0 0 0); }
     }
 
     /* ============================================================
-       STAGE BACKGROUNDS
+       IMAGES — absolutely positioned to truly fill the stage
        ============================================================ */
-
-    /* Stage 1 & 2 — classic grey dither */
-    #s1, #s2 {
-      background-color: #999999;
-      background-image:
-        linear-gradient(45deg, #888 25%, transparent 25%),
-        linear-gradient(-45deg, #888 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #888 75%),
-        linear-gradient(-45deg, transparent 75%, #888 75%);
-      background-size: 2px 2px;
-      background-position: 0 0, 0 1px, 1px -1px, -1px 0;
-    }
-
-    /* Stage 3 — lavender/periwinkle */
-    #s3 {
-      background-color: #8899bb;
-      background-image:
-        linear-gradient(45deg, #7788aa 25%, transparent 25%),
-        linear-gradient(-45deg, #7788aa 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #7788aa 75%),
-        linear-gradient(-45deg, transparent 75%, #7788aa 75%);
-      background-size: 2px 2px;
-      background-position: 0 0, 0 1px, 1px -1px, -1px 0;
+    .stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      display: block;
     }
 
     /* ============================================================
-       IMAGES
-       ============================================================ */
-
-    /* Stage 1 — happy mac image, pixel-perfect, no scaling blur */
-#s1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-}
-
-#s2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-}
-
-    /* ============================================================
-       VIDEO — Stage 3
-       fills the full stage, no letterboxing
+       VIDEO — Stage 3, same full-cover treatment
        ============================================================ */
     #bootvid {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -118,30 +79,27 @@
        Replace happymac.png with your file.
        ============================================================ -->
   <div id="s1" class="stage active">
-    <img src="welcome.png" alt="" />
+    <img src="happymac.png" alt="" />
   </div>
 
   <!-- ============================================================
-       STAGE 2 — Welcome dialog image
+       STAGE 2 — Welcome to Mika OS image
        Replace welcome.png with your file.
        ============================================================ -->
   <div id="s2" class="stage">
-    <img src="mikaos.png" alt="" />
+    <img src="welcome.png" alt="" />
   </div>
 
   <!-- ============================================================
        STAGE 3 — Startup video
        Replace startup.mp4 with your file.
-       Redirect happens when video ends — no hardcoded delay.
+       Redirects to plaza.html when video ends.
        ============================================================ -->
   <div id="s3" class="stage">
     <video id="bootvid" src="startup.mp4" muted playsinline preload="auto"></video>
   </div>
 
   <script>
-    // ── curtain drop ─────────────────────────────────────────────
-    // Adds a black overlay that animates off top-to-bottom,
-    // simulating an old CRT drawing the screen line by line.
     function dropCurtain(stageEl) {
       var curtain = document.createElement('div');
       curtain.className = 'render-curtain';
@@ -151,7 +109,6 @@
       }, 320);
     }
 
-    // ── transition ───────────────────────────────────────────────
     function goTo(fromId, toId, callback) {
       document.getElementById(fromId).classList.remove('active');
       var next = document.getElementById(toId);
@@ -160,7 +117,6 @@
       if (callback) callback();
     }
 
-    // ── boot on load ─────────────────────────────────────────────
     window.addEventListener('load', function() {
 
       // curtain on stage 1 immediately
@@ -173,19 +129,20 @@
         // stage 2 → stage 3 after 2.2s
         setTimeout(function() {
           goTo('s2', 's3', function() {
-            // play video the moment stage 3 is visible
+
             var vid = document.getElementById('bootvid');
             vid.play();
 
-            // redirect to plaza when video ends
+            // redirect when video ends
             vid.addEventListener('ended', function() {
               window.location.href = 'plaza.html';
             });
 
-            // safety fallback: redirect after 12s if video never fires 'ended'
+            // 12s safety fallback
             setTimeout(function() {
               window.location.href = 'plaza.html';
             }, 12000);
+
           });
         }, 2200);
 
