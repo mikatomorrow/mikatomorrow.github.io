@@ -82,17 +82,21 @@
        ============================================================ */
 
     /* Stage 1 — happy mac image, pixel-perfect, no scaling blur */
-    #s1 img {
-      image-rendering: pixelated;
-      image-rendering: crisp-edges;
-    }
+#s1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
 
-    /* Stage 2 — welcome dialog screenshot */
-    #s2 img {
-      width: 420px;          /* adjust to match your screenshot width */
-      image-rendering: pixelated;
-      image-rendering: crisp-edges;
-    }
+#s2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
 
     /* ============================================================
        VIDEO — Stage 3
