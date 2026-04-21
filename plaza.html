@@ -7,14 +7,34 @@
   <style type="text/css">
 
     /* ============================================================
-       BASE — diagonal stripe texture like Steam header
+       BASE
        ============================================================ */
+    html, body, * {
+      cursor: none !important;
+    }
+
+    html, body {
+      min-height: 100vh;
+    }
+
+    #fake-cursor {
+      position: fixed;
+      top: 0; left: 0;
+      width: 48px; height: 48px;
+      pointer-events: none;
+      z-index: 99999;
+      background: url('cursor-dino.png') no-repeat top left;
+      background-size: 48px 48px;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+
     body {
       background-color: #7070aa;
       background-image: url('bg.png');
       background-repeat: repeat;
       color: #cccccc;
-      font-family: Verdana, Arial, sans-serif;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
       font-size: 12px;
       margin: 0;
       padding: 16px 0 30px 0;
@@ -29,7 +49,7 @@
     }
 
     /* ============================================================
-       HEADER — same diagonal stripe but darker, like Steam bar
+       HEADER
        ============================================================ */
     #header {
       background-color: #111111;
@@ -83,18 +103,18 @@
     }
 
     /* ============================================================
-       DOOR TABLE
+       PORTALS — horizontal strips with image slot on left
        ============================================================ */
-    table.doors {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 10px;
+    .portals {
+      display: block;
     }
 
-    .door-cell { vertical-align: top; width: 50%; }
-
-    a.door {
-      display: block;
+    a.portal {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      height: 68px;
       border: 1px solid #222222;
       background-color: #0e0e0e;
       background-image: repeating-linear-gradient(
@@ -104,49 +124,135 @@
         transparent 1px,
         transparent 6px
       );
+      margin-bottom: 8px;
+      overflow: hidden;
     }
 
-    a.door:hover {
+    a.portal:hover {
       border-color: #3a3a3a;
       background-color: #131313;
     }
 
-    /* banner bar — each door has its own color, subtle */
-    .dbanner {
-      padding: 11px 16px 10px 16px;
+    /* left accent per room */
+    .pt-work    { border-left: 4px solid #7a9900; }
+    .pt-music   { border-left: 4px solid #2266aa; }
+    .pt-papers  { border-left: 4px solid #996622; }
+    .pt-about   { border-left: 4px solid #994433; }
+    .pt-food    { border-left: 4px solid #cc7722; }
+    .pt-gaming  { border-left: 4px solid #22aa77; }
+    .pt-random  { border-left: 4px solid #cc3366; }
+    .pt-mystery { border-left: 4px solid #663399; }
+    .pt-weather { border-left: 4px solid #1188cc; }
+
+    /* ── image slot — square, matches portal height ── */
+    .portal-img {
+      width: 68px;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+      overflow: hidden;
+      border-right: 1px solid #1a1a1a;
+      background-color: #080808;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    .portal-img img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+
+    /* ── info area ── */
+    .portal-info {
+      -ms-flex: 1;
+      flex: 1;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: center;
+      justify-content: center;
+      padding: 0 16px;
+    }
+
+    .portal-title {
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 20px;
+      font-size: 17px;
       font-weight: normal;
       letter-spacing: 3px;
-      text-transform: uppercase;
+      text-transform: none;
+      line-height: 1;
+      margin-bottom: 5px;
       color: #ffffff;
-      border-bottom: 1px solid rgba(0,0,0,0.6);
     }
 
-    /* each room gets a distinct but muted left accent */
-    .db-work    { background-color: #161e08; border-left: 4px solid #7a9900; }
-    .db-music   { background-color: #08101e; border-left: 4px solid #2266aa; }
-    .db-papers  { background-color: #1a1208; border-left: 4px solid #996622; }
-    .db-about   { background-color: #1a0a08; border-left: 4px solid #994433; }
-    .db-mystery { background-color: #0e0818; border-left: 4px solid #663399; }
+    .pt-work   .portal-title { color: #aabb44; }
+    .pt-music  .portal-title { color: #4488cc; }
+    .pt-papers .portal-title { color: #cc9944; }
+    .pt-about  .portal-title { color: #cc6655; }
+    .pt-food   .portal-title { color: #ee9933; }
+    .pt-gaming  .portal-title { color: #33cc99; }
+    .pt-random  .portal-title { color: #ee4488; }
+    .pt-mystery .portal-title { color: #9966cc; }
+    .pt-weather .portal-title { color: #33aaee; }
 
-    a.door:hover .db-work    { background-color: #1e2a0a; }
-    a.door:hover .db-music   { background-color: #0a1828; }
-    a.door:hover .db-papers  { background-color: #241a0a; }
-    a.door:hover .db-about   { background-color: #240e0a; }
-    a.door:hover .db-mystery { background-color: #140a22; }
-
-    .dbody {
-      padding: 13px 16px 15px 16px;
-    }
-
-    .dbody p {
-      font-size: 11px;
+    .portal-desc {
+      font-size: 10px;
       color: #4a4a4a;
-      line-height: 1.65;
-      margin-bottom: 10px;
+      line-height: 1.4;
     }
 
+    /* ── chevron ── */
+    .portal-arrow {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 0 16px 0 12px;
+      font-size: 22px;
+      color: #252525;
+      line-height: 1;
+    }
+
+    a.portal:hover .portal-arrow { color: #555555; }
+
+    /* ── mystery — centered, no image slot ── */
+    a.portal.pt-mystery {
+      height: 52px;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    .pt-mystery .portal-img { display: none; }
+
+    .pt-mystery .portal-info {
+      -ms-flex-align: center;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+    }
+
+    .pt-mystery .portal-title {
+      font-size: 22px;
+      letter-spacing: 12px;
+      margin-bottom: 3px;
+    }
+
+    .pt-mystery .portal-desc {
+      font-family: "Courier New", Courier, monospace;
+      color: #2a1e3a;
+    }
+
+    /* ============================================================
+       TAGS
+       ============================================================ */
     .dtag {
       display: inline-block;
       font-family: "Courier New", Courier, monospace;
@@ -158,20 +264,8 @@
       color: #383838;
     }
 
-    /* ── mystery door full-width ── */
-    .mystery-full .dbanner {
-      font-size: 26px;
-      letter-spacing: 12px;
-      text-align: center;
-    }
-
-    .mystery-full .dbody {
-      text-align: center;
-      padding: 12px 16px;
-    }
-
     /* ============================================================
-       MID RULE + FOOTER
+       MID RULE
        ============================================================ */
     hr.mid {
       border: none;
@@ -179,55 +273,23 @@
       margin: 24px 0 20px 0;
     }
 
-    .footer-area {
-      text-align: center;
-    }
-
-    .counter {
-      display: inline-block;
-      background-color: #080808;
-      border: 1px solid #1e1e1e;
-      font-family: "Courier New", Courier, monospace;
-      font-size: 12px;
-      color: #aaaaaa;
-      padding: 5px 18px;
-      letter-spacing: 4px;
-      margin-bottom: 12px;
-    }
-
-    .footer-links {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 10px;
-      color: #2a2a2a;
-      letter-spacing: 2px;
-      margin-top: 4px;
-    }
-
-    .footer-links a { color: #333333; margin: 0 8px; }
-    .footer-links a:hover { color: #777777; }
-
-    .last-upd {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 9px;
-      color: #1e1e1e;
-      margin-top: 8px;
-      letter-spacing: 2px;
-    }
-
     /* ============================================================
-       FOOTER STRIP
+       CLIPPY
        ============================================================ */
-    #footerstrip {
-      background-color: #0a0a0a;
-      border-top: 1px solid #1e1e1e;
-      border-left: 1px solid #222222;
-      border-right: 1px solid #222222;
-      text-align: center;
-      padding: 8px;
-      font-family: "Courier New", Courier, monospace;
-      font-size: 9px;
-      color: #1e1e1e;
-      letter-spacing: 2px;
+    #clippy-wrap {
+      position: fixed;
+      bottom: 24px;
+      right: 28px;
+      width: 124px;
+      height: 93px;
+      z-index: 999;
+      pointer-events: none;
+    }
+
+    #clippy-canvas {
+      display: block;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
     }
 
   </style>
@@ -235,104 +297,175 @@
 <body>
 <div id="outer">
 
-  <!-- HEADER — no nav below, just the title -->
+  <!-- HEADER -->
   <div id="header">
-    <h1>mikatomorrow</h1>
-    <div class="sub">welcome &nbsp;&mdash;&nbsp; pick a room</div>
+    <h1>mikatomorrow's world</h1>
+    <div class="sub">welcome to my plaza</div>
   </div>
 
   <!-- CONTENT -->
   <div id="content">
 
-    <div class="section-label">// the plaza //</div>
+    <div class="section-label">// hi //</div>
 
-    <table class="doors" cellpadding="0" cellspacing="0">
+    <div class="portals">
 
-      <!-- ROW 1 -->
-      <tr>
-        <td class="door-cell">
-          <a href="work.html" class="door">
-            <div class="dbanner db-work">[&gt;_] &nbsp;work</div>
-            <div class="dbody">
-              <p>RF &amp; IC design projects. Internship experience.<br />The technical stuff, made readable.</p>
-              <span class="dtag">RFIC</span>
-              <span class="dtag">radar</span>
-              <span class="dtag">microwave</span>
-            </div>
-          </a>
-        </td>
-        <td class="door-cell">
-          <a href="music.html" class="door">
-            <div class="dbanner db-music">&#9834; &nbsp;music</div>
-            <div class="dbody">
-              <p>Currently listening. What&rsquo;s been on repeat.<br />No algorithms involved.</p>
-              <span class="dtag">listening</span>
-              <span class="dtag">rotation</span>
-            </div>
-          </a>
-        </td>
-      </tr>
+      <a href="work.html" class="portal pt-work">
+        <div class="portal-img"><img src="atom.gif" alt=""/></div>
+        <div class="portal-info">
+          <div class="portal-title">🌣&nbsp;work</div>
+          <div class="portal-desc">engineering design projects, job experience, technical stuff made readable</div>
+        </div>
+        <div class="portal-arrow">&#8250;</div>
+      </a>
 
-      <!-- ROW 2 -->
-      <tr>
-        <td class="door-cell">
-          <a href="papers.html" class="door">
-            <div class="dbanner db-papers">[doc] &nbsp;papers</div>
-            <div class="dbody">
-              <p>Technical reports and writing. Things I had<br />to learn and wrote down.</p>
-              <span class="dtag">ECE</span>
-              <span class="dtag">technical</span>
-              <span class="dtag">reports</span>
-            </div>
-          </a>
-        </td>
-        <td class="door-cell">
-          <a href="about.html" class="door">
-            <div class="dbanner db-about">/me &nbsp;about</div>
-            <div class="dbody">
-              <p>Who I actually am. Not a resume.<br />Not a LinkedIn. Just a page.</p>
-              <span class="dtag">human</span>
-              <span class="dtag">atlanta</span>
-            </div>
-          </a>
-        </td>
-      </tr>
+      <a href="music.html" class="portal pt-music">
+        <div class="portal-img"><img src="mic1.gif" alt=""/></div>
+        <div class="portal-info">
+          
+          <div class="portal-title">&#9834; &nbsp;music</div>
+          <div class="portal-desc">fav songs & bands, currently listening, current obsessions </div>
+        </div>
+        <div class="portal-arrow">&#8250;</div>
+      </a>
 
-      <!-- ROW 3 — mystery full width -->
-      <tr>
-        <td colspan="2">
-          <a href="mystery.html" class="door mystery-full">
-            <div class="dbanner db-mystery">? &nbsp; ? &nbsp; ?</div>
-            <div class="dbody">
-              <p style="color:#221a2e; font-family:'Courier New',monospace; margin-bottom:0;">
-                no idea what&rsquo;s in here.&nbsp; probably fine.
-              </p>
-            </div>
-          </a>
-        </td>
-      </tr>
+      <a href="papers.html" class="portal pt-papers">
+        <div class="portal-img"><img src="turnbook.gif" alt=""/></div>
+        <div class="portal-info">
+          <div class="portal-title">⎙&nbsp;papers</div>
+          <div class="portal-desc">technical reports and other writing :p. things i had to learn and wrote down</div>
+        </div>
+        <div class="portal-arrow">&#8250;</div>
+      </a>
 
-    </table>
+      <a href="about.html" class="portal pt-about">
+        <div class="portal-img"><img src="wave_cloud.gif" alt=""/></div>
+        <div class="portal-info">
+          <div class="portal-title">˙ᵕ˙About Me</div>
+          <div class="portal-desc">who am i? :o</div>
+        </div>
+        <div class="portal-arrow">&#8250;</div>
+      </a>
 
-    <hr class="mid" />
+      <a href="food.html" class="portal pt-food">
+        <div class="portal-img"><img src="burger.gif" alt=""/></div>
+        <div class="portal-info">
+          <div class="portal-title">𓐐𓎩 food</div>
+          <div class="portal-desc">food i made or like!</div>
+        </div>
+        <div class="portal-arrow">&#8250;</div>
+      </a>
 
-    <!-- FOOTER -->
-    <div class="footer-area">
-      <div class="counter">visitors: 000413</div>
-      <div class="footer-links">
-        <a href="index.html">&#9632; terminal</a>
-        &nbsp;::&nbsp;
-        <a href="mailto:mharrington35@gatech.edu">contact</a>
-        &nbsp;::&nbsp;
-        <a href="https://github.com/michael--harrington" target="_blank">github</a>
-      </div>
-      <div class="last-upd">last updated: april 2026 &nbsp;&mdash;&nbsp; best viewed at 1024x768</div>
+      <a href="gaming.html" class="portal pt-gaming">
+        <div class="portal-img"><img src="gaming1.gif" alt=""/></div>
+        <div class="portal-info">
+          <div class="portal-title">⚔︎ gaming</div>
+          <div class="portal-desc">what im currently playing, favorites and opinions</div>
+        </div>
+        <div class="portal-arrow">&#8250;</div>
+      </a>
+
+      <a href="random.html" class="portal pt-random">
+        <div class="portal-img"><img src="random1.gif" alt=""/></div>
+        <div class="portal-info">
+          <div class="portal-title">಄ random interests</div>
+          <div class="portal-desc">things that dont fit anywhere else that i like.</div>
+        </div>
+        <div class="portal-arrow">&#8250;</div>
+      </a>
+
+      <a href="weather.html" class="portal pt-weather">
+        <div class="portal-img"><img src="cloud.gif" alt=""/></div>
+        <div class="portal-info">
+          <div class="portal-title">&#9729; weather</div>
+          <div class="portal-desc">check the weather!</div>
+        </div>
+        <div class="portal-arrow">&#8250;</div>
+      </a>
+
+      <a href="mystery.html" class="portal pt-mystery">
+      <div class="portal-img"><img src="wave_cloud.gif" alt=""/></div>
+        <div class="portal-info">
+          <div class="portal-title">? &nbsp; ? &nbsp; ?</div>
+          <div class="portal-desc">no idea what&rsquo;s in here.</div>
+        </div>
+        <div class="portal-arrow">&#8250;</div>
+      </a>
+
     </div>
 
+    <hr class="mid" />
   </div>
-
-  <div id="footerstrip">mikatomorrow.github.io &nbsp;::&nbsp; made with notepad &nbsp;::&nbsp; &copy; 2026</div>
-
 </div>
+
+<!-- FAKE CURSOR — div avoids browser img-element cursor interference -->
+<div id="fake-cursor"></div>
+
+<!-- CLIPPY -->
+<div id="clippy-wrap">
+  <canvas id="clippy-canvas" width="124" height="93"></canvas>
+</div>
+
+<script>
+// ── CLIPPY: rows 8-9 (looking at user) ──────────────────────────
+(function() {
+  var FW = 124, FH = 93;
+
+  // row 8 col 11 → row 9 col 8: looking at user
+  var seq = [];
+  for (var c = 10; c <= 26; c++) seq.push([c, 7]);
+  for (var c = 0; c <= 6; c++) seq.push([c, 8]);
+
+
+  var canvas = document.getElementById('clippy-canvas');
+  var ctx    = canvas.getContext('2d');
+  var sheet  = null, frame = 0;
+
+  function tick() {
+    if (!sheet) return;
+    var f = seq[frame % seq.length];
+    ctx.clearRect(0, 0, FW, FH);
+    ctx.drawImage(sheet, f[0] * FW, f[1] * FH, FW, FH, 0, 0, FW, FH);
+    frame++;
+  }
+
+  var img = new Image();
+  img.onload = function() {
+    var oc = document.createElement('canvas');
+    oc.width = img.width; oc.height = img.height;
+    var oct = oc.getContext('2d');
+    oct.drawImage(img, 0, 0);
+    var id = oct.getImageData(0, 0, oc.width, oc.height), d = id.data;
+    for (var j = 0; j < d.length; j += 4) {
+      if (d[j] > 200 && d[j+1] < 60 && d[j+2] > 200) d[j+3] = 0;
+    }
+    oct.putImageData(id, 0, 0);
+    sheet = oc;
+    tick();
+    setInterval(tick, 130);
+  };
+  img.src = 'clippy.png';
+})();
+
+// ── FAKE CURSOR ──────────────────────────────────────────────────
+(function() {
+  var el = document.getElementById('fake-cursor');
+
+  // Belt-and-suspenders: kill real cursor via JS as well
+  document.documentElement.style.cursor = 'none';
+  document.body.style.cursor = 'none';
+
+  function move(e) {
+    el.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
+    el.style.display = 'block';
+  }
+
+  // Hide fake cursor when mouse leaves the browser window
+  document.addEventListener('mousemove',  move);
+  document.addEventListener('mouseleave', function() { el.style.display = 'none'; });
+  document.addEventListener('mouseenter', function() { el.style.display = 'block'; });
+})();
+</script>
+
 </body>
 </html>

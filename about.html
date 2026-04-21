@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: about</title>
+  <style type="text/css">
+
+    html, body, * { cursor: none !important; }
+    html, body { min-height: 100vh; }
+
+    #fake-cursor {
+      position: fixed; top: 0; left: 0;
+      width: 48px; height: 48px;
+      pointer-events: none; z-index: 99999;
+      background: url('cursor-dino.png') no-repeat top left;
+      background-size: 48px 48px;
+      image-rendering: pixelated; image-rendering: crisp-edges;
+    }
+
+    body {
+      background-color: #7070aa;
+      background-image: url('bg.png');
+      background-repeat: repeat;
+      color: #cccccc;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+      font-size: 12px;
+      margin: 0;
+      padding: 16px 0 30px 0;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    a:visited { color: inherit; }
+
+    #outer { width: 760px; margin: 0 auto; }
+
+    #header {
+      background-color: #111111;
+      background-image: repeating-linear-gradient(
+        45deg, rgba(255,255,255,0.025) 0px,
+        rgba(255,255,255,0.025) 1px, transparent 1px, transparent 6px
+      );
+      border-bottom: 2px solid #2a2a2a;
+      border-left: 4px solid #994433;
+      padding: 22px 24px 18px 24px;
+    }
+
+    #header h1 {
+      font-family: Impact, "Arial Narrow", Arial, sans-serif;
+      font-size: 38px; font-weight: normal;
+      color: #cc6655; letter-spacing: 8px;
+      text-transform: lowercase; line-height: 1; margin-bottom: 6px;
+    }
+
+    #header .sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px; color: #444444; letter-spacing: 4px;
+    }
+
+    #header .breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 9px; color: #333333;
+      letter-spacing: 2px; margin-bottom: 10px;
+    }
+
+    #header .breadcrumb a { color: #662233; }
+    #header .breadcrumb a:hover { color: #cc6655; }
+
+    #content {
+      background-color: rgba(10,10,10,0.7);
+      border-left: 1px solid #222222;
+      border-right: 1px solid #222222;
+      padding: 28px 22px 32px 22px;
+    }
+
+    .section-label {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px; color: #2e2e2e;
+      letter-spacing: 4px; margin-bottom: 18px;
+    }
+
+    .bio {
+      font-size: 11px; color: #555555;
+      line-height: 1.8; margin-bottom: 20px;
+      border-left: 3px solid #2a0e0a;
+      padding-left: 16px;
+    }
+
+    hr.mid {
+      border: none; border-top: 1px solid #1e1e1e;
+      margin: 22px 0;
+    }
+
+    #clippy-wrap {
+      position: fixed; bottom: 24px; right: 28px;
+      width: 124px; height: 93px;
+      z-index: 999; pointer-events: none;
+    }
+
+    #clippy-canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
+
+  </style>
+</head>
+<body>
+<div id="outer">
+
+  <div id="header">
+    <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; about</div>
+    <h1>/me about</h1>
+    <div class="sub">not a resume &nbsp;&mdash;&nbsp; not a linkedin</div>
+  </div>
+
+  <div id="content">
+
+    <div class="section-label">// who I am //</div>
+
+    <div class="bio">
+      Bio goes here. ECE student at Georgia Tech, interested in RF/IC design.
+      From Atlanta. This is the human part of the website.
+    </div>
+
+    <hr class="mid" />
+
+    <div class="section-label">// interests //</div>
+
+    <div class="bio">
+      Music, food, tinkering. More details coming soon.
+    </div>
+
+    <hr class="mid" />
+
+  </div>
+</div>
+
+<div id="fake-cursor"></div>
+
+<div id="clippy-wrap">
+  <canvas id="clippy-canvas" width="124" height="93"></canvas>
+</div>
+
+<script>
+(function() {
+  var FW = 124, FH = 93;
+  // rows 4-5: general idle/greeting
+  var seq = [], i;
+  for (i = 4; i < 26; i++) seq.push([i, 24]);
+  for (i = 0; i < 20; i++) seq.push([i, 25]);
+
+
+
+  var canvas = document.getElementById('clippy-canvas');
+  var ctx = canvas.getContext('2d'), sheet = null, frame = 0;
+
+  function tick() {
+    if (!sheet) return;
+    var f = seq[frame % seq.length];
+    ctx.clearRect(0, 0, FW, FH);
+    ctx.drawImage(sheet, f[0]*FW, f[1]*FH, FW, FH, 0, 0, FW, FH);
+    frame++;
+  }
+
+  var img = new Image();
+  img.onload = function() {
+    var oc = document.createElement('canvas');
+    oc.width = img.width; oc.height = img.height;
+    var oct = oc.getContext('2d');
+    oct.drawImage(img, 0, 0);
+    var id = oct.getImageData(0, 0, oc.width, oc.height), d = id.data;
+    for (var j = 0; j < d.length; j += 4) {
+      if (d[j] > 200 && d[j+1] < 60 && d[j+2] > 200) d[j+3] = 0;
+    }
+    oct.putImageData(id, 0, 0);
+    sheet = oc; tick(); setInterval(tick, 130);
+  };
+  img.src = 'clippy.png';
+})();
+
+(function() {
+  var el = document.getElementById('fake-cursor');
+  document.documentElement.style.cursor = 'none';
+  document.body.style.cursor = 'none';
+  document.addEventListener('mousemove', function(e) {
+    el.style.transform = 'translate('+e.clientX+'px,'+e.clientY+'px)';
+    el.style.display = 'block';
+  });
+  document.addEventListener('mouseleave', function() { el.style.display = 'none'; });
+  document.addEventListener('mouseenter', function() { el.style.display = 'block'; });
+})();
+</script>
+
+</body>
+</html>

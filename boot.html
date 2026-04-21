@@ -74,10 +74,10 @@
     #s3 {
       background-color: #9A9ACC;
       background-image:
-        linear-gradient(45deg, #7788aa 25%, transparent 25%),
-        linear-gradient(-45deg, #7788aa 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, #7788aa 75%),
-        linear-gradient(-45deg, transparent 75%, #7788aa 75%);
+        linear-gradient(45deg, #9A9ACC 25%, transparent 25%),
+        linear-gradient(-45deg, #9A9ACC 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #9A9ACC 75%),
+        linear-gradient(-45deg, transparent 75%, #9A9ACC 75%);
       background-size: 2px 2px;
       background-position: 0 0, 0 1px, 1px -1px, -1px 0;
     }
@@ -91,11 +91,18 @@
       image-rendering: crisp-edges;
     }
 
+    /* happy mac — adjust width to scale up/down */
+    #s1 img {
+      width: 25px;
+    }
+
     /* ============================================================
-       VIDEO — natural size, centered by flex
+       VIDEO — resize and nudge position
        ============================================================ */
     #bootvid {
       display: block;
+      width: 1070px;        /* resize: change this value */
+      margin-top: 0px;     /* nudge up/down: negative moves up */
     }
 
   </style>
@@ -109,12 +116,12 @@
 
   <!-- STAGE 2 — Welcome to Mika OS -->
   <div id="s2" class="stage">
-    <img src="mikaos.png" alt="" />
+    <img src="mikaos_small.png" alt="" />
   </div>
 
   <!-- STAGE 3 — Startup video -->
   <div id="s3" class="stage">
-    <video id="bootvid" src="startup.mov" muted playsinline preload="auto"></video>
+    <video id="bootvid" src="mika_os_startup.mp4" muted playsinline preload="auto"></video>
   </div>
 
   <script>
