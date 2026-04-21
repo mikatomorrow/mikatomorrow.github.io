@@ -6,75 +6,41 @@
   <title>mikatomorrow :: weather</title>
   <style type="text/css">
 
-    html, body, * { cursor: none !important; }
-    html, body { margin: 0; padding: 0; height: 100%; }
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
 
-    #fake-cursor {
-      position: fixed; top: 0; left: 0;
-      width: 48px; height: 48px;
-      pointer-events: none; z-index: 99999;
-      background: url('cursor-dino.png') no-repeat top left;
-      background-size: 48px 48px;
+    body { background: #000000; }
+
+    #breadcrumb {
+      position: fixed; top: 12px; left: 16px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 9px; color: #112233; letter-spacing: 2px;
+      z-index: 200; pointer-events: auto;
+    }
+    #breadcrumb a { color: #225577; text-decoration: none; }
+    #breadcrumb a:hover { color: #1188cc; }
+
+    #weather-frame {
+      position: fixed;
+      top: 36px; left: 0;
+      width: 100%; height: calc(100% - 36px);
+      border: none;
+      z-index: 1;
+    }
+
+    #cloud-r1 {
+      position: fixed;
+      right: 12px; top: 60px;
+      z-index: 50; pointer-events: none;
+      opacity: 0.7;
       image-rendering: pixelated; image-rendering: crisp-edges;
     }
 
-    body {
-      background: #000;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-direction: column;
-      flex-direction: column;
-    }
-
-    #topbar {
-      background-color: #080808;
-      border-bottom: 2px solid #111111;
-      border-left: 4px solid #1188cc;
-      padding: 7px 20px;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      gap: 24px;
-      -ms-flex-negative: 0;
-      flex-shrink: 0;
-    }
-
-    #topbar .breadcrumb {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 9px; color: #333333; letter-spacing: 2px;
-    }
-    #topbar .breadcrumb a { color: #225577; text-decoration: none; }
-    #topbar .breadcrumb a:hover { color: #1188cc; }
-
-    #topbar .title {
-      font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 16px; font-weight: normal;
-      color: #1188cc; letter-spacing: 6px;
-      text-transform: lowercase;
-    }
-
-    /* wrapper so the overlay can be positioned relative to the iframe area */
-    #iframe-wrap {
-      -ms-flex: 1;
-      flex: 1;
-      position: relative;
-    }
-
-    #weather-frame {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    /* transparent overlay — captures mousemove for the fake cursor,
-       steps aside on mousedown/wheel so clicks and scrolls reach the iframe */
-    #iframe-overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      z-index: 5;
-      background: transparent;
+    #cloud-r2 {
+      position: fixed;
+      right: 12px; top: 140px;
+      z-index: 50; pointer-events: none;
+      opacity: 0.7;
+      image-rendering: pixelated; image-rendering: crisp-edges;
     }
 
     #clippy-wrap {
@@ -88,20 +54,15 @@
 </head>
 <body>
 
-  <div id="topbar">
-    <span class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; weather</span>
-    <span class="title">&#9729; weather</span>
-  </div>
+<div id="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; weather</div>
 
-  <div id="iframe-wrap">
-    <iframe id="weather-frame"
-      src="https://weatherstar.netbymatt.com/"
-      title="WeatherStar 4000+">
-    </iframe>
-    <div id="iframe-overlay"></div>
-  </div>
+<img id="cloud-r1" src="cloud1.png"  alt="" />
+<img id="cloud-r2" src="cloud.gif"  alt="" />
 
-<div id="fake-cursor"></div>
+<iframe id="weather-frame"
+  src="https://weatherstar.netbymatt.com/"
+  title="WeatherStar 4000+">
+</iframe>
 
 <div id="clippy-wrap">
   <canvas id="clippy-canvas" width="124" height="93"></canvas>
@@ -139,41 +100,6 @@
     sheet = oc; tick(); setInterval(tick, 130);
   };
   img.src = 'clippy.png';
-})();
-
-(function() {
-  var cursor = document.getElementById('fake-cursor');
-  var overlay = document.getElementById('iframe-overlay');
-
-  function moveCursor(e) {
-    cursor.style.transform = 'translate('+e.clientX+'px,'+e.clientY+'px)';
-    cursor.style.display = 'block';
-  }
-
-  // track cursor on normal page areas
-  document.addEventListener('mousemove', moveCursor);
-  document.addEventListener('mouseleave', function() { cursor.style.display = 'none'; });
-  document.addEventListener('mouseenter', function() { cursor.style.display = 'block'; });
-
-  // track cursor over the iframe via the overlay
-  overlay.addEventListener('mousemove', moveCursor);
-
-  // step aside on click so the iframe receives it, restore on mouseup
-  overlay.addEventListener('mousedown', function() {
-    overlay.style.pointerEvents = 'none';
-  });
-  document.addEventListener('mouseup', function() {
-    overlay.style.pointerEvents = 'auto';
-  });
-
-  // step aside on scroll so the iframe receives the wheel event
-  overlay.addEventListener('wheel', function() {
-    overlay.style.pointerEvents = 'none';
-    setTimeout(function() { overlay.style.pointerEvents = 'auto'; }, 200);
-  });
-
-  document.documentElement.style.cursor = 'none';
-  document.body.style.cursor = 'none';
 })();
 </script>
 

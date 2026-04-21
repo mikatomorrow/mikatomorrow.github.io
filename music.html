@@ -27,7 +27,16 @@
       font-size: 12px;
       margin: 0;
       padding: 16px 0 30px 0;
+      position: relative;
     }
+
+    #gif-headphone      { position: absolute; top: 60px;  left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-headphone-spin { position: absolute; top: 60px;  right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-mic2           { position: absolute; top: 220px; left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-mic3           { position: absolute; top: 220px; right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-mic4           { position: absolute; top: 380px; left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-bear           { position: absolute; top: 380px; right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-lucky-star     { position: absolute; top: 540px; right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
 
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
@@ -128,39 +137,36 @@
   </style>
 </head>
 <body>
+<img id="gif-headphone"      src="headphone.gif"       alt="" />
+<img id="gif-headphone-spin" src="headphone_spin.gif" alt="" />
+<img id="gif-mic2"           src="mic2.gif"            alt="" />
+<img id="gif-mic3"           src="mic3.gif"            alt="" />
+<img id="gif-mic4"           src="mic4.gif"            alt="" />
+<img id="gif-bear"           src="bear.gif"            alt="" />
+<img id="gif-lucky-star"     src="lucky-star-intro.gif" alt="" />
+
 <div id="outer">
 
   <div id="header">
     <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; music</div>
     <h1>&#9834; music</h1>
-    <div class="sub">currently listening &nbsp;&mdash;&nbsp; no algorithms involved</div>
+    <div class="sub">currently listening</div>
   </div>
 
   <div id="content">
 
-    <div class="section-label">// on rotation //</div>
-
     <div class="entry">
       <div class="entry-title">artist &mdash; album</div>
       <div class="entry-meta">genre &nbsp;&mdash;&nbsp; year</div>
-      <div class="entry-desc">What this album means to me, why it&rsquo;s been on repeat.</div>
+      <div class="entry-desc">song 1.</div>
       <span class="tag">electronic</span>
     </div>
 
     <div class="entry">
       <div class="entry-title">artist &mdash; album</div>
       <div class="entry-meta">genre &nbsp;&mdash;&nbsp; year</div>
-      <div class="entry-desc">Notes on this one.</div>
+      <div class="entry-desc">song 2.</div>
       <span class="tag">ambient</span>
-    </div>
-
-    <hr class="mid" />
-
-    <div class="section-label">// recently played //</div>
-
-    <div class="entry">
-      <div class="entry-title">placeholder</div>
-      <div class="entry-desc">More entries coming soon.</div>
     </div>
 
     <hr class="mid" />

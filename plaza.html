@@ -250,6 +250,33 @@
       color: #2a1e3a;
     }
 
+    /* ── weather — centered, no image slot ── */
+    a.portal.pt-weather {
+      height: 52px;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    .pt-weather .portal-img { display: none; }
+
+    .pt-weather .portal-info {
+      -ms-flex-align: center;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+    }
+
+    .pt-weather .portal-title {
+      font-size: 22px;
+      letter-spacing: 8px;
+      margin-bottom: 3px;
+    }
+
+    .pt-weather .portal-desc {
+      font-family: "Courier New", Courier, monospace;
+      color: #0e2233;
+    }
+
     /* ============================================================
        TAGS
        ============================================================ */
@@ -313,7 +340,7 @@
       <a href="work.html" class="portal pt-work">
         <div class="portal-img"><img src="atom.gif" alt=""/></div>
         <div class="portal-info">
-          <div class="portal-title">🌣&nbsp;work</div>
+          <div class="portal-title">🌣 work</div>
           <div class="portal-desc">engineering design projects, job experience, technical stuff made readable</div>
         </div>
         <div class="portal-arrow">&#8250;</div>
@@ -332,7 +359,7 @@
       <a href="papers.html" class="portal pt-papers">
         <div class="portal-img"><img src="turnbook.gif" alt=""/></div>
         <div class="portal-info">
-          <div class="portal-title">⎙&nbsp;papers</div>
+          <div class="portal-title">⎙ papers</div>
           <div class="portal-desc">technical reports and other writing :p. things i had to learn and wrote down</div>
         </div>
         <div class="portal-arrow">&#8250;</div>
@@ -341,7 +368,7 @@
       <a href="about.html" class="portal pt-about">
         <div class="portal-img"><img src="wave_cloud.gif" alt=""/></div>
         <div class="portal-info">
-          <div class="portal-title">˙ᵕ˙About Me</div>
+          <div class="portal-title">˙ᵕ˙about me</div>
           <div class="portal-desc">who am i? :o</div>
         </div>
         <div class="portal-arrow">&#8250;</div>

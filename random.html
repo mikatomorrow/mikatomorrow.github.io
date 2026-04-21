@@ -51,6 +51,17 @@
       opacity: 0.88;
     }
 
+    #gif-radar  { position: absolute; top: 60px;  left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-sat1   { position: absolute; top: 60px;  right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-robot1 { position: absolute; top: 220px; right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+
+    #gif-train {
+      position: absolute;
+      left: 10px; top: 260px;
+      image-rendering: pixelated; image-rendering: crisp-edges;
+      pointer-events: none; z-index: 60;
+    }
+
     #header {
       background-color: #0a0a1a;
       background-image: repeating-linear-gradient(
@@ -146,8 +157,12 @@
 </head>
 <body>
 
-<img id="xwings" src="xwings1.gif" alt="" />
-<img id="astronaut" src="astronaut_flip.gif" alt="" />
+<img id="gif-radar"  src="radar.gif"          alt="" />
+<img id="gif-sat1"   src="sat1.gif"           alt="" />
+<img id="gif-robot1" src="robot1.gif"         alt="" />
+<img id="xwings"    src="xwings1.gif"         alt="" />
+<img id="astronaut" src="astronaut_flip.gif"  alt="" />
+<img id="gif-train" src="train.gif"           alt="" />
 
 <div id="outer">
 

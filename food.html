@@ -27,7 +27,11 @@
       font-size: 12px;
       margin: 0;
       padding: 16px 0 30px 0;
+      position: relative;
     }
+
+    #gif-tomato { position: absolute; top: 60px;  right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-food1  { position: absolute; top: 260px; left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
 
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
@@ -128,34 +132,33 @@
   </style>
 </head>
 <body>
+<img id="gif-tomato" src="tomato_plop.gif" alt="" />
+<img id="gif-food1"  src="food1.gif"       alt="" />
+
 <div id="outer">
 
   <div id="header">
     <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; food</div>
-    <h1>&#127859; food</h1>
-    <div class="sub">things i make &nbsp;&mdash;&nbsp; things I eat</div>
+    <h1>𓐐𓎩 food</h1>
+    <div class="sub">nom nom nom (๑ᵔ⤙ᵔ๑) </div>
   </div>
 
   <div id="content">
 
-    <div class="section-label">// recipes //</div>
-
     <div class="entry">
-      <div class="entry-title">placeholder dish</div>
-      <div class="entry-meta">homemade &nbsp;&mdash;&nbsp; region or cuisine</div>
-      <div class="entry-desc">How to make it, why I like it, any notes on the process.</div>
+      <div class="entry-title">sandwich</div>
+      <div class="entry-meta">sandvich &nbsp;&mdash;&nbsp; make me strong</div>
+      <div class="entry-desc">pictures to come</div>
       <span class="tag">homemade</span>
     </div>
 
     <hr class="mid" />
 
-    <div class="section-label">// spots //</div>
-
     <div class="entry">
-      <div class="entry-title">placeholder restaurant / spot</div>
-      <div class="entry-meta">atlanta &nbsp;&mdash;&nbsp; type of food</div>
-      <div class="entry-desc">What&rsquo;s good here, what to order.</div>
-      <span class="tag">atlanta</span>
+      <div class="entry-title">bakery pictures</div>
+      <div class="entry-meta">washington d.c. &nbsp;&mdash;&nbsp; tasty</div>
+      <div class="entry-desc">pictures soon</div>
+      <span class="tag">baked goods</span>
     </div>
 
     <hr class="mid" />

@@ -25,7 +25,13 @@
       font-size: 12px;
       margin: 0;
       padding: 16px 0 30px 0;
+      position: relative;
     }
+
+    #gif-hot      { position: absolute; top: 60px;  left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-game     { position: absolute; top: 60px;  right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-pika     { position: absolute; top: 280px; left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-pikasleep{ position: absolute; top: 320px; right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
 
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
@@ -126,32 +132,35 @@
   </style>
 </head>
 <body>
+<img id="gif-hot"       src="hot.gif"       alt="" />
+<img id="gif-game"      src="game.gif"      alt="" />
+<img id="gif-pika"      src="cutepika.gif"  alt="" />
+<img id="gif-pikasleep" src="pikasleep.gif" alt="" />
+
 <div id="outer">
 
   <div id="header">
     <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; gaming</div>
     <h1>⚔︎ gaming</h1>
+      <div class="sub">vidya ৻(  •̀ ᗜ •́  ৻)</div>
+
   </div>
 
   <div id="content">
 
-    <div class="section-label">vidya ৻(  •̀ ᗜ •́  ৻)</div>
-
     <div class="entry">
-      <div class="entry-title">placeholder game</div>
-      <div class="entry-meta">platform &nbsp;&mdash;&nbsp; genre</div>
-      <div class="entry-desc">What I think of it so far. Hours in, what&rsquo;s good.</div>
+      <div class="entry-title">deadlock</div>
+      <div class="entry-meta">haze &nbsp;&mdash;&nbsp; lash</div>
+      <div class="entry-desc">video game</div>
       <span class="tag">PC</span>
     </div>
 
     <hr class="mid" />
 
-    <div class="section-label">// favorites //</div>
-
     <div class="entry">
-      <div class="entry-title">placeholder game</div>
-      <div class="entry-meta">platform &nbsp;&mdash;&nbsp; year</div>
-      <div class="entry-desc">Why this one stuck.</div>
+      <div class="entry-title">uhhh idk yet</div>
+      <div class="entry-meta">still idk</div>
+      <div class="entry-desc">hi :3</div>
       <span class="tag">all-time</span>
     </div>
 

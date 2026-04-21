@@ -27,7 +27,11 @@
       font-size: 12px;
       margin: 0;
       padding: 16px 0 30px 0;
+      position: relative;
     }
+
+    #gif-dance-rat   { position: absolute; top: 60px;  left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-spinning-rat{ position: absolute; top: 60px;  right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
 
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
@@ -102,15 +106,21 @@
   </style>
 </head>
 <body>
+<img id="gif-dance-rat"    src="dance_rat.gif"    alt="" />
+<img id="gif-spinning-rat" src="spinning_rat.gif" alt="" />
+
 <div id="outer">
 
+  
   <div id="header">
     <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; about</div>
-    <h1>/me about</h1>
+    <h1>˙ᵕ˙ about me</h1>
     <div class="sub">not a resume &nbsp;&mdash;&nbsp; not a linkedin</div>
   </div>
 
   <div id="content">
+
+    <hr class="mid" />
 
     <div class="section-label">// who I am //</div>
 
