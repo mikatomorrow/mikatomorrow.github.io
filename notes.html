@@ -120,6 +120,62 @@
       font-style: italic;
     }
 
+    /* ── subject accordion ── */
+    details.subject {
+      border: 1px solid #cccccc;
+      margin-bottom: 10px;
+    }
+
+    details.subject > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 18px;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid transparent;
+      user-select: none;
+    }
+
+    details.subject > summary::-webkit-details-marker { display: none; }
+
+    details.subject[open] > summary {
+      border-bottom: 1px solid #cccccc;
+      background-color: #f0f0f0;
+    }
+
+    details.subject > summary:hover {
+      background-color: #eeeeee;
+    }
+
+    .summary-title {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 17px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .summary-teaser {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      color: #888888;
+      display: block;
+    }
+
+    .summary-toggle {
+      float: right;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      color: #aaaaaa;
+      margin-top: 4px;
+    }
+
+    details.subject[open] .summary-toggle::after { content: "[ collapse ]"; }
+    details.subject:not([open]) .summary-toggle::after { content: "[ expand ]"; }
+
+    .subject-body {
+      padding: 20px 24px 24px 24px;
+    }
+
   </style>
 </head>
 <body>
@@ -131,152 +187,168 @@
 
 <hr />
 
-<h2>antenna notes</h2>
+<details class="subject">
+  <summary>
+    <span class="summary-toggle"></span>
+    <span class="summary-title">antenna notes</span>
+    <span class="summary-teaser">Maxwell's equations &mdash; half wave dipoles &mdash; ISM bands</span>
+  </summary>
+  <div class="subject-body">
 
-<h3>Lecture 1</h3>
-<div class="note-meta">date &mdash; topic</div>
+    <h3>Lecture 1</h3>
+    <div class="note-meta">date &mdash; topic</div>
 
-<p>A few fundamental formulas:</p>
+    <p>A few fundamental formulas:</p>
 
-<h3>Maxwell's Equations</h3>
-<p>put in</p>
+    <h3>Maxwell's Equations</h3>
+    <p>put in</p>
 
-<h3>Speed of Light / Frequency / Wavelength</h3>
-<pre>c = lambda * f
+    <h3>Speed of Light / Frequency / Wavelength</h3>
+    <pre>c = lambda * f
 f = c / lambda
 lambda = c / f</pre>
 
-<h3>Half Wave Dipole</h3>
-<p>Named for having the length of the antenna being half of the wavelength, lambda/2. This is the classic "coat-hanger" antenna that is first shown.</p>
-<p>A simple example: the antenna is 30cm long (d), meaning lambda/2 = 30cm =&gt; lambda = 60cm =&gt; c = lambda * f =&gt; 300x10^6 = 60*10^-2 * f, f = 500MHz</p>
-<p>This 500MHz is quite close to 433MHz, one of the many ISM bands.</p>
-<p>An ISM band &mdash; Industrial Scientific Medical &mdash; is an UNLICENSED band, meaning that as long as you adhere to power and length specifications, you can transmit whatever you want at any time without paying.</p>
-<p>ISM bands are as follows:</p>
-<ul>
-  <li>6.78 MHz</li>
-  <li>13.56 MHz</li>
-  <li>27.12 MHz</li>
-  <li>40.68 MHz</li>
-  <li>433 MHz</li>
-  <li>915 MHz</li>
-  <li>2.4 GHz (LNA!)</li>
-  <li>5.8 GHz (Also popular for modern day RFICs!)</li>
-  <li>24 GHz (Radar!)</li>
-</ul>
+    <h3>Half Wave Dipole</h3>
+    <p>Named for having the length of the antenna being half of the wavelength, lambda/2. This is the classic "coat-hanger" antenna that is first shown.</p>
+    <p>A simple example: the antenna is 30cm long (d), meaning lambda/2 = 30cm =&gt; lambda = 60cm =&gt; c = lambda * f =&gt; 300x10^6 = 60*10^-2 * f, f = 500MHz</p>
+    <p>This 500MHz is quite close to 433MHz, one of the many ISM bands.</p>
+    <p>An ISM band &mdash; Industrial Scientific Medical &mdash; is an UNLICENSED band, meaning that as long as you adhere to power and length specifications, you can transmit whatever you want at any time without paying.</p>
+    <p>ISM bands are as follows:</p>
+    <ul>
+      <li>6.78 MHz</li>
+      <li>13.56 MHz</li>
+      <li>27.12 MHz</li>
+      <li>40.68 MHz</li>
+      <li>433 MHz</li>
+      <li>915 MHz</li>
+      <li>2.4 GHz (LNA!)</li>
+      <li>5.8 GHz (Also popular for modern day RFICs!)</li>
+      <li>24 GHz (Radar!)</li>
+    </ul>
 
-<hr />
+  </div>
+</details>
 
-<h2>Catechism of the Catholic Church</h2>
+<details class="subject">
+  <summary>
+    <span class="summary-toggle"></span>
+    <span class="summary-title">Catechism of the Catholic Church</span>
+    <span class="summary-teaser">The Seven Sacraments &mdash; Baptism &mdash; Confirmation &mdash; The Fall &mdash; Grace and Justification</span>
+  </summary>
+  <div class="subject-body">
 
-<h3>Lecture 1</h3>
-<div class="note-meta">date &mdash; topic</div>
+    <h3>Lecture 1</h3>
+    <div class="note-meta">date &mdash; topic</div>
 
-<h3>The Seven Sacraments</h3>
-<p>Baptism, Confirmation, the Eucharist, Penance, the Anointing of the Sick, Holy Orders, and Matrimony.</p>
-<p>Eucharist is sacrament of sacraments, all other are ordered to it as to their end.</p>
-<p>Baptism, Confirmation, Eucharist lay the foundation of Christian life.</p>
-<p>Faithful are born new via Baptism, strengthened by Confirmation, and receive the food of eternal life in the Eucharist.</p>
+    <h3>The Seven Sacraments</h3>
+    <p>Baptism, Confirmation, the Eucharist, Penance, the Anointing of the Sick, Holy Orders, and Matrimony.</p>
+    <p>Eucharist is sacrament of sacraments, all other are ordered to it as to their end.</p>
+    <p>Baptism, Confirmation, Eucharist lay the foundation of Christian life.</p>
+    <p>Faithful are born new via Baptism, strengthened by Confirmation, and receive the food of eternal life in the Eucharist.</p>
 
-<h3>Baptism</h3>
-<p>Called baptism &mdash; meaning to plunge in Greek &mdash; to represent Christ, as he "plunged" into death, and then was resurrected as a "new creature" &mdash; as those who are baptized are reborn as sons of God and freed from sin.</p>
-<p>Also called the washing of regeneration and renewal by the Holy Spirit.</p>
-<p>Baptism is a bath, a gift, a grace, an anointing, an enlightenment, a veil, a rebirth, a seal, a garment of immortality.</p>
-<p>Water is a symbol that shows up all over the Bible, and has always been the source of holiness and life. In Noah's ark &mdash; "the water of the great flood, you made a sign of the waters of Baptism. that make an end of sin and a new beginning of goodness"</p>
-<p>Water from Earth symbolizes life, water of the sea symbolizes death &mdash; which can be tied to Christ's death, and so a Baptism (done with land or sea water?) symbolizes communion with Christ's death.</p>
-<p>Christ was baptized by St. John the Baptist despite the baptism being for sinners. He did this and declared to his disciples to spread out to all nations and baptize those who need it, this self-emptying of Jesus to performing a baptism.</p>
-<p>Baptism for the forgiveness of sins, one shall receive the gift of the Holy Spirit. Through the Holy Spirit, baptism purifies, justifies, and sanctifies.</p>
-<ul>
-  <li>The sign of the cross &mdash; redemption Christ won for us</li>
-  <li>Proclamation of the Word of God &mdash; sacramental entry into the life of faith, enlightens with revealed truth</li>
-  <li>Exorcism &mdash; liberation from sin and its instigator, the devil. Explicitly renounce Satan followed by Confess the faith of the church</li>
-</ul>
-<p>Baptismal water &mdash; water that has been prayed upon on Easter Vigil or at the moment such that it may be born of water and the Spirit for baptism.</p>
-<p>Essential rite &mdash; Truly baptism. Death to sin and entry into life of the Holy Trinity. Triple immersion into the baptismal water (or pour 3 times over head).</p>
-<p>Anointing with sacred chrism &mdash; perfumed oil consecrated by the bishop is a gift of the Holy Spirit to the now baptized, who has become anointed by the Holy Spirit.</p>
-<p>White garment &mdash; the person has "put on Christ" and risen with him, the candle &mdash; lit from the Easter candle &mdash; signifies that Christ has enlightened.</p>
-<p>Now, as a child of God, the baptized is entitled to say "Our Father".</p>
-<p>First Holy Communion &mdash; the marriage supper of the Lamb, receives food of the new life, body and blood of Christ.<br />
-Solemn Blessing &mdash; Concludes baptism.</p>
+    <h3>Baptism</h3>
+    <p>Called baptism &mdash; meaning to plunge in Greek &mdash; to represent Christ, as he "plunged" into death, and then was resurrected as a "new creature" &mdash; as those who are baptized are reborn as sons of God and freed from sin.</p>
+    <p>Also called the washing of regeneration and renewal by the Holy Spirit.</p>
+    <p>Baptism is a bath, a gift, a grace, an anointing, an enlightenment, a veil, a rebirth, a seal, a garment of immortality.</p>
+    <p>Water is a symbol that shows up all over the Bible, and has always been the source of holiness and life. In Noah's ark &mdash; "the water of the great flood, you made a sign of the waters of Baptism. that make an end of sin and a new beginning of goodness"</p>
+    <p>Water from Earth symbolizes life, water of the sea symbolizes death &mdash; which can be tied to Christ's death, and so a Baptism (done with land or sea water?) symbolizes communion with Christ's death.</p>
+    <p>Christ was baptized by St. John the Baptist despite the baptism being for sinners. He did this and declared to his disciples to spread out to all nations and baptize those who need it, this self-emptying of Jesus to performing a baptism.</p>
+    <p>Baptism for the forgiveness of sins, one shall receive the gift of the Holy Spirit. Through the Holy Spirit, baptism purifies, justifies, and sanctifies.</p>
+    <ul>
+      <li>The sign of the cross &mdash; redemption Christ won for us</li>
+      <li>Proclamation of the Word of God &mdash; sacramental entry into the life of faith, enlightens with revealed truth</li>
+      <li>Exorcism &mdash; liberation from sin and its instigator, the devil. Explicitly renounce Satan followed by Confess the faith of the church</li>
+    </ul>
+    <p>Baptismal water &mdash; water that has been prayed upon on Easter Vigil or at the moment such that it may be born of water and the Spirit for baptism.</p>
+    <p>Essential rite &mdash; Truly baptism. Death to sin and entry into life of the Holy Trinity. Triple immersion into the baptismal water (or pour 3 times over head).</p>
+    <p>Anointing with sacred chrism &mdash; perfumed oil consecrated by the bishop is a gift of the Holy Spirit to the now baptized, who has become anointed by the Holy Spirit.</p>
+    <p>White garment &mdash; the person has "put on Christ" and risen with him, the candle &mdash; lit from the Easter candle &mdash; signifies that Christ has enlightened.</p>
+    <p>Now, as a child of God, the baptized is entitled to say "Our Father".</p>
+    <p>First Holy Communion &mdash; the marriage supper of the Lamb, receives food of the new life, body and blood of Christ.<br />
+    Solemn Blessing &mdash; Concludes baptism.</p>
 
-<div class="question">
-  <strong>Question:</strong> Also look at 1308! Baptism of adults vs infants: 1233 &mdash; Last few sentences &mdash; "while in the Roman rite it (Baptism) is followed by years of catechesis before being completed later by Confirmation and the Eucharist..." Also, 1244 "The Latin church, which reserves admission to Holy Communion to those who have attained the age of reason." But then, 1250-1252 says that infant baptisms should be done, to be freed, and it is a misfault on parents that do not do this.
-</div>
+    <div class="question">
+      <strong>Question:</strong> Also look at 1308! Baptism of adults vs infants: 1233 &mdash; Last few sentences &mdash; "while in the Roman rite it (Baptism) is followed by years of catechesis before being completed later by Confirmation and the Eucharist..." Also, 1244 "The Latin church, which reserves admission to Holy Communion to those who have attained the age of reason." But then, 1250-1252 says that infant baptisms should be done, to be freed, and it is a misfault on parents that do not do this.
+    </div>
 
-<p>What do you ask of God's Church? Faith!</p>
-<p>Renewal of baptismal promises at Easter Vigil &mdash; baptism is a growth of faith, not a one and done. Baptism is the <em>source</em> of this new life in communion with Christ that then life springs forth from.</p>
+    <p>What do you ask of God's Church? Faith!</p>
+    <p>Renewal of baptismal promises at Easter Vigil &mdash; baptism is a growth of faith, not a one and done. Baptism is the <em>source</em> of this new life in communion with Christ that then life springs forth from.</p>
 
-<div class="question">
-  <strong>Check Understanding:</strong> If you suffer death for the sake of the faith without being Baptized (Crusade, Holy Orders, etc.?) They are baptized upon death; a baptism of blood. Similarly, catechumens (those in preparation of receiving Baptism) who die before it, assures salvation through their desire to receive it.
-</div>
+    <div class="question">
+      <strong>Check Understanding:</strong> If you suffer death for the sake of the faith without being Baptized (Crusade, Holy Orders, etc.?) They are baptized upon death; a baptism of blood. Similarly, catechumens (those in preparation of receiving Baptism) who die before it, assures salvation through their desire to receive it.
+    </div>
 
-<p>1250 &mdash; again children SHOULD come to the church for baptism, without such, their fate after death is up to God and Christ.</p>
+    <p>1250 &mdash; again children SHOULD come to the church for baptism, without such, their fate after death is up to God and Christ.</p>
 
-<p><strong>The 2 below make up the Fruit of Baptism, or Baptismal Grace:</strong></p>
-<p><strong>Death and Purification:</strong> Baptism is the cleansing of sins, including original sin, sin of Adam, and personal sins. "For the forgiveness of sins..." But the inclination towards sin, and the effects on our character and health because of our sins, do not disappear.</p>
-<p><strong>Regeneration and Renewal:</strong> A new creature, temple of the Holy Spirit, adopted son of God, and member of Christ.</p>
+    <p><strong>The 2 below make up the Fruit of Baptism, or Baptismal Grace:</strong></p>
+    <p><strong>Death and Purification:</strong> Baptism is the cleansing of sins, including original sin, sin of Adam, and personal sins. "For the forgiveness of sins..." But the inclination towards sin, and the effects on our character and health because of our sins, do not disappear.</p>
+    <p><strong>Regeneration and Renewal:</strong> A new creature, temple of the Holy Spirit, adopted son of God, and member of Christ.</p>
 
-<p>Baptism makes us members of the Body of Christ: "Therefore... we are members one of another" &mdash; this ties into why believers were not saved even though they treated Christ well, but not their fellow faithful men &mdash; the baptism connects you into a web of Christ as co-heirs to God.</p>
-<p>Baptism means that you no longer belong to yourself, but instead Christ.</p>
-<p>All connected, 1271 &mdash; "Baptism therefore constitutes the sacramental bond of unity existing among all who through it are reborn"</p>
+    <p>Baptism makes us members of the Body of Christ: "Therefore... we are members one of another" &mdash; this ties into why believers were not saved even though they treated Christ well, but not their fellow faithful men &mdash; the baptism connects you into a web of Christ as co-heirs to God.</p>
+    <p>Baptism means that you no longer belong to yourself, but instead Christ.</p>
+    <p>All connected, 1271 &mdash; "Baptism therefore constitutes the sacramental bond of unity existing among all who through it are reborn"</p>
 
-<div class="question">
-  <strong>Question:</strong> Missionary activity??? &mdash; "Reborn as sons of God", the baptized must profess before men the faith they have received from God through the Church" and participate in the apostolic and missionary activity of the People of God.
-</div>
+    <div class="question">
+      <strong>Question:</strong> Missionary activity??? &mdash; "Reborn as sons of God", the baptized must profess before men the faith they have received from God through the Church" and participate in the apostolic and missionary activity of the People of God.
+    </div>
 
-<p>Baptism imprints on the soul a permanent mark, a seal of the Lord given by the Holy Spirit, a seal of eternal life.</p>
+    <p>Baptism imprints on the soul a permanent mark, a seal of the Lord given by the Holy Spirit, a seal of eternal life.</p>
 
-<h3>Confirmation</h3>
-<p>Confirmation is the strengthening of the Baptism, the baptized are more perfectly bound to the church and the Holy Spirit blesses them with strength.</p>
-<p>Christ was descended upon by the Holy Spirit at his baptism by St. John the Baptist. The Holy Spirit was present over the waters of the first creation, and now he hovered over Christ as the new creation &mdash; and the Father revealed Christ as his beloved son.</p>
-<p>Christ's mighty works of God came from this fullness of the Holy Spirit, those who are baptized and believe in Christ receive this same Holy Spirit.</p>
-<p>Anointing signifies a spiritual seal. Oil represents abundance and joy, cleanses, limbers, heals, and radiates (put on before bath, put on athletes, soothing to bruises, makes beautiful and healthy).</p>
-<p>The 3 anointings: pre-baptismal signifies cleansing, anointing of the sick represents healing, and post-baptismal (chrism) represents consecration.</p>
-<p>Liturgy of Confirmation begins with renewal of baptismal promises and profession of faith.</p>
-<p>After application of oil and rites by the Priest/Bishop, the sign of peace concludes the sacrament.</p>
+    <h3>Confirmation</h3>
+    <p>Confirmation is the strengthening of the Baptism, the baptized are more perfectly bound to the church and the Holy Spirit blesses them with strength.</p>
+    <p>Christ was descended upon by the Holy Spirit at his baptism by St. John the Baptist. The Holy Spirit was present over the waters of the first creation, and now he hovered over Christ as the new creation &mdash; and the Father revealed Christ as his beloved son.</p>
+    <p>Christ's mighty works of God came from this fullness of the Holy Spirit, those who are baptized and believe in Christ receive this same Holy Spirit.</p>
+    <p>Anointing signifies a spiritual seal. Oil represents abundance and joy, cleanses, limbers, heals, and radiates (put on before bath, put on athletes, soothing to bruises, makes beautiful and healthy).</p>
+    <p>The 3 anointings: pre-baptismal signifies cleansing, anointing of the sick represents healing, and post-baptismal (chrism) represents consecration.</p>
+    <p>Liturgy of Confirmation begins with renewal of baptismal promises and profession of faith.</p>
+    <p>After application of oil and rites by the Priest/Bishop, the sign of peace concludes the sacrament.</p>
 
-<div class="note-callout">Note: Father Branson related mass to the sacraments &mdash; the baptism, confirmation, and eucharist &mdash; and now it is becoming obvious why. The flow of Mass follows closely to this.</div>
+    <div class="note-callout">Note: Father Branson related mass to the sacraments &mdash; the baptism, confirmation, and eucharist &mdash; and now it is becoming obvious why. The flow of Mass follows closely to this.</div>
 
-<p>Confirmation brings a deepening of baptismal grace, and increases the gift of the Holy Spirit, as well as applying the mark of the Holy Spirit, the seal of belonging to Christ.</p>
-<p>To receive confirmation one must be in a state of grace. Prepare yourself, lead your life to be more intimate with Christ and more familiar to the Holy Spirit.</p>
-<p>Sacrament of penance &mdash; receive to be cleansed for the gift of the Holy Spirit, and more intense prayer.</p>
-<p><strong>BISHOP DOES CONFIRMATION TYPICALLY</strong></p>
-<p><strong>MUST PROFESS FAITH, BE IN A STATE OF GRACE, HAVE THE INTENTION OF RECEIVING, AND BE PREPARED TO ASSUME ROLE OF DISCIPLE TO CHRIST</strong></p>
+    <p>Confirmation brings a deepening of baptismal grace, and increases the gift of the Holy Spirit, as well as applying the mark of the Holy Spirit, the seal of belonging to Christ.</p>
+    <p>To receive confirmation one must be in a state of grace. Prepare yourself, lead your life to be more intimate with Christ and more familiar to the Holy Spirit.</p>
+    <p>Sacrament of penance &mdash; receive to be cleansed for the gift of the Holy Spirit, and more intense prayer.</p>
+    <p><strong>BISHOP DOES CONFIRMATION TYPICALLY</strong></p>
+    <p><strong>MUST PROFESS FAITH, BE IN A STATE OF GRACE, HAVE THE INTENTION OF RECEIVING, AND BE PREPARED TO ASSUME ROLE OF DISCIPLE TO CHRIST</strong></p>
 
-<h3>The Fall</h3>
-<p>God is infinitely good and all his works are good, but so many evils and suffering in nature, and moral evil &mdash; why? Where does it come from?</p>
-<p>Sin is present all over human history &mdash; sin is an abuse of the freedom that God gave such that they would be capable of loving him and loving one another.</p>
-<p>Adam is the source of sin, Christ is the source of grace.</p>
-<p>Original sin, being the innate desire and causes that make man sin, come with it the Good News that Jesus is the savior, where all need his salvation and salvation is offered.</p>
-<p>The disobedient choice of our first parents came from the voice of the fallen angel, Satan (who was originally created good but became evil in a similar manner to how our first parents became sinful).</p>
-<p>The "fall"en part of the angel is that in using the free choice in this created spirits, they radically and irrevocably rejected God.</p>
-<p>Satan told our first parents "You will be like God", which is a reflection of how Satan thought of God in his rejection. Satan "has sinned from the beginning".</p>
+    <h3>The Fall</h3>
+    <p>God is infinitely good and all his works are good, but so many evils and suffering in nature, and moral evil &mdash; why? Where does it come from?</p>
+    <p>Sin is present all over human history &mdash; sin is an abuse of the freedom that God gave such that they would be capable of loving him and loving one another.</p>
+    <p>Adam is the source of sin, Christ is the source of grace.</p>
+    <p>Original sin, being the innate desire and causes that make man sin, come with it the Good News that Jesus is the savior, where all need his salvation and salvation is offered.</p>
+    <p>The disobedient choice of our first parents came from the voice of the fallen angel, Satan (who was originally created good but became evil in a similar manner to how our first parents became sinful).</p>
+    <p>The "fall"en part of the angel is that in using the free choice in this created spirits, they radically and irrevocably rejected God.</p>
+    <p>Satan told our first parents "You will be like God", which is a reflection of how Satan thought of God in his rejection. Satan "has sinned from the beginning".</p>
 
-<div class="question">
-  <strong>Talk about more:</strong> 394-395 &mdash; Satan's power is not infinite. He is only a creature of pure spirit, God's reign is infinite. Satan acts in the world out of hatred for God, and may cause harm in the world, it is still permitted by divine providence which with strength and gentleness guides human and cosmic history.
-</div>
+    <div class="question">
+      <strong>Talk about more:</strong> 394-395 &mdash; Satan's power is not infinite. He is only a creature of pure spirit, God's reign is infinite. Satan acts in the world out of hatred for God, and may cause harm in the world, it is still permitted by divine providence which with strength and gentleness guides human and cosmic history.
+    </div>
 
-<p>God created man in his image and established him in his friendship.</p>
-<p>The catch: cannot eat "of the tree of the knowledge of good and evil, for in the day that you eat of it, you shall die."</p>
-<p>Man, tempted by Satan, disobeyed God's command and abused his freedom &mdash; he <em>preferred</em> himself to God and therefore scorned him.</p>
-<p>He chose himself over and against God. God wanted to make man fully "divinized" by God in glory, but instead man chose to "be like God" but "without God, before God, and not in accordance with God", and so lost their grace of original holiness.</p>
-<p>This loss of holiness did much: control of the soul and spirit are lost, union of man and women now tensioned and marked by lust and domination, other visible creatures now hostile and alien to man, man is inclined to sin, subject to ignorance and suffering, and as warned by God &mdash; death makes its entrance into human history.</p>
-<p>This causes the sin in the world &mdash; Cain's murder of Abel, transgressions against Law of Moses, infidelity to God, etc.</p>
-<p>And so, from one man's actions, all men are doomed. And from this, one man's righteousness will lead to the acquittal and saving for all men.</p>
-<p>Where sin increased, grace abounded all the more.</p>
+    <p>God created man in his image and established him in his friendship.</p>
+    <p>The catch: cannot eat "of the tree of the knowledge of good and evil, for in the day that you eat of it, you shall die."</p>
+    <p>Man, tempted by Satan, disobeyed God's command and abused his freedom &mdash; he <em>preferred</em> himself to God and therefore scorned him.</p>
+    <p>He chose himself over and against God. God wanted to make man fully "divinized" by God in glory, but instead man chose to "be like God" but "without God, before God, and not in accordance with God", and so lost their grace of original holiness.</p>
+    <p>This loss of holiness did much: control of the soul and spirit are lost, union of man and women now tensioned and marked by lust and domination, other visible creatures now hostile and alien to man, man is inclined to sin, subject to ignorance and suffering, and as warned by God &mdash; death makes its entrance into human history.</p>
+    <p>This causes the sin in the world &mdash; Cain's murder of Abel, transgressions against Law of Moses, infidelity to God, etc.</p>
+    <p>And so, from one man's actions, all men are doomed. And from this, one man's righteousness will lead to the acquittal and saving for all men.</p>
+    <p>Where sin increased, grace abounded all the more.</p>
 
-<h3>Grace and Justification</h3>
-<p>The grace of the Holy Spirit has the power to cleanse us from our sins through baptism.</p>
-<p>First work of grace &mdash; conversion &mdash; Man turns towards God and away from Sin.</p>
-<p><strong>Justification:</strong> Justification detaches man from sin, and purifies man's heart from sin &mdash; it is the acceptance of God's righteousness through faith in Christ, and is merited for us by the Passion of Christ, establishes cooperation between God's grace and man's freedom, it is the most excellent work of God's love.</p>
-<p><strong>Grace:</strong> Justification comes from the grace of God. Grace is the favor, free, and undeserved help that God gives us.</p>
-<p>Grace is a participation in the life of God, it is the gift that God makes for us that combines himself and the Holy Spirit.</p>
-<ul>
-  <li><strong>Habitual grace</strong> &mdash; the ever-lasting grace to live and act with God</li>
-  <li><strong>Actual grace</strong> &mdash; an intervention by God</li>
-</ul>
-<p>In God's giving of free response to man (in his image), he has given the power to know and love him, and so immediately touches the heart of man &mdash; a grace in itself.</p>
-<p>Grace is the gift of the Spirit, and also the gifts that the Spirit grants us in association with his works.</p>
-<p><strong>Merit:</strong> Recompense owed by a community or society for the action of one of its members.</p>
+    <h3>Grace and Justification</h3>
+    <p>The grace of the Holy Spirit has the power to cleanse us from our sins through baptism.</p>
+    <p>First work of grace &mdash; conversion &mdash; Man turns towards God and away from Sin.</p>
+    <p><strong>Justification:</strong> Justification detaches man from sin, and purifies man's heart from sin &mdash; it is the acceptance of God's righteousness through faith in Christ, and is merited for us by the Passion of Christ, establishes cooperation between God's grace and man's freedom, it is the most excellent work of God's love.</p>
+    <p><strong>Grace:</strong> Justification comes from the grace of God. Grace is the favor, free, and undeserved help that God gives us.</p>
+    <p>Grace is a participation in the life of God, it is the gift that God makes for us that combines himself and the Holy Spirit.</p>
+    <ul>
+      <li><strong>Habitual grace</strong> &mdash; the ever-lasting grace to live and act with God</li>
+      <li><strong>Actual grace</strong> &mdash; an intervention by God</li>
+    </ul>
+    <p>In God's giving of free response to man (in his image), he has given the power to know and love him, and so immediately touches the heart of man &mdash; a grace in itself.</p>
+    <p>Grace is the gift of the Spirit, and also the gifts that the Spirit grants us in association with his works.</p>
+    <p><strong>Merit:</strong> Recompense owed by a community or society for the action of one of its members.</p>
+
+  </div>
+</details>
 
 <hr />
 
