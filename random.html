@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: random</title>
+  <style type="text/css">
+
+    html, body, * { cursor: none !important; }
+    html, body { min-height: 100vh; }
+
+    #fake-cursor {
+      position: fixed; top: 0; left: 0;
+      width: 48px; height: 48px;
+      pointer-events: none; z-index: 99999;
+      background: url('img/cursor-dino.png') no-repeat top left;
+      background-size: 48px 48px;
+      image-rendering: pixelated; image-rendering: crisp-edges;
+    }
+
+    body {
+      background-color: #000011;
+      background-image: url('gifs/star.gif');
+      background-repeat: repeat;
+      color: #cccccc;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+      font-size: 15px;
+      margin: 0;
+      padding: 16px 0 30px 0;
+      position: relative;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    a:visited { color: inherit; }
+
+    #outer { width: 92%; max-width: 1000px; margin: 0 auto; }
+
+    #xwings {
+      position: absolute;
+      top: 56px; left: 8px;
+      image-rendering: pixelated; image-rendering: crisp-edges;
+      pointer-events: none; z-index: 60;
+      opacity: 0.88;
+    }
+
+    #astronaut {
+      position: absolute;
+      right: 50px; top: 300px;
+      image-rendering: pixelated; image-rendering: crisp-edges;
+      pointer-events: none; z-index: 60;
+      opacity: 0.88;
+    }
+
+    #gif-robot1 { position: absolute; top: 220px; right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+
+    #gif-train {
+      position: absolute;
+      left: 10px; top: 260px;
+      image-rendering: pixelated; image-rendering: crisp-edges;
+      pointer-events: none; z-index: 60;
+    }
+
+    #header {
+      background-color: #0a0a1a;
+      background-image: repeating-linear-gradient(
+        45deg, rgba(255,255,255,0.02) 0px,
+        rgba(255,255,255,0.02) 1px, transparent 1px, transparent 6px
+      );
+      border-bottom: 2px solid #1a1a2a;
+      border-left: 4px solid #cc3366;
+      padding: 22px 24px 18px 24px;
+    }
+
+    #header h1 {
+      font-family: Impact, "Arial Narrow", Arial, sans-serif;
+      font-size: 40px; font-weight: normal;
+      color: #ee4488; letter-spacing: 8px;
+      text-transform: lowercase; line-height: 1; margin-bottom: 6px;
+    }
+
+    #header .sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 18px; color: #bbbbbb; letter-spacing: 4px;
+    }
+
+    #header .breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 18px; color: #aaaaaa;
+      letter-spacing: 2px; margin-bottom: 10px;
+    }
+
+    #header .breadcrumb a { color: #ee4488; }
+    #header .breadcrumb a:hover { color: #ffffff; }
+
+    #content {
+      background-color: rgba(6,6,18,0.82);
+      border-left: 1px solid #1a1a2a;
+      border-right: 1px solid #1a1a2a;
+      padding: 28px 22px 32px 22px;
+    }
+
+    .section-label {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 18px; color: #aaaaaa;
+      letter-spacing: 4px; margin-bottom: 18px;
+    }
+
+    .entry {
+      border-left: 3px solid #1a0410; border-bottom: 1px solid #222222;
+      padding: 16px 0 18px 18px;
+      margin-bottom: 28px;
+    }
+
+    .entry:hover { border-left-color: #cc3366; }
+
+    .entry-title {
+      font-family: Impact, "Arial Narrow", Arial, sans-serif;
+      font-size: 24px; font-weight: normal;
+      letter-spacing: 2px; color: #ee4488;
+      text-transform: uppercase; margin-bottom: 5px;
+    }
+
+    .entry-meta { display: none;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px; color: #bbbbbb;
+      letter-spacing: 2px; margin-bottom: 6px;
+    }
+
+    .entry-desc { margin-bottom: 10px;
+      font-size: 16px; color: #bbbbbb; line-height: 1.6;
+    }
+
+    .tag {
+      display: inline;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px; letter-spacing: 2px;
+      color: #bbbbbb;
+      padding: 0; margin: 0;
+      border: none;
+    }
+
+    .tag + .tag::before { content: " | "; color: #555555; }
+
+    hr.mid {
+      border: none; border-top: 1px solid #1e1e2e;
+      margin: 22px 0;
+    }
+
+    #clippy-wrap {
+      position: fixed; bottom: 24px; right: 28px;
+      width: 124px; height: 93px;
+      z-index: 999; pointer-events: none;
+    }
+
+    #clippy-canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
+
+  </style>
+</head>
+<body>
+
+
+<img id="gif-robot1" src="gifs/robot1.gif"         alt="" />
+<img id="xwings"    src="gifs/xwings1.gif"         alt="" />
+<img id="astronaut" src="gifs/astronaut_flip.gif"  alt="" />
+<img id="gif-train" src="gifs/train.gif"           alt="" />
+
+<div id="outer">
+
+  <div id="header">
+    <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; random</div>
+    <h1>಄ random</h1>
+    <div class="sub">my random interests (ᵕ—ᴗ—)</div>
+  </div>
+
+  <div id="content">
+
+    <div class="entry">
+      <div class="entry-title">trains</div>
+      <div class="entry-desc"> i like trains</div>
+      <span class="tag">trains</span>
+      <span class="tag">trains</span>
+      <span class="tag">trains</span>
+    </div>
+
+    <hr class="mid" />
+
+  </div>
+</div>
+
+<div id="fake-cursor"></div>
+
+<div id="clippy-wrap">
+  <canvas id="clippy-canvas" width="124" height="93"></canvas>
+</div>
+
+<script>
+(function() {
+  var FW = 124, FH = 93;
+  var seq = [];
+  for (var c = 9; c <= 26; c++) seq.push([c, 13]);
+  for (var c = 0; c <= 26; c++) seq.push([c, 14]);
+  for (var c = 0; c <= 14; c++) seq.push([c, 15]);
+
+
+  var canvas = document.getElementById('clippy-canvas');
+  var ctx = canvas.getContext('2d'), sheet = null, frame = 0;
+
+  function tick() {
+    if (!sheet) return;
+    var f = seq[frame % seq.length];
+    ctx.clearRect(0, 0, FW, FH);
+    ctx.drawImage(sheet, f[0]*FW, f[1]*FH, FW, FH, 0, 0, FW, FH);
+    frame++;
+  }
+
+  var img = new Image();
+  img.onload = function() {
+    var oc = document.createElement('canvas');
+    oc.width = img.width; oc.height = img.height;
+    var oct = oc.getContext('2d');
+    oct.drawImage(img, 0, 0);
+    var id = oct.getImageData(0, 0, oc.width, oc.height), d = id.data;
+    for (var j = 0; j < d.length; j += 4) {
+      if (d[j] > 200 && d[j+1] < 60 && d[j+2] > 200) d[j+3] = 0;
+    }
+    oct.putImageData(id, 0, 0);
+    sheet = oc; tick(); setInterval(tick, 130);
+  };
+  img.src = 'img/clippy.png';
+})();
+
+(function() {
+  var el = document.getElementById('fake-cursor');
+  document.documentElement.style.cursor = 'none';
+  document.body.style.cursor = 'none';
+  document.addEventListener('mousemove', function(e) {
+    el.style.transform = 'translate('+e.clientX+'px,'+e.clientY+'px)';
+    el.style.display = 'block';
+  });
+  document.addEventListener('mouseleave', function() { el.style.display = 'none'; });
+  document.addEventListener('mouseenter', function() { el.style.display = 'block'; });
+})();
+</script>
+
+</body>
+</html>
