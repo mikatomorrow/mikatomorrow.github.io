@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,18 +13,18 @@
       position: fixed; top: 0; left: 0;
       width: 48px; height: 48px;
       pointer-events: none; z-index: 99999;
-      background: url('cursor-dino.png') no-repeat top left;
+      background: url('img/cursor-dino.png') no-repeat top left;
       background-size: 48px 48px;
       image-rendering: pixelated; image-rendering: crisp-edges;
     }
 
     body {
       background-color: #7070aa;
-      background-image: url('bg.png');
+      background-image: url('img/bg.png');
       background-repeat: repeat;
       color: #cccccc;
       font-family: Tahoma, Verdana, Arial, sans-serif;
-      font-size: 12px;
+      font-size: 15px;
       margin: 0;
       padding: 16px 0 30px 0;
     }
@@ -32,7 +32,7 @@
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
 
-    #outer { width: 760px; margin: 0 auto; }
+    #outer { width: 92%; max-width: 1000px; margin: 0 auto; }
 
     #header {
       background-color: #111111;
@@ -47,23 +47,23 @@
 
     #header h1 {
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 38px; font-weight: normal;
+      font-size: 40px; font-weight: normal;
       color: #cc9944; letter-spacing: 8px;
       text-transform: lowercase; line-height: 1; margin-bottom: 6px;
     }
 
     #header .sub {
       font-family: "Courier New", Courier, monospace;
-      font-size: 10px; color: #444444; letter-spacing: 4px;
+      font-size: 18px; color: #bbbbbb; letter-spacing: 4px;
     }
 
     #header .breadcrumb {
       font-family: "Courier New", Courier, monospace;
-      font-size: 9px; color: #333333;
+      font-size: 18px; color: #aaaaaa;
       letter-spacing: 2px; margin-bottom: 10px;
     }
 
-    #header .breadcrumb a { color: #664422; }
+    #header .breadcrumb a { color: #cc9944; }
     #header .breadcrumb a:hover { color: #cc9944; }
 
     #content {
@@ -75,42 +75,46 @@
 
     .section-label {
       font-family: "Courier New", Courier, monospace;
-      font-size: 10px; color: #2e2e2e;
+      font-size: 18px; color: #aaaaaa;
       letter-spacing: 4px; margin-bottom: 18px;
     }
 
     .entry {
-      border-left: 3px solid #1a1208;
-      padding: 12px 0 12px 16px;
-      margin-bottom: 14px;
+      display: block;
+      border-left: 3px solid #1a1208; border-bottom: 1px solid #222222;
+      padding: 16px 0 18px 18px;
+      margin-bottom: 28px;
     }
 
     .entry:hover { border-left-color: #996622; }
 
     .entry-title {
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 15px; font-weight: normal;
+      font-size: 24px; font-weight: normal;
       letter-spacing: 2px; color: #cc9944;
       text-transform: uppercase; margin-bottom: 5px;
     }
 
-    .entry-meta {
+    .entry-meta { display: none; display: none;
       font-family: "Courier New", Courier, monospace;
-      font-size: 9px; color: #333333;
+      font-size: 13px; color: #bbbbbb;
       letter-spacing: 2px; margin-bottom: 6px;
     }
 
-    .entry-desc {
-      font-size: 11px; color: #4a4a4a; line-height: 1.6;
+    .entry-desc { margin-bottom: 10px;
+      font-size: 16px; color: #bbbbbb; line-height: 1.6;
     }
 
     .tag {
-      display: inline-block;
+      display: inline;
       font-family: "Courier New", Courier, monospace;
-      font-size: 9px; letter-spacing: 1px;
-      padding: 2px 6px; margin-right: 3px; margin-top: 6px;
-      border: 1px solid #252525; color: #383838;
+      font-size: 15px; letter-spacing: 2px;
+      color: #bbbbbb;
+      padding: 0; margin: 0;
+      border: none;
     }
+
+    .tag + .tag::before { content: " | "; color: #555555; }
 
     hr.mid {
       border: none; border-top: 1px solid #1e1e1e;
@@ -138,20 +142,43 @@
 
   <div id="content">
 
-    <div class="entry">
-      <div class="entry-title">paper 1</div>
-      <div class="entry-meta">ECE &nbsp;&mdash;&nbsp; 2025 &nbsp;&mdash;&nbsp; course or context</div>
-      <div class="entry-desc">soon.</div>
-      <span class="tag">ECE</span>
-      <span class="tag">technical</span>
-    </div>
+    <div class="section-label">// conference papers //</div>
 
-    <div class="entry">
-      <div class="entry-title">paper 2</div>
-      <div class="entry-meta">ECE &nbsp;&mdash;&nbsp; 2024</div>
-      <div class="entry-desc">soon.</div>
-      <span class="tag">reports</span>
-    </div>
+    <a href="project-reflectarray.html" class="entry">
+      <div class="entry-title">Reflectarray with Tapered Hexagonal Grid Design for Microwave Power Transmission</div>
+      <div class="entry-meta">ECE Wireless Power Transmission &nbsp;&mdash;&nbsp; Spring 2026 &nbsp;&mdash;&nbsp; targeting WiSEE 2026</div>
+      <div class="entry-desc">Circular-patch reflectarray on a hexagonal grid with passive Gaussian aperture taper (&sigma; = 0.70) for space-based WPT at 2.45 GHz. 334&deg; phase range (+52&deg; over square-patch baseline), &minus;24 dB SLL, 99.3% beam efficiency, &gt;40 dB cross-pol isolation, zero active electronics. Passive design maintains performance over 20-year GEO mission; delivers 18.5 MWh more cumulative energy than active Chebyshev baseline.</div>
+<span class="tag">WiSEE 2026 </span><span class="tag">HFSS</span><span class="tag">WPT</span><span class="tag">Reflectarray</span>    </a>
+
+    <hr class="mid" />
+
+    <div class="section-label">// technical reports //</div>
+
+    <a href="paper-fbar.html" class="entry">
+      <div class="entry-title">Survey of Film Bulk Acoustic Resonators</div>
+      <div class="entry-meta">Georgia Tech ECE Technical Report &nbsp;&mdash;&nbsp; 2025</div>
+      <div class="entry-desc">Survey of FBAR operating principles, piezoelectric thin-film fabrication (free-standing vs. SMR), CMOS integration via AlN sputtering and Bragg reflectors, and circuit architectures including ladder filters, lattice filters, and FBAR-based CMOS oscillators.</div>
+      <span class="tag">FBAR</span><span class="tag">MEMS</span><span class="tag">RF</span>
+    </a>
+
+
+    <hr class="mid" />
+
+    <a href="paper-mim.html" class="entry">
+      <div class="entry-title">Survey of Metal-Insulator-Metal Diodes for RF-to-DC Energy Harvesting</div>
+      <div class="entry-meta">Georgia Tech ECE Technical Report &nbsp;&mdash;&nbsp; 2026</div>
+      <div class="entry-desc">Survey of MIM diode quantum tunneling physics, RF-to-DC conversion efficiency analysis via Taylor-series nonlinearity model, and design tradeoffs in rectenna systems including the resistance&ndash;responsivity barrier-height dilemma.</div>
+      <span class="tag">MIM Diodes</span><span class="tag">Wireless Energy Harvesting</span><span class="tag">RF</span>
+    </a>
+
+    <hr class="mid" />
+
+    <a href="paper-quantum.html" class="entry">
+      <div class="entry-title">Survey of Benchmarking Methods for Quantum Logic Gates</div>
+      <div class="entry-meta">ECE &nbsp;&mdash;&nbsp; November 2025 &nbsp;&mdash;&nbsp; w/ Avery Mahan, Eric Yan, Tianyi Yu</div>
+      <div class="entry-desc">Survey of established and emerging quantum gate characterization methods: Randomized Benchmarking (RB), Cross-Entropy Benchmarking (XEB), Quantum Process Tomography (QPT), Gate Set Tomography (GST), Direct Fidelity Estimation (DFE), Leakage Benchmarking, and Deterministic Benchmarking. Covers scalability, SPAM error assumptions, coherent vs. incoherent error tradeoffs.</div>
+      <span class="tag">Quantum Computers</span><span class="tag">Randomized Benchmarking</span>
+    </a>
 
     <hr class="mid" />
 
@@ -197,7 +224,7 @@
     oct.putImageData(id, 0, 0);
     sheet = oc; tick(); setInterval(tick, 130);
   };
-  img.src = 'clippy.png';
+  img.src = 'img/clippy.png';
 })();
 
 (function() {

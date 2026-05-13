@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>mikatomorrow :: work</title>
+  <title>mikatomorrow :: projects</title>
   <style type="text/css">
 
     html, body, * { cursor: none !important; }
@@ -13,18 +13,18 @@
       position: fixed; top: 0; left: 0;
       width: 48px; height: 48px;
       pointer-events: none; z-index: 99999;
-      background: url('cursor-dino.png') no-repeat top left;
+      background: url('img/cursor-dino.png') no-repeat top left;
       background-size: 48px 48px;
       image-rendering: pixelated; image-rendering: crisp-edges;
     }
 
     body {
       background-color: #7070aa;
-      background-image: url('bg.png');
+      background-image: url('img/bg.png');
       background-repeat: repeat;
       color: #cccccc;
       font-family: Tahoma, Verdana, Arial, sans-serif;
-      font-size: 12px;
+      font-size: 15px;
       margin: 0;
       padding: 16px 0 30px 0;
       position: relative;
@@ -36,7 +36,7 @@
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
 
-    #outer { width: 760px; margin: 0 auto; }
+    #outer { width: 92%; max-width: 1000px; margin: 0 auto; }
 
     #header {
       background-color: #111111;
@@ -51,23 +51,23 @@
 
     #header h1 {
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 38px; font-weight: normal;
+      font-size: 40px; font-weight: normal;
       color: #aabb44; letter-spacing: 8px;
       text-transform: lowercase; line-height: 1; margin-bottom: 6px;
     }
 
     #header .sub {
       font-family: "Courier New", Courier, monospace;
-      font-size: 10px; color: #444444; letter-spacing: 4px;
+      font-size: 18px; color: #bbbbbb; letter-spacing: 4px;
     }
 
     #header .breadcrumb {
       font-family: "Courier New", Courier, monospace;
-      font-size: 9px; color: #333333;
+      font-size: 18px; color: #aaaaaa;
       letter-spacing: 2px; margin-bottom: 10px;
     }
 
-    #header .breadcrumb a { color: #556622; }
+    #header .breadcrumb a { color: #aabb44; }
     #header .breadcrumb a:hover { color: #aabb44; }
 
     #content {
@@ -79,42 +79,124 @@
 
     .section-label {
       font-family: "Courier New", Courier, monospace;
-      font-size: 10px; color: #2e2e2e;
+      font-size: 18px; color: #aaaaaa;
       letter-spacing: 4px; margin-bottom: 18px;
     }
 
-    .entry {
-      border-left: 3px solid #1e2a08;
-      padding: 12px 0 12px 16px;
+    /* ── featured cards ── */
+    a.featured-card {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      border: 1px solid #222222;
+      background-color: #0e0e0e;
+      background-image: repeating-linear-gradient(
+        45deg, rgba(255,255,255,0.012) 0px,
+        rgba(255,255,255,0.012) 1px, transparent 1px, transparent 6px
+      );
       margin-bottom: 14px;
+      overflow: hidden;
+      border-left: 4px solid #4a5e00;
     }
 
-    .entry:hover { border-left-color: #7a9900; }
+    a.featured-card:hover { border-color: #3a3a3a; border-left-color: #7a9900; }
+
+    .featured-img {
+      width: 190px;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+      border-right: 1px solid #1a1a1a;
+      background-color: #060606;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 8px; color: #1c1c1c; letter-spacing: 2px;
+      text-align: center; padding: 10px;
+    }
+
+    .featured-img img {
+      width: 100%; height: 100%;
+      display: block; object-fit: contain;
+      image-rendering: pixelated; image-rendering: crisp-edges;
+    }
+
+    .featured-info {
+      -ms-flex: 1; flex: 1;
+      padding: 18px 20px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    .featured-title {
+      font-family: Impact, "Arial Narrow", Arial, sans-serif;
+      font-size: 24px; font-weight: normal;
+      letter-spacing: 2px; color: #aabb44;
+      text-transform: uppercase; margin-bottom: 5px; line-height: 1.2;
+    }
+
+    .featured-meta { display: none; display: none;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px; color: #bbbbbb;
+      letter-spacing: 2px; margin-bottom: 10px;
+    }
+
+    .featured-desc {
+      font-size: 16px; color: #bbbbbb; line-height: 1.6; margin-bottom: 10px;
+    }
+
+    .featured-specs {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px; color: #bbbbbb(73.602% 0.00569 118.347); line-height: 1.9; margin-bottom: 10px;
+    }
+
+    a.featured-card:hover .featured-link { color: #aabb44; }
+
+    /* ── compact list entries ── */
+    a.entry {
+      display: block;
+      border-left: 3px solid #1e2a08; border-bottom: 1px solid #222222;
+      padding: 16px 0 18px 18px;
+      margin-bottom: 10px;
+    }
+
+    a.entry:hover { border-left-color: #7a9900; }
 
     .entry-title {
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 15px; font-weight: normal;
+      font-size: 24px; font-weight: normal;
       letter-spacing: 2px; color: #aabb44;
       text-transform: uppercase; margin-bottom: 5px;
     }
 
-    .entry-meta {
+    .entry-meta { display: none; display: none;
       font-family: "Courier New", Courier, monospace;
-      font-size: 9px; color: #333333;
+      font-size: 13px; color: #bbbbbb;
       letter-spacing: 2px; margin-bottom: 6px;
     }
 
-    .entry-desc {
-      font-size: 11px; color: #4a4a4a; line-height: 1.6;
+    .entry-desc { margin-bottom: 10px;
+      font-size: 16px; color: #bbbbbb; line-height: 1.6;
     }
 
     .tag {
-      display: inline-block;
+      display: inline;
       font-family: "Courier New", Courier, monospace;
-      font-size: 9px; letter-spacing: 1px;
-      padding: 2px 6px; margin-right: 3px; margin-top: 6px;
-      border: 1px solid #252525; color: #383838;
+      font-size: 15px; letter-spacing: 2px;
+      color: #bbbbbb;
+      padding: 0; margin: 0;
+      border: none;
     }
+
+    .tag + .tag::before { content: " | "; color: #555555; }
 
     hr.mid {
       border: none; border-top: 1px solid #1e1e1e;
@@ -132,35 +214,85 @@
   </style>
 </head>
 <body>
-<img id="gif-chalkboard" src="chalkboard.gif" alt="" />
-<img id="gif-solder"     src="solder.gif"     alt="" />
+<img id="gif-chalkboard" src="gifs/chalkboard.gif" alt="" />
+<img id="gif-solder"     src="gifs/solder.gif"     alt="" />
 
 <div id="outer">
 
   <div id="header">
-    <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; work</div>
-    <h1>🌣 work</h1>
-    <div class="sub">mostly RFIC design, microwave, & radar projects (＝^ω^＝)
-</div>
+    <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; projects</div>
+    <h1>🌣 projects</h1>
+    <div class="sub">mostly RFIC design, microwave, &amp; radar projects (＝^ω^＝)</div>
   </div>
 
   <div id="content">
 
-    <div class="entry">
-      <div class="entry-title">project 1</div>
-      <div class="entry-meta">2025 &nbsp;&mdash;&nbsp; class project</div>
-      <div class="entry-desc">thingy</div>
-      <span class="tag">RFIC</span>
-      <span class="tag">radar</span>
-    </div>
+    <div class="section-label">// featured //</div>
 
-    <div class="entry">
-      <div class="entry-title">project 2</div>
-      <div class="entry-meta">2024 &nbsp;&mdash;&nbsp; personal project</div>
-      <div class="entry-desc">thingy</div>
-      <span class="tag">microwave</span>
-      <span class="tag">ECE</span>
-    </div>
+    <a href="project-rx6ghz.html" class="featured-card">
+      <div class="featured-img">[schematic]</div>
+      <div class="featured-info">
+        <div class="featured-title">6.8 GHz Direct Conversion CMOS Receiver</div>
+        <div class="featured-meta">ECE 6420 &nbsp;&mdash;&nbsp; Wireless IC Design &nbsp;&mdash;&nbsp; Spring 2026</div>
+        <div class="featured-desc">Full direct-conversion receiver chain in NCSU 45 nm CMOS (Cadence Virtuoso/Spectre): inductively degenerated LNA, double-balanced I/Q passive mixers, and a CML frequency divider-by-2 for quadrature LO generation.</div>
+        <div class="featured-specs">
+          NF &lt; 6 dB &nbsp;|&nbsp; S11 &lt; &minus;10 dB &nbsp;|&nbsp; Gain &gt; 20 dB (6.6&ndash;7 GHz) &nbsp;|&nbsp; IIP3 &gt; &minus;15 dBm &nbsp;|&nbsp; &lt; 30 mW @ 1 V
+        </div>
+      </div>
+    </a>
+
+    <hr class="mid" />
+
+    <div class="section-label">// more projects //</div>
+
+    <a href="project-reflectarray.html" class="entry">
+      <div class="entry-title">Reflectarray with Tapered Hexagonal Grid for Space-Based WPT</div>
+      <div class="entry-meta">ECE Wireless Power Transmission &nbsp;&mdash;&nbsp; Spring 2026 &nbsp;&mdash;&nbsp; targeting WiSEE 2026 &nbsp;&mdash;&nbsp; w/ A. Abrams, C. Merkt, X. Lin, G. Durgin</div>
+      <div class="entry-desc">Circular-patch reflectarray on hexagonal grid with passive Gaussian aperture taper (&sigma; = 0.70) for space-based WPT at 2.45 GHz. 334&deg; phase range (+52&deg; over square-patch baseline), &minus;24 dB SLL, 99.3% beam efficiency, &gt;40 dB cross-pol isolation. Passive design maintains performance over 20-year GEO mission; delivers 18.5 MWh more cumulative energy than active Chebyshev baseline.</div>
+      <span class="tag">WiSEE 2026 </span><span class="tag">HFSS</span><span class="tag">WPT</span><span class="tag">Reflectarray</span>
+    </a>
+
+    <a href="project-rfpassive.html" class="entry">
+      <div class="entry-title">Broadband Quarter-Wave Impedance Transformer</div>
+      <div class="entry-meta">ECE 6360 Microwave Design &nbsp;&mdash;&nbsp; Spring 2026</div>
+      <div class="entry-desc">3-section Chebyshev stepped-impedance transformer on RO4003C microstrip, 50&Omega; to 10&Omega; at 3 GHz. 112% fractional bandwidth &mdash; 4&times; improvement over single-section baseline (29.7%). Designed and optimized in Keysight ADS.</div>
+      <span class="tag">ADS</span><span class="tag">Microwave Design</span><span class="tag">Microstrip</span>
+    </a>
+
+    <a href="project-coupler.html" class="entry">
+      <div class="entry-title">3-Section Quadrature Hybrid Coupler</div>
+      <div class="entry-meta">ECE 6360 Microwave Design &nbsp;&mdash;&nbsp; Spring 2026 &nbsp;&mdash;&nbsp; w/ Jordan Bartlett</div>
+      <div class="entry-desc">Branch-line quadrature hybrid coupler at f&#x2080; = 9 GHz (6.75&ndash;11.25 GHz band) on RO4003C microstrip. 3-section topology with &lambda;/4 taper to solve narrow line width constraint. ADS and HFSS simulations met all 100% rubric criteria; PCB fabricated and VNA-tested with measurement environment discussion.</div>
+      <span class="tag">ADS</span><span class="tag">HFSS</span><span class="tag">Microwave Design</span><span class="tag">PCB</span><span class="tag">VNA</span>
+    </a>
+
+    <a href="project-waveguide.html" class="entry">
+      <div class="entry-title">Rectangular Waveguide Modal Analysis &amp; TE10 Current Visualization</div>
+      <div class="entry-meta">ECE 6360 Microwave Design &nbsp;&mdash;&nbsp; Spring 2026</div>
+      <div class="entry-desc">Characterized TE10, TE01, TE20, TE11, and TM11 modes in a WR-28 Ka-band waveguide across 20&ndash;50 GHz in HFSS. Derived surface current density analytically for all 4 walls, validated with MATLAB visualization (2D + 3D) and full-wave HFSS simulation.</div>
+      <span class="tag">HFSS</span><span class="tag">MATLAB</span><span class="tag">Waveguide</span><span class="tag">EM Sim</span>
+    </a>
+
+    <a href="project-lna24.html" class="entry">
+      <div class="entry-title">2.4 GHz Cascode LNA Design &amp; Optimization</div>
+      <div class="entry-meta">Personal Project &nbsp;&mdash;&nbsp; Spring 2025</div>
+      <div class="entry-desc">Differential cascode LNA in 130 nm CMOS with inductive input matching and LC resonant output tank. S11 = &minus;13.3 dB, S21 = 19.4 dB, NF = 0.66 dB at 2.4 GHz. Validated S-parameters for tape-out readiness.</div>
+      <span class="tag">Cadence</span><span class="tag">RFIC</span><span class="tag">LNA</span><span class="tag">130nm</span>
+    </a>
+
+    <a href="project-ioniq6.html" class="entry">
+      <div class="entry-title">Hyundai Motors Lab &mdash; IONIQ 6 Driving Simulator</div>
+      <div class="entry-meta">Senior Capstone &nbsp;&mdash;&nbsp; Spring 2025 &nbsp;&mdash;&nbsp; Best ECE Project @ Capstone Expo</div>
+      <div class="entry-desc">Led simulator subteam: 1:1 IONIQ 6 rig with 3D-printed steering wheel, dual 12.3&Prime; displays, and Unreal Engine 5.4 ADAS environment. r = 0.63 Pearson correlation with real-vehicle driving. Multi-modal driver confidence metric (ECG, eye tracking, facial emotion, Likert surveys) across A/B/C HMI prototypes.</div>
+      <span class="tag">Unreal Engine</span><span class="tag">Python</span><span class="tag">ADAS</span>
+    </a>
+
+    <a href="project-mems.html" class="entry">
+      <div class="entry-title">MEMS Differential Capacitive Accelerometer</div>
+      <div class="entry-meta">ECE Interface IC Design &nbsp;&mdash;&nbsp; Fall 2025</div>
+      <div class="entry-desc">SOI-substrate differential capacitive accelerometer targeting BNEA &lt; 20 &micro;g/&radic;Hz, 0.2 pF/g sensitivity, 2 &micro;m capacitive gap, 500 Hz bandwidth within &lt; 6&times;6 mm&sup2;. Analytical design validated in COMSOL (resonant frequency 505 Hz).</div>
+      <span class="tag">MEMS</span><span class="tag">COMSOL</span><span class="tag">Microaccelerometer</span><span class="tag">SOI</span>
+    </a>
 
     <hr class="mid" />
 
@@ -208,7 +340,7 @@
     oct.putImageData(id, 0, 0);
     sheet = oc; tick(); setInterval(tick, 130);
   };
-  img.src = 'clippy.png';
+  img.src = 'img/clippy.png';
 })();
 
 (function() {

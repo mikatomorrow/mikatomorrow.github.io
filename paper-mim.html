@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: Survey of MIM Diodes</title>
+  <style type="text/css">
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 40px 60px 80px 60px;
+    }
+
+    a { color: #0000cc; }
+    a:visited { color: #551a8b; }
+
+    #breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #000000;
+      margin: 0 0 4px 0;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .page-sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .pdf-link {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: #0000cc;
+      background-color: #f0f4ff;
+      border: 1px solid #0000cc;
+      padding: 5px 10px;
+      display: inline-block;
+      margin-bottom: 24px;
+      text-decoration: none;
+    }
+
+    .pdf-link:hover { background-color: #dde8ff; }
+
+    h2 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #000000;
+      margin: 28px 0 6px 0;
+      border-bottom: 1px solid #aaaaaa;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0 4px 0;
+    }
+
+    p {
+      margin: 6px 0 10px 0;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin: 6px 0 10px 20px;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    pre, code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      background-color: #f4f4f4;
+      border: 1px solid #cccccc;
+    }
+
+    pre { padding: 10px 14px; margin: 10px 0; overflow-x: auto; }
+    code { padding: 1px 4px; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 26px 0;
+    }
+
+    .eq-box {
+      background-color: #f8f8f8;
+      border-left: 3px solid #aaaaaa;
+      padding: 10px 18px;
+      font-size: 13px;
+      margin: 12px 0;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="breadcrumb"><a href="papers.html">&larr; papers</a> / Survey of Metal-Insulator-Metal Diodes</div>
+
+<h1>Survey of Metal-Insulator-Metal Diodes for RF-to-DC Energy Harvesting</h1>
+<div class="page-sub">Georgia Tech ECE &mdash; Technical Report &nbsp;|&nbsp; 2026</div>
+
+<br />
+<a href="Survey of MIM Diodes.pdf" target="_blank" class="pdf-link">&#8681; open PDF in new tab</a>
+
+<hr />
+
+<h2>Abstract</h2>
+<p>As wireless communication systems expand toward terahertz frequencies, traditional Schottky rectifiers become unusable due to nonlinearity limitations, junction charging effects, and carrier transit times. Metal-Insulator-Metal (MIM) diodes offer an alternative rectification mechanism: quantum tunneling across a nanometer-scale insulating barrier enables zero-bias RF-to-DC conversion with junction capacitances in the attofarad range. This survey covers MIM operating principles, RF-to-DC conversion efficiency analysis, and key design tradeoffs in rectenna systems.</p>
+
+<hr />
+
+<h2>I. Background &amp; Principles of Operation</h2>
+<p>A MIM diode consists of two metal electrodes separated by an extremely thin (&sim;nm-scale) insulating layer. The dominant charge transport mechanism is <strong>quantum tunneling</strong>: electrons penetrate the insulator barrier without needing to surmount it, creating current flow even at near-zero applied bias. Tunneling probability depends exponentially on insulator thickness, which produces a strongly nonlinear I&ndash;V characteristic.</p>
+
+<p>A secondary mechanism, <strong>thermionic emission</strong> (Schottky effect), occurs when carriers go over the barrier rather than through it. This dominates only when the insulator is thick or temperatures are high; at high RF frequencies, quantum tunneling is the operative mechanism.</p>
+
+<h3>Comparison with Tunnel (Esaki) Diodes</h3>
+<p>Both MIM and Esaki diodes exploit quantum tunneling, but differ fundamentally in operating point. Esaki diodes use a heavily doped p-n junction and operate in the bandgap region under forward bias. MIM diodes rectify around <em>zero bias</em>, enabling passive RF-to-DC conversion without a DC supply &mdash; essential for energy harvesting applications.</p>
+
+<hr />
+
+<h2>II. RF-to-DC Conversion Efficiency</h2>
+
+<h3>Equivalent Circuit</h3>
+<p>The MIM diode is modeled as: junction resistance R&#x2C7; and junction capacitance C&#x2C7; in parallel (zero-bias values), with series resistance R&#x2C6; in series. C&#x2C7; can reach the attofarad range, enabling operation into the THz regime.</p>
+
+<h3>Nonlinear I&ndash;V Model</h3>
+<p>The tunneling I&ndash;V characteristic is approximated by a Taylor expansion around zero bias:</p>
+<div class="eq-box">I(V) = &alpha;&#x2081;V + &alpha;&#x2082;V&sup2; + &alpha;&#x2083;V&sup3;</div>
+<p>where &alpha;&#x2081; is the linear (conductance) term, &alpha;&#x2082; governs rectification, and &alpha;&#x2083; introduces distortion. For an RF input V(t) = V&#x2080; cos(&omega;t), the DC rectified current component is:</p>
+<div class="eq-box">I&#x1D30;&#x1D9C; = (&alpha;&#x2082; / 2) &middot; V&#x2080;&sup2;</div>
+<p>The rectified DC current is therefore controlled entirely by the curvature coefficient &alpha;&#x2082; of the tunneling characteristic &mdash; higher curvature (thinner, more asymmetric barriers) yields better rectification without an applied bias.</p>
+
+<h3>Rectenna Efficiency</h3>
+<p>The power conversion efficiency between antenna and load is:</p>
+<div class="eq-box">&eta; = (&alpha;&#x2082;&sup2; / 2) &middot; V&#x2080;&sup2; &middot; R&#x1D38; &middot; R&#x1D2C;</div>
+<p>where R&#x1D38; is antenna resistance and R&#x1D2C; is load resistance. Conjugate matching between the diode and antenna is critical; non-conjugate matching significantly degrades harvested power.</p>
+
+<hr />
+
+<h2>III. Key Tradeoffs &amp; Shortcomings</h2>
+
+<h3>Resistance&ndash;Responsivity Tradeoff</h3>
+<p>The central challenge in MIM diode design is that barrier height simultaneously controls both junction resistance and responsivity. Reducing barrier height lowers R&#x2C7; (improving antenna&ndash;diode impedance match), but also reduces &alpha;&#x2082; (degrading rectification efficiency). Every insulator change shifts both parameters in the same direction, making it impossible to independently optimize impedance matching and rectification sensitivity. This fundamental tradeoff limits achievable conversion efficiency in single-insulator MIM structures.</p>
+
+<h3>Matching Network Sensitivity</h3>
+<p>Because efficiency depends directly on impedance matching (equation above), poorly designed matching networks cause large power losses. MIM diodes have high zero-bias resistance (k&Omega;&ndash;M&Omega; range), making broadband matching to 50&Omega; antenna systems particularly challenging at high frequencies.</p>
+
+<h3>Fabrication Challenges</h3>
+<p>Precise control of insulator thickness at the 1&ndash;10 nm scale is required for consistent tunneling characteristics. Process variation in thickness directly translates to variation in R&#x2C7;, C&#x2C7;, and &alpha;&#x2082;. Multi-insulator (MIIM) structures have been explored as a route to breaking the resistance&ndash;responsivity tradeoff by engineering asymmetric barrier profiles.</p>
+
+<hr />
+
+<h2>IV. Conclusion</h2>
+<p>MIM diodes are a promising technology for passive RF energy harvesting at frequencies where conventional Schottky rectifiers fail. Their femtofarad-scale junction capacitance and zero-bias rectification capability give them a unique advantage in the upper microwave and THz bands. Realizing this potential requires solving the resistance&ndash;responsivity tradeoff through barrier engineering (MIIM structures, asymmetric metals) and developing integrated matching networks that can handle the high impedance of practical MIM junctions.</p>
+
+<hr />
+
+</body>
+</html>

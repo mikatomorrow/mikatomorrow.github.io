@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: Survey of Film Bulk Acoustic Resonators</title>
+  <style type="text/css">
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 40px 60px 80px 60px;
+    }
+
+    a { color: #0000cc; }
+    a:visited { color: #551a8b; }
+
+    #breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #000000;
+      margin: 0 0 4px 0;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .page-sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .pdf-link {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: #0000cc;
+      background-color: #f0f4ff;
+      border: 1px solid #0000cc;
+      padding: 5px 10px;
+      display: inline-block;
+      margin-bottom: 24px;
+      text-decoration: none;
+    }
+
+    .pdf-link:hover { background-color: #dde8ff; }
+
+    h2 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #000000;
+      margin: 28px 0 6px 0;
+      border-bottom: 1px solid #aaaaaa;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0 4px 0;
+    }
+
+    p {
+      margin: 6px 0 10px 0;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin: 6px 0 10px 20px;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    pre, code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      background-color: #f4f4f4;
+      border: 1px solid #cccccc;
+    }
+
+    pre { padding: 10px 14px; margin: 10px 0; overflow-x: auto; }
+    code { padding: 1px 4px; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 26px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin: 12px 0 18px 0;
+    }
+
+    th {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      font-weight: normal;
+      text-align: left;
+      padding: 6px 10px;
+      border-bottom: 2px solid #000000;
+      color: #555555;
+      letter-spacing: 1px;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #dddddd;
+      vertical-align: top;
+    }
+
+    .compare-box {
+      background-color: #f8f8f8;
+      border-left: 3px solid #aaaaaa;
+      padding: 10px 14px;
+      font-size: 16px;
+      margin: 12px 0;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="breadcrumb"><a href="papers.html">&larr; papers</a> / Survey of Film Bulk Acoustic Resonators</div>
+
+<h1>Survey of Film Bulk Acoustic Resonators</h1>
+<div class="page-sub">Georgia Tech ECE &mdash; Interface IC Design &nbsp;|&nbsp; 2025</div>
+
+<br />
+<a href="Survey of Film Bulk Acoustic Resonators.pdf" target="_blank" class="pdf-link">&#8681; open PDF in new tab</a>
+
+<hr />
+
+<h2>Abstract</h2>
+<p>As wireless communication systems become more prevalent, the need for high-performance MEMS resonator devices has greatly increased. FBARs offer a high quality factor (Q), small form factor, and compatibility with CMOS interface circuits, making them a popular choice for front-end applications in high-frequency filtering. This survey reviews the operating principles of FBARs, piezoelectric thin-film fabrication techniques, approaches for CMOS integration, and circuit-level interface architectures including ladder and lattice filter topologies.</p>
+
+<hr />
+
+<h2>I. Principles of Operation</h2>
+<p>FBARs are electromechanical transducers that convert electrical signals into bulk acoustic waves within a thin piezoelectric film via the inverse piezoelectric effect. The piezoelectric layer expands and contracts in response to an applied electric field, launching a longitudinal acoustic wave normal to the film plane. The resonant frequency is set by film thickness:</p>
+<pre>f&#x2C7;  &asymp;  v / (2t&#x2099;)
+
+where v = acoustic velocity in the piezoelectric material
+      t&#x2099; = piezoelectric film thickness</pre>
+
+<h3>Material Selection</h3>
+<p>Common piezoelectric materials include AlN, ZnO, LiNbO&#x2083;, and PZT. Although ZnO has a larger longitudinal piezoelectric coefficient (d&#x2083;&#x2083; = 11.67 pC/N vs. AlN&rsquo;s 5.49 pC/N), <strong>AlN is the dominant material in FBARs</strong> due to its wider bandgap, superior CMOS compatibility, lower dielectric constant (reducing parasitic capacitance), and suitability for reactive sputtering deposition.</p>
+
+<h3>Equivalent Circuit &mdash; Butterworth-Van Dyke Model</h3>
+<p>A piezoelectric resonator is modeled by the BVD circuit: a motional branch (L, C, R in series) representing mechanical resonance, in parallel with C&#x2080; representing static electrode capacitance. This model captures both the series resonance f&#x2C7; and the parallel anti-resonance f&#x2090;, which together define the filter passband and stopband. The separation between f&#x2C7; and f&#x2090; is characterized by the effective coupling factor k&#x209C;&#xB2;.</p>
+
+<hr />
+
+<h2>II. Fabrication &amp; CMOS Integration</h2>
+<p>FBARs are fabricated in two primary configurations:</p>
+
+<div class="compare-box">
+  <strong>Free-Standing FBAR</strong> &mdash; bulk micromachining etches an air cavity in the Si/SiO&#x2082; substrate beneath the piezoelectric stack. Achieves higher Q and better acoustic isolation, but is more complex to fabricate. A notable process flow uses AlN deposition, ICP etching of Mo electrodes, sacrificial Si cavity, Au&ndash;Au wafer bonding, and substrate removal.
+</div>
+
+<div class="compare-box">
+  <strong>Solidly Mounted Resonator (SMR)</strong> &mdash; replaces the air cavity with a Bragg acoustic mirror: alternating layers of low- and high-acoustic-impedance materials (e.g., SiO&#x2082;/Mo&ndash;W) deposited on a Si substrate. Easier CMOS integration; Q is slightly lower due to imperfect acoustic confinement.
+</div>
+
+<p>The dominant deposition technique for AlN films is <strong>reactive sputtering in nitrogen plasma</strong>.</p>
+
+<hr />
+
+<h2>III. Circuits &amp; System Architecture</h2>
+
+<h3>Ladder Filter</h3>
+<p>The most common FBAR filter topology. Series and parallel FBARs are arranged in a ladder network, with their anti-resonant and resonant frequencies precisely offset. The parallel FBAR anti-resonance (f&#x2090;&#x1D19;) marks the passband onset; the series FBAR resonance (f&#x2C7;&#x02E2;) marks its end. This creates a narrow, high-Q passband with deep notches on either side. Typical implementations use 4&ndash;8 resonator pairs.</p>
+
+<h3>Lattice Filter</h3>
+<p>An alternative topology using fewer resonators. The series resonant frequency of one FBAR branch is set equal to the parallel resonant frequency of the other, creating passband cancellation with notches at the band edges. The lattice filter produces a wider passband with less steep roll-off compared to the ladder filter, but with reduced component count.</p>
+
+<h3>Oscillator Integration</h3>
+<p>FBARs can replace the LC tank in a CMOS oscillator. Because FBARs have a much higher Q than on-chip inductors, FBAR-based oscillators achieve lower phase noise and lower power consumption without the negative conductance circuits required to sustain LC oscillation. FBARs are also used as mass, temperature, and pressure sensors via their resonant frequency sensitivity.</p>
+
+<hr />
+
+<h2>IV. Conclusion</h2>
+<p>FBARs provide compact, high-Q GHz filtering that is essential for modern wireless front-ends. AlN sputtering and acoustic mirror techniques enable reliable CMOS-compatible fabrication at scale. As the electromagnetic spectrum becomes more crowded and communication standards push to higher frequencies, concerns around linearity, parasitic capacitance, and MEMS&ndash;CMOS co-integration will become increasingly critical areas of development.</p>
+
+<hr />
+
+</body>
+</html>

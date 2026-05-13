@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,18 +13,18 @@
       position: fixed; top: 0; left: 0;
       width: 48px; height: 48px;
       pointer-events: none; z-index: 99999;
-      background: url('cursor-dino.png') no-repeat top left;
+      background: url('img/cursor-dino.png') no-repeat top left;
       background-size: 48px 48px;
       image-rendering: pixelated; image-rendering: crisp-edges;
     }
 
     body {
       background-color: #000011;
-      background-image: url('star.gif');
+      background-image: url('gifs/star.gif');
       background-repeat: repeat;
       color: #cccccc;
       font-family: Tahoma, Verdana, Arial, sans-serif;
-      font-size: 12px;
+      font-size: 15px;
       margin: 0;
       padding: 16px 0 30px 0;
       position: relative;
@@ -33,7 +33,7 @@
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
 
-    #outer { width: 760px; margin: 0 auto; }
+    #outer { width: 92%; max-width: 1000px; margin: 0 auto; }
 
     #xwings {
       position: absolute;
@@ -75,23 +75,23 @@
 
     #header h1 {
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 38px; font-weight: normal;
+      font-size: 40px; font-weight: normal;
       color: #ee4488; letter-spacing: 8px;
       text-transform: lowercase; line-height: 1; margin-bottom: 6px;
     }
 
     #header .sub {
       font-family: "Courier New", Courier, monospace;
-      font-size: 10px; color: #444444; letter-spacing: 4px;
+      font-size: 18px; color: #bbbbbb; letter-spacing: 4px;
     }
 
     #header .breadcrumb {
       font-family: "Courier New", Courier, monospace;
-      font-size: 9px; color: #333333;
+      font-size: 18px; color: #aaaaaa;
       letter-spacing: 2px; margin-bottom: 10px;
     }
 
-    #header .breadcrumb a { color: #661133; }
+    #header .breadcrumb a { color: #ee4488; }
     #header .breadcrumb a:hover { color: #ee4488; }
 
     #content {
@@ -103,42 +103,45 @@
 
     .section-label {
       font-family: "Courier New", Courier, monospace;
-      font-size: 10px; color: #2e2e2e;
+      font-size: 18px; color: #aaaaaa;
       letter-spacing: 4px; margin-bottom: 18px;
     }
 
     .entry {
-      border-left: 3px solid #1a0410;
-      padding: 12px 0 12px 16px;
-      margin-bottom: 14px;
+      border-left: 3px solid #1a0410; border-bottom: 1px solid #222222;
+      padding: 16px 0 18px 18px;
+      margin-bottom: 28px;
     }
 
     .entry:hover { border-left-color: #cc3366; }
 
     .entry-title {
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 15px; font-weight: normal;
+      font-size: 24px; font-weight: normal;
       letter-spacing: 2px; color: #ee4488;
       text-transform: uppercase; margin-bottom: 5px;
     }
 
-    .entry-meta {
+    .entry-meta { display: none;
       font-family: "Courier New", Courier, monospace;
-      font-size: 9px; color: #333333;
+      font-size: 13px; color: #bbbbbb;
       letter-spacing: 2px; margin-bottom: 6px;
     }
 
-    .entry-desc {
-      font-size: 11px; color: #4a4a4a; line-height: 1.6;
+    .entry-desc { margin-bottom: 10px;
+      font-size: 16px; color: #bbbbbb; line-height: 1.6;
     }
 
     .tag {
-      display: inline-block;
+      display: inline;
       font-family: "Courier New", Courier, monospace;
-      font-size: 9px; letter-spacing: 1px;
-      padding: 2px 6px; margin-right: 3px; margin-top: 6px;
-      border: 1px solid #252525; color: #383838;
+      font-size: 15px; letter-spacing: 2px;
+      color: #bbbbbb;
+      padding: 0; margin: 0;
+      border: none;
     }
+
+    .tag + .tag::before { content: " | "; color: #555555; }
 
     hr.mid {
       border: none; border-top: 1px solid #1e1e2e;
@@ -157,12 +160,12 @@
 </head>
 <body>
 
-<img id="gif-radar"  src="radar.gif"          alt="" />
-<img id="gif-sat1"   src="sat1.gif"           alt="" />
-<img id="gif-robot1" src="robot1.gif"         alt="" />
-<img id="xwings"    src="xwings1.gif"         alt="" />
-<img id="astronaut" src="astronaut_flip.gif"  alt="" />
-<img id="gif-train" src="train.gif"           alt="" />
+<img id="gif-radar"  src="gifs/radar.gif"          alt="" />
+<img id="gif-sat1"   src="gifs/sat1.gif"           alt="" />
+<img id="gif-robot1" src="gifs/robot1.gif"         alt="" />
+<img id="xwings"    src="gifs/xwings1.gif"         alt="" />
+<img id="astronaut" src="gifs/astronaut_flip.gif"  alt="" />
+<img id="gif-train" src="gifs/train.gif"           alt="" />
 
 <div id="outer">
 
@@ -234,7 +237,7 @@
     oct.putImageData(id, 0, 0);
     sheet = oc; tick(); setInterval(tick, 130);
   };
-  img.src = 'clippy.png';
+  img.src = 'img/clippy.png';
 })();
 
 (function() {

@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: Rectangular Waveguide Modal Analysis</title>
+  <style type="text/css">
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 40px 60px 80px 60px;
+    }
+
+    a { color: #0000cc; }
+    a:visited { color: #551a8b; }
+
+    #breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #000000;
+      margin: 0 0 4px 0;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .page-sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #000000;
+      margin: 28px 0 6px 0;
+      border-bottom: 1px solid #aaaaaa;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0 4px 0;
+    }
+
+    p {
+      margin: 6px 0 10px 0;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin: 6px 0 10px 20px;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    pre, code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      background-color: #f4f4f4;
+      border: 1px solid #cccccc;
+    }
+
+    pre { padding: 10px 14px; margin: 10px 0; overflow-x: auto; }
+    code { padding: 1px 4px; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 26px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin: 12px 0 18px 0;
+    }
+
+    th {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      font-weight: normal;
+      text-align: left;
+      padding: 6px 10px;
+      border-bottom: 2px solid #000000;
+      color: #555555;
+      letter-spacing: 1px;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #dddddd;
+      vertical-align: top;
+    }
+
+    .img-placeholder {
+      width: 100%;
+      background-color: #f0f0f0;
+      border: 1px dashed #aaaaaa;
+      text-align: center;
+      padding: 40px 0;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      color: #aaaaaa;
+      margin: 12px 0;
+      box-sizing: border-box;
+    }
+
+    .fig {
+      margin: 16px 0;
+      text-align: center;
+    }
+
+    .fig img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      margin: 0 auto 6px auto;
+      border: 1px solid #cccccc;
+    }
+
+    .fig-caption {
+      text-align: center;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: #000000;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="breadcrumb"><a href="work.html">&larr; projects</a> / Rectangular Waveguide Modal Analysis &amp; TE10 Current Visualization</div>
+
+<h1>Rectangular Waveguide Modal Analysis &amp; TE&#x2081;&#x2080; Current Visualization</h1>
+<div class="page-sub">ECE 6360 Microwave Design &nbsp;|&nbsp; Spring 2026 &nbsp;|&nbsp; WR-28 Ka-band &nbsp;|&nbsp; HFSS / MATLAB</div>
+
+<hr />
+
+<h2>Overview</h2>
+<p>Two-part waveguide study using a WR-28 Ka-band rectangular waveguide (26.5&ndash;40 GHz). Part 1 characterizes the first five propagating modes (TE&#x2081;&#x2080;, TE&#x2080;&#x2081;, TE&#x2082;&#x2080;, TE&#x2081;&#x2081;, TM&#x2081;&#x2081;) analytically and via HFSS E-field visualization. Part 2 derives the TE&#x2081;&#x2080; surface current density analytically for all four waveguide walls and validates against HFSS full-wave simulation, with MATLAB 2D and 3D current plots.</p>
+
+<h2>Waveguide Geometry</h2>
+<ul>
+  <li>Standard: WR-28 (Ka-band)</li>
+  <li>Inner dimensions: a = 0.280&Prime;, b = 0.140&Prime;</li>
+  <li>Operating band: 26.5&ndash;40 GHz &nbsp;|&nbsp; Center frequency: 33.25 GHz</li>
+  <li>Material: copper walls, air dielectric</li>
+  <li>Simulation: Ansys HFSS with waveguide ports</li>
+</ul>
+
+<hr />
+
+<h2>Part 1 &mdash; Modal Analysis</h2>
+
+<h3>Cutoff Frequencies</h3>
+<p>The cutoff wavenumber and cutoff frequency for each mode are given analytically by:</p>
+<pre>k&#x1D50; = &pi;&radic;((m/a)&sup2; + (n/b)&sup2;)
+f&#x1D50; = k&#x1D50; / (2&pi;&radic;(&mu;&epsilon;))</pre>
+
+<table>
+  <tr>
+    <th>Mode</th>
+    <th>m</th>
+    <th>n</th>
+    <th>k&#x1D50; (rad/m)</th>
+    <th>f&#x1D50; (GHz)</th>
+    <th>Status @ 33.25 GHz</th>
+  </tr>
+  <tr>
+    <td>TE&#x2081;&#x2080;</td>
+    <td>1</td>
+    <td>0</td>
+    <td>&mdash;</td>
+    <td>21.1</td>
+    <td>propagating (dominant)</td>
+  </tr>
+  <tr>
+    <td>TE&#x2080;&#x2081;</td>
+    <td>0</td>
+    <td>1</td>
+    <td>&mdash;</td>
+    <td>42.2</td>
+    <td>evanescent</td>
+  </tr>
+  <tr>
+    <td>TE&#x2082;&#x2080;</td>
+    <td>2</td>
+    <td>0</td>
+    <td>&mdash;</td>
+    <td>42.2</td>
+    <td>evanescent</td>
+  </tr>
+  <tr>
+    <td>TE&#x2081;&#x2081;</td>
+    <td>1</td>
+    <td>1</td>
+    <td>&mdash;</td>
+    <td>47.3</td>
+    <td>evanescent</td>
+  </tr>
+  <tr>
+    <td>TM&#x2081;&#x2081;</td>
+    <td>1</td>
+    <td>1</td>
+    <td>&mdash;</td>
+    <td>47.3</td>
+    <td>evanescent</td>
+  </tr>
+</table>
+
+<p>Exact k&#x1D50; values calculated from WR-28 dimensions and filled in from simulation. At 33.25 GHz, only TE&#x2081;&#x2080; propagates &mdash; the waveguide is single-mode across the Ka-band.</p>
+
+<div class="fig">
+  <img src="img/waveguide/waveguide-hfss-modes.png" alt="HFSS E-field plots for TE10, TE01, TE20, TE11, TM11" />
+  <div class="fig-caption">HFSS E-field magnitude plots for the first five modes at 33.25 GHz (WR-28, Ka-band).</div>
+</div>
+
+<hr />
+
+<h2>Part 2 &mdash; TE&#x2081;&#x2080; Surface Current Visualization</h2>
+
+<h3>Analytical Derivation (MATLAB)</h3>
+<p>Surface current density <strong>J&#x2C6;</strong> = <strong>n&#x2C6;</strong> &times; <strong>H</strong> was derived analytically for all four walls of the WR-28 guide in the TE&#x2081;&#x2080; mode using the field solutions from class notes. The current flows longitudinally (along z) on the broad walls and circumferentially (looping) on the narrow walls, with the characteristic null at the broad-wall center characteristic of TE&#x2081;&#x2080;. MATLAB was used to produce both 2D wall maps and a 3D unfolded visualization.</p>
+
+<div class="fig">
+  <img src="img/waveguide/waveguide-matlab-2d.png" alt="MATLAB 2D surface current density plots, all 4 walls" />
+  <div class="fig-caption">MATLAB 2D streamline plots of J<sub>s</sub> on the top/bottom broad wall (left) and side wall (right).</div>
+</div>
+
+<div class="fig">
+  <img src="img/waveguide/waveguide-matlab-3d.png" alt="MATLAB 3D unfolded waveguide current visualization" />
+  <div class="fig-caption">MATLAB 3D quiver visualization of TE<sub>10</sub> surface currents on all four waveguide walls.</div>
+</div>
+
+<h3>HFSS Full-Wave Validation</h3>
+<p>The HFSS simulation of the same WR-28 section (built in Part 1) was used to extract the surface current density from the full-wave solution. Agreement between the analytical and simulated current patterns confirms the field solution derivation.</p>
+
+<div class="fig">
+  <img src="img/waveguide/waveguide-hfss-jsurf-top.png" alt="HFSS surface current density, top view" />
+  <div class="fig-caption">HFSS J<sub>surf</sub> [A/m] &mdash; top/bottom broad wall view (max: 19.707 A/m).</div>
+</div>
+
+<div class="fig">
+  <img src="img/waveguide/waveguide-hfss-jsurf-front.png" alt="HFSS surface current density, front view" />
+  <div class="fig-caption">HFSS J<sub>surf</sub> [A/m] &mdash; front face view showing side-wall current distribution.</div>
+</div>
+
+<div class="fig">
+  <img src="img/waveguide/waveguide-hfss-jsurf-3d.png" alt="HFSS surface current density, 3D view" />
+  <div class="fig-caption">HFSS J<sub>surf</sub> [A/m] &mdash; 3D isometric view. Ansys HFSS 2025 R2.</div>
+</div>
+
+<hr />
+
+<h2>Tools</h2>
+<ul>
+  <li>Full-wave simulation: Ansys HFSS (waveguide ports, Ka-band sweep 20&ndash;50 GHz)</li>
+  <li>Analytical &amp; visualization: MATLAB (2D + 3D current density plots)</li>
+</ul>
+
+<hr />
+
+</body>
+</html>

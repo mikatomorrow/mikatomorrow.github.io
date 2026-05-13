@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,7 +23,7 @@
       width: 48px; height: 48px;
       pointer-events: none;
       z-index: 99999;
-      background: url('cursor-dino.png') no-repeat top left;
+      background: url('img/cursor-dino.png') no-repeat top left;
       background-size: 48px 48px;
       image-rendering: pixelated;
       image-rendering: crisp-edges;
@@ -31,11 +31,11 @@
 
     body {
       background-color: #7070aa;
-      background-image: url('bg.png');
+      background-image: url('img/bg.png');
       background-repeat: repeat;
       color: #cccccc;
       font-family: Tahoma, Verdana, Arial, sans-serif;
-      font-size: 12px;
+      font-size: 14px;
       margin: 0;
       padding: 16px 0 30px 0;
     }
@@ -44,8 +44,7 @@
     a:visited { color: inherit; }
 
     #outer {
-      width: 760px;
-      margin: 0 auto;
+      width: 92%; max-width: 1000px; margin: 0 auto;
     }
 
     /* ============================================================
@@ -78,8 +77,8 @@
 
     #header .sub {
       font-family: "Courier New", Courier, monospace;
-      font-size: 11px;
-      color: #555555;
+      font-size: 16px;
+      color: #cccccc;
       letter-spacing: 4px;
     }
 
@@ -114,7 +113,7 @@
       display: flex;
       -ms-flex-align: stretch;
       align-items: stretch;
-      height: 68px;
+      height: 100px;
       border: 1px solid #222222;
       background-color: #0e0e0e;
       background-image: repeating-linear-gradient(
@@ -143,11 +142,11 @@
     .pt-random  { border-left: 4px solid #cc3366; }
     .pt-mystery { border-left: 4px solid #663399; }
     .pt-weather { border-left: 4px solid #1188cc; }
-    .pt-notes   { border-left: 4px solid #dddddd; background-color: #f8f8f8; }
+    .pt-notes   { border-left: 4px solid #117777; }
 
     /* ── image slot — square, matches portal height ── */
     .portal-img {
-      width: 68px;
+      width: 100px;
       -ms-flex-negative: 0;
       flex-shrink: 0;
       overflow: hidden;
@@ -185,7 +184,7 @@
 
     .portal-title {
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
-      font-size: 17px;
+      font-size: 26px;
       font-weight: normal;
       letter-spacing: 3px;
       text-transform: none;
@@ -203,12 +202,12 @@
     .pt-random  .portal-title { color: #ee4488; }
     .pt-mystery .portal-title { color: #9966cc; }
     .pt-weather .portal-title { color: #33aaee; }
-    .pt-notes   .portal-title { color: #111111; font-family: "Times New Roman", Times, serif; letter-spacing: 1px; }
-    .pt-notes   .portal-desc  { color: #888888; }
+    .pt-notes   .portal-title { color: #33aaaa; }
+    .pt-notes   .portal-desc  { color: #bbbbbb; }
 
     .portal-desc {
-      font-size: 10px;
-      color: #4a4a4a;
+      font-size: 17px;
+      color: #bbbbbb;
       line-height: 1.4;
     }
 
@@ -226,9 +225,20 @@
 
     a.portal:hover .portal-arrow { color: #555555; }
 
+    .pt-work    .portal-arrow { color: #aabb44; }
+    .pt-music   .portal-arrow { color: #4488cc; }
+    .pt-papers  .portal-arrow { color: #cc9944; }
+    .pt-about   .portal-arrow { color: #cc6655; }
+    .pt-food    .portal-arrow { color: #ee9933; }
+    .pt-gaming  .portal-arrow { color: #33cc99; }
+    .pt-random  .portal-arrow { color: #ee4488; }
+    .pt-mystery .portal-arrow { color: #9966cc; }
+    .pt-weather .portal-arrow { color: #33aaee; }
+    .pt-notes   .portal-arrow { color: #33aaaa; }
+
     /* ── mystery — centered, no image slot ── */
     a.portal.pt-mystery {
-      height: 52px;
+      height: 75px;
       -ms-flex-pack: center;
       justify-content: center;
     }
@@ -243,19 +253,19 @@
     }
 
     .pt-mystery .portal-title {
-      font-size: 22px;
+      font-size: 26px;
       letter-spacing: 12px;
       margin-bottom: 3px;
     }
 
     .pt-mystery .portal-desc {
       font-family: "Courier New", Courier, monospace;
-      color: #2a1e3a;
+      color: #9977bb;
     }
 
     /* ── weather — centered, no image slot ── */
     a.portal.pt-weather {
-      height: 52px;
+      height: 75px;
       -ms-flex-pack: center;
       justify-content: center;
     }
@@ -270,14 +280,14 @@
     }
 
     .pt-weather .portal-title {
-      font-size: 22px;
+      font-size: 26px;
       letter-spacing: 8px;
       margin-bottom: 3px;
     }
 
     .pt-weather .portal-desc {
       font-family: "Courier New", Courier, monospace;
-      color: #0e2233;
+      color: #5599cc;
     }
 
     /* ============================================================
@@ -341,7 +351,7 @@
     <div class="portals">
 
       <a href="work.html" class="portal pt-work">
-        <div class="portal-img"><img src="atom.gif" alt=""/></div>
+        <div class="portal-img"><img src="gifs/atom.gif" alt=""/></div>
         <div class="portal-info">
           <div class="portal-title">🌣 projects</div>
           <div class="portal-desc">engineering slop <3 </div>
@@ -350,7 +360,7 @@
       </a>
 
       <a href="music.html" class="portal pt-music">
-        <div class="portal-img"><img src="mic1.gif" alt=""/></div>
+        <div class="portal-img"><img src="gifs/mic1.gif" alt=""/></div>
         <div class="portal-info">
           
           <div class="portal-title">&#9834; &nbsp;music</div>
@@ -360,7 +370,7 @@
       </a>
 
       <a href="papers.html" class="portal pt-papers">
-        <div class="portal-img"><img src="turnbook.gif" alt=""/></div>
+        <div class="portal-img"><img src="gifs/turnbook.gif" alt=""/></div>
         <div class="portal-info">
           <div class="portal-title">⎙ papers</div>
           <div class="portal-desc">technical reports and other writing :p. things i had to learn and wrote down</div>
@@ -369,7 +379,7 @@
       </a>
 
       <a href="about.html" class="portal pt-about">
-        <div class="portal-img"><img src="wave_cloud.gif" alt=""/></div>
+        <div class="portal-img"><img src="gifs/wave_cloud.gif" alt=""/></div>
         <div class="portal-info">
           <div class="portal-title">˙ᵕ˙about me</div>
           <div class="portal-desc">who am i? :o</div>
@@ -378,7 +388,7 @@
       </a>
 
       <a href="food.html" class="portal pt-food">
-        <div class="portal-img"><img src="burger.gif" alt=""/></div>
+        <div class="portal-img"><img src="gifs/burger.gif" alt=""/></div>
         <div class="portal-info">
           <div class="portal-title">𓐐𓎩 food</div>
           <div class="portal-desc">food i made or like!</div>
@@ -387,7 +397,7 @@
       </a>
 
       <a href="gaming.html" class="portal pt-gaming">
-        <div class="portal-img"><img src="gaming1.gif" alt=""/></div>
+        <div class="portal-img"><img src="gifs/gaming1.gif" alt=""/></div>
         <div class="portal-info">
           <div class="portal-title">⚔︎ gaming</div>
           <div class="portal-desc">what im currently playing, favorites and opinions</div>
@@ -396,7 +406,7 @@
       </a>
 
       <a href="random.html" class="portal pt-random">
-        <div class="portal-img"><img src="random1.gif" alt=""/></div>
+        <div class="portal-img"><img src="gifs/random1.gif" alt=""/></div>
         <div class="portal-info">
           <div class="portal-title">಄ random interests</div>
           <div class="portal-desc">things that dont fit anywhere else that i like.</div>
@@ -404,8 +414,17 @@
         <div class="portal-arrow">&#8250;</div>
       </a>
 
+      <a href="notes.html" class="portal pt-notes">
+        <div class="portal-img"><img src="gifs/panda_notes.gif" alt=""/></div>
+        <div class="portal-info">
+          <div class="portal-title">✎ notes</div>
+          <div class="portal-desc">my notes from stuffs! :D</div>
+        </div>
+        <div class="portal-arrow">&#8250;</div>
+      </a>
+
       <a href="weather.html" class="portal pt-weather">
-        <div class="portal-img"><img src="cloud.gif" alt=""/></div>
+        <div class="portal-img"><img src="gifs/cloud.gif" alt=""/></div>
         <div class="portal-info">
           <div class="portal-title">&#9729; weather</div>
           <div class="portal-desc">check the weather!</div>
@@ -413,17 +432,8 @@
         <div class="portal-arrow">&#8250;</div>
       </a>
 
-      <a href="notes.html" class="portal pt-notes">
-        <div class="portal-img"><img src="papers.gif" alt=""/></div>
-        <div class="portal-info">
-          <div class="portal-title">class notes</div>
-          <div class="portal-desc">typed notes from class. no frills.</div>
-        </div>
-        <div class="portal-arrow">&#8250;</div>
-      </a>
-
       <a href="mystery.html" class="portal pt-mystery">
-      <div class="portal-img"><img src="wave_cloud.gif" alt=""/></div>
+      <div class="portal-img"><img src="gifs/wave_cloud.gif" alt=""/></div>
         <div class="portal-info">
           <div class="portal-title">? &nbsp; ? &nbsp; ?</div>
           <div class="portal-desc">no idea what&rsquo;s in here.</div>
@@ -483,7 +493,7 @@
     tick();
     setInterval(tick, 130);
   };
-  img.src = 'clippy.png';
+  img.src = 'img/clippy.png';
 })();
 
 // ── FAKE CURSOR ──────────────────────────────────────────────────

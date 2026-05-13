@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,13 +11,13 @@
     body { background: #000000; }
 
     #breadcrumb {
-      position: fixed; top: 12px; left: 16px;
+      position: fixed; top: 14px; left: 20px;
       font-family: "Courier New", Courier, monospace;
-      font-size: 9px; color: #112233; letter-spacing: 2px;
+      font-size: 18px; color: #aaaaaa; letter-spacing: 2px;
       z-index: 200; pointer-events: auto;
     }
-    #breadcrumb a { color: #225577; text-decoration: none; }
-    #breadcrumb a:hover { color: #1188cc; }
+    #breadcrumb a { color: #33aaee; text-decoration: none; }
+    #breadcrumb a:hover { color: #66ccff; }
 
     #weather-frame {
       position: fixed;
@@ -56,8 +56,8 @@
 
 <div id="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; weather</div>
 
-<img id="cloud-r1" src="cloud1.png"  alt="" />
-<img id="cloud-r2" src="cloud.gif"  alt="" />
+<img id="cloud-r1" src="img/cloud1.png"  alt="" />
+<img id="cloud-r2" src="gifs/cloud.gif"  alt="" />
 
 <iframe id="weather-frame"
   src="https://weatherstar.netbymatt.com/"
@@ -99,7 +99,7 @@
     oct.putImageData(id, 0, 0);
     sheet = oc; tick(); setInterval(tick, 130);
   };
-  img.src = 'clippy.png';
+  img.src = 'img/clippy.png';
 })();
 </script>
 

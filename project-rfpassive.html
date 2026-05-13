@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: RF Passive Design</title>
+  <style type="text/css">
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 40px 60px 80px 60px;
+    }
+
+    a { color: #0000cc; }
+    a:visited { color: #551a8b; }
+
+    #breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #000000;
+      margin: 0 0 4px 0;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .page-sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .wip-banner {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      color: #cc6600;
+      background-color: #fff8ee;
+      border: 1px solid #cc6600;
+      padding: 5px 10px;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #000000;
+      margin: 28px 0 6px 0;
+      border-bottom: 1px solid #aaaaaa;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0 4px 0;
+    }
+
+    p {
+      margin: 6px 0 10px 0;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin: 6px 0 10px 20px;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    pre, code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      background-color: #f4f4f4;
+      border: 1px solid #cccccc;
+    }
+
+    pre { padding: 10px 14px; margin: 10px 0; overflow-x: auto; }
+    code { padding: 1px 4px; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 26px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin: 12px 0 18px 0;
+    }
+
+    th {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      font-weight: normal;
+      text-align: left;
+      padding: 6px 10px;
+      border-bottom: 2px solid #000000;
+      color: #555555;
+      letter-spacing: 1px;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #dddddd;
+      vertical-align: top;
+    }
+
+    .pass { color: #228800; }
+
+    .img-placeholder {
+      width: 100%;
+      background-color: #f0f0f0;
+      border: 1px dashed #aaaaaa;
+      text-align: center;
+      padding: 40px 0;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      color: #aaaaaa;
+      margin: 12px 0;
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="breadcrumb"><a href="work.html">&larr; projects</a> / RF Passive Design &mdash; Impedance Transformer &amp; Hybrid Coupler</div>
+
+<h1>Broadband Quarter-Wave Impedance Transformer</h1>
+<div class="page-sub">ECE 6360 Microwave Design &nbsp;|&nbsp; Spring 2026 &nbsp;|&nbsp; RO4003C microstrip &nbsp;|&nbsp; Keysight ADS</div>
+
+<hr />
+
+<h2>Overview</h2>
+<p>Two-part microwave passive design project from ECE 6360. Part 1 designs and optimizes a broadband quarter-wave impedance transformer on microstrip, comparing a single-section baseline against a 3-section Chebyshev transformer. Part 2 (in progress) designs a 3-section branch-line quadrature hybrid coupler targeting 6.75&ndash;11.25 GHz. All microstrip lines use RO4003C high-frequency laminate (0.32&Prime; substrate, &epsilon;&#x2C7; = 3.55) with 1 oz (35 &micro;m) copper cladding, designed in Keysight ADS with physical dimensions from LineCalc.</p>
+
+<hr />
+
+<h2>Part 1 &mdash; Broadband Quarter-Wave Impedance Transformer</h2>
+
+<h3>Design Goal</h3>
+<p>Transform a 50&Omega; source to a 10&Omega; load (5:1 impedance ratio) at f&#x2080; = 3 GHz using microstrip quarter-wave sections. Compare a single-section transformer against a 3-section Chebyshev design to quantify the bandwidth improvement.</p>
+
+<h3>Section 1: Single-Section Quarter-Wave Transformer</h3>
+<p>The single-section design uses one &lambda;/4 microstrip section with characteristic impedance:</p>
+<pre>Z&#x2081; = &radic;(Z&#x2C6; &middot; Z&#x1D38;) = &radic;(50 &middot; 10) = 22.36 &Omega;</pre>
+<p>Physical dimensions (LineCalc, RO4003C, 3 GHz): W = 218.57 mil, L = 562.50 mil. Simulated bandwidth: <strong>29.667%</strong>, consistent with Pozar&rsquo;s theoretical prediction of 29%.</p>
+
+<div class="img-placeholder">[|S11| vs. norm (f/3GHz) &mdash; single section &mdash; to be added]</div>
+
+<h3>Section 2: 3-Section Chebyshev Transformer (Optimized)</h3>
+<p>The 3-section Chebyshev transformer distributes the impedance transformation across three &lambda;/4 sections, with each section impedance set via the geometric-mean staircase:</p>
+<pre>Z&#x2083; = &radic;(Z&#x2C6; &middot; Z&#x2082;) = 14.95 &Omega; &nbsp; (final step, 50 &rarr; Z&#x2082;)
+Z&#x2082; = &radic;(Z&#x2C6; &middot; Z&#x1D38;) = 22.36 &Omega; &nbsp; (middle)
+Z&#x2081; = &radic;(Z&#x2082; &middot; Z&#x1D38;) = 33.44 &Omega; &nbsp; (first step, 50 &rarr; Z&#x2082;)</pre>
+<p>After ADS optimizer sweep, the final optimized impedances converged to <strong>Z&#x2081; = 33.4 &Omega;, Z&#x2082; = 21.0 &Omega;, Z&#x2083; = 13.9 &Omega;</strong>. Optimized bandwidth: <strong>112.333%</strong>, nearly a 4&times; increase over the single-section design.</p>
+
+<div class="img-placeholder">[|S11| vs. norm &mdash; unoptimized 3-section &mdash; to be added]</div>
+<div class="img-placeholder">[|S11| vs. norm &mdash; optimized 3-section &mdash; to be added]</div>
+<div class="img-placeholder">[|S11| overlay: single section vs. optimized 3-section with BW markers &mdash; to be added]</div>
+
+<h3>Results Summary</h3>
+
+<table>
+  <tr>
+    <th>Sections (N)</th>
+    <th>% Bandwidth</th>
+    <th>Z&#x2081; (&Omega;)</th>
+    <th>Z&#x2082; (&Omega;)</th>
+    <th>Z&#x2083; (&Omega;)</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>29.667%</td>
+    <td>22.36</td>
+    <td>&mdash;</td>
+    <td>&mdash;</td>
+  </tr>
+  <tr>
+    <td>3 (optimized)</td>
+    <td class="pass">112.333%</td>
+    <td>33.4</td>
+    <td>21.0</td>
+    <td>13.9</td>
+  </tr>
+</table>
+
+<hr />
+
+<h2>Tools &amp; Substrate</h2>
+<ul>
+  <li>Substrate: Rogers RO4003C, H = 32 mil, &epsilon;&#x2C7; = 3.55, T = 35 &micro;m (1 oz Cu), tan&delta; = 0.01</li>
+  <li>Schematic &amp; simulation: Keysight ADS (S-parameter, optimization)</li>
+  <li>Physical dimensions: ADS LineCalc</li>
+  <li>Full-wave validation: Ansys HFSS</li>
+  <li>Hardware: PCB fabricated &amp; measured on VNA</li>
+</ul>
+
+<hr />
+
+</body>
+</html>

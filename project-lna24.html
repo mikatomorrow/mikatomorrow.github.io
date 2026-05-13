@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: 2.4 GHz Cascode LNA</title>
+  <style type="text/css">
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 40px 60px 80px 60px;
+    }
+
+    a { color: #0000cc; }
+    a:visited { color: #551a8b; }
+
+    #breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #000000;
+      margin: 0 0 4px 0;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .page-sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #000000;
+      margin: 28px 0 6px 0;
+      border-bottom: 1px solid #aaaaaa;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0 4px 0;
+    }
+
+    p {
+      margin: 6px 0 10px 0;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin: 6px 0 10px 20px;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    pre, code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      background-color: #f4f4f4;
+      border: 1px solid #cccccc;
+    }
+
+    pre { padding: 10px 14px; margin: 10px 0; overflow-x: auto; }
+    code { padding: 1px 4px; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 26px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin: 12px 0 18px 0;
+    }
+
+    th {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      font-weight: normal;
+      text-align: left;
+      padding: 6px 10px;
+      border-bottom: 2px solid #000000;
+      color: #555555;
+      letter-spacing: 1px;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #dddddd;
+      vertical-align: top;
+    }
+
+    .pass { color: #228800; }
+
+    .img-placeholder {
+      width: 100%;
+      background-color: #f0f0f0;
+      border: 1px dashed #aaaaaa;
+      text-align: center;
+      padding: 40px 0;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      color: #aaaaaa;
+      margin: 12px 0;
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="breadcrumb"><a href="work.html">&larr; projects</a> / 2.4 GHz Cascode LNA Design &amp; Optimization</div>
+
+<h1>2.4 GHz Cascode LNA Design &amp; Optimization</h1>
+<div class="page-sub">Personal Project &nbsp;|&nbsp; Spring 2025 &nbsp;|&nbsp; 130 nm CMOS &nbsp;|&nbsp; Cadence Virtuoso / Spectre</div>
+
+<hr />
+
+<h2>Overview</h2>
+<p>Designed, simulated, and optimized a differential cascode Low Noise Amplifier (LNA) in 130 nm CMOS targeting the 2.4 GHz ISM band. The LNA is the first active stage in a receiver chain, and its noise figure and gain directly determine the cascaded noise performance of the entire system. The design prioritizes low noise figure while maintaining adequate input matching and gain.</p>
+
+<p>The topology uses inductive input matching to achieve a 50&Omega; input impedance at 2.4 GHz, a differential cascode input pair for gain and noise performance, and an LC resonant tank at the output tuned to 2.4 GHz to filter out-of-band noise.</p>
+
+<h2>Architecture</h2>
+<ul>
+  <li><strong>Input matching (white):</strong> Inductive network creating 50&Omega; match and tuning input resonance to 2.4 GHz</li>
+  <li><strong>Input transistors M1/M2 (pink):</strong> Differential pair providing voltage gain (A&#x1D65; = g&#x2098; &middot; R); dominant noise contributors &mdash; sized for minimum noise figure. W/L = 400&micro;m / 0.13&micro;m</li>
+  <li><strong>Cascode devices M3/M4 (green):</strong> Improve reverse isolation (reduce S&#x2081;&#x2082; leakage) and boost gain; W/L = 400&micro;m / 0.30&micro;m</li>
+  <li><strong>Output LC tank (green):</strong> Resonant at 2.4 GHz to filter high-frequency noise and present a high impedance load at the target frequency</li>
+</ul>
+
+<div class="img-placeholder">[schematic &mdash; to be added]</div>
+
+<h2>Design Specifications &amp; Results</h2>
+
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>Target</th>
+    <th>Simulated</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>S11 (input reflection)</td>
+    <td>&lt; &minus;10 dB</td>
+    <td>&minus;13.26 dB</td>
+    <td class="pass">&#10003; pass</td>
+  </tr>
+  <tr>
+    <td>S21 (forward gain) @ 2.4 GHz</td>
+    <td>10&ndash;20 dB</td>
+    <td>19.38 dB</td>
+    <td class="pass">&#10003; pass</td>
+  </tr>
+  <tr>
+    <td>Noise Figure</td>
+    <td>&lt; 2 dB</td>
+    <td>657 mdB (0.66 dB)</td>
+    <td class="pass">&#10003; pass</td>
+  </tr>
+</table>
+
+<div class="img-placeholder">[S-parameter &amp; NF simulation plot &mdash; to be added]</div>
+
+<h2>Tools &amp; Technology</h2>
+<ul>
+  <li>Technology: 130 nm CMOS</li>
+  <li>Schematic &amp; simulation: Cadence Virtuoso / Spectre</li>
+  <li>Analyses: S-parameter (SP), noise figure</li>
+</ul>
+
+<hr />
+
+</body>
+</html>

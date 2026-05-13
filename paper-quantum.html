@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: Survey of Benchmarking Methods for Quantum Logic Gates</title>
+  <style type="text/css">
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 40px 60px 80px 60px;
+    }
+
+    a { color: #0000cc; }
+    a:visited { color: #551a8b; }
+
+    #breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #000000;
+      margin: 0 0 4px 0;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .page-sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .authors {
+      font-style: italic;
+      font-size: 16px;
+      color: #444444;
+      margin-bottom: 16px;
+    }
+
+    .pdf-link {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: #0000cc;
+      background-color: #f0f4ff;
+      border: 1px solid #0000cc;
+      padding: 5px 10px;
+      display: inline-block;
+      margin-bottom: 24px;
+      text-decoration: none;
+    }
+
+    .pdf-link:hover { background-color: #dde8ff; }
+
+    h2 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #000000;
+      margin: 28px 0 6px 0;
+      border-bottom: 1px solid #aaaaaa;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0 4px 0;
+    }
+
+    p {
+      margin: 6px 0 10px 0;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin: 6px 0 10px 20px;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 26px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin: 12px 0 18px 0;
+    }
+
+    th {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      font-weight: normal;
+      text-align: left;
+      padding: 6px 10px;
+      border-bottom: 2px solid #000000;
+      color: #555555;
+      letter-spacing: 1px;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #dddddd;
+      vertical-align: top;
+    }
+
+    .compare-box {
+      background-color: #f8f8f8;
+      border-left: 3px solid #aaaaaa;
+      padding: 10px 14px;
+      font-size: 16px;
+      margin: 12px 0;
+    }
+
+    .fig-caption {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: #000000;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="breadcrumb"><a href="papers.html">&larr; papers</a> / Survey of Benchmarking Methods for Quantum Logic Gates</div>
+
+<h1>Survey of Benchmarking Methods for Quantum Logic Gates</h1>
+<div class="page-sub">Georgia Tech ECE &nbsp;|&nbsp; November 2025</div>
+<div class="authors">Michael Harrington, Avery Mahan, Eric Yan, Tianyi Yu</div>
+
+<a href="Survey_of_Benchmarking_Methods_for_Quantum_Logic_Gates-1.pdf" class="pdf-link" target="_blank">&#8681; open PDF in new tab</a>
+
+<hr />
+
+<h2>Abstract</h2>
+<p>As quantum computing systems scale toward fault-tolerant operation, characterizing the fidelity of quantum logic gates becomes a critical engineering challenge. This survey reviews established and emerging benchmarking methods — from protocol-level approaches like Randomized Benchmarking and Quantum Process Tomography to scalable modern alternatives such as Cross-Entropy Benchmarking and Gate Set Tomography. Each method is analyzed for its assumptions, scalability, error sensitivity, and practical deployment on near-term hardware.</p>
+
+<hr />
+
+<h2>I. Randomized Benchmarking (RB)</h2>
+<p>Randomized Benchmarking is the most widely deployed gate fidelity protocol. A sequence of random Clifford gates of increasing length is applied, followed by a recovery gate; the decay of average survival probability with sequence length yields the average gate error per Clifford. RB is efficient (polynomial in qubit count) and largely insensitive to state preparation and measurement (SPAM) errors because those errors appear only at the endpoints and do not scale with sequence length.</p>
+<div class="compare-box">
+  <strong>Key property:</strong> Exponential decay rate gives a single average error-per-gate number, independent of SPAM. Limited to the Clifford group — does not directly benchmark non-Clifford gates (e.g. T gates) needed for universal computation.
+</div>
+
+<hr />
+
+<h2>II. Cross-Entropy Benchmarking (XEB)</h2>
+<p>Cross-Entropy Benchmarking applies random circuits drawn from a broader gate set (not just Cliffords) and compares the output distribution to the ideal distribution via cross-entropy. Developed by Google for their quantum supremacy experiments, XEB provides a linear cross-entropy fidelity estimate that scales to many qubits and captures non-Clifford gate quality. However, XEB is sensitive to coherent errors and can give misleading results when the noise model has significant structure.</p>
+<div class="compare-box">
+  <strong>Key property:</strong> Applicable beyond Cliffords; used to benchmark 2-qubit gate fidelity at scale. More sensitive to coherent errors than RB — a high XEB score does not guarantee good performance on structured algorithms.
+</div>
+
+<hr />
+
+<h2>III. Quantum Process Tomography (QPT)</h2>
+<p>Quantum Process Tomography reconstructs the full process matrix (&chi;-matrix or Choi matrix) of a quantum gate by applying a complete set of input states and performing state tomography on each output. QPT provides complete characterization of a gate channel — amplitude damping, dephasing, coherent rotations, and crosstalk — but requires exponential resources in qubit count (4<sup>n</sup> parameters for n qubits), making it practical only for 1&ndash;2 qubit gates.</p>
+<div class="compare-box">
+  <strong>Key property:</strong> Complete characterization but exponential cost. Assumes perfect state preparation and measurement — SPAM errors corrupt the reconstruction. Suitable for calibrating individual gates in a small system.
+</div>
+
+<hr />
+
+<h2>IV. Gate Set Tomography (GST)</h2>
+<p>Gate Set Tomography simultaneously characterizes the gate set (including state preparation and measurement) by fitting a self-consistent model to a structured set of circuit sequences. Unlike QPT, GST does not assume perfect SPAM; it treats preparation, gates, and measurement as jointly unknown parameters and uses maximum-likelihood estimation to recover them. GST provides the most complete and accurate characterization available but requires a large, carefully designed experiment set and significant classical post-processing.</p>
+<div class="compare-box">
+  <strong>Key property:</strong> SPAM-agnostic full characterization. Yields a gauge-invariant description of the gate set. Computationally expensive classically, but provides error budgets that directly inform error correction design.
+</div>
+
+<hr />
+
+<h2>V. Direct Fidelity Estimation (DFE)</h2>
+<p>Direct Fidelity Estimation estimates the fidelity of a prepared state or implemented process to a target by sampling from the Pauli spectrum of the target. Rather than full tomography, DFE uses random Pauli measurements to estimate the fidelity in O(1/&epsilon;&sup2;) samples (independent of Hilbert space dimension for states with low-rank Pauli spectra). DFE is efficient for high-fidelity targets but degrades in efficiency as target states become more mixed or complex.</p>
+
+<hr />
+
+<h2>VI. Leakage Benchmarking</h2>
+<p>In real qubits (superconducting transmons, trapped ions), the computational subspace {|0&rang;, |1&rang;} sits within a larger Hilbert space. Leakage benchmarking extends RB sequences to detect population escaping into non-computational levels (|2&rang;, |3&rang;, ...). The protocol fits a two-parameter decay model (leakage rate L<sub>1</sub> and seepage rate L<sub>2</sub>) to the sequence-length decay curve, isolating the leakage contribution from total gate error.</p>
+<div class="compare-box">
+  <strong>Key property:</strong> Critical for transmon qubits where DRAG pulses are used to suppress leakage. Standard RB conflates leakage with ordinary gate error — leakage benchmarking separates them.
+</div>
+
+<hr />
+
+<h2>VII. Deterministic Benchmarking</h2>
+<p>Deterministic Benchmarking characterizes specific gate errors by using structured, deterministic sequences rather than random ones. By constructing sequences where known errors amplify predictably, deterministic benchmarking can isolate particular error channels (e.g. over-rotation, axis tilt) with higher sensitivity than random protocols for those specific errors. Less general than RB but more sensitive to targeted error types.</p>
+
+<hr />
+
+<h2>Comparison Summary</h2>
+
+<table>
+  <tr>
+    <th>Method</th>
+    <th>SPAM Robust</th>
+    <th>Scales to N qubits</th>
+    <th>Coherent error sensitive</th>
+    <th>Complete characterization</th>
+  </tr>
+  <tr><td>Randomized Benchmarking</td><td>Yes</td><td>Yes</td><td>No (averages out)</td><td>No</td></tr>
+  <tr><td>Cross-Entropy Benchmarking</td><td>Partial</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+  <tr><td>Quantum Process Tomography</td><td>No</td><td>No (exp.)</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Gate Set Tomography</td><td>Yes</td><td>No (exp.)</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Direct Fidelity Estimation</td><td>Partial</td><td>Yes (low rank)</td><td>Partial</td><td>No</td></tr>
+  <tr><td>Leakage Benchmarking</td><td>Yes</td><td>Yes</td><td>No</td><td>Leakage only</td></tr>
+  <tr><td>Deterministic Benchmarking</td><td>Yes</td><td>Limited</td><td>Yes (targeted)</td><td>No</td></tr>
+</table>
+
+<hr />
+
+</body>
+</html>

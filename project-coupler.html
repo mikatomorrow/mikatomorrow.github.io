@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: Quadrature Hybrid Coupler</title>
+  <style type="text/css">
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 40px 60px 80px 60px;
+    }
+
+    a { color: #0000cc; }
+    a:visited { color: #551a8b; }
+
+    #breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #000000;
+      margin: 0 0 4px 0;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .page-sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #000000;
+      margin: 28px 0 6px 0;
+      border-bottom: 1px solid #aaaaaa;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0 4px 0;
+    }
+
+    p {
+      margin: 6px 0 10px 0;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin: 6px 0 10px 20px;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 26px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin: 12px 0 18px 0;
+    }
+
+    th {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      font-weight: normal;
+      text-align: left;
+      padding: 6px 10px;
+      border-bottom: 2px solid #000000;
+      color: #555555;
+      letter-spacing: 1px;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #dddddd;
+      vertical-align: top;
+    }
+
+    .pass { color: #228800; }
+    .fail { color: #cc0000; }
+    .close { color: #cc6600; }
+
+    .contrib-box {
+      background-color: #f8f8f8;
+      border-left: 3px solid #aaaaaa;
+      padding: 10px 14px;
+      font-size: 16px;
+      margin: 12px 0;
+    }
+
+    .fig {
+      margin: 18px 0;
+    }
+
+    .fig img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #cccccc;
+    }
+
+    .fig-caption {
+      text-align: center;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: #000000;
+      margin-top: 5px;
+    }
+
+    .fig-row {
+      display: -ms-flexbox;
+      display: flex;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .fig-row .fig {
+      -ms-flex: 1;
+      flex: 1;
+      margin: 0;
+    }
+
+    .fig-row .fig img {
+      height: 300px;
+      width: 100%;
+      object-fit: contain;
+      background-color: #f8f8f8;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="breadcrumb"><a href="work.html">&larr; projects</a> / 3-Section Quadrature Hybrid Coupler</div>
+
+<h1>3-Section Quadrature Hybrid Coupler</h1>
+<div class="page-sub">Microwave Design &nbsp;|&nbsp; HFSS & ADS Simulation &nbsp;|&nbsp; RO4003C microstrip &nbsp;|&nbsp; PCB Fab & VNA</div>
+
+<h2>Overview</h2>
+<p>Designed, simulated, fabricated, and tested a 3-section branch-line quadrature hybrid coupler in microstrip at center frequency f&#x2080; = 9 GHz (target band: 6.75&ndash;11.25 GHz). A branch-line coupler splits the input power evenly between two output ports with a 90&deg; phase difference, with the fourth port isolated. The 3-section topology was chosen to achieve the 50% fractional bandwidth requirement that a single-section coupler cannot meet while maintaining input reflection S&#x2081;&#x2081; &lt; &minus;20 dB across the band.</p>
+
+<hr />
+
+<h2>Design Methodology</h2>
+
+<h3>Topology Progression</h3>
+<p>Design began with a single-section coupler, which could not meet the bandwidth target while keeping S&#x2081;&#x2081; &lt; &minus;20 dB. Progressed to a 2-section then 3-section branch-line topology, which placed the design within the required 6.75&ndash;11.25 GHz band.</p>
+
+<h3>Narrow Line Width Challenge</h3>
+<p>The 3-section design required very high characteristic impedances on the outer vertical branches, which translated to line widths below the 10 mil fabrication floor. Two solutions were explored:</p>
+<ul>
+  <li><strong>Stub design:</strong> Open stubs added to reduce effective impedance &mdash; functional but geometrically complex</li>
+  <li><strong>&lambda;/4 taper design (chosen):</strong> Quarter-wave impedance taper on the edge branches, transitioning smoothly from the narrow high-Z lines to the wider 50&Omega; output lines. More manufacturable and simulation-validated.</li>
+</ul>
+
+<div class="fig">
+  <img src="img/coupler/coupler_ads.png" alt="ADS schematic of 3-section branch-line coupler" />
+  <div class="fig-caption">ADS schematic &mdash; 3-section branch-line coupler at f&#x2080; = 9 GHz.</div>
+</div>
+
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/coupler/stub_design.png" alt="Stub design approach" />
+    <div class="fig-caption">Stub design: open stubs to reduce effective Z on narrow branches.</div>
+  </div>
+  <div class="fig">
+    <img src="img/coupler/quarter_wave.png" alt="Quarter-wave taper design" />
+    <div class="fig-caption">&lambda;/4 taper design: continuous impedance transition on edge branches (chosen).</div>
+  </div>
+</div>
+
+<div class="fig">
+  <img src="img/coupler/final_ads_design.png" alt="Final ADS layout" />
+  <div class="fig-caption">Final ADS layout with &lambda;/4 tapers on outer vertical branches.</div>
+</div>
+
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/coupler/final_hfss_design.png" alt="HFSS model" />
+    <div class="fig-caption">HFSS full-wave model, RO4003C substrate, &lambda;/4 radiation boundary.</div>
+  </div>
+  <div class="fig">
+    <img src="img/coupler/hfss_lump_port.png" alt="HFSS lumped port setup" />
+    <div class="fig-caption">HFSS lumped port placement at each SMA pad.</div>
+  </div>
+</div>
+
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/coupler/pcb_front.png" alt="Fabricated PCB front" />
+    <div class="fig-caption">Fabricated PCB &mdash; top (copper trace side).</div>
+  </div>
+  <div class="fig">
+    <img src="img/coupler/pcb_back.png" alt="Fabricated PCB back" />
+    <div class="fig-caption">Fabricated PCB &mdash; bottom (ground plane).</div>
+  </div>
+</div>
+
+<h3>Substrate &amp; Fabrication</h3>
+<ul>
+  <li>Substrate: Rogers RO4003C, &epsilon; = 3.38, tan&delta; = 0.0027, H = 32 mil (0.032&Prime;), Cu = 0.5 oz</li>
+  <li>Connectors: Adam Tech RF2-143-T-17-50-G SMA (18 GHz rated), soldered by hand</li>
+  <li>PCB fabricated via Georgia Tech ECE fab facility (HIVE); Gerber files generated from ADS layout</li>
+  <li>All line widths maintained &ge; 10 mil</li>
+</ul>
+
+<hr />
+
+<h2>Simulation Results</h2>
+
+<p>All 100% credit criteria met in both ADS and HFSS simulations over the target band (0.75f&#x2080; &ndash; 1.25f&#x2080; = 6.75&ndash;11.25 GHz):</p>
+
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>ADS Criterion</th>
+    <th>ADS Result</th>
+    <th>HFSS Criterion</th>
+    <th>HFSS Result</th>
+  </tr>
+  <tr>
+    <td>S&#x2081;&#x2081; (reflection)</td>
+    <td>&lt; &minus;20 dB</td>
+    <td class="pass">&#10003; &lt; &minus;20 dB</td>
+    <td>&lt; &minus;15 dB</td>
+    <td class="pass">&#10003; &lt; &minus;18 dB</td>
+  </tr>
+  <tr>
+    <td>S&#x2084;&#x2081; (isolation)</td>
+    <td>&lt; &minus;20 dB</td>
+    <td class="pass">&#10003; &lt; &minus;20 dB</td>
+    <td>&lt; &minus;15 dB</td>
+    <td class="pass">&#10003; &lt; &minus;18.5 dB</td>
+  </tr>
+  <tr>
+    <td>Phase diff. (&ang;S&#x2082;&#x2081; &minus; &ang;S&#x2083;&#x2081;)</td>
+    <td>90&deg; &plusmn; 3%</td>
+    <td class="pass">&#10003; 90&deg; &plusmn; 3%</td>
+    <td>90&deg; &plusmn; 5%</td>
+    <td class="pass">&#10003; 90&deg; &plusmn; 5%</td>
+  </tr>
+  <tr>
+    <td>Amplitude diff. (|S&#x2082;&#x2081;| &minus; |S&#x2083;&#x2081;|)</td>
+    <td>&lt; 1.5 dB</td>
+    <td class="pass">&#10003; &lt; 1.5 dB</td>
+    <td>&lt; 3 dB</td>
+    <td class="pass">&#10003; &lt; 3 dB</td>
+  </tr>
+</table>
+
+<h3>ADS Simulation</h3>
+<div class="fig">
+  <img src="img/coupler/s_matrix_ads.png" alt="ADS full S-matrix" />
+  <div class="fig-caption">ADS S-matrix &mdash; S11, S21, S31, S41 across 6.75&ndash;11.25 GHz.</div>
+</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/coupler/s11_ads.png" alt="ADS S11" />
+    <div class="fig-caption">ADS S&#x2081;&#x2081; &mdash; reflection &lt; &minus;20 dB across band.</div>
+  </div>
+  <div class="fig">
+    <img src="img/coupler/s41_ads.png" alt="ADS S41" />
+    <div class="fig-caption">ADS S&#x2084;&#x2081; &mdash; isolation &lt; &minus;20 dB across band.</div>
+  </div>
+</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/coupler/phase_diff_ads.png" alt="ADS phase difference" />
+    <div class="fig-caption">ADS phase difference (&#x2220;S&#x2082;&#x2081; &minus; &#x2220;S&#x2083;&#x2081;) &mdash; 90&deg; &plusmn; 3% across band.</div>
+  </div>
+  <div class="fig">
+    <img src="img/coupler/amp_diff_ads.png" alt="ADS amplitude difference" />
+    <div class="fig-caption">ADS amplitude difference (|S&#x2082;&#x2081;| &minus; |S&#x2083;&#x2081;|) &mdash; &lt; 1.5 dB across band.</div>
+  </div>
+</div>
+
+<h3>HFSS Simulation</h3>
+<div class="fig">
+  <img src="img/coupler/hfss_s_matrix.png" alt="HFSS full S-matrix" />
+  <div class="fig-caption">HFSS S-matrix &mdash; full-wave S11, S21, S31, S41.</div>
+</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/coupler/hfss_s11.png" alt="HFSS S11" />
+    <div class="fig-caption">HFSS S&#x2081;&#x2081; &mdash; reflection &lt; &minus;18 dB across band.</div>
+  </div>
+  <div class="fig">
+    <img src="img/coupler/hfss_s41.png" alt="HFSS S41" />
+    <div class="fig-caption">HFSS S&#x2084;&#x2081; &mdash; isolation &lt; &minus;18.5 dB across band.</div>
+  </div>
+</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/coupler/hfss_phase_diff.png" alt="HFSS phase difference" />
+    <div class="fig-caption">HFSS phase difference &mdash; 90&deg; &plusmn; 5% across band.</div>
+  </div>
+  <div class="fig">
+    <img src="img/coupler/hfss_amp_diff.png" alt="HFSS amplitude difference" />
+    <div class="fig-caption">HFSS amplitude difference &mdash; &lt; 3 dB across band.</div>
+  </div>
+</div>
+
+<hr />
+
+<h2>VNA Test Results</h2>
+
+<p>The fabricated board was tested on a VNA using SMA connectors.</p>
+
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/coupler/s11_vga.png" alt="VNA measured S11" />
+    <div class="fig-caption">Measured S&#x2081;&#x2081; &mdash; shape matches simulation, offset ~+6 dB (see discussion).</div>
+  </div>
+  <div class="fig">
+    <img src="img/coupler/s41_vga.png" alt="VNA measured S41" />
+    <div class="fig-caption">Measured S&#x2084;&#x2081; &mdash; shape matches simulation, same systematic offset.</div>
+  </div>
+</div>
+
+<h3>Discrepancy Discussion</h3>
+<p>Shapes closely match simulation but are shifted by approximately +6 dB. This discrepency was likely from the VNA calibration not accounting for the gender changer adapter, introducing a systematic loss offset. Limitations in the fabrication tolerance of the &lambda;/4 taper, which had a continuous impedance transition rather than discrete multi-step sections, also contributed to the offset.</p></strong>
+</p>
+<hr />
+
+<h2>Tools</h2>
+<ul>
+  <li>Schematic &amp; circuit simulation: Keysight ADS (MLIN microstrip library, optimizer)</li>
+  <li>Full-wave EM simulation: Ansys HFSS 2024 R2 (lumped port model, &lambda;/4 radiation boundary)</li>
+  <li>Layout &amp; Gerber: ADS layout</li>
+  <li>Hardware: VNA, SMA connectors (Adam Tech RF2-143, 18 GHz), RO4003C PCB</li>
+</ul>
+
+<hr />
+
+</body>
+</html>

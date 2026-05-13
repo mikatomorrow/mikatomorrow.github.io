@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: 6.8 GHz CMOS Receiver</title>
+  <style type="text/css">
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 40px 60px 80px 60px;
+    }
+
+    a { color: #0000cc; }
+    a:visited { color: #551a8b; }
+
+    #breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #000000;
+      margin: 0 0 4px 0;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .page-sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #000000;
+      margin-bottom: 6px;
+    }
+
+    .wip-banner {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      color: #cc6600;
+      background-color: #fff8ee;
+      border: 1px solid #cc6600;
+      padding: 5px 10px;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #000000;
+      margin: 28px 0 6px 0;
+      border-bottom: 1px solid #aaaaaa;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      margin: 18px 0 4px 0;
+    }
+
+    p {
+      margin: 6px 0 10px 0;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin: 6px 0 10px 20px;
+      padding: 0;
+      line-height: 1.7;
+    }
+
+    pre, code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      background-color: #f4f4f4;
+      border: 1px solid #cccccc;
+    }
+
+    pre { padding: 10px 14px; margin: 10px 0; overflow-x: auto; }
+    code { padding: 1px 4px; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #cccccc;
+      margin: 26px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+      margin: 12px 0 18px 0;
+    }
+
+    th {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      font-weight: normal;
+      text-align: left;
+      padding: 6px 10px;
+      border-bottom: 2px solid #000000;
+      color: #555555;
+      letter-spacing: 1px;
+    }
+
+    td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #dddddd;
+      vertical-align: top;
+    }
+
+    .pass { color: #228800; }
+    .close { color: #cc6600; }
+
+    .contrib-box {
+      background-color: #f8f8f8;
+      border-left: 3px solid #aaaaaa;
+      padding: 10px 14px;
+      font-size: 16px;
+      margin: 12px 0;
+    }
+
+    .img-placeholder {
+      width: 100%;
+      background-color: #f0f0f0;
+      border: 1px dashed #aaaaaa;
+      text-align: center;
+      padding: 40px 0;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px;
+      color: #aaaaaa;
+      margin: 12px 0;
+      box-sizing: border-box;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="breadcrumb"><a href="work.html">&larr; projects</a> / 6.8 GHz Direct Conversion CMOS Receiver</div>
+
+<h1>6.8 GHz Direct Conversion CMOS Receiver</h1>
+<div class="page-sub">ECE 6420 &mdash; Wireless IC Design &nbsp;|&nbsp; Spring 2026 &nbsp;|&nbsp; NCSU 45 nm CMOS &nbsp;|&nbsp; Cadence Virtuoso / Spectre</div>
+<div class="page-sub">w/ Nikhita Ramanujam</div>
+
+<br />
+<span class="wip-banner">&#9733; work in progress &mdash; more detail and figures to be added</span>
+
+<hr />
+
+<h2>Overview</h2>
+<p>Designed a full direct-conversion receiver (DCR) chain in NCSU 45 nm CMOS as a final project for ECE 6420. The receiver takes a 6.8 GHz RF input and downconverts it to baseband I/Q using a passive double-balanced mixer topology driven by a CML frequency divider that generates quadrature local oscillator signals from a 13.6 GHz (4.2 GHz &times; 2 = ... actually LO in at 4.2 GHz, doubled internally to feed divider) input.</p>
+<p>The full chain includes an inductively degenerated LNA for low-noise input matching, followed by passive IQ mixers, with bondwire parasitics explicitly modeled as inductive matching elements throughout the testbench.</p>
+
+<div class="contrib-box">
+  <strong>My contributions:</strong> I/Q Mixer design, full simulation results, IIP3 analysis, and integration of the receiver chain testbench. Partner Nikhita Ramanujam designed the LNA, BPF, and frequency divider.
+</div>
+
+<h2>Architecture</h2>
+<div class="img-placeholder">[block diagram &mdash; to be added]</div>
+
+<ul>
+  <li><strong>LNA:</strong> Inductively degenerated cascode, 50 &Omega; input match via bondwire + source degeneration inductor, current-mirror biased</li>
+  <li><strong>IQ Mixers:</strong> Double-balanced passive mixers for I and Q paths, driven 90&deg; apart</li>
+  <li><strong>Frequency Divider:</strong> CML divide-by-2 generating quadrature LO from 13.6 GHz input &rarr; 6.8 GHz I/Q</li>
+  <li><strong>Bondwire modeling:</strong> Q = 30, 1 nH/mm; values chosen from discrete set {0.5, 1, 1.5, 2, 2.5, 3} nH</li>
+  <li><strong>Pad capacitance:</strong> 15 fF at all off-chip ports</li>
+  <li><strong>Biasing:</strong> Current mirrors throughout; on-chip decoupling between bias and VDD/GND</li>
+</ul>
+
+<h2>Design Specifications &amp; Results</h2>
+
+<table>
+  <tr>
+    <th>Specification</th>
+    <th>Requirement</th>
+    <th>Achieved</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>SSB Noise Figure (LNA)</td>
+    <td>&lt; 9 dB</td>
+    <td>&lt; 6 dB</td>
+    <td class="pass">&#10003; pass</td>
+  </tr>
+  <tr>
+    <td>S11 (6.6&ndash;7 GHz)</td>
+    <td>&lt; &minus;10 dB</td>
+    <td>&lt; &minus;10 dB</td>
+    <td class="pass">&#10003; pass</td>
+  </tr>
+  <tr>
+    <td>Conversion Gain (6.6&ndash;7 GHz)</td>
+    <td>&gt; 20 dB</td>
+    <td>&gt; 20 dB</td>
+    <td class="pass">&#10003; pass</td>
+  </tr>
+  <tr>
+    <td>IIP3 (6.6&ndash;7 GHz)</td>
+    <td>&gt; &minus;15 dBm</td>
+    <td>&asymp; &minus;20 dBm</td>
+    <td class="close">&#8764; close, did not pass</td>
+  </tr>
+  <tr>
+    <td>First Image Rejection</td>
+    <td>&gt; 20 dB</td>
+    <td>&gt; 20 dB</td>
+    <td class="pass">&#10003; pass</td>
+  </tr>
+  <tr>
+    <td>Power Consumption</td>
+    <td>&lt; 30 mW @ 1 V</td>
+    <td>&lt; 30 mW</td>
+    <td class="pass">&#10003; pass</td>
+  </tr>
+</table>
+
+<p>IIP3 calculation from two-tone test:</p>
+<pre>Pin  &asymp; -24 dBm per tone
+&Delta;P  &asymp; 7.69 dB (average of upper/lower IM3 separation)
+IIP3 = Pin + &Delta;P/2 = -24 + 3.845 &asymp; -20.16 dBm</pre>
+
+<h2>Simulation Results</h2>
+<div class="img-placeholder">[S11 plot &mdash; to be added]</div>
+<div class="img-placeholder">[conversion gain plot &mdash; to be added]</div>
+<div class="img-placeholder">[noise figure plot &mdash; to be added]</div>
+<div class="img-placeholder">[IIP3 two-tone spectrum &mdash; to be added]</div>
+
+<h2>Tools &amp; Technology</h2>
+<ul>
+  <li>Technology: NCSU 45 nm CMOS, V<sub>DD</sub> = 1 V</li>
+  <li>Schematic &amp; simulation: Cadence Virtuoso / Spectre</li>
+  <li>On-chip inductor model: Q &le; 8 (from course HW5 model)</li>
+</ul>
+
+<hr />
+
+</body>
+</html>

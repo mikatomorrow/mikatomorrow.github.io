@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: Antenna Notes</title>
+  <style type="text/css">
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 40px 60px 80px 60px;
+    }
+
+    a { color: #0000cc; }
+    a:visited { color: #551a8b; }
+
+    #breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #555555;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 36px;
+      font-weight: bold;
+      color: #000000;
+      margin: 0 0 4px 0;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 4px;
+    }
+
+    .page-sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      color: #000000;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 26px;
+      font-weight: bold;
+      color: #000000;
+      margin: 32px 0 6px 0;
+      border-bottom: 1px solid #aaaaaa;
+      padding-bottom: 2px;
+    }
+
+    h3 {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: #000000;
+      margin: 20px 0 4px 0;
+    }
+
+    p { margin: 6px 0 10px 0; line-height: 1.7; }
+
+    ul, ol { margin: 6px 0 10px 20px; padding: 0; line-height: 1.7; }
+
+    pre, code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      background-color: #f4f4f4;
+      border: 1px solid #cccccc;
+    }
+
+    pre { padding: 10px 14px; margin: 10px 0; overflow-x: auto; }
+    code { padding: 1px 4px; }
+
+    hr { border: none; border-top: 1px solid #cccccc; margin: 28px 0; }
+
+    .note-meta {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      color: #aaaaaa;
+      margin-bottom: 8px;
+    }
+
+    .question {
+      background-color: #fffce8;
+      border-left: 3px solid #ccaa00;
+      padding: 8px 14px;
+      margin: 12px 0;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .note-callout {
+      background-color: #f0f0f0;
+      border-left: 3px solid #aaaaaa;
+      padding: 8px 14px;
+      margin: 12px 0;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="breadcrumb"><a href="notes.html">&larr; notes</a> / Antenna Notes</div>
+
+<h1>Antenna Notes</h1>
+<div class="page-sub">ECE @ Georgia Tech &nbsp;&mdash;&nbsp; typed as i go</div>
+
+<hr />
+
+<h2>Lecture 1</h2>
+<div class="note-meta">date &mdash; topic</div>
+
+<p>A few fundamental formulas:</p>
+
+<h3>Maxwell's Equations</h3>
+<p>put in</p>
+
+<h3>Speed of Light / Frequency / Wavelength</h3>
+<pre>c = lambda * f
+f = c / lambda
+lambda = c / f</pre>
+
+<h3>Half Wave Dipole</h3>
+<p>Named for having the length of the antenna being half of the wavelength, lambda/2. This is the classic "coat-hanger" antenna that is first shown.</p>
+<p>A simple example: the antenna is 30cm long (d), meaning lambda/2 = 30cm =&gt; lambda = 60cm =&gt; c = lambda * f =&gt; 300x10^6 = 60*10^-2 * f, f = 500MHz</p>
+<p>This 500MHz is quite close to 433MHz, one of the many ISM bands.</p>
+<p>An ISM band &mdash; Industrial Scientific Medical &mdash; is an UNLICENSED band, meaning that as long as you adhere to power and length specifications, you can transmit whatever you want at any time without paying.</p>
+<p>ISM bands are as follows:</p>
+<ul>
+  <li>6.78 MHz</li>
+  <li>13.56 MHz</li>
+  <li>27.12 MHz</li>
+  <li>40.68 MHz</li>
+  <li>433 MHz</li>
+  <li>915 MHz</li>
+  <li>2.4 GHz (LNA!)</li>
+  <li>5.8 GHz (Also popular for modern day RFICs!)</li>
+  <li>24 GHz (Radar!)</li>
+</ul>
+
+<hr />
+
+</body>
+</html>
