@@ -7,7 +7,8 @@
   <style type="text/css">
 
     html, body, * { cursor: none !important; }
-    html, body { min-height: 100vh; }
+    html, body {
+      position: relative; min-height: 100vh; }
 
     #fake-cursor {
       position: fixed; top: 0; left: 0;
@@ -19,9 +20,9 @@
     }
 
     body {
-      background-color: #7070aa;
-      background-image: url('img/bg.png');
-      background-repeat: repeat;
+      position: relative;
+      background-color: #e8dfd0;
+      
       color: #cccccc;
       font-family: Tahoma, Verdana, Arial, sans-serif;
       font-size: 15px;
@@ -86,7 +87,7 @@
       margin-bottom: 28px;
     }
 
-    .entry:hover { border-left-color: #996622; }
+    .entry:hover { border-left-color: #cc9944; }
 
     .entry-title {
       font-family: Impact, "Arial Narrow", Arial, sans-serif;
@@ -97,7 +98,7 @@
 
     .entry-meta { display: none; display: none;
       font-family: "Courier New", Courier, monospace;
-      font-size: 13px; color: #bbbbbb;
+      font-size: 13px; color: #444444;
       letter-spacing: 2px; margin-bottom: 6px;
     }
 
@@ -129,9 +130,15 @@
 
     #clippy-canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
 
+
+    #deco-cloud { position: absolute; top: 600px; left: 5%; width: 150px; pointer-events: none; mix-blend-mode: multiply; }
+    #deco-robot { position: absolute; top: 180px; right: 5%; width: 200px; pointer-events: none; mix-blend-mode: multiply; }
   </style>
 </head>
 <body>
+<img id="deco-cloud" src="img/cloud.png" alt="" />
+<img id="deco-robot" src="img/robot.PNG" alt="" />
+
 <div id="outer">
 
   <div id="header">
