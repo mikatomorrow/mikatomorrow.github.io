@@ -19,8 +19,8 @@
     }
 
     body {
-      background-color: #7070aa;
-      background-image: url('img/bg.png');
+      background-color: #000011;
+      background-image: url('gifs/star.gif');
       background-repeat: repeat;
       color: #cccccc;
       font-family: Tahoma, Verdana, Arial, sans-serif;
@@ -30,8 +30,8 @@
       position: relative;
     }
 
-    #gif-chalkboard { position: absolute; top: 60px;  left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
-    #gif-solder     { position: absolute; top: 60px;  right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-chalkboard { position: absolute; top: 200px; left:100px; width: 160px;  pointer-events: none; z-index: 60; image-rendering: pixelated; width: 180px; image-rendering: crisp-edges; }
+    #gif-book { position: absolute; top: 185px; right:100px; width: 160px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 150px; image-rendering: crisp-edges; }
 
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
@@ -68,7 +68,7 @@
     }
 
     #header .breadcrumb a { color: #aabb44; }
-    #header .breadcrumb a:hover { color: #aabb44; }
+    #header .breadcrumb a:hover { color: #ffffff; }
 
     #content {
       background-color: rgba(10,10,10,0.7);
@@ -215,7 +215,7 @@
 </head>
 <body>
 <img id="gif-chalkboard" src="gifs/chalkboard.gif" alt="" />
-<img id="gif-solder"     src="gifs/solder.gif"     alt="" />
+<img id="gif-book" src="gifs/book.gif" alt="" />
 
 <div id="outer">
 
@@ -241,6 +241,18 @@
       </div>
     </a>
 
+    <a href="project-coupler.html" class="featured-card">
+      <div class="featured-img">[PCB]</div>
+      <div class="featured-info">
+        <div class="featured-title">3-Section Quadrature Hybrid Coupler</div>
+        <div class="featured-meta">ECE 6360 &nbsp;&mdash;&nbsp; Microwave Design &nbsp;&mdash;&nbsp; Spring 2026 &nbsp;&mdash;&nbsp; w/ Jordan Bartlett</div>
+        <div class="featured-desc">Branch-line quadrature hybrid coupler at f&#x2080; = 9 GHz on RO4003C microstrip. 3-section topology with &lambda;/4 taper to solve narrow line width constraint. ADS and HFSS simulations met all 100% rubric criteria; PCB fabricated and VNA-tested.</div>
+        <div class="featured-specs">
+          S11 &lt; &minus;20 dB &nbsp;|&nbsp; S41 &lt; &minus;20 dB &nbsp;|&nbsp; Phase diff 90&deg; &plusmn; 3% &nbsp;|&nbsp; Amp diff &lt; 1.5 dB &nbsp;|&nbsp; 6.75&ndash;11.25 GHz
+        </div>
+      </div>
+    </a>
+
     <hr class="mid" />
 
     <div class="section-label">// more projects //</div>
@@ -259,14 +271,7 @@
       <span class="tag">ADS</span><span class="tag">Microwave Design</span><span class="tag">Microstrip</span>
     </a>
 
-    <a href="project-coupler.html" class="entry">
-      <div class="entry-title">3-Section Quadrature Hybrid Coupler</div>
-      <div class="entry-meta">ECE 6360 Microwave Design &nbsp;&mdash;&nbsp; Spring 2026 &nbsp;&mdash;&nbsp; w/ Jordan Bartlett</div>
-      <div class="entry-desc">Branch-line quadrature hybrid coupler at f&#x2080; = 9 GHz (6.75&ndash;11.25 GHz band) on RO4003C microstrip. 3-section topology with &lambda;/4 taper to solve narrow line width constraint. ADS and HFSS simulations met all 100% rubric criteria; PCB fabricated and VNA-tested with measurement environment discussion.</div>
-      <span class="tag">ADS</span><span class="tag">HFSS</span><span class="tag">Microwave Design</span><span class="tag">PCB</span><span class="tag">VNA</span>
-    </a>
-
-    <a href="project-waveguide.html" class="entry">
+<a href="project-waveguide.html" class="entry">
       <div class="entry-title">Rectangular Waveguide Modal Analysis &amp; TE10 Current Visualization</div>
       <div class="entry-meta">ECE 6360 Microwave Design &nbsp;&mdash;&nbsp; Spring 2026</div>
       <div class="entry-desc">Characterized TE10, TE01, TE20, TE11, and TM11 modes in a WR-28 Ka-band waveguide across 20&ndash;50 GHz in HFSS. Derived surface current density analytically for all 4 walls, validated with MATLAB visualization (2D + 3D) and full-wave HFSS simulation.</div>

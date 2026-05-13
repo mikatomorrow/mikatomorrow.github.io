@@ -117,6 +117,45 @@
       box-sizing: border-box;
     }
 
+
+    .fig {
+      margin: 18px 0;
+    }
+
+    .fig img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #cccccc;
+    }
+
+    .fig-caption {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: #000000;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .fig-row {
+      display: -ms-flexbox;
+      display: flex;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .fig-row .fig {
+      -ms-flex: 1;
+      flex: 1;
+      margin: 0;
+    }
+
+    .fig-row .fig img {
+      height: 300px;
+      width: 100%;
+      object-fit: contain;
+      background-color: #f8f8f8;
+    }
   </style>
 </head>
 <body>
@@ -124,9 +163,6 @@
 <div id="breadcrumb"><a href="work.html">&larr; projects</a> / MEMS Differential Capacitive Accelerometer</div>
 
 <h1>MEMS Differential Capacitive Accelerometer</h1>
-<div class="page-sub">ECE Interface IC Design &nbsp;|&nbsp; Fall 2025 &nbsp;|&nbsp; SOI MEMS &nbsp;|&nbsp; COMSOL Multiphysics</div>
-
-<hr />
 
 <h2>Overview</h2>
 <p>Designed and simulated a differential capacitive accelerometer on a silicon-on-insulator (SOI) substrate. The device uses a central proof mass suspended by folded tethers, with interdigitated sense electrodes on either side forming a differential capacitor pair. An applied acceleration displaces the proof mass, producing a differential capacitance change C&#x2080; &plusmn; &Delta;C that is read out by interface electronics.</p>
@@ -184,8 +220,14 @@
   <li><strong>Transient response:</strong> % overshoot and settling time computed from Q and bandwidth; validated against COMSOL time-domain simulation</li>
 </ul>
 
-<div class="img-placeholder">[COMSOL von Mises stress / modal plot &mdash; to be added]</div>
-<div class="img-placeholder">[COMSOL displacement magnitude vs. frequency &mdash; to be added]</div>
+<div class="fig">
+  <img src="img/mems/von_mises.png" alt="COMSOL von Mises stress distribution" />
+  <div class="fig-caption">COMSOL Multiphysics &mdash; von Mises stress distribution across proof mass and folded tethers under 1g acceleration.</div>
+</div>
+<div class="fig">
+  <img src="img/mems/displacement.png" alt="COMSOL displacement magnitude" />
+  <div class="fig-caption">COMSOL modal analysis &mdash; proof mass displacement magnitude confirming resonant frequency at 505 Hz.</div>
+</div>
 
 <h2>Tools &amp; Technology</h2>
 <ul>

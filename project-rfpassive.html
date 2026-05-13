@@ -138,19 +138,45 @@
       box-sizing: border-box;
     }
 
+
+    .fig {
+      margin: 18px 0;
+    }
+    .fig img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #cccccc;
+    }
+    .fig-caption {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: #000000;
+      text-align: center;
+      margin-top: 5px;
+    }
+    .fig-row {
+      display: -ms-flexbox;
+      display: flex;
+      gap: 12px;
+      margin: 18px 0;
+    }
+    .fig-row .fig {
+      -ms-flex: 1; flex: 1; margin: 0;
+    }
+    .fig-row .fig img {
+      height: 300px; width: 100%;
+      object-fit: contain; background-color: #f8f8f8;
+    }
   </style>
 </head>
 <body>
 
-<div id="breadcrumb"><a href="work.html">&larr; projects</a> / RF Passive Design &mdash; Impedance Transformer &amp; Hybrid Coupler</div>
+<div id="breadcrumb"><a href="work.html">&larr; projects</a> / Broadband Quarter-Wave Impedance Transformer</div>
 
 <h1>Broadband Quarter-Wave Impedance Transformer</h1>
-<div class="page-sub">ECE 6360 Microwave Design &nbsp;|&nbsp; Spring 2026 &nbsp;|&nbsp; RO4003C microstrip &nbsp;|&nbsp; Keysight ADS</div>
-
-<hr />
-
 <h2>Overview</h2>
-<p>Two-part microwave passive design project from ECE 6360. Part 1 designs and optimizes a broadband quarter-wave impedance transformer on microstrip, comparing a single-section baseline against a 3-section Chebyshev transformer. Part 2 (in progress) designs a 3-section branch-line quadrature hybrid coupler targeting 6.75&ndash;11.25 GHz. All microstrip lines use RO4003C high-frequency laminate (0.32&Prime; substrate, &epsilon;&#x2C7; = 3.55) with 1 oz (35 &micro;m) copper cladding, designed in Keysight ADS with physical dimensions from LineCalc.</p>
+<p>Microwave passive design project from ECE 6360. Designs and optimizes a broadband quarter-wave impedance transformer on microstrip, comparing a single-section baseline against a 3-section Chebyshev transformer. All microstrip lines use RO4003C high-frequency laminate (0.32&Prime; substrate, &epsilon;&#x2C7; = 3.55) with 1 oz (35 &micro;m) copper cladding, designed in Keysight ADS with physical dimensions from LineCalc.</p>
 
 <hr />
 
@@ -164,7 +190,426 @@
 <pre>Z&#x2081; = &radic;(Z&#x2C6; &middot; Z&#x1D38;) = &radic;(50 &middot; 10) = 22.36 &Omega;</pre>
 <p>Physical dimensions (LineCalc, RO4003C, 3 GHz): W = 218.57 mil, L = 562.50 mil. Simulated bandwidth: <strong>29.667%</strong>, consistent with Pozar&rsquo;s theoretical prediction of 29%.</p>
 
-<div class="img-placeholder">[|S11| vs. norm (f/3GHz) &mdash; single section &mdash; to be added]</div>
+<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_schematic_diagram.png" alt="Broadband transformer schematic" />
+  <div class="fig-caption">ADS schematic &mdash; single-section and 3-section Chebyshev quarter-wave impedance transformer on RO4003C microstrip.</div>
+</div>
+
+<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>.png" alt="<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div> single section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>| vs. normalized frequency &mdash; single-section transformer, 29.7% bandwidth at &minus;20 dB.</div>
+</div>|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>.png" alt="<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div> single section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>| vs. normalized frequency &mdash; single-section transformer, 29.7% bandwidth at &minus;20 dB.</div>
+</div>|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>.png" alt="<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div> single section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>| vs. normalized frequency &mdash; single-section transformer, 29.7% bandwidth at &minus;20 dB.</div>
+</div>
 
 <h3>Section 2: 3-Section Chebyshev Transformer (Optimized)</h3>
 <p>The 3-section Chebyshev transformer distributes the impedance transformation across three &lambda;/4 sections, with each section impedance set via the geometric-mean staircase:</p>
@@ -173,9 +618,912 @@ Z&#x2082; = &radic;(Z&#x2C6; &middot; Z&#x1D38;) = 22.36 &Omega; &nbsp; (middle)
 Z&#x2081; = &radic;(Z&#x2082; &middot; Z&#x1D38;) = 33.44 &Omega; &nbsp; (first step, 50 &rarr; Z&#x2082;)</pre>
 <p>After ADS optimizer sweep, the final optimized impedances converged to <strong>Z&#x2081; = 33.4 &Omega;, Z&#x2082; = 21.0 &Omega;, Z&#x2083; = 13.9 &Omega;</strong>. Optimized bandwidth: <strong>112.333%</strong>, nearly a 4&times; increase over the single-section design.</p>
 
-<div class="img-placeholder">[|S11| vs. norm &mdash; unoptimized 3-section &mdash; to be added]</div>
-<div class="img-placeholder">[|S11| vs. norm &mdash; optimized 3-section &mdash; to be added]</div>
-<div class="img-placeholder">[|S11| overlay: single section vs. optimized 3-section with BW markers &mdash; to be added]</div>
+<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>.png" alt="<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div> single section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>| vs. normalized frequency &mdash; single-section transformer, 29.7% bandwidth at &minus;20 dB.</div>
+</div>|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>.png" alt="<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div> single section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>| vs. normalized frequency &mdash; single-section transformer, 29.7% bandwidth at &minus;20 dB.</div>
+</div>|<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>
+<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>.png" alt="<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div> single section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>| vs. normalized frequency &mdash; single-section transformer, 29.7% bandwidth at &minus;20 dB.</div>
+</div>|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>.png" alt="<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div> single section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>| vs. normalized frequency &mdash; single-section transformer, 29.7% bandwidth at &minus;20 dB.</div>
+</div>|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>
+<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>.png" alt="<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div> single section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>| vs. normalized frequency &mdash; single-section transformer, 29.7% bandwidth at &minus;20 dB.</div>
+</div>|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>.png" alt="<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div> single section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/braodband_transformer_section2.png" alt="<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div> unoptimized 3-section" />
+  <div class="fig-caption">|<div class="fig">
+  <img src="img/rfpassive/broadband_transformer_section2_optimized.png" alt="<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div> optimized 3-section" />
+  <div class="fig-caption">|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>| vs. normalized frequency &mdash; optimized 3-section transformer, 112.3% bandwidth.</div>
+</div>| vs. normalized frequency &mdash; unoptimized 3-section Chebyshev transformer.</div>
+</div>| vs. normalized frequency &mdash; single-section transformer, 29.7% bandwidth at &minus;20 dB.</div>
+</div>|<div class="fig-row">
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_reflection_coefficient_before_and_after.png" alt="Reflection coefficient comparison" />
+    <div class="fig-caption">Reflection coefficient overlay &mdash; single-section vs. optimized 3-section with bandwidth markers.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rfpassive/broadband_transformer_bandwidth_percent.png" alt="Bandwidth percentage comparison" />
+    <div class="fig-caption">Fractional bandwidth &mdash; 29.7% (1-section) vs. 112.3% (3-section optimized).</div>
+  </div>
+</div>
 
 <h3>Results Summary</h3>
 

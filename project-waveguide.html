@@ -145,6 +145,20 @@
       color: #000000;
     }
 
+
+    .fig-row {
+      display: -ms-flexbox;
+      display: flex;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .fig-row .fig {
+      -ms-flex: 1; flex: 1; margin: 0; text-align: left;
+    }
+    .fig-row .fig img {
+      height: 260px; width: 100%;
+      object-fit: contain; background-color: #f8f8f8;
+    }
   </style>
 </head>
 <body>
@@ -152,9 +166,6 @@
 <div id="breadcrumb"><a href="work.html">&larr; projects</a> / Rectangular Waveguide Modal Analysis &amp; TE10 Current Visualization</div>
 
 <h1>Rectangular Waveguide Modal Analysis &amp; TE&#x2081;&#x2080; Current Visualization</h1>
-<div class="page-sub">ECE 6360 Microwave Design &nbsp;|&nbsp; Spring 2026 &nbsp;|&nbsp; WR-28 Ka-band &nbsp;|&nbsp; HFSS / MATLAB</div>
-
-<hr />
 
 <h2>Overview</h2>
 <p>Two-part waveguide study using a WR-28 Ka-band rectangular waveguide (26.5&ndash;40 GHz). Part 1 characterizes the first five propagating modes (TE&#x2081;&#x2080;, TE&#x2080;&#x2081;, TE&#x2082;&#x2080;, TE&#x2081;&#x2081;, TM&#x2081;&#x2081;) analytically and via HFSS E-field visualization. Part 2 derives the TE&#x2081;&#x2080; surface current density analytically for all four waveguide walls and validates against HFSS full-wave simulation, with MATLAB 2D and 3D current plots.</p>
@@ -230,9 +241,35 @@ f&#x1D50; = k&#x1D50; / (2&pi;&radic;(&mu;&epsilon;))</pre>
 
 <p>Exact k&#x1D50; values calculated from WR-28 dimensions and filled in from simulation. At 33.25 GHz, only TE&#x2081;&#x2080; propagates &mdash; the waveguide is single-mode across the Ka-band.</p>
 
-<div class="fig">
-  <img src="img/waveguide/waveguide-hfss-modes.png" alt="HFSS E-field plots for TE10, TE01, TE20, TE11, TM11" />
-  <div class="fig-caption">HFSS E-field magnitude plots for the first five modes at 33.25 GHz (WR-28, Ka-band).</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/waveguide/waveguide_TE_10_20ghz.png" alt="TE10 at 20 GHz evanescent" />
+    <div class="fig-caption">TE&#x2081;&#x2080; at 20 GHz &mdash; below cutoff (f&#x1D50; = 21.1 GHz); intentional evanescent check showing field does not propagate.</div>
+  </div>
+  <div class="fig">
+    <img src="img/waveguide/waveguide_TE_10_33.25ghz.png" alt="TE10 at 33.25 GHz propagating" />
+    <div class="fig-caption">TE&#x2081;&#x2080; at 33.25 GHz &mdash; dominant propagating mode at center frequency.</div>
+  </div>
+</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/waveguide/waveguide_TE_01_45ghz.png" alt="TE01 at 45 GHz" />
+    <div class="fig-caption">TE&#x2080;&#x2081; at 45 GHz &mdash; above cutoff (f&#x1D50; = 42.2 GHz), second mode.</div>
+  </div>
+  <div class="fig">
+    <img src="img/waveguide/waveguide_TE_20_45ghz.png" alt="TE20 at 45 GHz" />
+    <div class="fig-caption">TE&#x2082;&#x2080; at 45 GHz &mdash; above cutoff (f&#x1D50; = 42.2 GHz), third mode.</div>
+  </div>
+</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/waveguide/waveguide_TE_11_50ghz.png" alt="TE11 at 50 GHz" />
+    <div class="fig-caption">TE&#x2081;&#x2081; at 50 GHz &mdash; above cutoff (f&#x1D50; = 47.3 GHz).</div>
+  </div>
+  <div class="fig">
+    <img src="img/waveguide/waveguide_TM_11_50ghz.png" alt="TM11 at 50 GHz" />
+    <div class="fig-caption">TM&#x2081;&#x2081; at 50 GHz &mdash; above cutoff (f&#x1D50; = 47.3 GHz), degenerate with TE11.</div>
+  </div>
 </div>
 
 <hr />
@@ -243,12 +280,12 @@ f&#x1D50; = k&#x1D50; / (2&pi;&radic;(&mu;&epsilon;))</pre>
 <p>Surface current density <strong>J&#x2C6;</strong> = <strong>n&#x2C6;</strong> &times; <strong>H</strong> was derived analytically for all four walls of the WR-28 guide in the TE&#x2081;&#x2080; mode using the field solutions from class notes. The current flows longitudinally (along z) on the broad walls and circumferentially (looping) on the narrow walls, with the characteristic null at the broad-wall center characteristic of TE&#x2081;&#x2080;. MATLAB was used to produce both 2D wall maps and a 3D unfolded visualization.</p>
 
 <div class="fig">
-  <img src="img/waveguide/waveguide-matlab-2d.png" alt="MATLAB 2D surface current density plots, all 4 walls" />
+  <img src="img/waveguide/top_bottom_and_sidewall_matlab_2d_current.png" alt="MATLAB 2D surface current density plots, all 4 walls" />
   <div class="fig-caption">MATLAB 2D streamline plots of J<sub>s</sub> on the top/bottom broad wall (left) and side wall (right).</div>
 </div>
 
 <div class="fig">
-  <img src="img/waveguide/waveguide-matlab-3d.png" alt="MATLAB 3D unfolded waveguide current visualization" />
+  <img src="img/waveguide/3d_view_current_matlab.png" alt="MATLAB 3D unfolded waveguide current visualization" />
   <div class="fig-caption">MATLAB 3D quiver visualization of TE<sub>10</sub> surface currents on all four waveguide walls.</div>
 </div>
 
@@ -256,18 +293,33 @@ f&#x1D50; = k&#x1D50; / (2&pi;&radic;(&mu;&epsilon;))</pre>
 <p>The HFSS simulation of the same WR-28 section (built in Part 1) was used to extract the surface current density from the full-wave solution. Agreement between the analytical and simulated current patterns confirms the field solution derivation.</p>
 
 <div class="fig">
-  <img src="img/waveguide/waveguide-hfss-jsurf-top.png" alt="HFSS surface current density, top view" />
+  <img src="img/waveguide/bottom_current_hfss.png" alt="HFSS surface current density, top view" />
   <div class="fig-caption">HFSS J<sub>surf</sub> [A/m] &mdash; top/bottom broad wall view (max: 19.707 A/m).</div>
 </div>
 
 <div class="fig">
-  <img src="img/waveguide/waveguide-hfss-jsurf-front.png" alt="HFSS surface current density, front view" />
+  <img src="img/waveguide/side_current_hfss.png" alt="HFSS surface current density, front view" />
   <div class="fig-caption">HFSS J<sub>surf</sub> [A/m] &mdash; front face view showing side-wall current distribution.</div>
 </div>
 
 <div class="fig">
-  <img src="img/waveguide/waveguide-hfss-jsurf-3d.png" alt="HFSS surface current density, 3D view" />
+  <img src="img/waveguide/3d_view_current_hfss.png" alt="HFSS surface current density, 3D view" />
   <div class="fig-caption">HFSS J<sub>surf</sub> [A/m] &mdash; 3D isometric view. Ansys HFSS 2025 R2.</div>
+</div>
+
+<hr />
+
+<h2>Part 3 &mdash; Waveguide T-Junction</h2>
+<p>A T-junction power divider was designed and simulated in HFSS within the same WR-28 Ka-band waveguide. The T-junction splits an input wave from Port 1 equally between two output ports (Port 2, Port 3). S-parameter simulation characterizes the insertion loss and return loss across the Ka-band.</p>
+
+<div class="fig">
+  <img src="img/waveguide/waveguide_t_junction.png" alt="WR-28 T-junction geometry" />
+  <div class="fig-caption">HFSS model of WR-28 T-junction power divider &mdash; input port (Port 1) and two output ports (Port 2, Port 3).</div>
+</div>
+
+<div class="fig">
+  <img src="img/waveguide/waveguide_t_junction_s_params.png" alt="T-junction S-parameters" />
+  <div class="fig-caption">T-junction S-parameters &mdash; S11 (return loss) and S21/S31 (insertion loss) across Ka-band.</div>
 </div>
 
 <hr />

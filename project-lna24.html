@@ -127,6 +127,45 @@
       box-sizing: border-box;
     }
 
+
+    .fig {
+      margin: 18px 0;
+    }
+
+    .fig img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #cccccc;
+    }
+
+    .fig-caption {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: #000000;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .fig-row {
+      display: -ms-flexbox;
+      display: flex;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .fig-row .fig {
+      -ms-flex: 1;
+      flex: 1;
+      margin: 0;
+    }
+
+    .fig-row .fig img {
+      height: 300px;
+      width: 100%;
+      object-fit: contain;
+      background-color: #f8f8f8;
+    }
   </style>
 </head>
 <body>
@@ -134,9 +173,6 @@
 <div id="breadcrumb"><a href="work.html">&larr; projects</a> / 2.4 GHz Cascode LNA Design &amp; Optimization</div>
 
 <h1>2.4 GHz Cascode LNA Design &amp; Optimization</h1>
-<div class="page-sub">Personal Project &nbsp;|&nbsp; Spring 2025 &nbsp;|&nbsp; 130 nm CMOS &nbsp;|&nbsp; Cadence Virtuoso / Spectre</div>
-
-<hr />
 
 <h2>Overview</h2>
 <p>Designed, simulated, and optimized a differential cascode Low Noise Amplifier (LNA) in 130 nm CMOS targeting the 2.4 GHz ISM band. The LNA is the first active stage in a receiver chain, and its noise figure and gain directly determine the cascaded noise performance of the entire system. The design prioritizes low noise figure while maintaining adequate input matching and gain.</p>
@@ -151,7 +187,10 @@
   <li><strong>Output LC tank (green):</strong> Resonant at 2.4 GHz to filter high-frequency noise and present a high impedance load at the target frequency</li>
 </ul>
 
-<div class="img-placeholder">[schematic &mdash; to be added]</div>
+<div class="fig">
+  <img src="img/lna24/LNA.png" alt="2.4 GHz cascode LNA schematic" />
+  <div class="fig-caption">Differential cascode LNA schematic in 130 nm CMOS &mdash; input matching network (white), M1/M2 input pair (pink), cascode M3/M4 and output LC tank (green).</div>
+</div>
 
 <h2>Design Specifications &amp; Results</h2>
 
@@ -182,7 +221,10 @@
   </tr>
 </table>
 
-<div class="img-placeholder">[S-parameter &amp; NF simulation plot &mdash; to be added]</div>
+<div class="fig">
+  <img src="img/lna24/S11_cadence.png" alt="S-parameter and noise figure simulation results" />
+  <div class="fig-caption">Cadence Spectre simulation &mdash; S11 = &minus;13.26 dB, S21 = 19.38 dB, NF = 0.66 dB at 2.4 GHz.</div>
+</div>
 
 <h2>Tools &amp; Technology</h2>
 <ul>

@@ -45,7 +45,7 @@
 
     .award-banner {
       font-family: "Courier New", Courier, monospace;
-      font-size: 10px;
+      font-size: 16px;
       color: #007700;
       background-color: #f0fff0;
       border: 1px solid #007700;
@@ -144,6 +144,44 @@
       box-sizing: border-box;
     }
 
+
+    .fig {
+      margin: 18px 0;
+    }
+
+    .fig img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid #cccccc;
+    }
+
+    .fig-caption {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px;
+      color: #000000;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .fig-row {
+      display: -ms-flexbox;
+      display: flex;
+      gap: 6px;
+      margin: 18px auto;
+    }
+
+    .fig-row .fig {
+      -ms-flex: 1;
+      flex: 1;
+      margin: 0;
+    }
+
+    .fig-row .fig img {
+      height: 400px;
+      width: 100%;
+      object-fit: contain;
+          }
   </style>
 </head>
 <body>
@@ -151,14 +189,9 @@
 <div id="breadcrumb"><a href="work.html">&larr; projects</a> / Hyundai HATCI &mdash; IONIQ 6 Driving Simulator</div>
 
 <h1>Hyundai Motors Lab &mdash; IONIQ 6 L2/L3 HMI &amp; Driving Simulator</h1>
-<div class="page-sub">Senior Capstone &nbsp;|&nbsp; Spring 2025 &nbsp;|&nbsp; ID|EE|CMPE: L2/L3 Interface Design &mdash; Hyundai HATCI</div>
-<div class="page-sub">w/ Clarissa Kim, Edmond Li, Xiaoyang Wang, Adam Whitney, Cynthia Zhou</div>
 
 <br />
 <span class="award-banner">&#9733; Best ECE Project &mdash; Georgia Tech Capstone Expo 2025</span>
-
-<hr />
-
 <h2>Overview</h2>
 <p>Cross-disciplinary capstone project for Hyundai&rsquo;s Advanced Technology Center (HATCI), investigating how to improve driver trust and confidence in the IONIQ 6&rsquo;s Highway Driving Assist 2.0 (HDA 2.0) system within semi-Level 2 and emerging Level 2+ ADAS contexts. The project delivered three major bodies of work: (1) a validated HMI confidence metric, (2) a redesigned HDA 2.0 user interface, and (3) a physical + virtual driving simulator for ongoing Hyundai research.</p>
 
@@ -180,7 +213,16 @@
   <li><strong>Future upgrade:</strong> Two-axis NLR motion platform to be integrated</li>
 </ul>
 
-<div class="img-placeholder">[physical rig photo &mdash; to be added]</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/ioniq6/rig.png" alt="IONIQ 6 simulator rig front view" style="border: none;" />
+    <div class="fig-caption">Simulator rig &mdash; front view with dual 12.3&Prime; displays and 3D-printed steering wheel sleeve.</div>
+  </div>
+  <div class="fig">
+    <img src="img/ioniq6/rig2.png" alt="IONIQ 6 simulator rig side view" style="border: none;" />
+    <div class="fig-caption">Rig side view showing display mount positioning and seat setup.</div>
+  </div>
+</div>
 
 <h3>Virtual Environment (Unreal Engine 5.4)</h3>
 <p>The virtual environment evolved across three map iterations:</p>
@@ -200,7 +242,20 @@
 </ul>
 <p>All ADAS features execute within 500 ms of button press; UIs imported from Figma directly into UE blueprint blocks.</p>
 
-<div class="img-placeholder">[Unreal Engine environment screenshots &mdash; to be added]</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/ioniq6/sim1.png" alt="Unreal Engine 5.4 virtual environment" style="border: none;" />
+    <div class="fig-caption">UE5.4 virtual environment &mdash; CityScape HD map with autonomous vehicle actors.</div>
+  </div>
+  <div class="fig">
+    <img src="img/ioniq6/sim2.png" alt="Unreal Engine simulator view" style="border: none;" />
+    <div class="fig-caption">Driver&rsquo;s POV with ADAS HUD overlay active.</div>
+  </div>
+</div>
+<div class="fig">
+  <img src="img/ioniq6/simfunctionality.png" alt="ADAS blueprint functionality in Unreal Engine" />
+  <div class="fig-caption">ADAS blueprint logic in UE5.4 &mdash; LKA spline steering, SCC throttle control, and HDA handoff.</div>
+</div>
 
 <hr />
 
@@ -261,7 +316,14 @@
 <h3>North Star Concept (Level 2+)</h3>
 <p>A forward-looking design concept for SAE Level 2+ scenarios: a fixed display embedded in the steering wheel hub (screen stays stationary as the wheel turns, co-located with the airbag) provides essential information at the driver&rsquo;s point of contact. The main display is simplified to essential data during manual control; during HDA handoff, the wheel display shows transition status while the center screen visualizes vehicle systems. Designed for compatibility with Apple CarPlay iOS 16 full-width widget interface.</p>
 
-<div class="img-placeholder">[North Star renders &mdash; to be added]</div>
+<div class="fig">
+  <img src="img/ioniq6/north_star1.png" alt="North Star concept render 1" style="border: none;" />
+  <div class="fig-caption">North Star concept &mdash; steering wheel hub display with simplified main screen during HDA handoff.</div>
+</div>
+<div class="fig">
+  <img src="img/ioniq6/north_star2.png" alt="North Star concept render 2" style="width: 80%;" />
+  <div class="fig-caption">North Star concept &mdash; full-width CarPlay widget integration on center display.</div>
+</div>
 
 <hr />
 

@@ -20,7 +20,7 @@
 
     body {
       background-color: #7070aa;
-      background-image: url('img/bg.png');
+      background-image: url('gifs/star27.gif');
       background-repeat: repeat;
       color: #cccccc;
       font-family: Tahoma, Verdana, Arial, sans-serif;
@@ -29,14 +29,11 @@
       padding: 16px 0 30px 0;
       position: relative;
     }
-
-    #gif-headphone      { position: absolute; top: 60px;  left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
-    #gif-headphone-spin { position: absolute; top: 60px;  right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
-    #gif-mic2           { position: absolute; top: 220px; left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
-    #gif-mic3           { position: absolute; top: 220px; right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
-    #gif-mic4           { position: absolute; top: 380px; left: 10px;  pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
-    #gif-bear           { position: absolute; top: 380px; right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
-    #gif-lucky-star     { position: absolute; top: 540px; right: 10px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-mic2           { position: absolute; top: 100px; left: 100px;  pointer-events: none; z-index: 60; image-rendering: pixelated; width: 200px; image-rendering: crisp-edges; }
+    #gif-mic3           { position: absolute; top: 100px; right: 100px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 130px; image-rendering: crisp-edges; }
+    #gif-mic4           { position: absolute; top: 500px; left: 100px;  pointer-events: none; z-index: 60; image-rendering: pixelated; width: 150px; image-rendering: crisp-edges; }
+    #gif-bear           { position: absolute; top: 500px; right: 100px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 200px; image-rendering: crisp-edges; }
+    #gif-lucky-star { position: absolute; top: 2350px; left: 50%; transform: translateX(-50%); width: 500px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
 
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
@@ -73,7 +70,7 @@
     }
 
     #header .breadcrumb a { color: #4488cc; }
-    #header .breadcrumb a:hover { color: #4488cc; }
+    #header .breadcrumb a:hover { color: #ffffff; }
 
     #content {
       background-color: rgba(10,10,10,0.7);
@@ -88,11 +85,28 @@
       letter-spacing: 4px; margin-bottom: 18px;
     }
 
+    .entry-inner { }
+
     .entry {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: start;
+      align-items: center;
+      gap: 16px;
       border-left: 3px solid #081020; border-bottom: 1px solid #222222;
-      padding: 16px 0 18px 18px;
+      padding: 16px 0 18px 16px;
       margin-bottom: 28px;
     }
+    .album-art {
+      width: 175px;
+      height: 175px;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+      object-fit: cover;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+    .entry-text { -ms-flex: 1; flex: 1; }
 
     .entry:hover { border-left-color: #2266aa; }
 
@@ -124,6 +138,51 @@
 
     .tag + .tag::before { content: " | "; color: #555555; }
 
+    .featured-song {
+      border-left: 4px solid #4488cc;
+      background-color: #080e18;
+      padding: 20px 22px 18px 22px;
+      margin-bottom: 28px;
+    }
+
+    .featured-song-label {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px; color: #2266aa;
+      letter-spacing: 4px; margin-bottom: 10px;
+    }
+
+    .featured-song-title {
+      font-family: Impact, "Arial Narrow", Arial, sans-serif;
+      font-size: 32px; font-weight: normal;
+      color: #4488cc; letter-spacing: 3px;
+      text-transform: uppercase; line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .featured-song-artist {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px; color: #aaaaaa;
+      letter-spacing: 2px; margin-bottom: 12px;
+    }
+
+    .featured-song-note {
+      font-size: 16px; color: #bbbbbb;
+      line-height: 1.7; margin-bottom: 14px;
+    }
+
+    .play-btn {
+      display: inline-block;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px; color: #4488cc;
+      border: 1px solid #2266aa;
+      padding: 5px 14px;
+      cursor: pointer;
+      background: none;
+      letter-spacing: 2px;
+    }
+
+    .play-btn:hover { background-color: #0a1a2e; color: #88bbff; }
+
     hr.mid {
       border: none; border-top: 1px solid #1e1e1e;
       margin: 22px 0;
@@ -140,8 +199,6 @@
   </style>
 </head>
 <body>
-<img id="gif-headphone"      src="gifs/headphone.gif"       alt="" />
-<img id="gif-headphone-spin" src="gifs/headphone_spin.gif" alt="" />
 <img id="gif-mic2"           src="gifs/mic2.gif"            alt="" />
 <img id="gif-mic3"           src="gifs/mic3.gif"            alt="" />
 <img id="gif-mic4"           src="gifs/mic4.gif"            alt="" />
@@ -153,23 +210,101 @@
   <div id="header">
     <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; music</div>
     <h1>&#9834; music</h1>
-    <div class="sub">currently listening</div>
+    <div class="sub">currently,,, feeling punk rock</div>
   </div>
 
   <div id="content">
 
+    <div class="featured-song" style="display:flex; gap:20px">
+      <img src="img/music/will_wood.PNG" alt="Will Wood" style="width:200px; height:200px; object-fit:cover; flex-shrink:0; image-rendering:pixelated;" />
+      <div style="flex:1;">
+        <div class="featured-song-label">// favorite song ever //</div>
+        <div class="featured-song-title">MARSHA, THANKK YOU FOR THE DIALECTICS - WILL WOOD</div>
+        <div class="featured-song-note">will wood has been a long time favorite since i was in highschool, i went to 2 of his concerts and they have been the best concerts ive been to by far.
+        <br><br> this song particularly hits hard, as it focuses on mental health and hits on so many points that im sensitive about.
+<ul>
+  <li>the perversion of the health, pharmaceutical, &amp; therapeutic industry (&ldquo;don&rsquo;t heed no evil wills of moral nihilists&rdquo;)</li>
+  <li>the social desire to be <em>different</em> and so collecting disorders is approved (&ldquo;we depress to impress, i guess&rdquo;)</li>
+  <li>how easy it is to be diagnosed, causing mass misdiagnoses (&ldquo;If our harmonies don&rsquo;t sync, we can change our voices, A chorus on condition of our diagnosis&rdquo;)</li>
+</ul>
+all encompassed in an absolutely beautiful instrumental, with lyrics that are poetry on their own. truly an amazing listen.</div>
+        <button class="play-btn" onclick="toggleAudio('fav-audio',this,150,245)">&#9654; play snippet</button>
+        <audio id="fav-audio" src="audio/willwood_marsha.mp3" preload="none"></audio>
+      </div>
+    </div>
+    <hr class="mid" />
+
+    
     <div class="entry">
-      <div class="entry-title">artist &mdash; album</div>
-      <div class="entry-meta">genre &nbsp;&mdash;&nbsp; year</div>
-      <div class="entry-desc">song 1.</div>
-      <span class="tag">electronic</span>
+      <img class="album-art" src="img/music/csh.PNG" alt="Car Seat Headrest" />
+      <div class="entry-text">
+        <div class="entry-title">car seat headrest</div>
+        <div class="entry-desc">csh is my top band right now, especially the older songs. they made their old songs in a car (hence the name) so it all sounds a bit crusty, but in that way it makes it feel real. the voice cracks, the imperfections, the unpolishness screams human and it screams loser, and we're all losers.
+          
+          <br><br>top songs: something soon, drunk drivers/killer whales, death at the movies, nervous young inhumans</div>
+        <button class="play-btn" onclick="toggleAudio('csh',this,85,140)">&#9654; play snippet</button>
+        <audio id="csh" src="audio/csh_something_soon.mp3" preload="none"></audio>
+                <br>
+        <br>
+
+        <span class="tag">indie rock</span>
+      </div>
+    </div>
+
+
+    <div class="entry">
+      <img class="album-art" src="img/music/hot_freaks.PNG" alt="Hot Freaks" />
+      <div class="entry-text">
+        <div class="entry-title">Hot Freaks</div>
+        <div class="entry-desc">hot freaks is very much different than what i usually listen to, but puppy princess has been one of my fav songs for years now, something about it's sweet lyrics and christmas-y beat makes me feel so warm and happy. they make a lot of other gushy, fuzzy songs that i like too.
+          <br> <br>
+          top songs: puppy princess, write me letters, heartache, i wanna be your boyfriend
+        </div>
+        <button class="play-btn" onclick="toggleAudio('pp',this, 50.5, 97)">&#9654; play snippet</button>
+        <audio id="pp" src="audio/puppy_hot_freaks.mp3" preload="none"></audio>
+        <br> <br>
+        <span class="tag">indie pop</span>
+      </div>
     </div>
 
     <div class="entry">
-      <div class="entry-title">artist &mdash; album</div>
-      <div class="entry-meta">genre &nbsp;&mdash;&nbsp; year</div>
-      <div class="entry-desc">song 2.</div>
-      <span class="tag">ambient</span>
+      <img class="album-art" src="img/music/machine_love.PNG" alt="Jamie Paige" />
+      <div class="entry-text">
+        <div class="entry-title">jamie paige</div>
+        <div class="entry-desc">soooo many amazing vocaloid songs from jamie, its truly remarkable how so many amazing songs can come from one person (who wrangles many robots XD). ive been obsessed with the machine love extended melody recently, but so many good songs that are worth a listen. <br> <br> top songs: machine love extended melody, FIRE!!!, when spring comes, strawberry </div>
+        <button class="play-btn" onclick="toggleAudio('jp',this,100.5,121)">&#9654; play snippet</button>
+        <audio id="jp" src="audio/jamie_machine_love.mp3" preload="none"></audio>
+        <br>
+        <br>
+
+        <span class="tag">vocaloid</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <img class="album-art" src="img/music/machinery_of_human.PNG" alt="Machinery of the Human Heart" />
+      <div class="entry-text">
+        <div class="entry-title">machinery of the human heart</div>
+        <div class="entry-desc">not as well known as they ought to be, i really love the vocals and the lyrics and how it ties into a story like by the willow tree and champagne. <br><br> top songs: champagne, your surgeon is human too, by the willow tree, remember something beautiful.</div>
+        <button class="play-btn" onclick="toggleAudio('mothh',this, 65, 105.25)">&#9654; play snippet</button>
+        <audio id="mothh" src="audio/mothh_champagne.mp3" preload="none"></audio>
+        <br>
+        <br>
+        <span class="tag">dark carberet, indie pop</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <img class="album-art" src="img/music/nihilist_cheerleader.PNG" alt="Nihilist Cheerleader" />
+      <div class="entry-text">
+        <div class="entry-title">nihilist cheerleader</div>
+        <div class="entry-desc">very indie band, but with such amazing songs - her voice is beautiful and full of emotion, which is why i love their music so much. that sense of realness and passion, maybe even desperation, is what i look for in songs. <br><br>top songs: miss you forever, who's gonna hear you </div>
+        <button class="play-btn" onclick="toggleAudio('nc',this,178,220)">&#9654; play snippet</button>
+        <audio id="nc" src="audio/nihilist_miss_you.mp3" preload="none"></audio>
+        <br>
+        <br>
+        <span class="tag">punk</span>
+      </div>
     </div>
 
     <hr class="mid" />
@@ -230,5 +365,39 @@
 })();
 </script>
 
+<script>
+function toggleAudio(id, btn, startTime, endTime) {
+  document.querySelectorAll("audio").forEach(function(a) {
+    if (a.id !== id && !a.paused) {
+      a.pause();
+      a.currentTime = a._startTime !== undefined ? a._startTime : 0;
+      a.ontimeupdate = null;
+      if (a._btn) { a._btn.innerHTML = "&#9654; play snippet"; }
+    }
+  });
+  var a = document.getElementById(id);
+  if (a.paused) {
+    a._btn = btn;
+    a._startTime = startTime;
+    if (startTime !== undefined) a.currentTime = startTime;
+    a.play();
+    btn.innerHTML = "&#9646;&#9646; pause";
+    a.onended = function() { btn.innerHTML = "&#9654; play snippet"; };
+    if (endTime !== undefined) {
+      a.ontimeupdate = function() {
+        if (a.currentTime >= endTime) {
+          a.pause();
+          a.currentTime = startTime;
+          a.ontimeupdate = null;
+          btn.innerHTML = "&#9654; play snippet";
+        }
+      };
+    }
+  } else {
+    a.pause();
+    btn.innerHTML = "&#9654; play snippet";
+  }
+}
+</script>
 </body>
 </html>

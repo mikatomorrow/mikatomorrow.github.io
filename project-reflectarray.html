@@ -149,6 +149,8 @@
 
     .fig img {
       max-width: 100%;
+      max-height: 420px;
+      width: auto;
       display: block;
       margin: 0 auto;
       margin: 0 auto 6px auto;
@@ -173,15 +175,14 @@
       -ms-flex: 1;
       flex: 1;
       margin: 0;
-      text-align: left;
+      text-align: center;
     }
 
     .fig-row .fig img {
       height: 300px;
       width: 100%;
       object-fit: contain;
-      background-color: #f8f8f8;
-    }
+          }
 
   </style>
 </head>
@@ -190,13 +191,9 @@
 <div id="breadcrumb"><a href="work.html">&larr; projects</a> / Reflectarray with Tapered Hexagonal Grid Design for Microwave Power Transmission</div>
 
 <h1>Reflectarray with Tapered Hexagonal Grid Design for Microwave Power Transmission</h1>
-<div class="page-sub">ECE Wireless Power Transmission &nbsp;|&nbsp; Spring 2026 &nbsp;|&nbsp; targeting WiSEE 2026 &nbsp;|&nbsp; HFSS</div>
-<div class="authors">Aidan Abrams, Christian Merkt, Michael Harrington, Xuan Lin, Gregory D. Durgin &mdash; Georgia Institute of Technology</div>
 
 <a href="reflectarray_hexgrid_wpt.pdf" target="_blank" class="pdf-link">&#8681; open PDF in new tab</a>
 <a href="poster_wisee.pdf" target="_blank" class="pdf-link">&#8681; open poster in new tab</a>
-
-<hr />
 
 <h2>Abstract</h2>
 <p>This paper presents the design, simulation, and array analysis of a circular-patch reflectarray element arranged on a hexagonal grid for space-based microwave wireless power transmission (WPT) at 2.45 GHz. All design parameters are derived from first principles: patch radius from the TM<sub>11</sub> cavity resonance condition, substrate thickness from Q-factor bounds, and element spacing from grating-lobe and overlap constraints. The circular patch on a hexagonal 50 mm unit cell achieves a 334&deg; reflection phase range, 52&deg; more than the square-patch square-grid baseline. A passive Gaussian aperture taper (&sigma; = 0.70) applied to the circular aperture yields &minus;24 dB sidelobe level and 99.3% beam efficiency with zero active electronics. The passive design is inherently radiation-hard, exhibiting negligible performance degradation over a 20-year geostationary orbit mission, delivering 18.5 MWh more cumulative energy than the active Chebyshev baseline.</p>
@@ -247,7 +244,7 @@
 <p>Simulated in Ansys HFSS using an infinite-array Floquet port with rectangular lattice vectors matching the 50 mm &times; 43.3 mm bounding box and periodic master/slave boundaries. Seven parametric studies: phase curve, oblique scan stability, bandwidth, substrate loss sensitivity, cross-polarization, manufacturing tolerance, and square-patch baseline comparison.</p>
 
 <div class="fig">
-  <img src="img/reflectarray/fig-reflectarray-phase.png" alt="Reflection phase vs. patch radius at 2.45 GHz" />
+  <img src="img/reflectarray/fig1_phase_curve_comparison.png" alt="Reflection phase vs. patch radius at 2.45 GHz" />
   <div class="fig-caption">Fig. 1 &mdash; Reflection phase vs. patch dimension at 2.45 GHz. Circular patch on hex grid (left) achieves 334&deg;; square patch on rect grid (right) achieves 282&deg;.</div>
 </div>
 
@@ -258,17 +255,25 @@
 <h3>Bandwidth &amp; Oblique Stability</h3>
 <p>3 dB bandwidth: ~400 MHz (&plusmn;8%), sufficient for orbital thermal cycling. Resonant frequency shifts &lt;150 MHz across 0&ndash;40&deg; incidence range, confirming element stability under off-axis feed illumination.</p>
 
+
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/reflectarray/fig2_bandwidth.png" alt="Bandwidth stability" style="height: 420px; border: none;" />
+    <div class="fig-caption">3 dB bandwidth ~400 MHz (&plusmn;8%) centered at 2.45 GHz.</div>
+  </div>
+  <div class="fig">
+    <img src="img/reflectarray/fig3_oblique.png" alt="Oblique scan stability" style="height: 420px; border: none;" />
+    <div class="fig-caption">Phase stability across 0&ndash;40&deg; incidence angles; resonant frequency shift &lt;150 MHz.</div>
+  </div>
+</div>
 <h3>Cross-Polarization</h3>
 <p>Circular patch geometry yields &gt;40 dB cross-pol isolation across the full design range (vs. ~25 dB for square patches) &mdash; important for satellite applications where antenna attitude is not always controlled.</p>
 
-<h3>Manufacturing Tolerance</h3>
-<p>&plusmn;0.1 mm variation in patch radius: &plusmn;25&deg; phase error. &plusmn;0.1 mm variation in substrate thickness: &plusmn;10&deg;. Both within standard PCB fabrication tolerances.</p>
 
 <div class="fig">
-  <img src="img/reflectarray/fig-reflectarray-tolerance.png" alt="Manufacturing tolerance analysis" />
-  <div class="fig-caption">Fig. 2 &mdash; Phase sensitivity to patch radius and substrate thickness variation at 2.45 GHz.</div>
+  <img src="img/reflectarray/fig5_cross_pol.png" alt="Cross-polarization isolation" />
+  <div class="fig-caption">Cross-polarization isolation &mdash; circular patch exceeds 40 dB across full design range vs. ~25 dB for square patches.</div>
 </div>
-
 <hr />
 
 <h2>Array Configuration &amp; Aperture Taper</h2>
@@ -283,27 +288,21 @@
 <p>Five amplitude tapers were independently applied: uniform, passive Gaussian (&sigma; = 0.70), Chebyshev radial &minus;25 dB (active), Taylor radial &minus;25 dB (active), Chebyshev separable &minus;25 dB (active). The passive Gaussian taper is realized by grading element sizes so that edge elements reflect less power naturally.</p>
 
 <div class="fig">
-  <img src="img/reflectarray/fig-reflectarray-configs.png" alt="Four aperture configurations" />
+  <img src="img/reflectarray/fig_aperture_comparison.png" alt="Four aperture configurations" />
   <div class="fig-caption">Fig. 3 &mdash; Four aperture configurations. Color in config 4 encodes passive Gaussian taper amplitude (&sigma; = 0.70).</div>
 </div>
 
 <div class="fig">
-  <img src="img/reflectarray/fig-reflectarray-pareto.png" alt="SLL vs gain loss Pareto tradeoff" />
-  <div class="fig-caption">Fig. 4 &mdash; SLL vs. gain loss Pareto tradeoff for passive Gaussian taper. Red diamond marks the selected design (&sigma; = 0.70).</div>
-</div>
-
-<div class="fig">
-  <img src="img/reflectarray/fig-reflectarray-patterns.png" alt="Radiation patterns comparison" />
+  <img src="img/reflectarray/fig_radiation_pattern.png" alt="Radiation patterns comparison" />
   <div class="fig-caption">Fig. 5 &mdash; Radiation patterns at 2.45 GHz comparing five illumination tapers across three aperture geometries.</div>
 </div>
-
 <hr />
 
 <h2>20-Year Mission Degradation Analysis</h2>
 <p>Active designs using PIN diode attenuators degrade in GEO. Under accumulated TID from a 20-year GEO mission, PIN diode forward voltage increases ~15%, raising insertion loss by ~0.3 dB and causing SLL drift of 0.8&ndash;1.7 dB. The passive reflectarray is immune: copper patch radius is set by photolithographic patterning and is invariant under radiation.</p>
 
 <div class="fig">
-  <img src="img/reflectarray/fig-reflectarray-degradation.png" alt="20-year GEO degradation model" />
+  <img src="img/reflectarray/fig_degradation.png" style="max-height: 650px;" alt="20-year GEO degradation model" />
   <div class="fig-caption">Fig. 6 &mdash; 20-year GEO degradation model. Passive design (flat line) maintains &minus;24 dB SLL throughout. Active designs drift 0.8&ndash;1.7 dB.</div>
 </div>
 
@@ -311,24 +310,26 @@
 
 <h2>Results</h2>
 
-<table>
-  <tr>
-    <th>Metric</th>
-    <th>Proposed (Circular / Hex)</th>
-    <th>Zhang Baseline</th>
-  </tr>
-  <tr><td>Phase range</td><td><strong>334&deg;</strong></td><td>282&deg;</td></tr>
-  <tr><td>Best SLL</td><td><strong>&minus;24.0 dB</strong></td><td>&minus;13.1 dB</td></tr>
-  <tr><td>Beam efficiency</td><td><strong>99.3%</strong></td><td>88.8%</td></tr>
-  <tr><td>Cross-pol isolation</td><td><strong>&gt;40 dB</strong></td><td>&mdash;</td></tr>
-  <tr><td>Active electronics</td><td><strong>0</strong></td><td>0</td></tr>
-  <tr><td>20-yr energy (WPT)</td><td><strong>174.9 MWh</strong></td><td>156.4 MWh</td></tr>
-</table>
 
+
+
+<table>
+    <tr>
+      <th>Metric</th>
+      <th>Proposed</th>
+      <th>Baseline</th>
+      <th>Improvement</th>
+    </tr>
+    <tr><td>Phase range</td><td><strong>334&deg;</strong></td><td>282&deg;</td><td><strong>+52&deg;</strong></td></tr>
+    <tr><td>Best SLL</td><td><strong>&minus;24.0 dB</strong></td><td>&minus;13.1 dB</td><td><strong>+10.9 dB</strong></td></tr>
+    <tr><td>Beam efficiency</td><td><strong>99.3%</strong></td><td>88.8%</td><td><strong>+10.5%</strong></td></tr>
+    <tr><td>Cross-pol isolation</td><td><strong>&gt;40 dB</strong></td><td>&mdash;</td><td><strong>&mdash;</strong></td></tr>
+    <tr><td>Active electronics</td><td><strong>0</strong></td><td>0</td><td><strong>&mdash;</strong></td></tr>
+    <tr><td>20-yr energy</td><td><strong>174.9 MWh</strong></td><td>156.4 MWh</td><td><strong>+11.8%</strong></td></tr>
+  </table>
 <p>The circular aperture boundary alone improves SLL from &minus;13.1 dB to &minus;17.7 dB by reducing edge diffraction naturally. Adding the passive Gaussian taper brings SLL to &minus;24.0 dB with 99.3% beam efficiency &mdash; surpassing even the best active Chebyshev design on the baseline when beam efficiency is considered.</p>
 
 <hr />
-
 <h2>Future Work</h2>
 <ul>
   <li>Finite-array mutual coupling simulation</li>

@@ -147,6 +147,13 @@
       box-sizing: border-box;
     }
 
+
+    .fig { margin: 18px 0; }
+    .fig img { max-width: 100%; max-height: 420px; width: auto; display: block; margin: 0 auto; border: 1px solid #cccccc; }
+    .fig-caption { font-family: "Courier New", Courier, monospace; font-size: 14px; color: #000000; text-align: center; margin-top: 5px; }
+    .fig-row { display: -ms-flexbox; display: flex; gap: 6px; margin: 18px auto; }
+    .fig-row .fig { -ms-flex: 1; flex: 1; margin: 0; }
+    .fig-row .fig img { height: 400px; width: 100%; object-fit: contain; }
   </style>
 </head>
 <body>
@@ -157,10 +164,7 @@
 <div class="page-sub">ECE 6420 &mdash; Wireless IC Design &nbsp;|&nbsp; Spring 2026 &nbsp;|&nbsp; NCSU 45 nm CMOS &nbsp;|&nbsp; Cadence Virtuoso / Spectre</div>
 <div class="page-sub">w/ Nikhita Ramanujam</div>
 
-<br />
-<span class="wip-banner">&#9733; work in progress &mdash; more detail and figures to be added</span>
-
-<hr />
+<br /><hr />
 
 <h2>Overview</h2>
 <p>Designed a full direct-conversion receiver (DCR) chain in NCSU 45 nm CMOS as a final project for ECE 6420. The receiver takes a 6.8 GHz RF input and downconverts it to baseband I/Q using a passive double-balanced mixer topology driven by a CML frequency divider that generates quadrature local oscillator signals from a 13.6 GHz (4.2 GHz &times; 2 = ... actually LO in at 4.2 GHz, doubled internally to feed divider) input.</p>
@@ -171,7 +175,6 @@
 </div>
 
 <h2>Architecture</h2>
-<div class="img-placeholder">[block diagram &mdash; to be added]</div>
 
 <ul>
   <li><strong>LNA:</strong> Inductively degenerated cascode, 50 &Omega; input match via bondwire + source degeneration inductor, current-mirror biased</li>
@@ -235,10 +238,34 @@
 IIP3 = Pin + &Delta;P/2 = -24 + 3.845 &asymp; -20.16 dBm</pre>
 
 <h2>Simulation Results</h2>
-<div class="img-placeholder">[S11 plot &mdash; to be added]</div>
-<div class="img-placeholder">[conversion gain plot &mdash; to be added]</div>
-<div class="img-placeholder">[noise figure plot &mdash; to be added]</div>
-<div class="img-placeholder">[IIP3 two-tone spectrum &mdash; to be added]</div>
+<div class="fig">
+  <img src="img/rx6ghz/s11.png" alt="S11 input reflection" />
+  <div class="fig-caption">S11 &mdash; input reflection &lt; &minus;10 dB across 6.6&ndash;7 GHz band.</div>
+</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/rx6ghz/conversion_gain.png" alt="Conversion gain" style="border: none;" />
+    <div class="fig-caption">Conversion gain &mdash; &gt;20 dB across 6.6&ndash;7 GHz.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rx6ghz/receiver_output.png" alt="Receiver output" style="border: none;" />
+    <div class="fig-caption">Receiver output spectrum.</div>
+  </div>
+</div>
+<div class="fig-row">
+  <div class="fig">
+    <img src="img/rx6ghz/nf_lna.png" alt="LNA noise figure" style="border: none;" />
+    <div class="fig-caption">LNA SSB noise figure &mdash; &lt;6 dB across band.</div>
+  </div>
+  <div class="fig">
+    <img src="img/rx6ghz/nf_receiver.png" alt="Receiver noise figure" style="border: none;" />
+    <div class="fig-caption">Full receiver chain noise figure.</div>
+  </div>
+</div>
+<div class="fig">
+  <img src="img/rx6ghz/iip3.png" alt="IIP3 two-tone test" />
+  <div class="fig-caption">IIP3 two-tone test &mdash; IIP3 &asymp; &minus;20.16 dBm.</div>
+</div>
 
 <h2>Tools &amp; Technology</h2>
 <ul>

@@ -10,6 +10,9 @@
 
     body { background: #000000; }
 
+
+
+
     #breadcrumb {
       position: fixed; top: 14px; left: 20px;
       font-family: "Courier New", Courier, monospace;
@@ -17,7 +20,7 @@
       z-index: 200; pointer-events: auto;
     }
     #breadcrumb a { color: #33aaee; text-decoration: none; }
-    #breadcrumb a:hover { color: #66ccff; }
+    #breadcrumb a:hover { color: #ffffff; }
 
     #weather-frame {
       position: fixed;
@@ -27,21 +30,23 @@
       z-index: 1;
     }
 
-    #cloud-r1 {
-      position: fixed;
-      right: 12px; top: 60px;
-      z-index: 50; pointer-events: none;
-      opacity: 0.7;
-      image-rendering: pixelated; image-rendering: crisp-edges;
-    }
+    .cloud { position: absolute; z-index: 50; pointer-events: none; opacity: 0.75; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #c1  { top: 135px; left: 704px;  width: 90px; }
+    #c2  { top:  72px; left: 776px;  width: 60px; }
+    #c3  { top:  81px; left: 848px;  width: 80px; }
+    #c4  { top: 135px; left: 920px;  width: 90px; }
+    #c5  { top:  72px; left: 992px;  width: 60px; }
+    #c6  { top:  81px; left: 1064px;  width: 55px; }
+    #c7  { top:  45px; left: 1136px;  width: 75px; }
+    #c8  { top: 117px; left:1208px;  width: 65px; }
+    #c9  { top:  90px; left:1280px;  width: 70px; }
+    #c10 { top:  36px; left:1350px;  width: 50px; }
+    #c11 { top: 108px; left:1420px;  width: 60px; }
+    #c12 { top:  72px; left:1490px;  width: 55px; }
+    #c13 { top:  36px; left:1560px;  width: 50px; }
+    #c14 { top: 108px; left:1630px;  width: 60px; }
+  
 
-    #cloud-r2 {
-      position: fixed;
-      right: 12px; top: 140px;
-      z-index: 50; pointer-events: none;
-      opacity: 0.7;
-      image-rendering: pixelated; image-rendering: crisp-edges;
-    }
 
     #clippy-wrap {
       position: fixed; bottom: 24px; right: 28px;
@@ -56,8 +61,23 @@
 
 <div id="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; weather</div>
 
-<img id="cloud-r1" src="img/cloud1.png"  alt="" />
-<img id="cloud-r2" src="gifs/cloud.gif"  alt="" />
+<div id="cloud-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:50;overflow:hidden;">
+<img id="c1"  class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c2"  class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c3"  class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c4"  class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c5"  class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c6"  class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c7"  class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c8"  class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c9"  class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c10" class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c11" class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c12" class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c13" class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c14" class="cloud" src="gifs/cloud.gif" alt="" />
+</div>
+
 
 <iframe id="weather-frame"
   src="https://weatherstar.netbymatt.com/"
