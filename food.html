@@ -30,10 +30,10 @@
       position: relative;
     }
 
-    #gif-tomato { position: absolute; top: 150px;  right: 100px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 110px; image-rendering: crisp-edges; }
-    #gif-food1  { position: absolute; top: 150px; left: 100px;  pointer-events: none; z-index: 60; image-rendering: pixelated; width: 110px; image-rendering: crisp-edges; }
-    #gif-egg_cook { position: absolute; top: 460px; right: 100px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 180px; image-rendering: crisp-edges; }
-    #gif-noodle   { position: absolute; top: 460px; left: 100px;  pointer-events: none; z-index: 60; image-rendering: pixelated; width: 110px; image-rendering: crisp-edges; }
+    #gif-tomato { position: absolute; top: 300px;  right: 100px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 110px; image-rendering: crisp-edges; }
+    #gif-food1  { position: absolute; top: 1700px; right: 100px;  pointer-events: none; z-index: 60; image-rendering: pixelated; width: 110px; image-rendering: crisp-edges; }
+    #gif-egg_cook { position: absolute; top: 700px; left: 100px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 180px; image-rendering: crisp-edges; }
+    #gif-noodle   { position: absolute; top: 2700px; left: 100px;  pointer-events: none; z-index: 60; image-rendering: pixelated; width: 110px; image-rendering: crisp-edges; }
 
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
@@ -134,6 +134,69 @@
 
     #clippy-canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
 
+
+    .restaurant { margin-bottom: 32px; }
+
+    .rest-header { margin-bottom: 14px; }
+
+    .rest-name {
+      font-family: Impact, "Arial Narrow", Arial, sans-serif;
+      font-size: 24px; font-weight: normal;
+      color: #ee9933; letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .rest-location {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 17px; color: #bbbbbb;
+      letter-spacing: 2px; margin-top: 3px;
+    }
+
+    .photo-grid {
+      display: -ms-flexbox;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .photo-grid img {
+      height: 200px;
+      width: auto;
+      object-fit: cover;
+      display: block;
+      image-rendering: auto;
+    }
+
+        .photo-placeholder {
+      height: 200px;
+      width: 260px;
+      background-color: #0e0e0e;
+      border: 1px dashed #2a2a2a;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10px; color: #2a2a2a;
+    }
+    .photo-item {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .photo-caption {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 16px; color: #aaaaaa;
+      letter-spacing: 1px; margin-top: 6px;
+      text-align: center; max-width: 250px;
+      position: absolute;
+      bottom: -24px; left: 0;
+    }
   </style>
 </head>
 <body>
@@ -154,18 +217,201 @@
 
   <div id="content">
 
-    <div class="entry">
-      <div class="entry-title">sandwich</div>
-      <div class="entry-meta">sandvich &nbsp;&mdash;&nbsp; make me strong</div>
-      <span class="tag">homemade</span>
+    <div class="section-label">// restaurants &amp; bakeries //</div>
+
+    
+    <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">Tatte Bakery &amp; Cafe</div>
+        <div class="rest-location">Wasington, D.C.</div>
+      </div>
+      <div class="photo-grid" id="photos-tatte">
+        <div class="photo-item">
+          <img src="img/food/tatte/tatte1.jpg" alt="" style="height:250px; margin-left:20px; margin-top:25px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 150px; margin-bottom: -70px;">traditional shakshuka w/ a croque madame!</div>        </div>
+        <div class="photo-item">
+          <img src="img/food/tatte/tatte4.jpg" alt="" style="height:250px; margin-left:510px; margin-top:-210px; margin-bottom:-50px;"/>
+<div class="photo-caption" style="margin-left: 600px; margin-bottom: -65px;">shakshuka w/ black sesame latte!  </div>        </div>
+        <div class="photo-item">
+          <img src="img/food/tatte/tatte2.jpg" alt="" style="height:250px; padding-bottom: 90px; margin-left:300px; margin-top:100px; margin-bottom:-50px;"/>
+<div class="photo-caption" style="margin-left: 350px; margin-bottom: 0px;">house breakfast plate; fritters, bacon, sunny side up eggs B)</div>        </div>
+      </div>
+    </div>
+
+
+    <hr class="mid" />
+
+        <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">Vegan Pancake House</div>
+        <div class="rest-location">Atlanta, GA</div>
+      </div>
+      <div class="photo-grid" id="photos-vph">
+        <div class="photo-item">
+          <img src="img/food/pancakehouse/pancake_house.jpg" alt="" style="height:400px; padding-bottom: 100px; margin-left:350px; margin-top:-50px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 275px;  white-space: nowrap; margin-bottom: 25px;">not vegan myself but this place is so amazing, <br>blueberry pancakes best pancakes ive ever had</div>        </div>
+      </div>
     </div>
 
     <hr class="mid" />
 
-    <div class="entry">
-      <div class="entry-title">bakery pictures</div>
-      <div class="entry-meta">washington d.c. &nbsp;&mdash;&nbsp; tasty</div>
-      <span class="tag">baked goods</span>
+    <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">Cafe Intermezzo</div>
+        <div class="rest-location">Atlanta, GA</div>
+      </div>
+      <div class="photo-grid" id="photos-intermezzo">
+        <div class="photo-item">
+          <img src="img/food/intermezzo/irish_coffee.jpg" alt="" style="height:300px; padding-bottom: 100px; margin-left:350px; margin-top:-50px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 325px;  white-space: nowrap; margin-bottom: 0px;">amazing coffee and sweets place, so <br>beautiful and amazing for dates - had <br> irish coffee and strawberry cheese cake!!!</div>        </div>
+      </div>
+    </div>
+
+    <hr class="mid" />
+
+    <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">Steamhouse Lounge</div>
+        <div class="rest-location">Atlanta, GA</div>
+      </div>
+      <div class="photo-grid" id="photos-steamhouse">
+        <div class="photo-item">
+          <img src="img/food/steamhouse/steamhouse2.jpg" alt="" style="height:300px; padding-bottom: 100px; margin-left:50px; margin-top:0px; margin-bottom:-50px;"/>
+<div class="photo-caption" style="margin-left: 175px; margin-bottom: 0px;">grouper filet w/ collard greens and red potatos!!! </div>        </div>
+        <div class="photo-item">
+          <img src="img/food/steamhouse/steamhouse3.jpg" alt="" style="height:350px; margin-left:50px; margin-top:-20px; margin-bottom:-50px;"/>
+<div class="photo-caption" style="margin-left: 80px; white-space: nowrap; margin-bottom: 0px;">oysters, lobster bisque, <br>and fish & chips ^-^ </div>        </div>
+      </div>
+    </div>
+
+    <hr class="mid" />
+
+    <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">Wagaya</div>
+        <div class="rest-location">Atlanta, GA</div>
+      </div>
+      <div class="photo-grid" id="photos-wagaya">
+        <div class="photo-item">
+          <img src="img/food/wagaya/wagaya_atl.jpg" alt="" style="transform:rotate(-90deg); height:500px; padding-bottom: 30px; margin-left:350px; margin-top:-150px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 400px;  margin-bottom: 20px;">tonkotsu ramen + sushi, i love asian food :></div>        </div>
+      </div>
+    </div>
+    <hr class="mid" />
+
+    <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">E-Ramen</div>
+        <div class="rest-location">Atlanta, GA</div>
+      </div>
+      <div class="photo-grid" id="photos-istanbul">
+        <div class="photo-item">
+          <img src="img/food/eramen/ramen1.jpg" alt="" style="height:400px;padding-bottom: 70px; margin-left:300px; margin-top:-50px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 400px;  margin-bottom: 10px;">signature e-ramen <3</div>        </div>
+      </div>
+    </div>
+
+
+    <hr class="mid" />
+
+    <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">Antico Pizza Napoletana</div>
+        <div class="rest-location">Atlanta, GA</div>
+      </div>
+      <div class="photo-grid" id="photos-antico">
+        <div class="photo-item">
+          <img src="img/food/antico/antico.jpg" alt="" style="height:300px; padding-bottom: 80px; margin-left:50px; margin-top:0px; margin-bottom:-50px;"/>
+<div class="photo-caption" style="margin-left: 50px;white-space: nowrap; margin-bottom: 10px;">meatball pizza, def one of the <br> best if u like meaty pizzas >:D </div>        </div>
+        <div class="photo-item">
+          <img src="img/food/antico/antico2.jpg" alt="" style="height:270px; margin-left:150px; margin-top:25px; margin-bottom:-50px;"/>
+<div class="photo-caption" style="margin-left: 225px; margin-bottom: 10px;">calzone!!! always yummers </div>        </div>
+      </div>
+    </div>
+
+    <hr class="mid" />
+
+    <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">North Italia</div>
+        <div class="rest-location">Washington, D.C.</div>
+      </div>
+      <div class="photo-grid" id="photos-northitalia">
+        <div class="photo-item">
+          <img src="img/food/northitalia/northitalia2.jpg" alt="" style="height:300px; margin-left:75px; margin-top:25px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 200px; margin-bottom: -60px;">metbal</div>        </div>
+        <div class="photo-item">
+          <img src="img/food/northitalia/northitalia.jpg" alt="" style="height:300px; margin-left:150px; margin-top:25px; margin-bottom:-50px;"/>
+<div class="photo-caption" style="margin-left: 200px; margin-bottom: -65px;">spicy rigatoni vodka, my fav meal ^w^  </div>        </div>
+        <div class="photo-item">
+          <img src="img/food/northitalia/lasagna.jpg" alt="" style="height:250px; padding-bottom: 90px; margin-left:225px; margin-top:100px; margin-bottom:-50px;"/>
+<div class="photo-caption" style="margin-left: 350px; margin-bottom: 25px;">braised short rib lasagna, mffmgfghhh,,,</div>        </div>
+      </div>
+    </div>
+
+    <hr class="mid" />
+
+    <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">Taste of Istanbul</div>
+        <div class="rest-location">Washington, D.C.</div>
+      </div>
+      <div class="photo-grid" id="photos-istanbul">
+        <div class="photo-item">
+          <img src="img/food/istanbul/turkish.jpg" alt="" style="height:300px;padding-bottom: 90px; margin-left:350px; margin-top:-50px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 290px; white-space: nowrap; margin-bottom: 20px;">kaşarlı mantar pide and kaşarlı pide <br>with Beypazarı to drink, so tasty,,, </div>        </div>
+      </div>
+    </div>
+
+    <hr class="mid" />
+
+        <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">Bar Taco</div>
+        <div class="rest-location">Washington, D.C.</div>
+      </div>
+      <div class="photo-grid" id="photos-bartaco">
+        <div class="photo-item">
+          <img src="img/food/bartaco/bartaco.jpg" alt="" style="transform:rotate(-90deg); padding-bottom: 70px; height:400px; margin-left:120px; margin-top:-75px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 150px; margin-bottom: 25px;">sangria and tacos!!!</div>        </div>
+        <div class="photo-item">
+          <img src="img/food/bartaco/bartaco2.jpg" alt="" style="transform:rotate(-90deg); height:400px; margin-left:150px; margin-top:-50px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 150px; width: 300px; margin-bottom: 20px;">some sort of tequila with more tacos!!! </div>        </div>
+      </div>
+    </div>
+
+    <hr class="mid" />
+
+    <div class="restaurant">
+      <div class="rest-header">
+        <div class="rest-name">Rreal Tacos</div>
+        <div class="rest-location">Atlanta, GA</div>
+      </div>
+      <div class="photo-grid" id="photos-rreal">
+        <div class="photo-item">
+          <img src="img/food/rreal/rreal.jpg" alt="" style="padding-bottom: 70px; height:250px; margin-left:50px; margin-top:-0px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 90px; margin-top: 0px;">birria tacos & sangria :D </div>        </div>
+        <div class="photo-item">
+          <img src="img/food/rreal/rreal2.jpg" alt="" style="transform:rotate(-90deg); height:300px; margin-left:200px; margin-top:-25px; margin-bottom:-50px;" />
+<div class="photo-caption" style="margin-left: 225px; margin-top: 0px;">quesidilla w/ more birria! </div>        </div>
+      </div>
+    </div>
+
+    <hr class="mid" />
+
+    <div class="section-label">// personal creations //</div>
+
+    <div class="restaurant">
+      <div class="photo-grid" id="photos-personal">
+        <div class="photo-item">
+          <img src="img/food/personal/firstburrito.jpg" alt="" style="height:250px; margin-left:90px; margin-top:25px; margin-bottom:-50px;" />
+          <div class="photo-caption" style="margin-left: 110px; margin-bottom: 10px;">first burrito attempt <br>(freshman yr)</div>
+        </div>
+        <div class="photo-item">
+          <img src="img/food/personal/pan_de_bono.jpg" alt="" style="transform:rotate(-90deg); height:400px; margin-left:250px; margin-top:-50px; margin-bottom:-50px;" />
+          <div class="photo-caption" style="width: 200px; margin-left: 275px; margin-top: 0px;">pan de bono - so yummy, i love colombian food <3 </div>
+        </div>
+      </div>
     </div>
 
     <hr class="mid" />

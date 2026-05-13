@@ -6,7 +6,7 @@
   <title>mikatomorrow :: weather</title>
   <style type="text/css">
 
-    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; max-width: 100%; }
 
     body { background: #000000; }
 
@@ -24,28 +24,34 @@
 
     #weather-frame {
       position: fixed;
-      top: 36px; left: 0;
-      width: 100%; height: calc(100% - 36px);
+      top: 175px;
+      left: 90%;
+      transform: translateX(-50%) scale(1.15);
+      transform-origin: top center;
+      width: 2000px;
+      height: calc(100% - 36px);
       border: none;
       z-index: 1;
+      clip-path: inset(0 0 325px 0);
     }
 
     .cloud { position: absolute; z-index: 50; pointer-events: none; opacity: 0.75; image-rendering: pixelated; image-rendering: crisp-edges; }
-    #c1  { top: 135px; left: 704px;  width: 90px; }
-    #c2  { top:  72px; left: 776px;  width: 60px; }
-    #c3  { top:  81px; left: 848px;  width: 80px; }
-    #c4  { top: 135px; left: 920px;  width: 90px; }
-    #c5  { top:  72px; left: 992px;  width: 60px; }
-    #c6  { top:  81px; left: 1064px;  width: 55px; }
-    #c7  { top:  45px; left: 1136px;  width: 75px; }
-    #c8  { top: 117px; left:1208px;  width: 65px; }
-    #c9  { top:  90px; left:1280px;  width: 70px; }
-    #c10 { top:  36px; left:1350px;  width: 50px; }
-    #c11 { top: 108px; left:1420px;  width: 60px; }
-    #c12 { top:  72px; left:1490px;  width: 55px; }
-    #c13 { top:  36px; left:1560px;  width: 50px; }
-    #c14 { top: 108px; left:1630px;  width: 60px; }
-  
+    /* top row left to right */
+    #c1  { top: 48px; left:   0px; width: 140px; }
+    #c2  { top: 38px; left: 145px; width: 105px; }
+    #c3  { top: 58px; left: 240px; width: 150px; }
+    #c4  { top: 42px; left: 390px; width: 115px; }
+    #c5  { top: 62px; left: 505px; width: 130px; }
+    #c6  { top: 40px; left: 630px; width: 100px; }
+    #c7  { top: 55px; left: 720px; width: 160px; }
+    #c8  { top: 44px; left: 882.5px; width: 120px; }
+    #c9  { top: 65px; left: 1002.5px; width: 135px; }
+    #c10 { top: 42px; left:1137.5px; width: 110px; }
+    #c11 { top: 58px; left:1247.5px; width: 145px; }
+    #c12 { top: 40px; left:1390px; width: 100px; }
+    #c13 { top: 58px; left:1485px; width: 140px; }
+    #c14 { top: 42px; left:1625px; width: 105px; }
+    #c15 { top: 62px; left:1717.5px; width: 155px; }
 
 
     #clippy-wrap {
@@ -54,6 +60,14 @@
       z-index: 999; pointer-events: none;
     }
     #clippy-canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #breadcrumb {
+      position: fixed; top: 14px; left: 20px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 18px; color: #aaaaaa; letter-spacing: 2px;
+      z-index: 200; pointer-events: auto;
+    }
+    #breadcrumb a { color: #33aaee; text-decoration: none; }
+    #breadcrumb a:hover { color: #ffffff; }
 
   </style>
 </head>
@@ -76,12 +90,16 @@
 <img id="c12" class="cloud" src="gifs/cloud.gif" alt="" />
 <img id="c13" class="cloud" src="gifs/cloud.gif" alt="" />
 <img id="c14" class="cloud" src="gifs/cloud.gif" alt="" />
+<img id="c15" class="cloud" src="gifs/cloud.gif" alt="" />
+
+
 </div>
 
 
 <iframe id="weather-frame"
-  src="https://weatherstar.netbymatt.com/"
-  title="WeatherStar 4000+">
+  src="https://weatherstar.netbymatt.com/?current-weather-checkbox=true&hourly-checkbox=false&hourly-graph-checkbox=false&travel-checkbox=true&local-forecast-checkbox=false&extended-forecast-checkbox=true&almanac-checkbox=true&spc-outlook-checkbox=false&radar-checkbox=true&latest-observations-checkbox=false&regional-forecast-checkbox=true&hazards-checkbox=true"
+  title="WeatherStar 4000+"
+  scrolling="no">
 </iframe>
 
 <div id="clippy-wrap">

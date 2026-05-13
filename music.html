@@ -8,6 +8,7 @@
 
     html, body, * { cursor: none !important; }
     html, body { min-height: 100vh; }
+    body { min-height: 3550px; }
 
     #fake-cursor {
       position: fixed; top: 0; left: 0;
@@ -30,10 +31,10 @@
       position: relative;
     }
     #gif-mic2           { position: absolute; top: 100px; left: 100px;  pointer-events: none; z-index: 60; image-rendering: pixelated; width: 200px; image-rendering: crisp-edges; }
-    #gif-mic3           { position: absolute; top: 500px; right: 100px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 130px; image-rendering: crisp-edges; }
-    #gif-mic4           { position: absolute; top: 1000px; left: 100px;  pointer-events: none; z-index: 60; image-rendering: pixelated; width: 150px; image-rendering: crisp-edges; }
-    #gif-bear           { position: absolute; top: 2000px; right: 100px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 200px; image-rendering: crisp-edges; }
-    #gif-lucky-star { position: absolute; top: 2950px; left: 50%; transform: translateX(-50%); width: 500px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
+    #gif-mic3           { position: absolute; top: 700px; right: 100px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 130px; image-rendering: crisp-edges; }
+    #gif-mic4           { position: absolute; top: 1400px; left: 100px;  pointer-events: none; z-index: 60; image-rendering: pixelated; width: 150px; image-rendering: crisp-edges; }
+    #gif-bear           { position: absolute; top: 2100px; right: 100px; pointer-events: none; z-index: 60; image-rendering: pixelated; width: 200px; image-rendering: crisp-edges; }
+    #gif-lucky-star { position: absolute; top: 3260px; left: 50%; transform: translateX(-50%); width: 500px; pointer-events: none; z-index: 60; image-rendering: pixelated; image-rendering: crisp-edges; }
 
     a { text-decoration: none; color: inherit; }
     a:visited { color: inherit; }
@@ -196,6 +197,22 @@
 
     #clippy-canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
 
+    #mystery-snippet {
+      position: absolute;
+      top: 3550px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 61;
+    }
+    #mystery-snippet .play-btn {
+      background-color: #0a1a2e;
+      border-color: #4488cc;
+      color: #88ccff;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 6px;
+      padding: 8px 22px;
+    }
   </style>
 </head>
 <body>
@@ -205,12 +222,17 @@
 <img id="gif-bear"           src="gifs/bear.gif"            alt="" />
 <img id="gif-lucky-star"     src="gifs/lucky-star-intro-lucky-star.gif" alt="" />
 
+<div id="mystery-snippet">
+  <button class="play-btn" onclick="toggleAudio('mystery-audio',this, 72, 94)">???</button>
+  <audio id="mystery-audio" src="audio/out_of_touch.mp3" preload="none"></audio>
+</div>
+
 <div id="outer">
 
   <div id="header">
     <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; music</div>
     <h1>&#9834; music</h1>
-    <div class="sub">currently,,, feeling punk rock</div>
+    <div class="sub">currently,,, feeling punk rock (＝^ω^＝)</div>
   </div>
 
   <div id="content">
@@ -326,7 +348,21 @@ all encompassed in an absolutely beautiful instrumental, with lyrics that are po
         <div class="entry-desc">not as well known as they ought to be, i really love the vocals and the lyrics and how it ties into a story like by the willow tree and champagne. <br><br> top songs: champagne, your surgeon is human too, by the willow tree, remember something beautiful.</div>
         <button class="play-btn" onclick="toggleAudio('mothh',this, 65, 105.25)">&#9654; play snippet</button>
         <audio id="mothh" src="audio/mothh_champagne.mp3" preload="none"></audio>
+        <br><br>
         <span class="tag">dark cabaret, indie pop</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <img class="album-art" src="img/music/modern_baseball.PNG" alt="Modern Baseball" />
+      <div class="entry-text">
+        <div class="entry-title">modern baseball</div>
+        <div class="entry-desc"> another top tier band, more well known and dominates my sadder playlists - gives a lot of young, nervous & anxious vibes in songs like apartment. very relatable, very me, i like :3
+          <br> <br>top songs: your graduation, tears over beers, re-do, apartment</div>
+        <button class="play-btn" onclick="toggleAudio('mb',this, 85.5, 115)">&#9654; play snippet</button>
+        <audio id="mb" src="audio/modern_baseball_graduation.mp3" preload="none"></audio>
+        <br><br>
+        <span class="tag">emo</span><span class="tag">indie rock</span>
       </div>
     </div>
 
@@ -395,30 +431,31 @@ function toggleAudio(id, btn, startTime, endTime) {
       a.pause();
       a.currentTime = a._startTime !== undefined ? a._startTime : 0;
       a.ontimeupdate = null;
-      if (a._btn) { a._btn.innerHTML = "&#9654; play snippet"; }
+      if (a._btn) { a._btn.innerHTML = a._origText; }
     }
   });
   var a = document.getElementById(id);
   if (a.paused) {
     a._btn = btn;
+    a._origText = btn.innerHTML;
     a._startTime = startTime;
     if (startTime !== undefined) a.currentTime = startTime;
     a.play();
     btn.innerHTML = "&#9646;&#9646; pause";
-    a.onended = function() { btn.innerHTML = "&#9654; play snippet"; };
+    a.onended = function() { btn.innerHTML = a._origText; };
     if (endTime !== undefined) {
       a.ontimeupdate = function() {
         if (a.currentTime >= endTime) {
           a.pause();
           a.currentTime = startTime;
           a.ontimeupdate = null;
-          btn.innerHTML = "&#9654; play snippet";
+          btn.innerHTML = a._origText;
         }
       };
     }
   } else {
     a.pause();
-    btn.innerHTML = "&#9654; play snippet";
+    btn.innerHTML = a._origText || btn.innerHTML;
   }
 }
 </script>
