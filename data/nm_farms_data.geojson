@@ -1,0 +1,1553 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.585,
+          35.098
+        ]
+      },
+      "properties": {
+        "id": "peas-and-hominy-farm",
+        "name": "Peas and Hominy Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 7.6,
+        "address": "3501 Aspen Ave NE, Albuquerque, NM",
+        "phone": "(505) 504-5540",
+        "website": "https://www.facebook.com/peasandhominy/",
+        "sells": "Diversified seasonal vegetables (specific list not published)",
+        "notes": "Owner Jack has a background in resource management, sustainable development, and automotive repair; 14+ years in small-scale diversified vegetable production. Regenerative farming, pesticide-free.\n\nNote: Location is approximate"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6053,
+          35.2378
+        ]
+      },
+      "properties": {
+        "id": "silver-leaf-farm",
+        "name": "Silver Leaf Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 7.9,
+        "address": "4206 Corrales Rd, Corrales, NM 87048",
+        "phone": "(505) 459-7163",
+        "website": "https://www.eatsilverleaf.com/",
+        "sells": "USDA Certified Organic vegetables, greens, herbs, plus house-made hot sauces and jam",
+        "where_to_buy": "Downtown Growers Market (Sat) & Corrales Growers Market (Sun); on-site farm stand",
+        "notes": "Founded by brothers Aaron and Elan Silverblatt-Buser (family farm on 15 acres, 13+ years, formerly Majestic Valley Farms). Supplies restaurants (Farm & Table, Los Poblanos, Torino's, The Grove, The Shop, Farina), La Montañita Co-op, Whole Foods, and Cochiti/Santo Domingo/Bernalillo schools. Solar-powered. Named NMDA Farm Family of the Year 2025."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6053,
+          35.2378
+        ]
+      },
+      "properties": {
+        "id": "corrales-classic-farm",
+        "name": "Corrales Classic Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 7.9,
+        "address": "7596 Corrales Rd, Corrales, NM, 87048",
+        "phone": "(505) 463-5758",
+        "website": "https://www.facebook.com/Corralesclassicfarms/",
+        "sells": "Garlic and onions (specialty), plus other vegetables, herbs, and fruit",
+        "where_to_buy": "Corrales Growers Market",
+        "notes": "Small family farm practicing organic growing techniques, specializing in garlic and onions.\n\nNote: Now rankable — address added"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.5503,
+          35.2827
+        ]
+      },
+      "properties": {
+        "id": "big-baby-farm",
+        "name": "Big Baby Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 8.2,
+        "address": "Bernalillo, NM (ZIP 87004 area)",
+        "website": "https://www.instagram.com/bigbabyfarms/ (also bigbaby.farm)",
+        "sells": "Fruits and vegetables (specific list not published)",
+        "notes": "Celestial fruits and vegetables grown in the heart of the Rio Grande Valley."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6463,
+          35.1548
+        ]
+      },
+      "properties": {
+        "id": "matt-s-mushroom-farm",
+        "name": "Matt's Mushroom Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 9,
+        "address": "723 Chavez Rd NW, Albuquerque, NM 87107 (also listed at 609 Broadway Blvd NE)",
+        "phone": "(585) 750-4432",
+        "website": "https://www.mattsmushroomfarm.com/",
+        "sells": "Gourmet and medicinal mushrooms (oyster and others), fresh and as grow-your-own 'Farm-in-a-Box' kits",
+        "where_to_buy": "Currently paused — micro-CSA in development, call ahead",
+        "notes": "Founded by Matt Fien Gretton from an award-winning undergrad project growing mushrooms on agricultural waste. 70% of substrate sourced from local businesses' waste products; 10% of profits support medicinal-mushroom advocacy. Per USFarmTrail, fresh sales are currently paused with a micro-CSA in the works — call ahead before visiting.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.65,
+          35.145
+        ]
+      },
+      "properties": {
+        "id": "north-valley-organics",
+        "name": "North Valley Organics",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 9.4,
+        "address": "Albuquerque, NM (North Valley)",
+        "phone": "(505) 379-1640",
+        "website": "https://www.northvalleyorganics.com",
+        "sells": "Seasonal produce by month: green garlic & onions (Apr-May), garlic scapes/cilantro/turnips/snap peas/strawberries (May-Jun), blackberries (Jun-Jul), cured garlic (Jul-Dec), Romano beans/cherry & salad tomatoes (Jul-Oct), okra (Aug-Oct), sweet potatoes (Oct-Nov), cucumbers (Sep-Oct), carrots (Jul, Oct-Nov)",
+        "where_to_buy": "School districts, CSAs, farmers markets",
+        "notes": "3-acre certified organic urban farm on three plots in Albuquerque's North Valley. USDA-certified training site for soil health/organic ag. Living mulch, minimal-till cover cropping, gravity-fed acequia irrigation plus drip."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.65,
+          35.145
+        ]
+      },
+      "properties": {
+        "id": "vida-verde-farm",
+        "name": "Vida Verde Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 9.4,
+        "address": "North Valley/Duranes area, Albuquerque, NM 87107 (5-6 acres across 4 parcels)",
+        "phone": "(505) 933-1106 (cell, per ATTRA listing)",
+        "website": "https://www.facebook.com/vidaverdefarms/",
+        "sells": "175+ varieties of vegetables, fruits, herbs and flowers (organic, no chemical pesticides/herbicides)",
+        "where_to_buy": "Downtown Growers Market; MoGro mobile grocery; own CSA",
+        "notes": "Run by Seth Matlick (17 years). Supplies restaurants (Farm & Table and others). MoGro (Roadrunner Food Bank program) gets Vida Verde produce to 300-500 homes/week. Email: vidaverdefarm@gmail.com."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.666,
+          35.1441
+        ]
+      },
+      "properties": {
+        "id": "big-jim-farms",
+        "name": "Big Jim Farms",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 10.3,
+        "address": "3521 Rio Grande Blvd NW, Albuquerque, NM 87107 (North Valley)",
+        "phone": "(505) 459-0719",
+        "website": "https://bigjimfarms.com/",
+        "sells": "Organically grown U-pick green & red chile (Mild/Giuzeppi, Medium/Big Jim, Hot/Sandia, XXX Hot/Lumbre), U-pick sunflowers and cut flowers, pumpkins, honey, salsa",
+        "where_to_buy": "On-site farm, open daily (chile U-pick Aug-Oct)",
+        "notes": "3rd-generation family (Wagner family) farm; started as a green-chile U-pick in 2017, has grown into a broader agritourism operation with farm animals, workshops, field trips, and a Christmas tree lot. Open daily 8am-6/8pm; chile U-pick runs August-October, sunflowers from July.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6522,
+          35.0755
+        ]
+      },
+      "properties": {
+        "id": "casademolina-farm",
+        "name": "Casademolina Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 11.5,
+        "address": "1001 3rd St SW, Albuquerque, NM 87102 (South Valley, near the Rio Grande/downtown)",
+        "phone": "(505) 203-9520",
+        "website": "None found (no active website)",
+        "sells": "Organic (unspecified crop list; business tagged as 'organic grower' in directories)",
+        "where_to_buy": "Not published — contact directly",
+        "notes": "Small organic farm run by the Molina family (Diane Molina appears as a contact/reviewer). Keeps a low public profile — no website or crop list published; founded around 2018 per one directory.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6742,
+          35.0281
+        ]
+      },
+      "properties": {
+        "id": "olive-s-garden",
+        "name": "Olive's Garden",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 14.6,
+        "address": "2212 Durand Rd NW, Albuquerque, NM 87105 (South Valley)",
+        "website": "https://www.instagram.com/electrickennedyhallway/",
+        "sells": "Seasonal vegetables and fruit (specific list not published)",
+        "notes": "Contact: Electra and Olive Kennedy-Hall. Small family farm in the South Valley focused on respecting the land and the crops grown for the community. Note: address is ZIP 87105 (South Valley) — corrected from the prior 87107 (North Valley) listing, so distance below has been recalculated.\n\nNote: Location corrected: 87105, South Valley (not North Valley)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6742,
+          35.0281
+        ]
+      },
+      "properties": {
+        "id": "whole-heart-farm",
+        "name": "Whole Heart Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 14.6,
+        "address": "1404 Gonzales Rd SW, Albuquerque, NM 87105 (South Valley)",
+        "phone": "(505) 410-4688",
+        "website": "http://wholeheart.farm/",
+        "sells": "Seasonal vegetables: baby carrots, green onions, spinach, salad lettuce mix, radishes, and more",
+        "where_to_buy": "Downtown Growers Market; weekly email order list, farm/market pickup",
+        "notes": "Owned/run by Joshua Shelburne (wife Katie runs the CSA); biointensive regenerative model, low/no-till, no pesticides/herbicides. Sells to Agri-Cultura Network."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6742,
+          35.0281
+        ]
+      },
+      "properties": {
+        "id": "casa-fresco-farm",
+        "name": "Casa Fresco Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 14.6,
+        "address": "Albuquerque, NM (South Valley — specific address not published)",
+        "website": "https://www.facebook.com/casafrescofarm/",
+        "sells": "Seasonal produce (specific list not published)",
+        "where_to_buy": "Downtown Growers Market",
+        "notes": "Small family farm in the South Valley. Grows high-quality, all-natural produce while regenerating soil with minimal disturbance and organic practices.\n\nNote: 'Location' cell had been overwritten with the market name — restored to South Valley and market moved to its own column"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6742,
+          35.0281
+        ]
+      },
+      "properties": {
+        "id": "chispas-farms",
+        "name": "Chispas Farms",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 14.6,
+        "address": "229 Saavedra Rd SW, Albuquerque, NM 87105 (South Valley)",
+        "website": "https://www.chispasfarm.com",
+        "sells": "120+ heirloom vegetable & fruit varieties; eggs; also raises sheep, goats, ducks, geese, rabbits",
+        "where_to_buy": "Santa Fe Farmers Market",
+        "notes": "4-acre farm founded 2001, run by Casey Holland since 2017. Transitioning to no-till, regenerative closed-loop practices; seed saving; worker-equity model."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6742,
+          35.0281
+        ]
+      },
+      "properties": {
+        "id": "farm-of-song",
+        "name": "Farm of Song",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 14.6,
+        "address": "Albuquerque, NM (South Valley — 2.4-acre farm; exact street address not published)",
+        "phone": "(505) 550-4953",
+        "website": "https://www.instagram.com/farmofsong/",
+        "sells": "30+ diversified vegetable crops: apples, asparagus, beets, bell peppers, bok choy, broccoli, cabbage, carrots, cauliflower, celery, sweet corn, cucumbers, eggplant, garlic, green beans, green onions, jujubes, kohlrabi, leafy greens & herbs, leeks, lettuce, okra, onions, peas, peppers, potatoes, pumpkins, radishes, shallots, summer & winter squash",
+        "where_to_buy": "Downtown Growers Market",
+        "notes": "Co-op-owned, 4-season farm on 2.4 acres (1.5 in production) in the South Valley, in production since 2022 on land long farmed in vegetables/alfalfa. One of MoGro's largest local suppliers. Contact: Ian Colburn. Also sold via tiny grocer ABQ.\n\nNote: Distance is approximate (South Valley area used; exact address not published)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6805,
+          35.0006
+        ]
+      },
+      "properties": {
+        "id": "ironwood-farm",
+        "name": "Ironwood Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 16.2,
+        "address": "531 Shirk Ln SW, Albuquerque, NM 87105 (South Valley)",
+        "phone": "(505) 363-0074",
+        "website": "http://www.ironwoodfarm.org/ (unconfirmed)",
+        "sells": "General crop/produce (specific list not published)",
+        "where_to_buy": "Not published — contact directly",
+        "notes": "General crop farm founded 2009, managed by Malherbe Louis. Small operation (1 listed employee); has hosted farm interns in the past. Limited current public information — worth confirming it's still active before visiting.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.69,
+          35.002
+        ]
+      },
+      "properties": {
+        "id": "simple-revolution-farm",
+        "name": "Simple Revolution Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 16.5,
+        "address": "Isleta Blvd & Gun Club Rd SW, Albuquerque, NM 87105",
+        "website": "https://www.facebook.com/simplerevolutionfarm/",
+        "sells": "Seasonal produce (specific list not published)",
+        "where_to_buy": "Farm stand on-site, or at Rail Yards Market",
+        "notes": "Growing food since 1994 in the South Valley. Regenerative and sustainable, kept simple."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.0189,
+          35.4905
+        ]
+      },
+      "properties": {
+        "id": "alga-farms",
+        "name": "Alga Farms",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 34.3,
+        "address": "95 Cedar St, Santa Fe, NM (precise location uncertain — some records place it near Cerrillos)",
+        "phone": "(505) 795-2305",
+        "website": "None found (thin listing)",
+        "sells": "Not published — categorized only as 'organic farm'",
+        "where_to_buy": "Not published — contact directly",
+        "notes": "Very limited public information found; no working website or crop list turned up. Worth a direct call to confirm current operations before visiting.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.1067,
+          35.5989
+        ]
+      },
+      "properties": {
+        "id": "green-tractor-farm",
+        "name": "Green Tractor Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 36.3,
+        "address": "La Cienega, NM (near Santa Fe)",
+        "website": "https://www.greentractorfarm.com/pages/about",
+        "sells": "Flowers and organic vegetables",
+        "where_to_buy": "Santa Fe Farmers Market",
+        "notes": "Founded 2000 by Tom and Mary Dixon on the land where Tom was raised. Diverse produce and flowers on 3 acres; certified organic since 2006. Sells year-round at the Santa Fe Farmers Market."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.0072,
+          35.8987
+        ]
+      },
+      "properties": {
+        "id": "groundstone-farm",
+        "name": "Groundstone Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 56.9,
+        "address": "Pojoaque/Nambé, NM (just north of Santa Fe; 1.5 acres)",
+        "website": "http://www.groundstonefarm.com/find-our-produce.html",
+        "sells": "Greens, herbs, fruits, flowers, seeds, carrots, chile, onions, peppers, squash, tomatoes",
+        "where_to_buy": "Santa Fe Farmers Market (Saturdays); La Montañita Co-op (Santa Fe); Squash Blossom Local Food (wholesale to restaurants)",
+        "notes": "Run by Matt Ladegaard and Nina Yozell-Epstein. Organic practices, drip irrigation fed by the Acequia del Rincon. Focus on land-race varieties and crop diversity. New find — not previously in your NM Harvest-based research.\n\nNote: New find, added at your request"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.3153,
+          36.2261
+        ]
+      },
+      "properties": {
+        "id": "malandro-farm",
+        "name": "Malandro Farm",
+        "type": "farm",
+        "category": "Vegetables & Produce",
+        "distance_mi": 73.3,
+        "address": "Abiquiu, NM (~2.5 acres along the Rio Chama)",
+        "website": "https://lisabellaanderson.wixsite.com/malandrofarm",
+        "sells": "Beets, carrots, peas, peppers, tomatoes, garlic, onion, collard greens, squash, parsnips, turnips, herbs, black beans",
+        "where_to_buy": "Santa Fe Farmers Market",
+        "notes": "Proprietor: Lisa Anderson. Grows without chemical fertilizers or pesticides. Re-added at your request with its real website (previously only had a Facebook link on file).\n\nNote: Re-added — you had trimmed this one, then flagged its real site for re-inclusion"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.61,
+          35.166
+        ]
+      },
+      "properties": {
+        "id": "wavada-orchard",
+        "name": "Wavada Orchard",
+        "type": "farm",
+        "category": "Fruit & Orchards",
+        "distance_mi": 6.9,
+        "address": "105 Baker Ln NE, Albuquerque, NM 87113",
+        "phone": "(505) 898-6910",
+        "website": "https://www.facebook.com/wavada.orchard/",
+        "sells": "Apples, peaches, pears, cherries, plums, apricots; fresh eggs. U-pick apples in season.",
+        "where_to_buy": "On-site orchard, appointment-only, cash only",
+        "notes": "Local orchard producing cherries, peaches, apples, pears, plums and apricots in Albuquerque's North Valley; also sells fresh eggs. Appointment-only visits, cash only. Chickens and horses share the small orchard.\n\nNote: Location is approximate (address geocoded to nearest known area)\n\nUpdated via USFarmTrail.com cross-check (Sept 2026)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.599,
+          35.247
+        ]
+      },
+      "properties": {
+        "id": "alary-farm",
+        "name": "Alary Farm",
+        "type": "farm",
+        "category": "Fruit & Orchards",
+        "distance_mi": 8,
+        "address": "6322 Corrales Rd, Corrales, NM 87048",
+        "phone": "(505) 898-1204",
+        "website": "http://www.alaryfarm.com/",
+        "sells": "Apples (multiple varieties) and fresh-pressed cider",
+        "where_to_buy": "On-site farm stand, Sat-Sun (seasonal, call ahead)",
+        "notes": "Same family farm location since 1879 — one of the oldest continuously operated orchards in the area. No visiting/U-pick permitted; sells from the farm Sat-Sun 9am-5pm seasonally (call ahead, as availability changes through the season). Known for an award-winning apple pie recipe shared on their site.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory).",
+        "personal_note": "recipes on here"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6728,
+          34.9934
+        ]
+      },
+      "properties": {
+        "id": "flora-fauna-farm",
+        "name": "Flora Fauna Farm",
+        "type": "farm",
+        "category": "Fruit & Orchards",
+        "distance_mi": 16.3,
+        "address": "421 Clark Rd SW, Albuquerque, NM 87105 (South Valley Bosque)",
+        "phone": "(505) 508-8551",
+        "website": "https://florafauna.farm/",
+        "sells": "Fruit trees and shrubs adapted to high desert: jujubes (specialty), figs, pomegranates, apples, Asian pears, grapes, mulberries, persimmons, peaches, plums, apricots, plus native/xeric plants; potted or bare-root, some fresh fruit at market; eggs from their ducks",
+        "where_to_buy": "Appointment pickup, online, farmers markets",
+        "notes": "Founded ~2015 by two biologists, started on a 2-acre property in La Mesa, NM before relocating for better water access. About 3/4 acre of nursery production space, 'mixed in with kids and dogs and ducks and orchard.' Appointment-only — text, call, or email to set up a pickup. Sells online and at farmers markets.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.62,
+          35.17
+        ]
+      },
+      "properties": {
+        "id": "loose-leaf-farm",
+        "name": "Loose Leaf Farm",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 7.4,
+        "address": "8412 Rio Grande Blvd NW, Los Ranchos de Albuquerque, NM 87114",
+        "phone": "(505) 313-6823 (unconfirmed — one source lists phone as 'not public')",
+        "website": "https://www.instagram.com/looseleaffarm/",
+        "sells": "Vegetables, herbs, orchard fruit (apples, peaches) and flowers; pastured chicken, duck, goose, and goat meat/eggs",
+        "where_to_buy": "CSA, Los Ranchos Growers' Market, pop-up roadside stand",
+        "notes": "Veteran-owned (husband Mark is a Navy veteran and former Honeywell field engineer), run by first-generation farmers Sarah and Mark Robertson since 2015. 4 acres across two leased North Valley parcels; cover-cropped and grazed by livestock for soil health; flood irrigation from the acequia for the orchard, drip for vegetables. Sells via CSA, farmers markets (Los Ranchos Growers' Market), and a pop-up roadside stand.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.3892,
+          35.0778
+        ]
+      },
+      "properties": {
+        "id": "lotus-farm-llc",
+        "name": "Lotus Farm LLC",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 8.7,
+        "address": "6 Sierra Rose Ln, Tijeras, NM 87059 (33-acre farm, 7,460 ft elevation)",
+        "phone": "(505) 281-3814",
+        "website": "https://www.facebook.com/lotusfarmsnm/",
+        "sells": "Pastured poultry (chicken, turkey, duck) and pork, organically fed, humanely raised, no vaccines/hormones",
+        "where_to_buy": "Santa Fe Farmers Market (Saturdays + 1st Tuesday monthly); Polk's Folly Farm",
+        "notes": "Team: Grant Wilson (manager/co-owner), Val Wilson (co-owner), Jessica Kellam (farm manager), Maverick Martinez (facilities manager), Ashley Martinez (senior farm technician), and Val's parents Catherine and Abel Alvarez. Raises chickens, turkeys, ducks, and pigs. Longtime supplier to Farm & Table restaurant in ABQ. Email: lotus.farms.nm@gmail.com.\n\nUpdated via USFarmTrail.com cross-check (Sept 2026)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.3238,
+          35.1683
+        ]
+      },
+      "properties": {
+        "id": "lone-mountain-ranch-cattle-co",
+        "name": "Lone Mountain Ranch (Cattle Co.)",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 9.3,
+        "address": "1818 NM-14, Sandia Park, NM 87047 (also referenced as Golden, NM)",
+        "phone": "(505) 281-1432",
+        "website": "https://lonemountaincattle.com/",
+        "sells": "American-raised Fullblood Wagyu beef — steaks (filet, ribeye, sirloin, flank, shank) and more, ships nationwide via Goldbelly",
+        "where_to_buy": "Ships nationwide via Goldbelly",
+        "notes": "A serious premium operation: 27,000 acres, 700+ Fullblood Wagyu cattle, land with historical remnants dating to the 1200s. Uses traditional Japanese breeding methods alongside modern genetics. This is high-end Wagyu, not everyday grocery beef — also supplies some of the Wagyu sold through Skarsgard Farms' delivery service.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.68,
+          35.03
+        ]
+      },
+      "properties": {
+        "id": "sweet-mercy-farms",
+        "name": "Sweet Mercy Farms",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 14.7,
+        "address": "6991 Jensen Rd SW, Albuquerque, NM 87105 (Rio Grande Bosque, South Valley)",
+        "phone": "(505) 507-8851 / (505) 730-7663",
+        "website": "https://www.sweetmercyfarms.com/",
+        "sells": "100% grass-fed & grass-finished beef, heritage Yorkshire/Hampshire pork, free-range eggs, pastured chicken and lamb, raw milk (from partner dairies), wild-caught salmon",
+        "where_to_buy": "Farm pickup, Saturday metro delivery, Downtown Growers Market, online w/ shipping",
+        "notes": "Small family-run farm along the Rio Grande Bosque. Cattle never given hormones, antibiotics, or growth promoters. Order for farm pickup, Saturday metro delivery, at the Downtown Growers Market (spring-fall, Robinson Park), or online with shipping. Contact: donna@sweetmercyfarms.com.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory).",
+        "personal_note": "VERY PROMISING!!!"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6526,
+          34.9945
+        ]
+      },
+      "properties": {
+        "id": "mas-cattle-company-llc",
+        "name": "MAS Cattle Company LLC",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 15.5,
+        "address": "5704 Broadway Blvd SE, Albuquerque, NM 87105 (South Valley)",
+        "phone": "(505) 933-2565",
+        "website": "None found (Facebook/Google only)",
+        "sells": "Grass-fed beef by the half or whole animal, custom cut and vacuum-packaged",
+        "where_to_buy": "Direct order (call/text)",
+        "notes": "Run by Marcos; consistently strong customer reviews for personal service and quality. Beef is aged ~2 weeks, with about 16 days total from order to pickup for processing/packaging. Local New Mexico grass-fed beef, direct from the rancher.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.1593,
+          35.1422
+        ]
+      },
+      "properties": {
+        "id": "bill-king-ranch",
+        "name": "Bill King Ranch",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 18.7,
+        "address": "183 King Rd, Stanley, NM 87056",
+        "phone": "(505) 220-9909",
+        "website": "http://www.billkingranch.com/",
+        "sells": "N/A for direct-to-consumer meat — this is a cattle *breeding* operation: Hereford, Angus, and Charolais bulls and breeding cattle",
+        "where_to_buy": "Private treaty sales (breeding-stock buyers, not retail meat)",
+        "notes": "A serious commercial cattle genetics operation, not a small market farm — sells 600+ bulls annually to producers across the US, Canada, and Mexico via private treaty sales. Worth knowing about if breeding stock (not dinner) is the interest; not a place to buy beef for the freezer.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory).",
+        "personal_note": "Has beef, call"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.1625,
+          35.0439
+        ]
+      },
+      "properties": {
+        "id": "nm-smart-meats",
+        "name": "NM Smart Meats",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 20.5,
+        "address": "2 Spring Ct, Edgewood, NM 87015 (operation spans Edgewood and Moriarty)",
+        "phone": "(505) 553-2366",
+        "website": "http://www.nmsmartmeats.com/",
+        "sells": "Grass-fed, antibiotic- and hormone-free beef — whole, half, quarter, or eighth steer shares with custom cuts (steaks, roasts, hamburger, organ meats)",
+        "where_to_buy": "Direct order",
+        "notes": "Small family-run beef operation run by Stuart Seagers. Cattle born, raised, and finished entirely on New Mexico pasture — no feedlots, no long-haul transport.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.1057,
+          34.9531
+        ]
+      },
+      "properties": {
+        "id": "trilogy-beef-community-llc",
+        "name": "Trilogy Beef Community LLC",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 26.5,
+        "address": "141 Feather Trail, Moriarty, NM 87035",
+        "phone": "(505) 927-7935",
+        "website": "https://trilogybeef.grazecart.com/",
+        "sells": "USDA-inspected, process-verified New Mexico beef — grass-fed or locally-grain-finished, no antibiotics, no added hormones, no synthetic inputs on pasture",
+        "where_to_buy": "Online (GrazeCart) + farm pickup ('The Market at the Buffalo Creek Ranch')",
+        "notes": "A cooperative network of multi-generational New Mexico beef-ranching families (led by Manny Encinias), harvesting locally in Moriarty under federal USDA inspection. Online ordering via GrazeCart with a farm pickup point ('The Market at the Buffalo Creek Ranch'). Similar in spirit to Sweet Grass Co-op, but its own distinct group of ranches.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.7334,
+          34.8062
+        ]
+      },
+      "properties": {
+        "id": "chavez-farms",
+        "name": "Chavez Farms",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 29,
+        "address": "1551 Don Pasqual Rd NW, Los Lunas, NM 87031 (also 750 Soledad Ln)",
+        "phone": "(505) 865-0412",
+        "website": "https://www.instagram.com/chavezfarms505/",
+        "sells": "Grass-fed, dry-aged, hormone-free beef; organic heirloom green & red chile (incl. Big Jim); alfalfa; produce",
+        "where_to_buy": "On-site farm stand",
+        "notes": "6th-generation family farm run by Matthew & Leandra Chavez. Farm stand hours roughly Tue-Fri 9am-2pm, Sat 9am-1/2pm (varies by source)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.7334,
+          34.8062
+        ]
+      },
+      "properties": {
+        "id": "peculiar-farms",
+        "name": "Peculiar Farms",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 29,
+        "address": "2105 Highway 314 NW, Los Lunas, NM 87031 (2nd location: 18 Silver Ln, Los Lunas — ~1 min away)",
+        "phone": "(505) 261-3605",
+        "website": "https://www.facebook.com/peculiarfarmsnm/",
+        "sells": "Grass-fed beef, Araucana eggs, heirloom vegetables and fruit, flowers",
+        "where_to_buy": "On-site farm store; Europa Coffee café on-site",
+        "notes": "Owner Thomas Dollahite moved from archaeology into full-time farming in 2011. Expanding grass-fed beef operation; runs an on-site café (Europa Coffee) where customers can try the farm's products. New find — not previously in your NM Harvest-based research.\n\nNote: New find, added at your request"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.9508,
+          35.397
+        ]
+      },
+      "properties": {
+        "id": "talus-wind-ranch-heritage",
+        "name": "Talus Wind Ranch Heritage",
+        "type": "farm",
+        "category": "Meat & Poultry",
+        "distance_mi": 34,
+        "address": "Galisteo, NM (ranch); distributed statewide",
+        "phone": "(505) 982-7782",
+        "website": "https://www.taluswindranch.com",
+        "sells": "Heritage-breed pork: Mangalitsa, Berkshire, Hampshire",
+        "where_to_buy": "La Montañita Co-Op",
+        "notes": "Founded by Galisteo rancher Tim Willms; sources from his ranch plus small NM ranchers in northern/central NM. Humanely raised (no farrowing crates, no teeth/tail clipping), pasture-raised, never feedlot; antibiotic-free feed with NM-grown alfalfa, veggies, pecans, juniper berries."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.705994,
+          34.834944
+        ]
+      },
+      "properties": {
+        "id": "de-smet-dairy-and-creamery",
+        "name": "De Smet Dairy and Creamery",
+        "type": "farm",
+        "category": "Dairy & Eggs",
+        "distance_mi": 26.5,
+        "address": "2405 McNew Rd, Bosque Farms, NM 87068",
+        "phone": "(505) 350-9075 / (505) 916-0475 (two numbers appear in different listings)",
+        "website": "https://desmetdairy.com",
+        "sells": "Raw A2 cow milk, pasteurized non-homogenized milk, yogurt, chicken eggs",
+        "where_to_buy": "Farm store + statewide retail partners — see Stores tab for the full list",
+        "notes": "New Mexico's only Grade A raw-milk dairy. Established 1949 by Landon De Smet; now 3rd-generation, run by Erica and Mike de Smet. 80 Jersey/Jersey-cross cows on 125 acres, grass-fed year-round, no hormones/antibiotics/GMOs, cows individually named, calves left with moms. On-farm store plus retail partners in ABQ (Moses Kountry Health Foods, multiple La Montañita locations, Keller's), Santa Fe (La Montañita, Beneficial Farms CSA), Los Alamos Co-op, Taos Food Co-op, and Las Cruces (Mountain View Market). Farm tours offered.\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.0806,
+          36.0031
+        ]
+      },
+      "properties": {
+        "id": "ewe-matter-farm-dairy",
+        "name": "Ewe Matter Farm & Dairy",
+        "type": "farm",
+        "category": "Dairy & Eggs",
+        "distance_mi": 61.7,
+        "address": "Northern New Mexico (town not specified)",
+        "sells": "Sheep dairy products (specific list not published)",
+        "where_to_buy": "Direct order",
+        "notes": "A small family farm in northern New Mexico. NM-raised, humanely raised, steroid/antibiotic/hormone free, pasture-raised, free-range. No usable website found despite searching.\n\nNote: Distance is a rough proxy — exact town unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6504,
+          35.0844
+        ]
+      },
+      "properties": {
+        "id": "mi-young",
+        "name": "Mi Young",
+        "type": "farm",
+        "category": "Herbs & Prepared Foods",
+        "distance_mi": 11.1,
+        "address": "Albuquerque, NM",
+        "website": "https://www.facebook.com/miyoungsfarm/",
+        "sells": "Vegan kimchi",
+        "where_to_buy": "On-site farm stand + farmers markets",
+        "notes": "Fermented-foods maker; limited public information available beyond the product itself."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6742,
+          35.0281
+        ]
+      },
+      "properties": {
+        "id": "sabroso-foods",
+        "name": "Sabroso Foods",
+        "type": "farm",
+        "category": "Herbs & Prepared Foods",
+        "distance_mi": 14.6,
+        "address": "1019 Sunset Rd SW, Albuquerque, NM 87105 (Barelas/South Valley)",
+        "phone": "(505) 842-5579",
+        "website": "https://sabrosofoodsnm.com/",
+        "sells": "Fresh flour and corn tortillas made daily, plus tamales (pork red chile, green chile)",
+        "where_to_buy": "Wholesale to NM grocery chains (e.g. John Brooks)",
+        "notes": "Family-owned since 1987 (30+ years). Not a farm — a tortilla manufacturer. Hours ~Mon-Fri 7am-2:30pm, Sat 8am-noon. Email: oswaldo@osymar.com.\n\nNote: User-flagged favorite (***)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.1978,
+          35.4155
+        ]
+      },
+      "properties": {
+        "id": "sunstar-herbs",
+        "name": "SunStar Herbs",
+        "type": "farm",
+        "category": "Herbs & Prepared Foods",
+        "distance_mi": 23.3,
+        "address": "417 Camino Cerro Chato, Los Cerrillos, NM 87010",
+        "phone": "(505) 699-2688 / (505) 328-9210",
+        "website": "https://www.facebook.com/SunStarHerbs/",
+        "sells": "Garlic (including soft-neck varieties) and herbs; farm-stand hours suggest other seasonal produce too",
+        "where_to_buy": "On-site farm stand + farmers markets",
+        "notes": "Small working farm in the village of Los Cerrillos. Listed variably as a farmers'-market vendor, produce retailer, and garden center/nursery across directories — likely combines direct farm-stand sales with market vending. On-site hours roughly Mon 9am-3pm, Sun 10am-4pm (confirm before visiting, as sources vary).\n\nSource: USFarmTrail.com (found and researched independently, not part of the original NM Harvest directory)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6997,
+          34.8353
+        ]
+      },
+      "properties": {
+        "id": "blue-fly-farms",
+        "name": "Blue Fly Farms",
+        "type": "farm",
+        "category": "Herbs & Prepared Foods",
+        "distance_mi": 26.3,
+        "address": "24 Riverside Dr, Peralta, NM 87042",
+        "phone": "(505) 510-1837 / (505) 977-3355",
+        "website": "http://blueflyfarms.com/",
+        "sells": "Certified organic lavender, essential oils & hydrosols, salves/sachets, and farm-to-can sparkling waters (lavender, tulsi, peppermint, rosemary)",
+        "where_to_buy": "Downtown Growers Market; La Montañita Co-op; Etsy shop 'BlueflyFarms'",
+        "notes": "Founded 2013 by Kemper Barkhurst & Elizabeth Arnold. Family farm with chickens. Sparkling waters also sold via New Mexico Ferments."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.546,
+          35.1035
+        ]
+      },
+      "properties": {
+        "id": "keller-s-on-eubank",
+        "name": "Keller's on Eubank",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 5.9,
+        "address": "2912 Eubank Blvd NE, Albuquerque, NM 87112",
+        "phone": "(505) 294-1427",
+        "sells": "Also appeared in the original ABQ-60 USFarmTrail list as a standalone 'Keller's Farm Stores' entry — same family of stores.",
+        "raw_milk": "NO — sells only pasteurized milk and yogurt (no raw milk at this location)",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.353,
+          35.198
+        ]
+      },
+      "properties": {
+        "id": "lantern-ridge-farm-market-nursery",
+        "name": "Lantern Ridge Farm Market + Nursery",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 7.8,
+        "address": "12540 NM-14, Sandia Park, NM 87047",
+        "phone": "(505) 395-7774",
+        "website": "https://www.lanternridgemarket.com/",
+        "sells": "Café menu (BBQ brisket & green chile smash burgers, quiche, avocado toast, coffee bar), specialty/seasonal grocery items, plus a full plant nursery (seasonal trees, shrubs, Christmas trees/wreaths in winter)",
+        "raw_milk": "N/A — not a dairy retailer",
+        "notes": "Moved from USFarmTrail Nearby tab",
+        "personal_note": "Touristy, check out but looks overpriced"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6463,
+          35.1548
+        ]
+      },
+      "properties": {
+        "id": "moses-kountry-health-foods",
+        "name": "Moses Kountry Health Foods",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 9,
+        "address": "7115 4th St NW, Los Ranchos de Albuquerque, NM 87107",
+        "phone": "(505) 898-9763",
+        "sells": "One of De Smet Dairy's Albuquerque retail partners.",
+        "raw_milk": "YES — sells raw milk, pasteurized milk, and yogurt",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.622,
+          35.081
+        ]
+      },
+      "properties": {
+        "id": "la-monta-ita-co-op-nob-hill",
+        "name": "La Montañita Co-op — Nob Hill",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 9.9,
+        "address": "3500 Central Ave SE, Albuquerque, NM 87106",
+        "phone": "(505) 265-4631",
+        "website": "https://lamontanita.coop/",
+        "sells": "Flagship Nob Hill location of the ABQ-based food co-op.",
+        "raw_milk": "NO — sells only pasteurized milk and yogurt (no raw milk at this location)",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6647,
+          35.1338
+        ]
+      },
+      "properties": {
+        "id": "no-bull-prime-meats",
+        "name": "No Bull Prime Meats",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 10.4,
+        "address": "1208 Griegos Rd NW, Albuquerque, NM 87107 (North Valley); cattle raised on the Rizzi family farm near Estancia, NM",
+        "phone": "(505) 449-7387",
+        "website": "https://www.nobullprimemeats.com/",
+        "sells": "Dry-aged, all-natural beef, bison, pork, lamb, goat, plus exotic meats (Wagyu A3, kangaroo, frog legs, camel); no antibiotics, steroids, or GMOs",
+        "raw_milk": "N/A — not a dairy retailer",
+        "notes": "Moved from USFarmTrail Nearby tab"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.67,
+          35.1075
+        ]
+      },
+      "properties": {
+        "id": "la-monta-ita-co-op-rio-grande",
+        "name": "La Montañita Co-op — Rio Grande",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 11.3,
+        "address": "2400 Rio Grande Blvd NW, Albuquerque, NM 87104",
+        "phone": "(505) 242-8800",
+        "website": "https://lamontanita.coop/",
+        "sells": "Near Old Town.",
+        "raw_milk": "NO — sells only pasteurized milk and yogurt (no raw milk at this location)",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6953,
+          34.9611
+        ]
+      },
+      "properties": {
+        "id": "rasband-dairy",
+        "name": "Rasband Dairy",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 18.8,
+        "address": "7116 Isleta Blvd SW, Albuquerque, NM 87105 (South Valley)",
+        "phone": "(505) 873-2171",
+        "website": "https://www.restaurantji.com/nm/albuquerque/rasband-dairy-/",
+        "sells": "Pasteurized milk (regular, skim, orange-flavored, cream), famous for its chocolate milk",
+        "raw_milk": "NO — Rasband's milk is pasteurized only, not raw (unlike De Smet)",
+        "notes": "Moved from USFarmTrail Nearby tab",
+        "personal_note": "REALLY GOOD"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.705994,
+          34.834944
+        ]
+      },
+      "properties": {
+        "id": "de-smet-dairy-farm-store",
+        "name": "De Smet Dairy Farm Store",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 26.5,
+        "address": "2405 McNew Road, Bosque Farms, NM 87068",
+        "phone": "(505) 916-0475",
+        "website": "https://www.desmetdairy.com/bosque-farms",
+        "sells": "The source farm itself. thefarm@desmetdairy.com. Also sells pasteurized milk, yogurt, and eggs on-site.",
+        "raw_milk": "YES — fresh raw milk sold directly at the farm store",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.734,
+          34.8078
+        ]
+      },
+      "properties": {
+        "id": "snake-ranch-farm-stores",
+        "name": "Snake Ranch Farm Stores",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 28.9,
+        "address": "232 Main St NE, Los Lunas, NM 87031 (seasonal market — the actual growing farm is in San Antonio, NM, near Socorro)",
+        "phone": "(505) 865-6543 (Los Lunas market) / (575) 835-2839 (farm office)",
+        "website": "https://sichlerchile.com/snake-ranch-farm-stores/",
+        "sells": "Renowned red & green chile, melons, tomatoes, squash, corn, cucumbers, garlic, apples, cantaloupes",
+        "raw_milk": "N/A — not a dairy retailer",
+        "notes": "Moved from USFarmTrail Nearby tab"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.721,
+          34.765
+        ]
+      },
+      "properties": {
+        "id": "honey-shack-nm",
+        "name": "Honey Shack NM",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 31.2,
+        "address": "3118 NM-47, Los Lunas, NM 87031",
+        "phone": "(505) 859-3151",
+        "website": "https://honeyshacknm.com/",
+        "sells": "Raw honey (including single-flower varieties like buckwheat), beeswax, bourbon-aged honey",
+        "raw_milk": "N/A — not a dairy retailer",
+        "notes": "Moved from USFarmTrail Nearby tab"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.9989,
+          35.6551
+        ]
+      },
+      "properties": {
+        "id": "the-shop-urban-rebel-farms",
+        "name": "The Shop @ Urban Rebel Farms",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 43.1,
+        "address": "3201 Rufina St, Santa Fe, NM 87507 (Midtown)",
+        "phone": "(505) 379-8959 (farm) / (505) 471-3559 (retail shop)",
+        "website": "https://urbanrebelfarms.com/",
+        "sells": "Veganic microgreens (30+ living varieties, edible young herbs/vegetables/grains), plus (via 'The Shop') hydroponics, soil, indoor lighting, nutrients, and gardening supplies for home growers",
+        "raw_milk": "N/A — not a dairy retailer",
+        "notes": "Moved from USFarmTrail Nearby tab"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.9631,
+          35.665
+        ]
+      },
+      "properties": {
+        "id": "dr-field-goods-kitchen-butcher-shop",
+        "name": "Dr. Field Goods Kitchen & Butcher Shop",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 45,
+        "address": "2860 Cerrillos Rd, Santa Fe, NM 87507 (original location; 2nd Santa Fe spot at 187 Paseo de Peralta, plus an Albuquerque location at Sawmill Market)",
+        "phone": "(505) 471-0043 (Kitchen) / (505) 474-6081 (Butcher Shop)",
+        "website": "https://drfieldgoods.com/",
+        "sells": "Farm-to-table 'New Mexico fusion' restaurant menu, plus a full butcher counter and bakery selling locally sourced meats and house-made breads/baked goods to take home",
+        "raw_milk": "N/A — not a dairy retailer",
+        "notes": "Moved from USFarmTrail Nearby tab"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.96,
+          35.687
+        ]
+      },
+      "properties": {
+        "id": "la-monta-ita-co-op-santa-fe",
+        "name": "La Montañita Co-op — Santa Fe",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 46.2,
+        "address": "913 West Alameda St, Santa Fe, NM 87501",
+        "phone": "(505) 984-2852",
+        "website": "https://lamontanita.coop/",
+        "raw_milk": "YES — sells raw milk, pasteurized milk, and yogurt",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.9378,
+          35.687
+        ]
+      },
+      "properties": {
+        "id": "ecco-gelato",
+        "name": "Ecco Gelato",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 47,
+        "address": "128 E Marcy St, Santa Fe, NM 87501",
+        "phone": "(505) 986-9778",
+        "sells": "Gelato shop that also carries De Smet dairy products retail.",
+        "raw_milk": "YES — sells raw milk, pasteurized milk, and yogurt",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.91,
+          35.67
+        ]
+      },
+      "properties": {
+        "id": "beneficial-farms-csa",
+        "name": "Beneficial Farms CSA",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 47.2,
+        "address": "1101 Camino De Cruz Blanca, Santa Fe, NM 87505",
+        "phone": "(505) 470-1969",
+        "sells": "A CSA operation that also serves as a De Smet retail pickup point.",
+        "raw_milk": "YES — sells raw milk, pasteurized milk, and yogurt",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.3266,
+          35.8905
+        ]
+      },
+      "properties": {
+        "id": "los-alamos-cooperative-market",
+        "name": "Los Alamos Cooperative Market",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 50.3,
+        "address": "95 Entrada, Los Alamos, NM 87544",
+        "phone": "(505) 695-1579",
+        "sells": "grocery@losalamos.coop",
+        "raw_milk": "YES — raw milk and yogurt only (no pasteurized milk listed)",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.0806,
+          36.0031
+        ]
+      },
+      "properties": {
+        "id": "sweet-grass-co-op",
+        "name": "Sweet Grass Co-op",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 61.7,
+        "address": "Ranches across northern NM & southern CO; mailing address PO Box 1206, Alamosa, CO",
+        "phone": "Not published (order via website)",
+        "website": "https://sweetgrasscoop.com/store/",
+        "sells": "Bulk grass-fed, grass-finished beef: quarter/half/whole shares, ground-beef boxes, mixed boxes — delivery available to ABQ and Santa Fe",
+        "raw_milk": "N/A — meat co-op, not dairy",
+        "notes": "Moved from Farms tab"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.5731,
+          36.4072
+        ]
+      },
+      "properties": {
+        "id": "taos-food-co-op",
+        "name": "Taos Food Co-op",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 99.4,
+        "address": "314 Paseo Del Pueblo Norte, Suite G, Taos, NM 87571",
+        "phone": "(575) 758-3840",
+        "sells": "taosfoodcoop@gmail.com",
+        "raw_milk": "YES — raw milk and yogurt",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.7637,
+          32.3199
+        ]
+      },
+      "properties": {
+        "id": "mountain-view-market-co-op",
+        "name": "Mountain View Market Co-op",
+        "type": "store",
+        "category": "Store / Co-op",
+        "distance_mi": 197.9,
+        "address": "1300 El Paseo Rd, Las Cruces, NM 88001",
+        "phone": "(575) 523-0436",
+        "sells": "Las Cruces' natural foods co-op.",
+        "raw_milk": "YES — sells raw milk, pasteurized milk, and yogurt",
+        "notes": "De Smet Dairy 'Where to Buy' page (desmetdairy.com/where-to-buy)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6504,
+          35.0844
+        ]
+      },
+      "properties": {
+        "id": "three-sisters-kitchen",
+        "name": "Three Sisters Kitchen",
+        "type": "restaurant",
+        "category": "Restaurant / Cafe",
+        "distance_mi": 11.1,
+        "address": "109 Gold Ave SW, Albuquerque, NM 87102 (downtown)",
+        "phone": "(505) 832-7237",
+        "website": "https://threesisterskitchen.org/ ; https://threesisterskitchen.org/cafe-at-explora/",
+        "sells": "Café (breakfast/lunch Tue-Fri, brunch Sat) using local ingredients; retail Local Foods Shop selling NM-grown/raised/produced goods; TSK Food Group brand granolas, spice shakes, waffle mix",
+        "notes": "Nonprofit community food space born from 2015-2017 community organizing in downtown ABQ. Also runs a Commercial Test Kitchen (food-business incubator), Community Classroom, and Indoor Winter Evening Market. Café hours ~Mon-Fri 9am-5pm. Contact: hello@threesisterskitchen.org."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.639,
+          35.1529
+        ]
+      },
+      "properties": {
+        "id": "cottonwood-creamery-cookies",
+        "name": "Cottonwood Creamery & Cookies",
+        "type": "restaurant",
+        "category": "Restaurant / Cafe",
+        "distance_mi": 8.6,
+        "address": "6561 4th St NW, Unit A, Los Ranchos de Albuquerque, NM 87107",
+        "phone": "(505) 526-8360",
+        "website": "https://www.creameryandcookies.com/",
+        "sells": "Small-batch New Mexico-inspired ice cream (lemon verbena; brown butter praline pecan; strawberry meringue; hatch green chile with piñon; NM s'mores with biscochitos; honeycomb sopaipilla), cookies, blue corn waffle cones, coffee/espresso/cappuccino, blue corn burnt-butter biscuits",
+        "notes": "Opened 2025 by co-owners Paul Meyer and Irma Ruiz, who returned to New Mexico after years in California. Correct business name is 'Cottonwood Creamery & Cookies' — the NM Harvest listing's name ('Cottonwood Culinary Creations') appears outdated. Hours roughly Wed-Thu 11/12-7/8pm, Fri 12-9pm, Sat 1-9pm, Sun 12-7pm, closed Mon-Tue (confirm before visiting)."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.941,
+          35.6889
+        ]
+      },
+      "properties": {
+        "id": "santa-fe-farmers-market",
+        "name": "Santa Fe Farmers Market",
+        "type": "market",
+        "category": "Farmers Market",
+        "address": "1607 Paseo de Peralta, Santa Fe, NM 87501",
+        "website": "https://santafefarmersmarket.com",
+        "schedule": "Saturdays year-round, 8am-1pm; Tuesdays seasonally (warm months), 8am-1pm",
+        "notes": "One of the oldest, largest growers' markets in the country (150+ vendors); 100% of produce sold is grown in northern NM."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6516,
+          35.0847
+        ]
+      },
+      "properties": {
+        "id": "downtown-growers-market-albuquerque",
+        "name": "Downtown Growers' Market (Albuquerque)",
+        "type": "market",
+        "category": "Farmers Market",
+        "address": "Robinson Park, 810 Copper Ave NW, Albuquerque, NM 87102",
+        "website": "https://www.downtowngrowers.org",
+        "schedule": "Saturdays, 8am-noon, mid-April through early November",
+        "notes": "70+ New Mexico growers; also runs 8am yoga and rotating nonprofit programming."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.605,
+          35.236
+        ]
+      },
+      "properties": {
+        "id": "corrales-growers-market",
+        "name": "Corrales Growers' Market",
+        "type": "market",
+        "category": "Farmers Market",
+        "address": "500 Jones Rd & Corrales Rd, Corrales, NM 87048",
+        "phone": "(505) 898-6336",
+        "website": "https://corralesgrowersmarket.com",
+        "schedule": "Sundays, 9am-noon, late April-early November; Wednesdays, 3-6pm, mid-July-October; Winter Market: 1st Sunday of the month (Dec-Apr), 11am-1pm",
+        "notes": "Food-focused market (produce, meat, eggs, baked goods, jams) since 2003; corralesgrowersmarket@gmail.com."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.3722,
+          35.1108
+        ]
+      },
+      "properties": {
+        "id": "cedar-crest-farmers-market",
+        "name": "Cedar Crest Farmers' Market",
+        "type": "market",
+        "category": "Farmers Market",
+        "address": "12183 NM Hwy 14, Cedar Crest, NM 87008 (winter location: 12128 NM-14)",
+        "website": "https://www.facebook.com/people/The-Cedar-Crest-Farmers-Market/61574251080358/",
+        "schedule": "Wednesdays, 3-6pm, May-October; last Sunday of the month, noon-4pm",
+        "notes": "East Mountains market; contact petewithers@swcp.com."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.575,
+          35.087
+        ]
+      },
+      "properties": {
+        "id": "mile-hi-farmers-market",
+        "name": "Mile-Hi Farmers' Market",
+        "type": "market",
+        "category": "Farmers Market",
+        "address": "Alvarado Park, 2000 Alvarado Dr NE, Albuquerque, NM 87110",
+        "website": "https://www.facebook.com/milehimarketabq",
+        "schedule": "Sundays 10am-2pm, June-October (some listings say late June-September); Food Truck Thursday evenings added in summer",
+        "notes": "Fruits and vegetables, burritos, baked goods, coffee, crafts. Neighborhood market aiming to 'build community around food'; playground on-site keeps kids busy while parents shop."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.647,
+          35.1725
+        ]
+      },
+      "properties": {
+        "id": "los-ranchos-growers-art-market",
+        "name": "Los Ranchos Growers' & Art Market",
+        "type": "market",
+        "category": "Farmers Market",
+        "address": "6718 Rio Grande Blvd NW (Hartnett Park / City Hall tennis court lot), Los Ranchos de Albuquerque, NM 87107",
+        "phone": "(505) 890-2799 / (505) 344-6582 (Village Hall)",
+        "website": "https://www.losranchosnm.gov/growers-arts-market",
+        "schedule": "Saturdays 8-11am, May-November (7am start in summer per some sources); companion Art Market runs alongside 8am-noon on the same Saturdays; Winter Markets 2nd Saturday of the month (Dec-Apr) 10am-noon",
+        "notes": "One of Albuquerque's longest-running growers' markets (34+ seasons). Saturdays 8-11am, May-November (7am start in summer per some sources); 2nd Saturday of the month 10am-noon, December-April. Also runs a companion year-round Art Market on the same schedule. (Also matches the Facebook link you shared earlier — same market, consolidated here.)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6479,
+          35.0839
+        ]
+      },
+      "properties": {
+        "id": "rail-yards-market",
+        "name": "Rail Yards Market",
+        "type": "market",
+        "category": "Farmers Market",
+        "address": "777 1st St SW, Albuquerque, NM 87102 (historic Barelas Rail Yards)",
+        "phone": "(505) 600-1109",
+        "website": "https://railyardsmarket.org/",
+        "schedule": "Sundays 10am-2pm, May-October, plus a December Holiday Market and a February Valentine Market",
+        "notes": "Albuquerque's largest farmers market — nonprofit, volunteer-founded in 2014, run under fiscal sponsorship of the Barelas Community Coalition. Sundays 10am-2pm, May-October, plus a December Holiday Market and February Valentine Market."
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6892,
+          34.9932
+        ]
+      },
+      "properties": {
+        "id": "south-valley-growers-market",
+        "name": "South Valley Growers' Market",
+        "type": "market",
+        "category": "Farmers Market",
+        "address": "6029 Isleta Blvd SW, Albuquerque, NM (South Valley)",
+        "phone": "(505) 877-4044",
+        "website": "https://www.facebook.com/SouthValleyGrowersMarket/",
+        "schedule": "Saturdays 8am-noon, roughly late May through mid-October (2026 season: May 30-Oct 10)",
+        "notes": "Seasonal Saturday market, 8am-noon, roughly late May through mid-October (2026 season: May 30-Oct 10). Community-gathering feel in the South Valley bosque farming tradition."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1045 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>mikatomorrow :: farms</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <style type="text/css">
+
+    html, body, * { cursor: none !important; }
+    html, body { min-height: 100vh; }
+
+    #fake-cursor {
+      position: fixed; top: 0; left: 0;
+      width: 48px; height: 48px;
+      pointer-events: none; z-index: 99999;
+      background: url('img/cursor-dino.png') no-repeat top left;
+      background-size: 48px 48px;
+      image-rendering: pixelated; image-rendering: crisp-edges;
+    }
+
+    body {
+      background-color: #7070aa;
+      background-image: url('img/bg.png');
+      background-repeat: repeat;
+      color: #cccccc;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+      font-size: 15px;
+      margin: 0;
+      padding: 16px 0 30px 0;
+      position: relative;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    a:visited { color: inherit; }
+
+    #outer { width: 92%; max-width: 1000px; margin: 0 auto; }
+
+    #header {
+      background-color: #111111;
+      background-image: repeating-linear-gradient(
+        45deg, rgba(255,255,255,0.025) 0px,
+        rgba(255,255,255,0.025) 1px, transparent 1px, transparent 6px
+      );
+      border-bottom: 2px solid #2a2a2a;
+      border-left: 4px solid #338833;
+      padding: 22px 24px 18px 24px;
+    }
+
+    #header h1 {
+      font-family: Impact, "Arial Narrow", Arial, sans-serif;
+      font-size: 40px; font-weight: normal;
+      color: #55cc55; letter-spacing: 8px;
+      text-transform: lowercase; line-height: 1; margin-bottom: 6px;
+    }
+
+    #header .sub {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 18px; color: #bbbbbb; letter-spacing: 4px;
+    }
+
+    #header .breadcrumb {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 18px; color: #aaaaaa;
+      letter-spacing: 2px; margin-bottom: 10px;
+    }
+
+    #header .breadcrumb a { color: #55cc55; }
+    #header .breadcrumb a:hover { color: #ffffff; }
+
+    #content {
+      background-color: rgba(10,10,10,0.7);
+      border-left: 1px solid #222222;
+      border-right: 1px solid #222222;
+      padding: 28px 22px 32px 22px;
+    }
+
+    .section-label {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 18px; color: #aaaaaa;
+      letter-spacing: 4px; margin-bottom: 18px;
+    }
+
+    .entry-desc {
+      margin-bottom: 18px;
+      font-size: 16px; color: #bbbbbb; line-height: 1.6;
+    }
+
+    #farm-controls {
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: center; align-items: center;
+      -ms-flex-wrap: wrap; flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    #farm-search {
+      background-color: #0e0e0e;
+      border: 1px solid #2a2a2a;
+      color: #dddddd;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      padding: 8px 10px;
+      letter-spacing: 1px;
+      width: 320px;
+      max-width: 100%;
+      cursor: text !important;
+    }
+
+    #farm-search:focus { outline: none; border-color: #55cc55; }
+
+    #state-select {
+      background-color: #0e0e0e;
+      border: 1px solid #2a2a2a;
+      color: #dddddd;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 15px;
+      padding: 8px 10px;
+      letter-spacing: 1px;
+      cursor: pointer !important;
+    }
+
+    #state-select:focus { outline: none; border-color: #55cc55; }
+
+    #farm-status {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px; color: #888888;
+      letter-spacing: 1px;
+    }
+
+    #farm-map {
+      width: 100%;
+      height: 560px;
+      background-color: #0a0a0a;
+      border: 1px solid #2a2a2a;
+      margin-bottom: 16px;
+      cursor: default !important;
+    }
+
+    #farm-map, #farm-map * { cursor: inherit !important; }
+
+    #farm-map .leaflet-tile-pane {
+      filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9);
+    }
+
+    .leaflet-popup-content-wrapper {
+      background-color: #111111;
+      color: #cccccc;
+      border: 1px solid #333333;
+      border-radius: 0;
+    }
+
+    .leaflet-popup-tip { background-color: #111111; }
+
+    .farm-popup-name {
+      font-family: Impact, "Arial Narrow", Arial, sans-serif;
+      font-size: 18px; color: #55cc55; letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 4px;
+    }
+
+    .farm-popup-meta {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px; color: #aaaaaa; letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .farm-popup-osm a { color: #55cc55; }
+    .farm-popup-osm a:hover { color: #ffffff; }
+
+    #farm-legend {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px; color: #aaaaaa;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    #farm-legend .swatch {
+      display: inline-block;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    #farm-legend span.item { margin-right: 22px; white-space: nowrap; }
+
+    #layer-toggles {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px; color: #cccccc;
+      letter-spacing: 1px;
+      display: -ms-flexbox; display: flex;
+      -ms-flex-wrap: wrap; flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 10px;
+    }
+
+    #layer-toggles label { cursor: pointer !important; white-space: nowrap; }
+    #layer-toggles input { cursor: pointer !important; margin-right: 6px; }
+
+    #chip-row {
+      display: -ms-flexbox; display: flex;
+      -ms-flex-wrap: wrap; flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .chip {
+      display: inline-block;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px; letter-spacing: 1px;
+      padding: 4px 10px;
+      border: 1px solid #333333;
+      color: #888888;
+      background-color: #0e0e0e;
+      cursor: pointer !important;
+      -webkit-user-select: none; user-select: none;
+    }
+
+    .chip.active { background-color: #333333; color: #eeeeee; border-color: #555555; font-weight: bold; }
+
+    .pick-marker {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 4px rgba(0,0,0,0.7);
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: center; align-items: center;
+      -ms-flex-pack: center; justify-content: center;
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .marker-cluster-pick {
+      background-color: rgba(85,204,85,0.35);
+    }
+    .marker-cluster-pick div {
+      background-color: rgba(85,204,85,0.75);
+      color: #051805;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+    }
+
+    .personal-note-badge {
+      display: inline-block;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px; font-weight: bold;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      margin-bottom: 6px;
+      border: 1px solid #ddaa33;
+      color: #ddaa33;
+      background-color: rgba(221,170,51,0.08);
+    }
+
+    .farm-entry-schedule, .farm-entry-wtb, .farm-entry-rawmilk {
+      font-size: 13px; color: #999999;
+      margin-bottom: 2px;
+    }
+
+    .farm-entry-notes {
+      font-size: 13px; color: #888888;
+      line-height: 1.5; margin-top: 4px;
+      white-space: pre-line;
+    }
+
+    .farm-entry.flash-highlight { background-color: rgba(85,204,85,0.12); border-left-color: #55cc55; }
+
+    .pick-popup-note {
+      font-size: 13px; color: #ddaa33; font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .pick-popup-link { display: block; margin-top: 6px; }
+    .pick-popup-link a { color: #55cc55; }
+    .pick-popup-link a:hover { color: #ffffff; }
+
+    .farm-entry {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      gap: 14px;
+      border-left: 3px solid #0a1a0a; border-bottom: 1px solid #222222;
+      padding: 14px 0 16px 16px;
+      margin-bottom: 4px;
+      cursor: pointer !important;
+    }
+
+    .farm-entry:hover { border-left-color: #55cc55; background-color: rgba(85,204,85,0.04); }
+
+    .farm-entry-icon {
+      width: 36px; height: 36px;
+      -ms-flex-negative: 0; flex-shrink: 0;
+      border-radius: 50%;
+      display: -ms-flexbox; display: flex;
+      -ms-flex-align: center; align-items: center;
+      -ms-flex-pack: center; justify-content: center;
+      font-size: 16px;
+      margin-top: 2px;
+    }
+
+    .farm-entry-text { -ms-flex: 1; flex: 1; }
+
+    .farm-entry-title {
+      font-family: Impact, "Arial Narrow", Arial, sans-serif;
+      font-size: 21px; font-weight: normal;
+      letter-spacing: 1px; color: #55cc55;
+      text-transform: uppercase; margin-bottom: 4px;
+    }
+
+    .farm-entry-meta {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px; color: #999999;
+      letter-spacing: 1px; margin-bottom: 6px;
+    }
+
+    .farm-entry-contact {
+      font-size: 14px; color: #bbbbbb;
+      line-height: 1.6; margin-bottom: 2px;
+    }
+
+    .farm-entry-contact a { color: #55cc55; }
+    .farm-entry-contact a:hover { color: #ffffff; }
+
+    .farm-entry-products {
+      font-size: 14px; color: #999999;
+      font-style: italic;
+    }
+
+    #farm-list-empty {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 14px; color: #666666;
+      letter-spacing: 1px; padding: 10px 0;
+      display: none;
+    }
+
+    .fine-print {
+      font-size: 13px; color: #777777; line-height: 1.6;
+    }
+
+    .fine-print a { color: #55cc55; }
+    .fine-print a:hover { color: #ffffff; }
+
+    hr.mid {
+      border: none; border-top: 1px solid #1e1e1e;
+      margin: 22px 0;
+    }
+
+    #clippy-wrap {
+      position: fixed; bottom: 24px; right: 28px;
+      width: 124px; height: 93px;
+      z-index: 999; pointer-events: none;
+    }
+
+    #clippy-canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
+
+  </style>
+</head>
+<body>
+
+<div id="outer">
+
+  <div id="header">
+    <div class="breadcrumb"><a href="plaza.html">&#8592; plaza</a> &nbsp;/&nbsp; farms</div>
+    <h1>&#10048; farms</h1>
+    <div class="sub"> support local farms! (&#9673;&#8255;&#9673;)</div>
+  </div>
+
+  <div id="content">
+
+    <div class="section-label">// local farms //</div>
+
+    <div id="layer-toggles">
+      <label><input type="checkbox" id="toggle-picks" checked="checked" /> my picks (curated, nm)</label>
+      <label><input type="checkbox" id="toggle-osm" /> explore openstreetmap (all states)</label>
+    </div>
+
+    <div id="farm-controls">
+      <select id="state-select">
+        <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+        <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+        <option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option>
+        <option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option>
+        <option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option>
+        <option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option>
+        <option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option>
+        <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
+        <option selected="selected">New Mexico</option>
+        <option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option>
+        <option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
+        <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option>
+        <option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option>
+        <option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+      </select>
+      <input type="text" id="farm-search" placeholder="search" />
+    </div>
+
+    <div id="chip-row"></div>
+    <div id="chip-row-category"></div>
+
+    <div id="farm-map"></div>
+
+    <div id="farm-legend">
+      <span class="item"><span class="swatch" style="background-color:#55cc55;"></span>my picks: farm</span>
+      <span class="item"><span class="swatch" style="background-color:#4488cc;"></span>my picks: store</span>
+      <span class="item"><span class="swatch" style="background-color:#ddaa33;"></span>my picks: market</span>
+      <span class="item"><span class="swatch" style="background-color:#ee5544;"></span>my picks: restaurant</span>
+      <span class="item"><span class="swatch" style="background-color:#55cc55; opacity:0.5;"></span>osm: farm shop</span>
+      <span class="item"><span class="swatch" style="background-color:#ddaa33; opacity:0.5;"></span>osm: farmers market</span>
+    </div>
+
+    <hr class="mid" />
+
+    <div id="pick-section">
+      <div class="section-label">// my picks (curated) //</div>
+      <div id="pick-status" class="farm-entry-meta" style="margin-bottom:10px;">loading my picks...</div>
+      <div id="pick-list"></div>
+      <div id="pick-list-empty" style="display:none;" class="farm-entry-meta">no matches — try a different search or filter</div>
+      <hr class="mid" />
+    </div>
+
+    <div id="osm-section" style="display:none;">
+      <div class="section-label">// explore openstreetmap //</div>
+      <div id="farm-status">loading farms...</div>
+      <div id="farm-list"></div>
+      <div id="farm-list-empty">no matches — try a different search</div>
+      <hr class="mid" />
+    </div>
+
+  </div>
+</div>
+
+<div id="fake-cursor"></div>
+
+<div id="clippy-wrap">
+  <canvas id="clippy-canvas" width="124" height="93"></canvas>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+(function() {
+  var STATE_VIEWS = {
+    'Alabama': [32.8, -86.8, 7], 'Alaska': [64.2, -149.4, 4], 'Arizona': [34.2, -111.6, 6],
+    'Arkansas': [34.9, -92.4, 7], 'California': [37.2, -119.4, 6], 'Colorado': [39.0, -105.5, 7],
+    'Connecticut': [41.6, -72.7, 9], 'Delaware': [39.0, -75.5, 9], 'District of Columbia': [38.9, -77.0, 11],
+    'Florida': [28.6, -82.4, 6], 'Georgia': [32.6, -83.4, 7], 'Hawaii': [20.8, -156.9, 7],
+    'Idaho': [44.3, -114.6, 6], 'Illinois': [40.0, -89.2, 7], 'Indiana': [39.9, -86.3, 7],
+    'Iowa': [42.0, -93.5, 7], 'Kansas': [38.5, -98.4, 7], 'Kentucky': [37.5, -85.3, 7],
+    'Louisiana': [31.0, -92.0, 7], 'Maine': [45.4, -69.2, 7], 'Maryland': [39.0, -76.7, 8],
+    'Massachusetts': [42.2, -71.5, 8], 'Michigan': [44.3, -85.4, 6], 'Minnesota': [46.3, -94.3, 6],
+    'Mississippi': [32.7, -89.7, 7], 'Missouri': [38.5, -92.5, 7], 'Montana': [47.0, -109.6, 6],
+    'Nebraska': [41.5, -99.8, 7], 'Nevada': [39.3, -116.6, 6], 'New Hampshire': [43.7, -71.6, 8],
+    'New Jersey': [40.1, -74.7, 8], 'New Mexico': [34.5, -106.1, 6], 'New York': [42.9, -75.5, 7],
+    'North Carolina': [35.5, -79.0, 7], 'North Dakota': [47.5, -100.5, 7], 'Ohio': [40.3, -82.8, 7],
+    'Oklahoma': [35.5, -97.5, 7], 'Oregon': [43.9, -120.6, 6], 'Pennsylvania': [40.9, -77.6, 7],
+    'Rhode Island': [41.7, -71.5, 10], 'South Carolina': [33.9, -80.9, 7], 'South Dakota': [44.4, -100.3, 7],
+    'Tennessee': [35.9, -86.4, 7], 'Texas': [31.5, -99.3, 6], 'Utah': [39.4, -111.7, 6],
+    'Vermont': [44.0, -72.7, 8], 'Virginia': [37.5, -78.8, 7], 'Washington': [47.4, -120.5, 7],
+    'West Virginia': [38.6, -80.6, 7], 'Wisconsin': [44.6, -89.9, 7], 'Wyoming': [43.0, -107.5, 7]
+  };
+
+  var REF_CITY = {
+    'Alabama': [33.5207, -86.8025], 'Alaska': [61.2181, -149.9003], 'Arizona': [33.4484, -112.0740],
+    'Arkansas': [34.7465, -92.2896], 'California': [34.0522, -118.2437], 'Colorado': [39.7392, -104.9903],
+    'Connecticut': [41.1792, -73.1894], 'Delaware': [39.7391, -75.5398], 'District of Columbia': [38.9072, -77.0369],
+    'Florida': [30.3322, -81.6557], 'Georgia': [33.7490, -84.3880], 'Hawaii': [21.3069, -157.8583],
+    'Idaho': [43.6150, -116.2023], 'Illinois': [41.8781, -87.6298], 'Indiana': [39.7684, -86.1581],
+    'Iowa': [41.5868, -93.6250], 'Kansas': [37.6872, -97.3301], 'Kentucky': [38.2527, -85.7585],
+    'Louisiana': [29.9511, -90.0715], 'Maine': [43.6591, -70.2568], 'Maryland': [39.2904, -76.6122],
+    'Massachusetts': [42.3601, -71.0589], 'Michigan': [42.3314, -83.0458], 'Minnesota': [44.9778, -93.2650],
+    'Mississippi': [32.2988, -90.1848], 'Missouri': [39.0997, -94.5786], 'Montana': [45.7833, -108.5007],
+    'Nebraska': [41.2565, -95.9345], 'Nevada': [36.1699, -115.1398], 'New Hampshire': [42.9956, -71.4548],
+    'New Jersey': [40.7357, -74.1724], 'New Mexico': [35.0844, -106.6504], 'New York': [40.7128, -74.0060],
+    'North Carolina': [35.2271, -80.8431], 'North Dakota': [46.8772, -96.7898], 'Ohio': [39.9612, -82.9988],
+    'Oklahoma': [35.4676, -97.5164], 'Oregon': [45.5152, -122.6784], 'Pennsylvania': [39.9526, -75.1652],
+    'Rhode Island': [41.8240, -71.4128], 'South Carolina': [34.0007, -81.0348], 'South Dakota': [43.5446, -96.7311],
+    'Tennessee': [36.1627, -86.7816], 'Texas': [29.7604, -95.3698], 'Utah': [40.7608, -111.8910],
+    'Vermont': [44.4759, -73.2121], 'Virginia': [36.8529, -75.9780], 'Washington': [47.6062, -122.3321],
+    'West Virginia': [38.3498, -81.6326], 'Wisconsin': [43.0389, -87.9065], 'Wyoming': [41.1400, -104.8202]
+  };
+
+  var REF_CITY_NAME = {
+    'Alabama': 'Birmingham', 'Alaska': 'Anchorage', 'Arizona': 'Phoenix', 'Arkansas': 'Little Rock',
+    'California': 'Los Angeles', 'Colorado': 'Denver', 'Connecticut': 'Bridgeport', 'Delaware': 'Wilmington',
+    'District of Columbia': 'Washington', 'Florida': 'Jacksonville', 'Georgia': 'Atlanta', 'Hawaii': 'Honolulu',
+    'Idaho': 'Boise', 'Illinois': 'Chicago', 'Indiana': 'Indianapolis', 'Iowa': 'Des Moines',
+    'Kansas': 'Wichita', 'Kentucky': 'Louisville', 'Louisiana': 'New Orleans', 'Maine': 'Portland',
+    'Maryland': 'Baltimore', 'Massachusetts': 'Boston', 'Michigan': 'Detroit', 'Minnesota': 'Minneapolis',
+    'Mississippi': 'Jackson', 'Missouri': 'Kansas City', 'Montana': 'Billings', 'Nebraska': 'Omaha',
+    'Nevada': 'Las Vegas', 'New Hampshire': 'Manchester', 'New Jersey': 'Newark', 'New Mexico': 'Albuquerque',
+    'New York': 'New York City', 'North Carolina': 'Charlotte', 'North Dakota': 'Fargo', 'Ohio': 'Columbus',
+    'Oklahoma': 'Oklahoma City', 'Oregon': 'Portland', 'Pennsylvania': 'Philadelphia', 'Rhode Island': 'Providence',
+    'South Carolina': 'Columbia', 'South Dakota': 'Sioux Falls', 'Tennessee': 'Nashville', 'Texas': 'Houston',
+    'Utah': 'Salt Lake City', 'Vermont': 'Burlington', 'Virginia': 'Virginia Beach', 'Washington': 'Seattle',
+    'West Virginia': 'Charleston', 'Wisconsin': 'Milwaukee', 'Wyoming': 'Cheyenne'
+  };
+
+  function distanceMiles(lat1, lon1, lat2, lon2) {
+    var R = 3958.8;
+    var dLat = (lat2 - lat1) * Math.PI / 180;
+    var dLon = (lon2 - lon1) * Math.PI / 180;
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  var OVERPASS_ENDPOINTS = [
+    'https://overpass-api.de/api/interpreter',
+    'https://overpass.kumi.systems/api/interpreter',
+    'https://overpass.openstreetmap.ru/api/interpreter'
+  ];
+
+  function buildQuery(stateName) {
+    return '[out:json][timeout:50];' +
+      'area["name"="' + stateName + '"]["admin_level"="4"]->.st;' +
+      '(' +
+      '  node["shop"="farm"](area.st);' +
+      '  way["shop"="farm"](area.st);' +
+      '  node["amenity"="marketplace"]["marketplace"~"farmer",i](area.st);' +
+      '  way["amenity"="marketplace"]["marketplace"~"farmer",i](area.st);' +
+      ');' +
+      'out center tags;';
+  }
+
+  var TOURISTY_KEYWORDS = [
+    'pumpkin patch', 'corn maze', 'hayride', 'petting zoo',
+    'wedding venue', 'event venue', 'tasting room', 'wine tasting'
+  ];
+
+  var statusEl = document.getElementById('farm-status');
+  var searchEl = document.getElementById('farm-search');
+  var listEl = document.getElementById('farm-list');
+  var listEmptyEl = document.getElementById('farm-list-empty');
+  var stateSelectEl = document.getElementById('state-select');
+
+  var SANDIA_HEIGHTS = [35.1747, -106.4883];
+  var map = L.map('farm-map', { scrollWheelZoom: true }).setView(SANDIA_HEIGHTS, 9);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    subdomains: 'abc',
+    maxZoom: 19
+  }).addTo(map);
+
+  var farms = [];
+  var excludedIds = {};
+  var overridesMap = {};
+  var manualFarms = [];
+  var loadToken = 0;
+
+  var overridesReady = Promise.all([
+    fetch('data/farms-excluded.json').then(function(r) { return r.json(); }).catch(function() { return { ids: [] }; }),
+    fetch('data/farms-overrides.json').then(function(r) { return r.json(); }).catch(function() { return { overrides: {} }; }),
+    fetch('data/farms-manual.json').then(function(r) { return r.json(); }).catch(function() { return { farms: [] }; })
+  ]).then(function(results) {
+    (results[0].ids || []).forEach(function(id) { excludedIds[id] = true; });
+    overridesMap = results[1].overrides || {};
+    manualFarms = results[2].farms || [];
+  });
+
+  function looksTouristy(tags, name) {
+    if (tags.tourism) return true;
+    if (tags.brand) return true;
+    var lname = (name || '').toLowerCase();
+    for (var i = 0; i < TOURISTY_KEYWORDS.length; i++) {
+      if (lname.indexOf(TOURISTY_KEYWORDS[i]) !== -1) return true;
+    }
+    return false;
+  }
+
+  function addressString(tags) {
+    var parts = [];
+    if (tags['addr:housenumber'] && tags['addr:street']) {
+      parts.push(tags['addr:housenumber'] + ' ' + tags['addr:street']);
+    } else if (tags['addr:street']) {
+      parts.push(tags['addr:street']);
+    }
+    if (tags['addr:city']) parts.push(tags['addr:city']);
+    return parts.join(', ');
+  }
+
+  function productList(tags) {
+    var out = [];
+    for (var key in tags) {
+      if (key.indexOf('product:') === 0 && (tags[key] === 'yes' || tags[key] === 'only')) {
+        out.push(key.substring(8).replace(/_/g, ' '));
+      }
+    }
+    return out;
+  }
+
+  function normalizeWebsite(url) {
+    if (!url) return null;
+    if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+    return url;
+  }
+
+  function osmLink(f) {
+    if (f.osmType === 'manual') return '<span title="added manually, not from OpenStreetMap">manually added</span>';
+    return '<a href="https://www.openstreetmap.org/' + f.osmType + '/' + f.osmId + '" target="_blank">view on OSM</a>';
+  }
+
+  function popupHtml(f) {
+    var html = '<div class="farm-popup-name">' + f.name + '</div>';
+    if (f.address) html += '<div class="farm-popup-meta">' + f.address + '</div>';
+    if (f.phone) html += '<div class="farm-popup-meta">' + f.phone + '</div>';
+    if (f.hours) html += '<div class="farm-popup-meta">' + f.hours + '</div>';
+    if (f.products.length) html += '<div class="farm-popup-meta">sells: ' + f.products.join(', ') + '</div>';
+    html += '<div class="farm-popup-osm">' + osmLink(f) + '</div>';
+    return html;
+  }
+
+  function entryHtml(f) {
+    var color = f.type === 'market' ? '#ddaa33' : '#55cc55';
+    var icon = f.type === 'market' ? '&#9673;' : '&#10048;';
+    var html = '<div class="farm-entry" data-idx="' + f.idx + '">';
+    html += '<div class="farm-entry-icon" style="background-color:' + color + '22; color:' + color + '; border:1px solid ' + color + '55;">' + icon + '</div>';
+    html += '<div class="farm-entry-text">';
+    html += '<div class="farm-entry-title">' + f.name + '</div>';
+    var metaBits = [];
+    if (f.address) metaBits.push(f.address);
+    metaBits.push(f.type === 'market' ? 'farmers market' : 'farm shop / stand');
+    if (f.distance !== undefined) metaBits.push(Math.round(f.distance) + ' mi from ' + f.refCityName);
+    html += '<div class="farm-entry-meta">' + metaBits.join(' &middot; ') + '</div>';
+    var contactBits = [];
+    if (f.phone) contactBits.push('<a href="tel:' + f.phone.replace(/[^0-9+]/g, '') + '">' + f.phone + '</a>');
+    if (f.website) contactBits.push('<a href="' + f.website + '" target="_blank">website</a>');
+    contactBits.push(osmLink(f));
+    html += '<div class="farm-entry-contact">' + contactBits.join(' &nbsp;|&nbsp; ') + '</div>';
+    if (f.hours) html += '<div class="farm-entry-meta">' + f.hours + '</div>';
+    if (f.products.length) html += '<div class="farm-entry-products">sells: ' + f.products.join(', ') + '</div>';
+    html += '</div></div>';
+    return html;
+  }
+
+  function clearCurrentFarms() {
+    farms.forEach(function(f) { if (map.hasLayer(f.marker)) map.removeLayer(f.marker); });
+    farms = [];
+    listEl.innerHTML = '';
+    listEmptyEl.style.display = 'none';
+  }
+
+  function render(farmList, stateName) {
+    var ref = REF_CITY[stateName];
+    if (ref) {
+      farmList.forEach(function(f) {
+        f.distance = distanceMiles(ref[0], ref[1], f.lat, f.lon);
+        f.refCityName = REF_CITY_NAME[stateName];
+      });
+      farmList.sort(function(a, b) { return a.distance - b.distance; });
+    } else {
+      farmList.sort(function(a, b) { return a.name.localeCompare(b.name); });
+    }
+    farms = farmList;
+
+    var listHtml = '';
+    farms.forEach(function(f, idx) {
+      f.idx = idx;
+      var color = f.type === 'market' ? '#ddaa33' : '#55cc55';
+      f.marker = L.circleMarker([f.lat, f.lon], {
+        radius: 7, color: '#000000', weight: 1,
+        fillColor: color, fillOpacity: 0.9
+      }).bindPopup(popupHtml(f));
+      f.marker.addTo(map);
+      f.searchBlob = (f.name + ' ' + f.address + ' ' + f.products.join(' ')).toLowerCase();
+      listHtml += entryHtml(f);
+    });
+    listEl.innerHTML = listHtml;
+
+    listEl.querySelectorAll('.farm-entry').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var f = farms[parseInt(el.getAttribute('data-idx'), 10)];
+        map.setView([f.lat, f.lon], 13);
+        if (!map.hasLayer(f.marker)) f.marker.addTo(map);
+        f.marker.openPopup();
+      });
+    });
+
+    statusEl.textContent = farms.length + ' farms & markets found — refreshed ' + new Date().toLocaleTimeString();
+  }
+
+  function applySearch() {
+    var q = searchEl.value.trim().toLowerCase();
+    var visibleCount = 0;
+    farms.forEach(function(f) {
+      var match = !q || f.searchBlob.indexOf(q) !== -1;
+      if (match) {
+        visibleCount++;
+        if (!map.hasLayer(f.marker)) f.marker.addTo(map);
+      } else {
+        if (map.hasLayer(f.marker)) map.removeLayer(f.marker);
+      }
+      var entryEl = listEl.querySelector('.farm-entry[data-idx="' + f.idx + '"]');
+      if (entryEl) entryEl.style.display = match ? '' : 'none';
+    });
+    listEmptyEl.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  searchEl.addEventListener('input', applySearch);
+
+  function fetchWithTimeout(url, opts, ms) {
+    var controller = new AbortController();
+    var timer = setTimeout(function() { controller.abort(); }, ms);
+    opts = Object.assign({}, opts, { signal: controller.signal });
+    return fetch(url, opts).then(function(res) { clearTimeout(timer); return res; }, function(err) { clearTimeout(timer); throw err; });
+  }
+
+  function fetchFrom(endpoints, idx, stateName, token) {
+    if (idx >= endpoints.length) {
+      if (token === loadToken) statusEl.textContent = 'couldn\'t reach OpenStreetMap right now — try refreshing in a bit.';
+      return;
+    }
+    fetchWithTimeout(endpoints[idx], {
+      method: 'POST',
+      body: 'data=' + encodeURIComponent(buildQuery(stateName))
+    }, 20000).then(function(res) {
+      if (!res.ok) throw new Error('bad response');
+      return res.json();
+    }).then(function(data) {
+      if (token !== loadToken) return;
+
+      var farmList = [];
+      data.elements.forEach(function(el) {
+        var key = el.type + '/' + el.id;
+        if (excludedIds[key]) return;
+        var tags = el.tags || {};
+        var ov = overridesMap[key] || {};
+        var name = ov.name || tags.name || 'unnamed farm';
+        if (looksTouristy(tags, name)) return;
+        var lat = el.type === 'node' ? el.lat : (el.center && el.center.lat);
+        var lon = el.type === 'node' ? el.lon : (el.center && el.center.lon);
+        if (lat == null || lon == null) return;
+        farmList.push({
+          osmType: el.type, osmId: el.id,
+          name: name, lat: lat, lon: lon,
+          type: tags.amenity === 'marketplace' ? 'market' : 'farm',
+          address: ov.address !== undefined ? ov.address : addressString(tags),
+          phone: ov.phone !== undefined ? ov.phone : (tags.phone || tags['contact:phone'] || null),
+          hours: ov.hours !== undefined ? ov.hours : (tags.opening_hours || null),
+          website: ov.website !== undefined ? normalizeWebsite(ov.website) : normalizeWebsite(tags.website || tags['contact:website'] || tags.url),
+          products: ov.products !== undefined ? ov.products : productList(tags)
+        });
+      });
+
+      manualFarms.forEach(function(f) {
+        if ((f.state || '').toLowerCase() !== stateName.toLowerCase()) return;
+        farmList.push({
+          osmType: 'manual', osmId: f.id,
+          name: f.name, lat: f.lat, lon: f.lon,
+          type: f.type === 'market' ? 'market' : 'farm',
+          address: f.address || '',
+          phone: f.phone || null,
+          hours: f.hours || null,
+          website: normalizeWebsite(f.website),
+          products: f.products || []
+        });
+      });
+
+      render(farmList, stateName);
+    }).catch(function() {
+      fetchFrom(endpoints, idx + 1, stateName, token);
+    });
+  }
+
+  function loadState(stateName) {
+    loadToken++;
+    var token = loadToken;
+    clearCurrentFarms();
+    statusEl.textContent = 'loading farms in ' + stateName + '...';
+    var view = STATE_VIEWS[stateName];
+    if (view) map.setView([view[0], view[1]], view[2]);
+    overridesReady.then(function() {
+      if (token === loadToken) fetchFrom(OVERPASS_ENDPOINTS, 0, stateName, token);
+    });
+  }
+
+  // ===================== MY PICKS (curated) =====================
+  var PICK_COLORS = { farm: '#55cc55', store: '#4488cc', market: '#ddaa33', restaurant: '#ee5544' };
+  var PICK_ICONS = { farm: '&#10048;', store: '&#128722;', market: '&#9673;', restaurant: '&#127860;' };
+
+  var toggleGlobalPicksEl = document.getElementById('toggle-picks');
+  var toggleOsmEl = document.getElementById('toggle-osm');
+  var pickSectionEl = document.getElementById('pick-section');
+  var osmSectionEl = document.getElementById('osm-section');
+  var pickListEl = document.getElementById('pick-list');
+  var pickListEmptyEl = document.getElementById('pick-list-empty');
+  var pickStatusEl = document.getElementById('pick-status');
+  var chipRowEl = document.getElementById('chip-row');
+  var chipRowCategoryEl = document.getElementById('chip-row-category');
+
+  var pickPlaces = [];
+  var pickTypeFilter = { farm: true, store: true, market: true, restaurant: true };
+  var pickCategoryFilter = {};
+  var pickMarkersById = {};
+  var osmEnabled = false;
+
+  var pickClusterGroup = L.markerClusterGroup({
+    iconCreateFunction: function(cluster) {
+      return L.divIcon({
+        html: '<div>' + cluster.getChildCount() + '</div>',
+        className: 'marker-cluster marker-cluster-small marker-cluster-pick',
+        iconSize: L.point(40, 40)
+      });
+    }
+  });
+  pickClusterGroup.addTo(map);
+
+  function escapeHtml(s) {
+    var div = document.createElement('div');
+    div.textContent = s == null ? '' : s;
+    return div.innerHTML;
+  }
+
+  function firstUrl(str) {
+    if (!str) return null;
+    var m = str.match(/https?:\/\/[^\s;,()]+/);
+    return m ? m[0] : null;
+  }
+
+  window.scrollToPickDetail = function(id) {
+    var el = document.getElementById('pick-' + id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.classList.add('flash-highlight');
+    setTimeout(function() { el.classList.remove('flash-highlight'); }, 1800);
+  };
+
+  function pickPopupHtml(p) {
+    var html = '<div class="farm-popup-name">' + escapeHtml(p.name) + '</div>';
+    html += '<div class="farm-popup-meta">' + escapeHtml(p.category) + '</div>';
+    if (p.personal_note) html += '<div class="pick-popup-note">' + escapeHtml(p.personal_note) + '</div>';
+    if (p.sells) {
+      var oneLine = p.sells.length > 90 ? p.sells.slice(0, 90) + '…' : p.sells;
+      html += '<div class="farm-popup-meta">' + escapeHtml(oneLine) + '</div>';
+    }
+    html += '<div class="pick-popup-link"><a href="javascript:void(0)" onclick="scrollToPickDetail(\'' + p.id + '\')">view full details &#8595;</a></div>';
+    return html;
+  }
+
+  function pickEntryHtml(p) {
+    var color = PICK_COLORS[p.type] || '#55cc55';
+    var icon = PICK_ICONS[p.type] || '&#10048;';
+    var html = '<div class="farm-entry" id="pick-' + p.id + '">';
+    html += '<div class="farm-entry-icon" style="background-color:' + color + '22; color:' + color + '; border:1px solid ' + color + '55;">' + icon + '</div>';
+    html += '<div class="farm-entry-text">';
+    if (p.personal_note) html += '<div class="personal-note-badge">' + escapeHtml(p.personal_note) + '</div>';
+    html += '<div class="farm-entry-title">' + escapeHtml(p.name) + '</div>';
+    var metaBits = [escapeHtml(p.category)];
+    if (p.address) metaBits.push(escapeHtml(p.address));
+    if (p.distance_mi != null) metaBits.push(Math.round(p.distance_mi) + ' mi from Sandia Heights');
+    html += '<div class="farm-entry-meta">' + metaBits.join(' &middot; ') + '</div>';
+    var contactBits = [];
+    if (p.phone) contactBits.push('<a href="tel:' + p.phone.replace(/[^0-9+]/g, '') + '">' + escapeHtml(p.phone) + '</a>');
+    var url = firstUrl(p.website);
+    if (url) contactBits.push('<a href="' + url + '" target="_blank">website</a>');
+    if (contactBits.length) html += '<div class="farm-entry-contact">' + contactBits.join(' &nbsp;|&nbsp; ') + '</div>';
+    if (p.sells) html += '<div class="farm-entry-products">sells: ' + escapeHtml(p.sells) + '</div>';
+    if (p.where_to_buy) html += '<div class="farm-entry-wtb">where to buy: ' + escapeHtml(p.where_to_buy) + '</div>';
+    if (p.schedule) html += '<div class="farm-entry-schedule">hours: ' + escapeHtml(p.schedule) + '</div>';
+    if (p.raw_milk) html += '<div class="farm-entry-rawmilk">raw milk: ' + escapeHtml(p.raw_milk) + '</div>';
+    if (p.notes) html += '<div class="farm-entry-notes">' + escapeHtml(p.notes) + '</div>';
+    html += '</div></div>';
+    return html;
+  }
+
+  function matchesPickFilters(p, q) {
+    if (!pickTypeFilter[p.type]) return false;
+    if (pickCategoryFilter[p.category] === false) return false;
+    if (q) {
+      var blob = (p.name + ' ' + (p.address || '') + ' ' + (p.sells || '') + ' ' + (p.category || '')).toLowerCase();
+      if (blob.indexOf(q) === -1) return false;
+    }
+    return true;
+  }
+
+  function renderPicks() {
+    pickClusterGroup.clearLayers();
+    pickMarkersById = {};
+    var listHtml = '';
+    var visibleCount = 0;
+    var q = searchEl.value.trim().toLowerCase();
+    pickPlaces.forEach(function(p) {
+      if (!matchesPickFilters(p, q)) return;
+      visibleCount++;
+      var color = PICK_COLORS[p.type] || '#55cc55';
+      var icon = PICK_ICONS[p.type] || '&#10048;';
+      var marker = L.marker([p.lat, p.lon], {
+        icon: L.divIcon({
+          className: '',
+          html: '<div class="pick-marker" style="background-color:' + color + ';">' + icon + '</div>',
+          iconSize: [24, 24]
+        })
+      }).bindPopup(pickPopupHtml(p));
+      pickMarkersById[p.id] = marker;
+      pickClusterGroup.addLayer(marker);
+      listHtml += pickEntryHtml(p);
+    });
+    pickListEl.innerHTML = listHtml;
+    pickListEmptyEl.style.display = visibleCount === 0 ? 'block' : 'none';
+    pickStatusEl.textContent = visibleCount + ' of ' + pickPlaces.length + ' my picks shown';
+
+    pickListEl.querySelectorAll('.farm-entry').forEach(function(el) {
+      el.addEventListener('click', function() {
+        var id = el.id.replace('pick-', '');
+        var marker = pickMarkersById[id];
+        if (!marker) return;
+        pickClusterGroup.zoomToShowLayer(marker, function() { marker.openPopup(); });
+      });
+    });
+  }
+
+  function buildChips() {
+    var typeLabels = { farm: 'farm', store: 'store', market: 'market', restaurant: 'restaurant' };
+    var typeHtml = '';
+    Object.keys(typeLabels).forEach(function(t) {
+      typeHtml += '<span class="chip active" data-type="' + t + '" style="background-color:' + PICK_COLORS[t] + ';color:#0a0a0a;border-color:' + PICK_COLORS[t] + ';">' + typeLabels[t] + '</span>';
+    });
+    chipRowEl.innerHTML = typeHtml;
+
+    var catHtml = '';
+    Object.keys(pickCategoryFilter).sort().forEach(function(cat) {
+      catHtml += '<span class="chip active" data-category="' + escapeHtml(cat) + '">' + escapeHtml(cat) + '</span>';
+    });
+    chipRowCategoryEl.innerHTML = catHtml;
+
+    Array.prototype.forEach.call(chipRowEl.querySelectorAll('.chip'), function(chip) {
+      chip.addEventListener('click', function() {
+        var t = chip.getAttribute('data-type');
+        pickTypeFilter[t] = !pickTypeFilter[t];
+        if (pickTypeFilter[t]) {
+          chip.style.backgroundColor = PICK_COLORS[t]; chip.style.color = '#0a0a0a';
+        } else {
+          chip.style.backgroundColor = '#0e0e0e'; chip.style.color = '#888888';
+        }
+        renderPicks();
+      });
+    });
+
+    Array.prototype.forEach.call(chipRowCategoryEl.querySelectorAll('.chip'), function(chip) {
+      chip.addEventListener('click', function() {
+        var cat = chip.getAttribute('data-category');
+        pickCategoryFilter[cat] = !pickCategoryFilter[cat];
+        chip.classList.toggle('active', pickCategoryFilter[cat]);
+        renderPicks();
+      });
+    });
+  }
+
+  fetch('data/nm_farms_data.geojson').then(function(r) { return r.json(); }).then(function(geo) {
+    var categoriesSet = {};
+    pickPlaces = geo.features.map(function(f) {
+      var p = Object.assign({}, f.properties);
+      p.lat = f.geometry.coordinates[1];
+      p.lon = f.geometry.coordinates[0];
+      if (p.distance_mi == null) p.distance_mi = distanceMiles(SANDIA_HEIGHTS[0], SANDIA_HEIGHTS[1], p.lat, p.lon);
+      categoriesSet[p.category] = true;
+      return p;
+    });
+    pickPlaces.sort(function(a, b) { return (a.distance_mi || 0) - (b.distance_mi || 0); });
+    Object.keys(categoriesSet).forEach(function(cat) { pickCategoryFilter[cat] = true; });
+    buildChips();
+    renderPicks();
+  }).catch(function() {
+    pickStatusEl.textContent = 'could not load my picks data.';
+  });
+
+  searchEl.addEventListener('input', function() { renderPicks(); });
+
+  toggleGlobalPicksEl.addEventListener('change', function() {
+    pickSectionEl.style.display = this.checked ? '' : 'none';
+    if (this.checked) { pickClusterGroup.addTo(map); renderPicks(); }
+    else { map.removeLayer(pickClusterGroup); }
+  });
+
+  toggleOsmEl.addEventListener('change', function() {
+    osmEnabled = this.checked;
+    osmSectionEl.style.display = osmEnabled ? '' : 'none';
+    if (osmEnabled) {
+      loadState(stateSelectEl.value);
+    } else {
+      loadToken++;
+      clearCurrentFarms();
+    }
+  });
+
+  stateSelectEl.addEventListener('change', function() {
+    if (osmEnabled) loadState(this.value);
+  });
+})();
+</script>
+
+<script>
+(function() {
+  var FW = 124, FH = 93;
+  var seq = [], i;
+  for (i = 2; i < 26; i++) seq.push([i, 5]);
+  for (i = 0; i < 26; i++) seq.push([i, 6]);
+  for (i = 0; i < 10; i++) seq.push([i, 7]);
+
+  var canvas = document.getElementById('clippy-canvas');
+  var ctx = canvas.getContext('2d'), sheet = null, frame = 0;
+
+  function tick() {
+    if (!sheet) return;
+    var f = seq[frame % seq.length];
+    ctx.clearRect(0, 0, FW, FH);
+    ctx.drawImage(sheet, f[0]*FW, f[1]*FH, FW, FH, 0, 0, FW, FH);
+    frame++;
+  }
+
+  var img = new Image();
+  img.onload = function() {
+    var oc = document.createElement('canvas');
+    oc.width = img.width; oc.height = img.height;
+    var oct = oc.getContext('2d');
+    oct.drawImage(img, 0, 0);
+    var id = oct.getImageData(0, 0, oc.width, oc.height), d = id.data;
+    for (var j = 0; j < d.length; j += 4) {
+      if (d[j] > 200 && d[j+1] < 60 && d[j+2] > 200) d[j+3] = 0;
+    }
+    oct.putImageData(id, 0, 0);
+    sheet = oc; tick(); setInterval(tick, 130);
+  };
+  img.src = 'img/clippy.png';
+})();
+
+(function() {
+  var el = document.getElementById('fake-cursor');
+  document.documentElement.style.cursor = 'none';
+  document.body.style.cursor = 'none';
+  document.addEventListener('mousemove', function(e) {
+    el.style.transform = 'translate('+e.clientX+'px,'+e.clientY+'px)';
+    el.style.display = 'block';
+  });
+  document.addEventListener('mouseleave', function() { el.style.display = 'none'; });
+  document.addEventListener('mouseenter', function() { el.style.display = 'block'; });
+})();
+</script>
+
+</body>
+</html>

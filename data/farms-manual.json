@@ -1,0 +1,26 @@
+{
+  "_readme": "Farms you know about that aren't on OpenStreetMap yet — add them here and they'll show up on farms.html alongside the live OSM results. Each entry needs: id (any unique string, prefix it 'manual-'), name, state (full name, must match the dropdown exactly, e.g. 'New Mexico'), lat, lon (right-click the spot on Google Maps to copy coordinates). Optional: type ('farm' or 'market', defaults to farm), address, phone, hours, website, products (array of strings).",
+  "farms": [
+    {
+      "id": "manual-redhorse-schwebach",
+      "name": "Red Horse BNB (Schwebach Farms)",
+      "state": "New Mexico",
+      "lat": 35.0154195,
+      "lon": -106.6778419,
+      "type": "farm",
+      "address": "2155 Londene Lane, Albuquerque, NM 87105 (approximate pin — exact address unmapped)",
+      "phone": "505-967-7610"
+    },
+    {
+      "id": "manual-thomas-farms",
+      "name": "Thomas Farms Fiesta Pinto Beans",
+      "state": "New Mexico",
+      "lat": 34.8647778,
+      "lon": -106.0516738,
+      "type": "farm",
+      "address": "114 Howell Rd E, McIntosh, NM 87032 (approximate pin — exact address unmapped)",
+      "phone": "505-384-2396",
+      "hours": "Mon-Fri 8am-5pm, Sat 8am-12pm, Sun closed"
+    }
+  ]
+}

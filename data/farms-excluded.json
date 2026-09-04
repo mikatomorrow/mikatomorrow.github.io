@@ -1,0 +1,6 @@
+{
+  "_readme": "OSM ids to hide from the farms map/list — e.g. places that have closed down. Get the id from a listing's 'view on OSM' link on farms.html (it's the number after node/ or way/ in the URL). Add one string per entry, format 'node/12345' or 'way/12345'.",
+  "ids": [
+    "way/1319945185"
+  ]
+}

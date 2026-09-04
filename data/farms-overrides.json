@@ -1,0 +1,11 @@
+{
+  "_readme": "Fixes for existing OSM entries on farms.html — fill in a missing phone/website/name/address, or correct a wrong one, without waiting for someone to edit OpenStreetMap itself. Key = 'node/12345' or 'way/12345' (from that listing's 'view on OSM' link). Only set the fields you want to change — anything you omit keeps using the live OSM value.",
+  "overrides": {
+    "way/1166008065": {
+      "name": "Fresh4Less",
+      "phone": "(505) 717-5380",
+      "website": "https://www.yelp.com/biz/fresh-4-less-bernalillo",
+      "hours": "Mon-Sat 8am-5:30pm, Sun 8am-5pm"
+    }
+  }
+}
